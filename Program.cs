@@ -5,61 +5,14 @@ namespace RPG{
         static void Main(string[] args){
 
             dragonsChallenge();
-            
-        }
-        static void dragonsChallenge(){
-        // if (Jogador1.pontos == Jogador2.pontos) ;
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                   TORNEIO                                     |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|                              O torneio começou!                               |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
-            Console.WriteLine("| arquibancadas e é quando na tenda dos participantes você se reúne com os      |");
-            Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
-            Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
-            Console.WriteLine("| que não será um desafio qualquer, você começará com o mesmo desafio que um    |");
-            Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
-            Console.ReadLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                             DESAFIO DOS DRAGÕES                               |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Procurar o ovo                                                            |");
-            Console.WriteLine("| (2) Lutar contra o dragão                                                     |");
-            Console.WriteLine("| (3) Fugir do dragão                                                           |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            Console.WriteLine();
-            Console.Write("Informe a opção desejada para continuar: ");
-
-            string opcao = Console.ReadLine();
-            switch (opcao){
-            case "1":
-                searchEgg(opcao);
-                break;
-            case "2":
-                fightDragon(opcao);
-                break;
-            case "3":
-                avoidDragon(opcao);
-                break;
-            }
+            breakBeforeNextChallenge();
         }
 
-        static void searchEgg(string opcao){
+                //---------> OPÇÂO 1 <---------
+        static void searchEgg(string option){
             Console.WriteLine();
             Console.WriteLine("Opção 1 - sucesso");
-            //if opcao 1 && dado > 10
+            //if option 1 && dado > 10
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           PROCURAR O OVO  --  SUCESSO                         |");
@@ -110,11 +63,12 @@ namespace RPG{
                         //shift+alt 
         }
 
-        static void fightDragon(string opcao){
+        //---------> OPÇÂO 2 <---------
+        static void fightDragon(string option){
 
             Console.WriteLine();
             Console.WriteLine("Opção 2 - sucesso");
-            //if opcao 1 && dado > 10
+            //if option 1 && dado > 10
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           ENFRENTAR DRAGÃO  --  SUCESSO                       |");
@@ -152,11 +106,12 @@ namespace RPG{
  
         }
 
-        static void avoidDragon(string opcao){
+        //---------> OPÇÂO 3 <---------
+        static void avoidDragon(string option){
             
             Console.WriteLine();
             Console.WriteLine("Opção 3 - sucesso");
-            //if opcao 1 && dado > 10
+            //if option 1 && dado > 10
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           FUGIR DRAGÃO  --  SUCESSO                           |");
@@ -182,21 +137,58 @@ namespace RPG{
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
  
         }
+        static void dragonsChallenge(){
 
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|                                   TORNEIO                                     |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|                              O torneio começou!                               |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
+            Console.WriteLine("| arquibancadas e é quando na tenda dos participantes você se reúne com os      |");
+            Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
+            Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
+            Console.WriteLine("| que não será um desafio qualquer, você começará com o mesmo desafio que um    |");
+            Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //Console.ReadLine();
-            // switch (opcao){
-            // case 1:
-            //     procurarOvo();
-            //     break;
-            // case 2:
-            //     Console.Write("Carregando..");
-            //     break;
-            // case 3:
-            //     Console.Write("Saindo... Esperamos você uma outra hora");
-            //     break;
-            // }
+            Console.WriteLine();
+            Console.WriteLine("Pressione Enter para continuar");
+            Console.ReadLine();
 
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|                             DESAFIO DOS DRAGÕES                               |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("| (1) Procurar o ovo                                                            |");
+            Console.WriteLine("| (2) Lutar contra o dragão                                                     |");
+            Console.WriteLine("| (3) Fugir do dragão                                                           |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+            Console.WriteLine();
+            Console.Write("Informe a opção desejada para continuar: ");
+            string option = Console.ReadLine();
+
+            switch (option){
+            case "1":
+                searchEgg(option);
+                break;
+            case "2":
+                fightDragon(option);
+                break;
+            case "3":
+                avoidDragon(option);
+                break;
+            }
+        }
+
+        breakBeforeNextChallenge(){
+            
+
+        }
 
 
       }
