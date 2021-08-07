@@ -6,6 +6,7 @@ namespace RPG
   {
     public static void dragonsChallenge()
     {
+      //Console.BackgroundColor = ConsoleColor.Red;
 
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
       Console.WriteLine("|                                   TORNEIO                                     |");
@@ -139,7 +140,7 @@ namespace RPG
       //shift+alt 
     }
 
-    //---------> OPÇÂO 2 <---------
+    //---------> OPÇÃO 2 <---------
     static void fightDragon(string option)
     {
       //grifinoria++;
@@ -195,7 +196,7 @@ namespace RPG
 
     }
 
-    //---------> OPÇÂO 3 <---------
+    //---------> OPÇÃO 3 <---------
     static void avoidDragon(string option)
     {
       //sonserina+=2;
@@ -236,10 +237,10 @@ namespace RPG
       //life--;
 
     }
-  }
+  
 
   //---------> BREAK <-----------
-  public static void breakAfterDragonChallenge()
+  public static void breakAfterDragonsChallenge()
   {
 
     Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -292,7 +293,7 @@ namespace RPG
   }
 
 
-  //---------> OPÇÂO 1 <---------
+  //---------> OPÇÃO 1 <---------
   static void studyPotions(string option)
   {
     //corvinal++;
@@ -329,7 +330,7 @@ namespace RPG
 
   }
 
-  //---------> OPÇÂO 2 <---------
+  //---------> OPÇÃO 2 <---------
   static void sabotageParticipants(string option)
   {
     //sonserina++;
@@ -393,7 +394,7 @@ namespace RPG
 
   }
 
-  //---------> OPÇÂO 3 <---------
+  //---------> OPÇÃO 3 <---------
   static void askFriendsForHelp(string option)
   {
     //lufalufa++
@@ -416,7 +417,7 @@ namespace RPG
     //life++
   }
 
-  //---------> OPÇÂO 4 <---------
+  //---------> OPÇÃO 4 <---------
   static void practiceSpells(string option)
   {
     //grifinoria++
@@ -456,4 +457,5 @@ namespace RPG
     //life--
 
   }
+}
 }

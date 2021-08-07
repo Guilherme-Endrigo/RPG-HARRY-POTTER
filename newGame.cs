@@ -5,8 +5,9 @@ namespace RPG
 
   class newGame
   {
-    public static void newGame()
+    public static void menu()
     {
+      Console.ForegroundColor = ConsoleColor.Red;
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
       Console.WriteLine("|                                UM NOVO ANO!                                   |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -48,7 +49,7 @@ namespace RPG
       Console.WriteLine("| cada uma das tarefas do torneio, quem tiver obtido o maior resultado no final  |");
       Console.WriteLine("| das tarefas ganhará a Taça Tribruxo.                                           |");
       Console.WriteLine("|                                                                                |");
-      Console.WriteLine("|    Agora, caros possiveis candidatos, se quiser se candidatar a campeão deverá |");
+      Console.WriteLine("|    Agora, caros possíveis candidatos, se quiser se candidatar a campeão deverá |");
       Console.WriteLine("| escrever seu nome claramente em um pedaço de pergaminho e depositá-lo no       |");
       Console.WriteLine("| cálice imediatamente                                                           |");
       Console.WriteLine("|                                                                                |");
@@ -63,11 +64,11 @@ namespace RPG
 
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você deseja inserir seu nome no calice de Fogo?                              |");
+      Console.WriteLine("|  Você deseja inserir seu nome no Cálice de Fogo?                              |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (1) com certeza! é a minha chance de provar minha bravura e superioridade.    |");
+      Console.WriteLine("| (1) Com certeza! é a minha chance de provar minha bravura e superioridade.    |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (2) Melhor não, desde do que aconteceu com o cedrico não me parece uma boa    |");
+      Console.WriteLine("| (2) Melhor não, desde o que aconteceu com o Cedrico não me parece uma boa     |");
       Console.WriteLine("| ideia                                                                         |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -125,5 +126,61 @@ namespace RPG
       Console.ReadLine();
       Console.WriteLine();
     }
+  
+      public static void firstBreak()
+    {
+      //Console.BackgroundColor = ConsoleColor.Red;
+
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                                   TORNEIO                                     |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Atenção, o torneio está para começar… Amanhã será um dia de altas emoções, |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
+      Console.WriteLine("| arquibancadas e é quando na tenda dos participantes você se reúne com os      |");
+      Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
+      Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
+      Console.WriteLine("| que não será um desafio qualquer, você começará com o mesmo desafio que um    |");
+      Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      Console.WriteLine();
+      Console.WriteLine("Pressione Enter para continuar");
+      Console.ReadLine();
+
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                             DESAFIO DOS DRAGÕES                               |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("| (1) Procurar o ovo                                                            |");
+      Console.WriteLine("| (2) Lutar contra o dragão                                                     |");
+      Console.WriteLine("| (3) Fugir do dragão                                                           |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      Console.WriteLine();
+      Console.Write("Informe a opção desejada para continuar: ");
+      string option = Console.ReadLine();
+
+      switch (option)
+      {
+        case "1":
+          searchEgg(option);
+          break;
+        case "2":
+          fightDragon(option);
+          break;
+        case "3":
+          avoidDragon(option);
+          break;
+      }
+    }
+  
   }
+
 }
+
+
+

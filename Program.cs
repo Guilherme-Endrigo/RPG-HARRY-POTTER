@@ -7,10 +7,10 @@ namespace RPG
     static void Main(string[] args)
     {
 
-      menu();
-      dragonsChallenge();
-      breakBeforeNextChallenge();
-      draw();
+      RPG.newGame.menu();
+      //RPG.Dragon.dragonsChallenge();
+      //RPG.Dragon.breakAfterDragonsChallenge();
+      //RPG.endGame.draw();
     }
 
   }

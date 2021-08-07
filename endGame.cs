@@ -7,12 +7,12 @@ namespace RPG
   {
 
 
-    static void draw()
+    public static void draw()
     {
       // if (Jogador1.pontos == Jogador2.pontos) ;
 
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                                  EPILOGO                                      |");
+      Console.WriteLine("|                                  EPÍLOGO                                      |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Parabéns a todos os participantes, este torneio foi apenas o começo        |");
@@ -32,11 +32,12 @@ namespace RPG
       Console.WriteLine("|                                  A ESCOLHA                                    |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    No mundo magico o duelo magico é a forma mais honrosa de resolver algumas  |");
+      Console.WriteLine("|    No mundo mágico o duelo mágico é a forma mais honrosa de resolver algumas  |");
       Console.WriteLine("| disputas como essa, para manter o princípio da igualdade todas as suas        |");
-      Console.WriteLine("| conquistas durante a jornada serão temporariamente esquecidas. – continuou    |");
-      Console.WriteLine("|    Por favor escolha qual varinha você deseja utilizar neste duelo, está será |");
-      Console.WriteLine("| a única vantagem que vocês possuíram no duelo:                                |");
+      Console.WriteLine("| conquistas durante a jornada serão temporariamente esquecidas – continuou     |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Por favor, escolha qual varinha você deseja utilizar neste duelo, esta     |");
+      Console.WriteLine("| será a única vantagem que você possuirá no duelo:                             |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("| (1) Varinha de Cerejeira, rígida e feita com coração de dragão;               |");
       Console.WriteLine("|                                                                               |");
@@ -44,7 +45,7 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("| (3) Varinha de Olmo, flexível e feita com pena de fênix;                      |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (4) Varinha de Pereira, rígida e feita com cabelo de veela;                   |");
+      Console.WriteLine("| (4) Varinha de Pereira, rígida e feita com cabelo de Veela;                   |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -76,7 +77,7 @@ namespace RPG
 
         case "2":
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                             Varinha de castanheira                            |");
+          Console.WriteLine("|                             Varinha de Castanheira                            |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine("|    A varinha escolhida se atrai por bruxos e bruxas que são habilidosos em    |");
@@ -93,7 +94,7 @@ namespace RPG
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine("|    Acredita-se que apenas puros-sangues podem produzir magia a partir das     |");
-          Console.WriteLine("| varinhas de olmo, e conhecida pelos feitiços mais elegantes.                  |");
+          Console.WriteLine("| varinhas de Olmo, e conhecida pelos feitiços mais elegantes.                  |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
           //função recebimento ponto
@@ -104,9 +105,8 @@ namespace RPG
           Console.WriteLine("|                               Varinha de Pereira                              |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Com essa varinha de poderes mágicos esplêndidos, as quais dão o melhor de  |");
-          Console.WriteLine("| si nas mãos dos sábios. Donos dessas varinhas são, normalmente populares e    |");
-          Console.WriteLine("| e bem respeitados.                                                            |");
+          Console.WriteLine("|    Essa varinha de poderes mágicos esplêndidos se dá melhor nas mãos dos      |");
+          Console.WriteLine("| sábios. Donos dessas varinhas são, normalmente populares e e bem respeitados. |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
           //função recebimento ponto
@@ -119,22 +119,22 @@ namespace RPG
       Console.WriteLine("|                                    O DUELO                                    |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Cada varinha tem suas características únicas aproveitou a Hermione para    |");
-      Console.WriteLine("| mostrar seus conhecimentos. Não só são conhecidas por essas habilidades       |");
+      Console.WriteLine("|  - Cada varinha tem suas características únicas - aproveitou Sr Olivaras para |");
+      Console.WriteLine("| mostrar seus conhecimentos. - Não só são conhecidas por essas habilidades     |");
       Console.WriteLine("| únicas como também tem suas vantagens em um duelo.                            |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Se o Aluno escolhe a varinha de cerejeira ele atacará sempre um pouco      |");
-      Console.WriteLine("| mais forte ( +2 dadoAtaque);                                                  |");
+      Console.WriteLine("|  - Se o Aluno escolhe a varinha de Cerejeira, ele atacará sempre um pouco     |");
+      Console.WriteLine("| mais forte ( +2 dadoAtaque ).                                                 |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Se o Aluno escolhe a varinha de castanheira ele conseguirá se defender     |");
-      Console.WriteLine("| mais facilmente ( +2 dadoDefesa);                                             |");
+      Console.WriteLine("|  - Se o Aluno escolhe a varinha de Castanheira, ele conseguirá se defender    |");
+      Console.WriteLine("| mais facilmente ( +2 dadoDefesa ).                                            |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Se o Aluno escolhe a carinha de Olmo, devido a sua característica          |");
-      Console.WriteLine("| flexível, sem duvida conseguirá aguentar o primeiro ataque direto             |");
+      Console.WriteLine("|  - Se o Aluno escolhe a varinha de Olmo, devido à sua característica          |");
+      Console.WriteLine("| flexível, sem dúvida, conseguirá aguentar o primeiro ataque direto            |");
       Console.WriteLine("| (primeiro dado = 20)                                                          |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| Se o Aluno escolhe a carinha de Pereira ele será alguém equilibrado que       |");
-      Console.WriteLine("| será tão bom no ataque quanto na defesa ( +1 dadoAtaque, +1 dadoDefesa)       |");
+      Console.WriteLine("|  - Se o Aluno escolhe a varinha de Pereira ele será alguém equilibrado que    |");
+      Console.WriteLine("| será tão bom no ataque quanto na defesa ( +1 dadoAtaque, +1 dadoDefesa )      |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -160,38 +160,33 @@ namespace RPG
 
       while (coin != "1" && coin != "2")
       {
-        Console.WriteLine("Opção Invalida, tente novamente");
+        Console.WriteLine("Opção Inválida, tente novamente");
         coin = Console.ReadLine();
       }
 
       // if(coin == "valor dado") { 
       //   Console.WriteLine("{JOGADOR1} você é o primeiro a atacar");
-      //   Console.WriteLine("Precione ENTER para continuar: ");
+      //   Console.WriteLine("Pressione ENTER para continuar: ");
       //   Console.ReadLine();
       // } else { 
       //   Console.WriteLine("{JOGADOR2} você será o primeiro a atacar");
-      //   Console.WriteLine("Precione ENTER para continuar: ");
+      //   Console.WriteLine("Pressione ENTER para continuar: ");
       //   Console.ReadLine(); }
 
       Console.WriteLine();
-      Console.WriteLine("Precione ENTER para continuar: ");
+      Console.WriteLine("Pressione ENTER para continuar: ");
       Console.ReadLine();
 
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                                A REVERENCIA                                   |");
+      Console.WriteLine("|                                A REVERÊNCIA                                   |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Assim percebe-se que ambos os jogadores se posicionam e com passos firmes, |");
-      Console.WriteLine("|  ao o encontro do tablado o qual rangia com seus passeares, os mesmos         |");
-      Console.WriteLine("| dirigiam-se até o centro do tablado ao deter-se o olhar um ao outro a frente  |");
-      Console.WriteLine("| num breve resvalar  Logo ligeiramente erguiam-na até a frente de seu rosto e  |");
-      Console.WriteLine("| assim cortando o ar com a mesma na diagonal direcionando-a para baixo         |");
-      Console.WriteLine("| mantendo-a ali firme com os braços eretos na diagonal com a varinha mirada    |");
-      Console.WriteLine("| para o solo, e em seguida inclinando o corpo apoiando a mão esquerda que está |");
-      Console.WriteLine("| livre na barriga, deslizando seu pé esquerdo para trás buscando apoio e       |");
-      Console.WriteLine("| flexionando o joelho direito abaixando-se centímetros, exercendo uma sublime  |");
-      Console.WriteLine("| reverencia.                                                                   |");
-      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Assim, ambos jogadores posicionam-se frente a frente no centro do tablado. |");
+      Console.WriteLine("| É um momento solene, no qual se entreolham enxergando a determinação um no    |");
+      Console.WriteLine("| outro. Os dois empunham suas varinhas na posição de combate normalmente       |");
+      Console.WriteLine("| adotada. Nas arquibancadas, permeia um silêncio coletivo. Quando contar-se    |");
+      Console.WriteLine("| três, após o sinal de saudação, serão lançados os primeiros feitiços,         |");
+      Console.WriteLine("| iniciando o duelo.                                                            |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       // JOGAR DADOS BASEADOS NO CRITERIOS DE SUCESSO 
@@ -199,7 +194,7 @@ namespace RPG
       // Console.WriteLine(FEITIÇO DE ATAQUE 1/2 ou 3)
 
       // SE NÃO 
-      // Console.WriteLine("FETIÇO DE DEFESA 1/2/3");
+      // Console.WriteLine("FEITIÇO DE DEFESA 1/2/3");
     }
   }
 }
