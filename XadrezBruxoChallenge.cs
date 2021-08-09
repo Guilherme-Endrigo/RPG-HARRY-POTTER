@@ -2,7 +2,7 @@ using System;
 
 namespace RPG
 {
-  class Dragon
+  class ChessChallenge
   {
     public static void wizardChessChallenge()
     {
