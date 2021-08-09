@@ -4,6 +4,7 @@ namespace RPG
 {
     class Lake
     {
+        
         public static void lakeChallenge()
         {
 
@@ -115,8 +116,8 @@ namespace RPG
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|  Eita, algo de errado não está certo!Você engasgou com o guelricho e a planta |");
-            Console.WriteLine("| desceu pelo cano errado. Perdeu 1 ponto nessa jogada e seu tempo de prova foi |");
-            Console.WriteLine("| encurtado!                                                                     |");
+            Console.WriteLine("| desceu pelo lado errado. Perdeu 1 ponto nessa jogada e seu tempo de prova foi |");
+            Console.WriteLine("| encurtado!                                                                    |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

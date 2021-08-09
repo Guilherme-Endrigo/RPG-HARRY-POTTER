@@ -54,3 +54,11 @@ D:\Projetos\RPG\obj\Debug\net5.0\RPG.csproj.CoreCompileInputs.cache
 D:\Projetos\RPG\obj\Debug\net5.0\RPG.dll
 D:\Projetos\RPG\obj\Debug\net5.0\ref\RPG.dll
 D:\Projetos\RPG\obj\Debug\net5.0\RPG.pdb
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.exe
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.deps.json
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.runtimeconfig.json
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.runtimeconfig.dev.json
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.dll
+D:\Projetos\RPG\bin\Debug\net5.0\ref\RPG.dll
+D:\Projetos\RPG\bin\Debug\net5.0\RPG.pdb
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.genruntimeconfig.cache

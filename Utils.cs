@@ -249,4 +249,34 @@ namespace RPG
 
         }
     }
+
+    class Dice
+    {
+        public static int throwDice()
+        {
+            Random diceRandom = new Random();
+
+            int dice = diceRandom.Next(1, 21);
+
+            return dice;
+
+        }
+
+        public static void teste()
+        {
+            int diceValue = RPG.Dice.throwDice();
+
+            if (diceValue >= 5)
+            {
+                Console.Write($"Sucesso! Valor do dado: {diceValue}");
+            }
+            else
+            {
+                Console.WriteLine($"Fracasso! Valor do dado: {diceValue}");
+            }
+            
+            int diceValeu = RPG.Dice.throwDice();
+        }
+    }
+
 }
