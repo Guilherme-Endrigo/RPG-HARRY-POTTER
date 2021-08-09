@@ -46,3 +46,11 @@ C:\Users\bcast\Documents\.NET + Angular (aulas)\RPG HP\RPG\bin\Debug\net5.0\RPG.
 C:\Users\bcast\Documents\.NET + Angular (aulas)\RPG HP\RPG\bin\Debug\net5.0\ref\RPG.dll
 C:\Users\bcast\Documents\.NET + Angular (aulas)\RPG HP\RPG\bin\Debug\net5.0\RPG.pdb
 C:\Users\bcast\Documents\.NET + Angular (aulas)\RPG HP\RPG\obj\Debug\net5.0\RPG.genruntimeconfig.cache
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.csproj.AssemblyReference.cache
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.AssemblyInfoInputs.cache
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.AssemblyInfo.cs
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.csproj.CoreCompileInputs.cache
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.dll
+D:\Projetos\RPG\obj\Debug\net5.0\ref\RPG.dll
+D:\Projetos\RPG\obj\Debug\net5.0\RPG.pdb
