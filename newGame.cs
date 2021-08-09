@@ -130,34 +130,31 @@ namespace RPG
       public static void firstBreak()
     {
       //Console.BackgroundColor = ConsoleColor.Red;
+      //Console.ResetColor(); //quando quiser parar de colorir
+
 
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                                   TORNEIO                                     |");
+      Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Atenção, o torneio está para começar… Amanhã será um dia de altas emoções, |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
-      Console.WriteLine("| arquibancadas e é quando na tenda dos participantes você se reúne com os      |");
-      Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
-      Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
-      Console.WriteLine("| que não será um desafio qualquer, você começará com o mesmo desafio que um    |");
-      Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
+      Console.WriteLine("| e o primeiro de muitos desafios. Antes de tudo, escolha o que deseja fazer    |");
+      Console.WriteLine("| até amanhã. Lembre-se apenas, jovem bruxo, que toda ação pode levar tanto a   |");
+      Console.WriteLine("| vantagens quanto a uma respectiva consequência                                |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       Console.WriteLine();
-      Console.WriteLine("Pressione Enter para continuar");
+      Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
 
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                             DESAFIO DOS DRAGÕES                               |");
+      Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (1) Procurar o ovo                                                            |");
-      Console.WriteLine("| (2) Lutar contra o dragão                                                     |");
-      Console.WriteLine("| (3) Fugir do dragão                                                           |");
+      Console.WriteLine("| (1) Escrever uma fofoca para o blog da escola                                 |");
+      Console.WriteLine("| (2) Passar a tarde lendo um livro                                             |");
+      Console.WriteLine("| (3) Treinar quadribol                                                         |");
+      Console.WriteLine("| (4) Cuidar de uma planta                                                      |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       Console.WriteLine();
@@ -167,13 +164,51 @@ namespace RPG
       switch (option)
       {
         case "1":
-          searchEgg(option);
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                ESCREVER UMA FOFOCA                            |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Você escreveu uma fofoca para o blog da escola, colocando em prática sua   |");
+          Console.WriteLine("| astúcia, porém com os ataques que fez, perdeu amizades                        |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+          //sonserina++;
+
           break;
         case "2":
-          fightDragon(option);
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                    LER LIVRO                                  |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Ao esperar o resultado lendo um livro você aumentou sua inteligência, mas  |");
+          Console.WriteLine("| sua percepção diminuiu porque está com a vista cansada                        |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+          //corvinal++;
+
           break;
         case "3":
-          avoidDragon(option);
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                TREINAR QUADRIBOL                              |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Treinar quadribol aumentou sua força, porém o deixou mais cansado          |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+          //grifinoria++;
+          
+          break;
+          case "4":
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                CUIDAR DA PLANTA                               |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Escolher cuidar de uma planta em um mundo pós-guerra é um gesto de         |");
+          Console.WriteLine("| gentileza apreciado, você aumentou seu carisma com essa ação                  |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+          //lufalufa++;
+          
           break;
       }
     }

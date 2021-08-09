@@ -8,31 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Visitante\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\bcast\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Visitante\\Documents\\UCode\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj",
+      "projectUniqueName": "C:\\Users\\bcast\\Documents\\.NET + Angular (aulas)\\RPG HP\\RPG\\RPG.csproj",
       "projectName": "RPG",
-      "projectPath": "C:\\Users\\Visitante\\Documents\\UCode\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj",
-      "packagesPath": "C:\\Users\\Visitante\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Visitante\\Documents\\UCode\\Marco\\ProjetoRPG_HP\\RPG\\obj\\",
+      "projectPath": "C:\\Users\\bcast\\Documents\\.NET + Angular (aulas)\\RPG HP\\RPG\\RPG.csproj",
+      "packagesPath": "C:\\Users\\bcast\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bcast\\Documents\\.NET + Angular (aulas)\\RPG HP\\RPG\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Visitante\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\bcast\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
