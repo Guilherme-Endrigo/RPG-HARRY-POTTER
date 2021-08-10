@@ -260,7 +260,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             character[i].house = RPG.Update.updateHouse(character[i], 1, 0, 0, 0);
-            //grifinoria++;
+
 
             break;
           case "4":
@@ -273,13 +273,12 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             character[i].house = RPG.Update.updateHouse(character[i], 0, 0, 0, 1);
-            //lufalufa++;
+
 
             break;
         }
 
-        // RPG.Dragon.dragonsChallenge(character);
-
+        RPG.Lake.lakeChallenge(character);
       }
     }
 

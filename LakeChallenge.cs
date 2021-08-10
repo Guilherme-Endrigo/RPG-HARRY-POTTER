@@ -43,25 +43,22 @@ namespace RPG
         switch (option)
         {
           case "1":
-            eatGuelricho(character);
-            merpeoplePhase(character);
+            eatGuelricho(character, character[i]);
             break;
 
           case "2":
-            bubbleHead(character);
-            merpeoplePhase(character);
+            bubbleHead(character, character[i]);
             break;
 
           case "3":
-            transfiguration(character);
-            merpeoplePhase(character);
+            transfiguration(character, character[i]);
             break;
         }
 
       }
 
       //---------> OPÇÂO 1 <---------
-      static void eatGuelricho(List<Character> character)
+      static void eatGuelricho(List<Character> character, Character personagem)
       {
 
         for (int i = 0; i < character.Count; i++)
@@ -150,7 +147,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 2 <---------
-      static void bubbleHead(List<Character> character)
+      static void bubbleHead(List<Character> character, Character personagem)
       {
 
         for (int i = 0; i < character.Count; i++)
@@ -257,7 +254,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 3 <---------
-      static void transfiguration(List<Character> character)
+      static void transfiguration(List<Character> character, Character personagem)
       {
 
         Console.WriteLine();
@@ -329,7 +326,7 @@ namespace RPG
 
 
       //---------> ENFRENTAR SEREIANOS <---------
-      static void merpeoplePhase(List<Character> character)
+      static void merpeoplePhase(List<Character> character, Character personagem)
       {
 
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -371,26 +368,26 @@ namespace RPG
           switch (option)
           {
             case "1":
-              fightMerpeople(character);
+              fightMerpeople(character, character[i]);
               break;
             case "2":
-              saveFriends(character);
+              saveFriends(character, character[i]);
               break;
             case "3":
-              wooMerpeople(character);
+              wooMerpeople(character, character[i]);
               break;
             case "4":
-              enchantMerpeople(character);
+              enchantMerpeople(character, character[i]);
               break;
           }
 
-          breakForNextChallenge(character);
+          breakForNextChallenge(character, character[i]);
         }
 
       }
 
       //---------> OPÇÂO 1 <---------
-      static void fightMerpeople(List<Character> character)
+      static void fightMerpeople(List<Character> character, Character personagem)
       {
         Console.WriteLine();
         Console.WriteLine("Opção 1");
@@ -463,7 +460,7 @@ namespace RPG
 
       }
       //---------> OPÇÂO 2 <---------
-      static void saveFriends(List<Character> character)
+      static void saveFriends(List<Character> character, Character personagem)
       {
 
         Console.WriteLine();
@@ -531,7 +528,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 3 <---------
-      static void wooMerpeople(List<Character> character)
+      static void wooMerpeople(List<Character> character, Character personagem)
       {
 
         Console.WriteLine();
@@ -600,7 +597,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 4 <---------
-      static void enchantMerpeople(List<Character> character)
+      static void enchantMerpeople(List<Character> character, Character personagem)
       {
 
         Console.WriteLine();
@@ -670,7 +667,7 @@ namespace RPG
 
 
       //---------> BREAK <---------
-      static void breakForNextChallenge(List<Character> character)
+      static void breakForNextChallenge(List<Character> character, Character personagem)
       {
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
         Console.WriteLine("|                                   DESCANSO                                    |");
@@ -728,7 +725,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 1 <---------
-      static void takeRest(List<Character> character)
+      static void takeRest(List<Character> character, Character personagem)
       {
 
         Console.WriteLine();
@@ -751,7 +748,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 2 <---------
-      static void investigate(List<Character> character)
+      static void investigate(List<Character> character, Character personagem)
       {
         Console.WriteLine();
         Console.WriteLine("Opção 2");
@@ -874,7 +871,7 @@ namespace RPG
       }
 
       //---------> OPÇÂO 3 <---------
-      static void tellStories(List<Character> character)
+      static void tellStories(List<Character> character, Character personagem)
       {
 
         for (int i = 0; i < character.Count; i++)
