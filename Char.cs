@@ -5,45 +5,6 @@ namespace RPG
 {
     class Character
     {
-        public Character createChar(string _name, string _wand, int _life, int _score, int _idChar)
-        {
-            Character model = new Character();
-            model.idChar = _idChar;
-            model.name = _name;
-            model.wand = _wand;
-            model.life = 10;
-            model.score = 0;
-            model.isAlive = true;
-            model.hasMap = false;
-            model.hasPotion = false;
-            model.house = house.createHouse(_idChar);
-
-            return model;
-
-        }
-
-        public Character updateChar(Character character, bool _isAlive, int _score, int _life, bool _hasMap, bool _hasPotion)
-        {
-            character.isAlive = _isAlive;
-            character.score = _score;
-            character.life = _life;
-            character.hasPotion = _hasPotion;
-            character.hasMap = _hasMap;
-
-            return character;
-
-        }
-
-        public House updateHouse(Character character, int _scoreGryff, int _scoreRav, int _scoreSly, int _scoreHuff)
-        {
-            character.house.scoreGryffindor = _scoreGryff;
-            character.house.scoreRavenclaw = _scoreRav;
-            character.house.scoreSlytherin = _scoreSly;
-            character.house.scoreHufflePuff = _scoreHuff;
-
-            return character.house;
-        }
-
         public House whatHouse(Character character)
         {
 

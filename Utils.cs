@@ -148,46 +148,54 @@ namespace RPG
     {
         public static void hedwigsTune()
         {
-            int frequency = 55;
+            int frequency = 15;
+
+            //PARTE 1
 
             Thread.Sleep(2000);
+
             Console.Beep(493, 350);
             Thread.Sleep(frequency);
 
             Console.Beep(659, 550);
             Thread.Sleep(frequency);
 
-            Console.Beep(783, 350);
+            Console.Beep(783, 175);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 330);
+            Console.Beep(740, 165);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 340);
+            Console.Beep(659, 190);
             Thread.Sleep(frequency);
 
-            Console.Beep(987, 350);
+            Console.Beep(987, 450);
             Thread.Sleep(frequency);
 
-            Console.Beep(880, 500);
+            Console.Beep(880, 530);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 450);
-            Thread.Sleep(frequency);
-            Console.Beep(659, 300);
-
-            Thread.Sleep(frequency);
-            Console.Beep(783, 500);
+            Console.Beep(740, 650);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 300);
+            // //PARTE 2
+
+            Console.Beep(659, 700);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 200);
-            Console.Beep(659, 200);
-
-            Console.Beep(493, 600);
+            Console.Beep(800, 400);
             Thread.Sleep(frequency);
+
+            Console.Beep(740, 400);
+            Thread.Sleep(frequency);
+
+            Console.Beep(659, 700);
+            Console.Beep(659, 400);
+
+            Console.Beep(493, 700);
+            Thread.Sleep(frequency);
+
+            //PARTE 3
 
             Thread.Sleep(frequency);
             Console.Beep(493, 350);
@@ -205,6 +213,8 @@ namespace RPG
             Console.Beep(659, 440);
             Thread.Sleep(frequency);
 
+            //PARTE 4
+
             Console.Beep(987, 400);
             Thread.Sleep(frequency);
 
@@ -216,6 +226,8 @@ namespace RPG
 
             Console.Beep(1046, 550);
             Thread.Sleep(frequency);
+
+            // //PARTE 5
 
             Console.Beep(880, 300);
             Thread.Sleep(frequency);
@@ -229,23 +241,17 @@ namespace RPG
             Console.Beep(987, 300);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 300);
-            Thread.Sleep(frequency);
+            // Console.Beep(659, 300);
+            // Thread.Sleep(frequency);
 
-            Console.Beep(783, 300);
-            Thread.Sleep(frequency);
+            // Console.Beep(783, 300);
+            // Thread.Sleep(frequency);
 
-            Console.Beep(659, 400);
-            Thread.Sleep(frequency);
+            // Console.Beep(659, 400);
+            // Thread.Sleep(frequency);
 
-            Console.Beep(783, 200);
-            Thread.Sleep(frequency);
-
-            Console.Beep(750, 600);
-            Thread.Sleep(frequency);
-
-            Console.Beep(780, 600);
-            Thread.Sleep(frequency);
+            // Console.Beep(783, 200);
+            // Thread.Sleep(frequency);
 
         }
     }
@@ -274,8 +280,66 @@ namespace RPG
             {
                 Console.WriteLine($"Fracasso! Valor do dado: {diceValue}");
             }
-            
+
             int diceValeu = RPG.Dice.throwDice();
+        }
+    }
+
+    class Creations
+    {
+        public static Character createChar(string _name, int _idChar)
+        {
+            var model = new Character();
+            model.idChar = _idChar;
+            model.name = _name;
+            model.life = 10;
+            model.score = 0;
+            model.isAlive = true;
+            model.hasMap = false;
+            model.hasPotion = false;
+            model.house = createHouse(_idChar);
+
+            return model;
+
+        }
+        public static House createHouse(int _idChar)
+        {
+            House model = new House();
+
+            model.houseName = "Sem definição";
+            model.idChar = _idChar;
+            model.scoreGryffindor = 0;
+            model.scoreHufflePuff = 0;
+            model.scoreRavenclaw = 0;
+            model.scoreSlytherin = 0;
+
+            return model;
+
+        }
+    }
+
+    class Update
+    {
+        public static Character updateChar(Character character, bool _isAlive, int _score, int _life, bool _hasMap, bool _hasPotion)
+        {
+            character.isAlive = _isAlive;
+            character.score = _score;
+            character.life = _life;
+            character.hasPotion = _hasPotion;
+            character.hasMap = _hasMap;
+
+            return character;
+
+        }
+
+        public static House updateHouse(Character character, int _scoreGryff, int _scoreRav, int _scoreSly, int _scoreHuff)
+        {
+            character.house.scoreGryffindor = _scoreGryff;
+            character.house.scoreRavenclaw = _scoreRav;
+            character.house.scoreSlytherin = _scoreSly;
+            character.house.scoreHufflePuff = _scoreHuff;
+
+            return character.house;
         }
     }
 

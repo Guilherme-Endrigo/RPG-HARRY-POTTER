@@ -1,13 +1,54 @@
 using System;
+using System.Collections.Generic;
 
 namespace RPG
 {
 
     class newGame
     {
-        public static void menu()
+        public static void menuInitial()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|                        Bem vindo ao jogo de RPG                               |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|   Escolha uma das opções abaixo:                                              |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("| (1) Novo jogo                                                                 |");
+            Console.WriteLine("| (2) Regras do jogo                                                            |");
+            Console.WriteLine("| (3) Sair                                                                      |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+            Console.WriteLine();
+            Console.Write("Informe a opção desejada: ");
+            string firstOption = Console.ReadLine();
+            Console.WriteLine();
+
+
+            while (firstOption != "1" && firstOption != "2" && firstOption != "3")
+            { Console.WriteLine("Opção Invalida, tente novamente"); };
+
+            switch (firstOption)
+            {
+                case "1":
+                    startGame();
+                    break;
+
+                case "2":
+                    rules();
+                    break;
+
+                case "3":
+                    Console.Write("Saindo... Esperamos vocês uma outra hora");
+                    break;
+
+            }
+        }
+        public static void startGame()
+        {
+            // Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                UM NOVO ANO!                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -23,8 +64,7 @@ namespace RPG
 
 
             Console.WriteLine();
-            Console.WriteLine("(Isso delimitará quantos amigos irão jogar)");
-            Console.WriteLine();
+            Console.Write("(Isso delimitará quantos amigos irão jogar): ");
             string groupSize = Console.ReadLine();
             Console.WriteLine();
 
@@ -32,12 +72,12 @@ namespace RPG
             Console.WriteLine(" -------------------------------------------------------------------------------- ");
             Console.WriteLine("|                              OS ESCOLHIDOS                                     |");
             Console.WriteLine("|------------------------------------------------------------------------------- |");
-            Console.WriteLine("|    A diretora Maggonagol, dirige-se a frente do salão comunal e começa seu     |");
+            Console.WriteLine("|    A diretora McGonagall, dirige-se a frente do salão comunal e começa seu     |");
             Console.WriteLine("| tipico discurso de começo as aulas, porém essa neste ano - ela começa          |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|    Temos a honra de sediar o infame Torneio Tribruxo, e como todos sabem,      |");
             Console.WriteLine("| após os eventos recentes, o cálice decidiu que neste ano o jogo sera aberto a  |");
-            Console.WriteLine($"| {groupSize} participantes.                                                               |");
+            Console.WriteLine($"|{groupSize} participante(s).                                                   |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|   As instruções para as tarefas que os campeões deverão enfrentar este ano     |");
             Console.WriteLine("| serão informadas após seres selecionadas pelo cálice. Haverá, no total cinco   |");
@@ -73,32 +113,44 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+            List<RPG.Character> character = new List<Character>();
+
             for (int i = 0; i < Int32.Parse(groupSize); i++)
             {
+
                 Console.WriteLine();
-                Console.WriteLine("Escolha seu nome aventureiro");
+                Console.Write("Informe sua decisão: ");
                 string newNameChoice = Console.ReadLine();
                 Console.WriteLine();
 
+
                 while (newNameChoice != "1" && newNameChoice != "2")
                 {
-                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine("Opção Invalida, digite novamente");
                     newNameChoice = Console.ReadLine();
                 }
                 switch (newNameChoice)
                 {
                     case "1":
-                        Console.WriteLine(" Você corajosamente se posiciona na frente do calice e coloca seu nome que é: ");
+                        Console.Write(" Você corajosamente se posiciona na frente do calice e coloca seu nome que é: ");
                         string name = Console.ReadLine();
+                        var charc = RPG.Creations.createChar(name, _idChar: i);
+                        character.Add(charc);
                         break;
 
                     case "2":
-                        Console.WriteLine(" Você é empurrado pelo restante dos seus amigos e pela vergonha de estar diante do calice decide colocar seu nome : ");
+                        Console.Write(" Você é empurrado pelo restante dos seus amigos e pela vergonha de estar diante do calice decide colocar seu nome: ");
                         name = Console.ReadLine();
+                        var charct = RPG.Creations.createChar(name, _idChar: i);
+                        character.Add(charct);
                         break;
 
                 }
+
+
             }
+
+            firstBreak(character);
 
         }
 
@@ -127,12 +179,15 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar");
+            Console.WriteLine("Pressione ENTER para voltar para o menu");
             Console.ReadLine();
             Console.WriteLine();
+
+            menuInitial();
+
         }
 
-        public static void firstBreak()
+        public static void firstBreak(List<Character> character)
         {
             //Console.BackgroundColor = ConsoleColor.Red;
             //Console.ResetColor(); //quando quiser parar de colorir
@@ -162,59 +217,64 @@ namespace RPG
             Console.WriteLine("| (4) Cuidar de uma planta                                                      |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            Console.WriteLine();
-            Console.Write("Informe a opção desejada para continuar: ");
-            string option = Console.ReadLine();
-
-            switch (option)
+            for (int i = 0; i < character.Count; i++)
             {
-                case "1":
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                ESCREVER UMA FOFOCA                            |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Você escreveu uma fofoca para o blog da escola, colocando em prática sua   |");
-                    Console.WriteLine("| astúcia, porém com os ataques que fez, perdeu amizades                        |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine();
+                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                string option = Console.ReadLine();
 
-                    //sonserina++;
+                switch (option)
+                {
+                    case "1":
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                ESCREVER UMA FOFOCA                            |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Você escreveu uma fofoca para o blog da escola, colocando em prática sua   |");
+                        Console.WriteLine("| astúcia, porém com os ataques que fez, perdeu amizades.                       |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                    break;
-                case "2":
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                    LER LIVRO                                  |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Ao esperar o resultado lendo um livro você aumentou sua inteligência, mas  |");
-                    Console.WriteLine("| sua percepção diminuiu porque está com a vista cansada                        |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        character[i].house = RPG.Update.updateHouse(character[i], 0, 0, 1, 0);
+                        //character[i].house.scoreSlytherin += 1;
 
-                    //corvinal++;
+                        break;
+                    case "2":
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                    LER LIVRO                                  |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Ao esperar o resultado lendo um livro você aumentou sua inteligência, mas  |");
+                        Console.WriteLine("| sua percepção diminuiu porque está com a vista cansada.                        |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                    break;
-                case "3":
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                TREINAR QUADRIBOL                              |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Treinar quadribol aumentou sua força, porém o deixou mais cansado          |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        //corvinal++;
 
-                    //grifinoria++;
+                        break;
+                    case "3":
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                TREINAR QUADRIBOL                              |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Treinar quadribol aumentou sua força, porém o deixou mais cansado.          |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                    break;
-                case "4":
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                CUIDAR DA PLANTA                               |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Escolher cuidar de uma planta em um mundo pós-guerra é um gesto de         |");
-                    Console.WriteLine("| gentileza apreciado, você aumentou seu carisma com essa ação                  |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        //grifinoria++;
 
-                    //lufalufa++;
+                        break;
+                    case "4":
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                CUIDAR DA PLANTA                               |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Escolher cuidar de uma planta em um mundo pós-guerra é um gesto de         |");
+                        Console.WriteLine("| gentileza apreciado, você aumentou seu carisma com essa ação.                 |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                    break;
+                        //lufalufa++;
+
+                        break;
+                }
+
             }
         }
 

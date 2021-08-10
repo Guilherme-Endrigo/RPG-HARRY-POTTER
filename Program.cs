@@ -7,18 +7,19 @@ namespace RPG
         static void Main(string[] args)
         {
 
-            //RPG.newGame.menu();
+            RPG.Drawings.logoGame();
+            RPG.newGame.menuInitial();
             //RPG.Dragon.dragonsChallenge();
             //RPG.Dragon.breakAfterDragonsChallenge();
             //RPG.Maze.mazeChallenge();
             //RPG.endGame.draw();
             //RPG.Lake.lakeChallenge();
-            //RPG.Dice.teste();
+            // RPG.Drawings.trophy();
+            // RPG.Drawings.logoGame();
+            // RPG.Drawings.maze();
+            // RPG.Drawings.merPeople();
+            // RPG.Drawings.dragon();
 
-            RPG.Drawings.trophy();
-            RPG.Drawings.logoGame();
-            RPG.Drawings.maze();
-            RPG.Drawings.merPeople();
         }
 
     }
