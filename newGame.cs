@@ -276,7 +276,7 @@ namespace RPG
 
             }
 
-            RPG.Lake.lakeChallenge(character);
+            RPG.Dragon.dragonsChallenge(character);
         }
 
     }
