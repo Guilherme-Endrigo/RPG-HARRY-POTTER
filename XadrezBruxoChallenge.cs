@@ -264,8 +264,230 @@ namespace RPG
 
       //shift+alt 
     }
+
+
+  //---------> BREAK <-----------
+  public static void breakAfterXadrezBruxoChallenge()
+  {
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                                   DESCANSO                                    |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|                     O Xadrez de bruxo chegou ao seu fim                       |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    Onde rolou muita emoção! Agora você precisa descansar,                     |");
+    Console.WriteLine("| Após esse grande desafio, voce poderá escolher algo para fazer,               |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|                     Bom vamos lá para as suas opções.                         |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    Console.WriteLine();
+    Console.WriteLine("Pressione Enter para continuar");
+    Console.ReadLine();
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                                    DESCANSO                                   |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("| Faça uma escolha:                                                             |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("| (1) Fazer uma festa no Salão Principal com os irmãos Weasley                  |");
+    Console.WriteLine("| (2) Tirar cochilo                                                             |");
+    Console.WriteLine("| (3) Relaxar na estufa da Prof. Sprout                                         |");
+    Console.WriteLine("| (4) Ir visitar Hagrid                                                         |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    Console.WriteLine();
+    Console.Write("Informe a opção desejada para continuar: ");
+    string option = Console.ReadLine();
+
+    switch (option)
+    {
+      case "1":
+        mainHallParty(option);
+        break;
+      case "2":
+        nap(option);
+        break;
+      case "3":
+        relaxInTheGreenHouse(option);
+        break;
+      case "4":
+        visitHagrid(option);
+        break;
+    }
+  }
+
+
+  //---------> OPÇÃO 1 <---------
+  static void mainHallParty(string option)
+  {
+    //corvinal++;
+
+    //throwDice();
+    //se success()
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 1 - sucesso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  SUCESSO                |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" Conseguiu novas amizades com essa festa, tempos difíceis revelam grandes amigos|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //vida++
+  
+
+    //else
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 1 - fracasso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  FRACASO                |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
+    Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+  }
+
+  //---------> OPÇÃO 2 <---------
+  static void nap(string option)
+  {
+    //sonserina++;
+
+    //throwDice();
+    //se success()
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 2 - sucesso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                      TIRAR COCHILO  --  SUCESSO                               |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    Que sono revigorante, e teve um sonho,                                     |");
+    Console.WriteLine("| através dele você aprendeu a como abrir o Oráculo dos sonhos!                 |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //life++
+
+
+    //else
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 2 - fracasso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                      TIRAR COCHILO  --  FRACASSO                              |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    “Acho que alguém dormiu muito, ZzzzZzZ, te deram a poção do morto vivo”    |");
+    Console.WriteLine("|        não conseguiu realizar nenhuma ação e dormiu por dias.                 |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //life--
+  }
+
+  //---------> OPÇÃO 3 <---------
+  static void relaxInTheGreenHouse(string option)
+  {
+    //lufalufa++
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 3");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT                          |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    Na estufa da prof Sprout, podemos encontrar desde as plantas mais estranhas|");
+    Console.WriteLine("| e os fungos do mundo mágico                                                   |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    Console.WriteLine();
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - SUCESSO                |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|              “Você achou uma poção para reverter quem foi petrificado.”       |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //point++
+
+    //else
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 3 - fracasso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - FRACASSO               |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    Shazam! Você foi petrificado pelo Basilisco de Salazar Slytherin, que azar |");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    
+    // point--
+    // life--
+  }
+
+  //---------> OPÇÃO 4 <---------
+  static void visitHagrid(string option)
+  {
+    //grifinoria++
+
+    //throwDice();
+    //se success()
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 4 - sucesso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    “Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”,        |");
+    Console.WriteLine("| você ganhou um delicioso bolo feito com muito amor <3.                        |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //point++
+    //life++
+
+    //point++
+    //intelligence++
+
+    //else
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 4 - fracasso");
+
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
+    Console.WriteLine("|-------------------------------------------------------------------------------|");
+    Console.WriteLine("|                                                                               |");
+    Console.WriteLine("|    “Xiiii, Hagrid te levou para a floresta proibida                           |");
+    Console.WriteLine("| e para seu azar o zelador te viu e te levou a diretoria”                      |");
+    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+    //point--
+    //life--
+
+  }
 }
 }
+
   
 
   
