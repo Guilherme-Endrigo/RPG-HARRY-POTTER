@@ -13,7 +13,12 @@ namespace RPG
             //RPG.Maze.mazeChallenge();
             //RPG.endGame.draw();
             //RPG.Lake.lakeChallenge();
-            RPG.Dice.teste();
+            //RPG.Dice.teste();
+
+            RPG.Drawings.trophy();
+            RPG.Drawings.logoGame();
+            RPG.Drawings.maze();
+            RPG.Drawings.merPeople();
         }
 
     }
