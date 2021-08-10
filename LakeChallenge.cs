@@ -1,80 +1,94 @@
 using System;
-
+using System.Collections.Generic;
 namespace RPG
 {
-    class Lake
+  class Lake
+  {
+    static int diceValue;
+    public static void lakeChallenge(List<Character> character)
     {
-        
-        public static void lakeChallenge()
+
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                                    O LAGO                                     |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|  A segunda tarefa do Torneio Tribruxo começa, todos os campeões encaminham-se |");
+      Console.WriteLine("| ao Lago Negro. Algo importante, querido, deve ser resgatado do fundo do lago. |");
+      Console.WriteLine("| Mas, cuidado com aqueles que espreitam-se nas profundezas. Mergulhe de cabeça |");
+      Console.WriteLine("| para recuperar o que foi perdido!                                             |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      Console.WriteLine();
+      Console.WriteLine("Pressione Enter para continuar");
+      Console.ReadLine();
+
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("| (1) Guelricho                                                                 |");
+      Console.WriteLine("| (2) Feitiço Cabeça de Bolha                                                   |");
+      Console.WriteLine("| (3) Transfigurar-se num peixe                                                           |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      for (int i = 0; i < character.Count; i++)
+      {
+        Console.WriteLine();
+        Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+        string option = Console.ReadLine();
+
+        switch (option)
         {
+          case "1":
+            eatGuelricho(character);
+            merpeoplePhase(character);
+            break;
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    O LAGO                                     |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  A segunda tarefa do Torneio Tribruxo começa, todos os campeões encaminham-se |");
-            Console.WriteLine("| ao Lago Negro. Algo importante, querido, deve ser resgatado do fundo do lago. |");
-            Console.WriteLine("| Mas, cuidado com aqueles que espreitam-se nas profundezas. Mergulhe de cabeça |");
-            Console.WriteLine("| para recuperar o que foi perdido!                                             |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          case "2":
+            bubbleHead(character);
+            merpeoplePhase(character);
+            break;
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
-            Console.ReadLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Guelricho                                                                 |");
-            Console.WriteLine("| (2) Feitiço Cabeça de Bolha                                                   |");
-            Console.WriteLine("| (3) Transfigurar-se num peixe                                                           |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-
-            Console.WriteLine();
-            Console.Write("Informe a opção desejada para continuar: ");
-            string option = Console.ReadLine();
-
-            switch (option)
-            {
-                case "1":
-                    eatGuelricho();
-                    break;
-                case "2":
-                    bubbleHead();
-                    break;
-                case "3":
-                    transfiguration();
-                    break;
-            }
-
+          case "3":
+            transfiguration(character);
+            merpeoplePhase(character);
+            break;
         }
 
-        //---------> OPÇÂO 1 <---------
-        static void eatGuelricho()
+      }
+
+      //---------> OPÇÂO 1 <---------
+      static void eatGuelricho(List<Character> character)
+      {
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Opção 1");
+          Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 1");
-            Console.WriteLine();
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                  GUELRICHO                                    |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|  Você escolheu engolir o guelricho! Blargh, a partir de agora role o dado     |");
+          Console.WriteLine("| para descobrir os efeitos colaterais da sua decisão!                          |");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                  GUELRICHO                                    |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu engolir o guelricho! Blargh, a partir de agora role o dado     |");
-            Console.WriteLine("| para descobrir os efeitos colaterais da sua decisão!                          |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //throwDice(); 
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
+
+          if (diceValue > 10)
+          {
             Console.WriteLine();
-            //if success()
-            Console.WriteLine("Opção 1 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                            GUELRICHO -- SUCESSO                               |");
@@ -85,11 +99,13 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;      
-            //gryffindor++++;
-            //hufflepuff++
+            character[i].house.scoreGryffindor += 2;
+            character[i].house.scoreHufflePuff += 1;
+            character[i].score += 1;
+          }
 
-            //else if pocaoEscolhida = true
+          else if (character[i].hasPotion && diceValue > 10)
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 1 - pocaoEscolhida = true");
 
@@ -102,12 +118,13 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //life++;
-            //point++;
-            //ravenclaw++;
+            character[i].house.scoreRavenclaw += 1;
+            character[i].score -= 1;
+            character[i].life += 1;
 
-
-            //else
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 1 -- fracasso");
 
@@ -121,32 +138,46 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //gryffindor++++;
-            //hufflepuff++
-            //point--;
-            //life--;
+            character[i].house.scoreGryffindor += 2;
+            character[i].house.scoreHufflePuff += 1;
+
+            character[i].score -= 1;
+            character[i].life -= 1;
+
+          }
 
         }
-        //---------> OPÇÂO 2 <---------
-        static void bubbleHead()
+      }
+
+      //---------> OPÇÂO 2 <---------
+      static void bubbleHead(List<Character> character)
+      {
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Opção 2");
+          Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 2");
-            Console.WriteLine();
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                           FEITIÇO CABEÇA DE BOLHA                             |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|  Você escolheu utilizar o feitiço cabeça de bolha! Glub-glub, a partir de     |");
+          Console.WriteLine("| agora role o para descobrir os efeitos colaterais da sua decisão!             |");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           FEITIÇO CABEÇA DE BOLHA                             |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu utilizar o feitiço cabeça de bolha! Glub-glub, a partir de     |");
-            Console.WriteLine("| agora role o para descobrir os efeitos colaterais da sua decisão!             |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            //throwDice(); 
+          if (diceValue > 10)
+          {
             Console.WriteLine();
-            //if success()
             Console.WriteLine("Opção 2 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -158,10 +189,12 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;
-            //ravenclaw++
+            character[i].house.scoreRavenclaw += 1;
+            character[i].score += 1;
 
-            //else
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 2 -- fracasso");
 
@@ -174,64 +207,85 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point--;
-            //life--;
-            //ravenclaw++
+            //ravenclaw++ NÃO COLOQUEI PQ ACHEI Q N MERECE HAH
+            character[i].score -= 1;
+            character[i].life -= 1;
 
-            //else if 
-            //throwDice(); 
+
             Console.WriteLine();
-            //if success()
-            Console.WriteLine("Opção 2 -- Fugir do afogamento -- sucesso");
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                         FUGIR DO AFOGAMENTO  -- SUCESSO                       |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Parabéns, você conseguiu fugir do seu destino! Nadou para fora do lago antes |");
-            Console.WriteLine("| da bolha encher-se de água!                                                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //ravenclaw++;
-
-            //else
+            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.ReadLine();
+            diceValue = RPG.Dice.throwDice();
             Console.WriteLine();
-            Console.WriteLine("Opção 2 -- Fugir do afogamento -- fracasso");
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                         FUGIR DO AFOGAMENTO   --  FRACASSO                    |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  O feitiço virou-se contra o feiticeiro! A bolha estourou, você está ficando  |");
-            Console.WriteLine("| sem ar, tente novamente na próxima rodada fugir desse destino!                |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            if (diceValue < 10)
+            {
+              Console.WriteLine();
+              Console.WriteLine("Opção 2 -- Fugir do afogamento -- sucesso");
 
-            //alive = false;
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+              Console.WriteLine("|                         FUGIR DO AFOGAMENTO  -- SUCESSO                       |");
+              Console.WriteLine("|-------------------------------------------------------------------------------|");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine("|  Parabéns, você conseguiu fugir do seu destino! Nadou para fora do lago antes |");
+              Console.WriteLine("| da bolha encher-se de água!                                                   |");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+              //ravenclaw++; acho q n merece
+            }
+            else
+            {
+
+              Console.WriteLine();
+              Console.WriteLine("Opção 2 -- Fugir do afogamento -- fracasso");
+
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+              Console.WriteLine("|                         FUGIR DO AFOGAMENTO   --  FRACASSO                    |");
+              Console.WriteLine("|-------------------------------------------------------------------------------|");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine("|  O feitiço virou-se contra o feiticeiro! A bolha estourou, você está ficando  |");
+              Console.WriteLine("| sem ar, tente novamente na próxima rodada fugir desse destino!                |");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+              character[i].isAlive = false;
+
+            }
+          }
         }
-        //---------> OPÇÂO 3 <---------
-        static void transfiguration()
+      }
+
+      //---------> OPÇÂO 3 <---------
+      static void transfiguration(List<Character> character)
+      {
+
+        Console.WriteLine();
+        Console.WriteLine("Opção 3");
+        Console.WriteLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                                TRANSFIGURAÇÃO                                 |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu utilizar o feitiço de transfiguração! A partir de agora role o |");
+        Console.WriteLine("| dado para descobrir se você se lembrou de entrar na água antes de se          |");
+        Console.WriteLine("| transformar!                                                                  |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
 
+          if (diceValue > 10)
+          {
             Console.WriteLine();
-            Console.WriteLine("Opção 3");
-            Console.WriteLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                TRANSFIGURAÇÃO                                 |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu utilizar o feitiço de transfiguração! A partir de agora role o |");
-            Console.WriteLine("| dado para descobrir se você se lembrou de entrar na água antes de se          |");
-            Console.WriteLine("| transformar!                                                                  |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
             Console.WriteLine("Opção 3 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -243,10 +297,13 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;      
-            //slytherin++;
+            character[i].house.scoreSlytherin += 1;
+            character[i].score += 1;
 
-            //else
+
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 3 -- fracasso");
 
@@ -260,90 +317,107 @@ namespace RPG
             Console.WriteLine("| vaidar tempo de completar a prova.                                            |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            //slytherin++
-            //point--;
-            //life--;
+
+            //slytherin++ não acho q mereça ahah
+            character[i].score -= 1;
+            character[i].life -= 1;
+          }
 
         }
+      }
 
 
-        //---------> ENFRENTAR SEREIANOS <---------
-        public static void merpeoplePhase()
+
+      //---------> ENFRENTAR SEREIANOS <---------
+      static void merpeoplePhase(List<Character> character)
+      {
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           ENFRENTANDO OS SEREIANOS                            |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Muito bem campeões, hora de iniciar a busca pelo que foi roubado!            |");
+        Console.WriteLine("| O tempo está passando, cada competidor tem 1h para completar o desafio! Você  |");
+        Console.WriteLine("| está nadando na floresta de algas no fundo do Lago Negro, quando avista seus  |");
+        Console.WriteLine("| amigos presos pelos pés em uma armadilha.                                     |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        Console.WriteLine();
+        Console.WriteLine("Pressione Enter para continuar");
+        Console.ReadLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Mas espere! Parece que eles têm companhia, estão sendo vigiados por          |");
+        Console.WriteLine("| sereianos! Você precisa resgatá-los, o que você pretende fazer:               |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("| (1) Lutar contra os sereianos                                                 |");
+        Console.WriteLine("| (2) Tentar salvar todos os reféns                                             |");
+        Console.WriteLine("| (3) Persuadir os sereianos a libertar o seu amigo                             |");
+        Console.WriteLine("| (4) Enfeitiçar os sereianos                                                   |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+          string option = Console.ReadLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           ENFRENTANDO OS SEREIANOS                            |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Muito bem campeões, hora de iniciar a busca pelo que foi roubado!            |");
-            Console.WriteLine("| O tempo está passando, cada competidor tem 1h para completar o desafio! Você  |");
-            Console.WriteLine("| está nadando na floresta de algas no fundo do Lago Negro, quando avista seus  |");
-            Console.WriteLine("| amigos presos pelos pés em uma armadilha.                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          switch (option)
+          {
+            case "1":
+              fightMerpeople(character);
+              break;
+            case "2":
+              saveFriends(character);
+              break;
+            case "3":
+              wooMerpeople(character);
+              break;
+            case "4":
+              enchantMerpeople(character);
+              break;
+          }
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
-            Console.ReadLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Mas espere! Parece que eles têm companhia, estão sendo vigiados por          |");
-            Console.WriteLine("| sereianos! Você precisa resgatá-los, o que você pretende fazer:               |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("| (1) Lutar contra os sereianos                                                 |");
-            Console.WriteLine("| (2) Tentar salvar todos os reféns                                             |");
-            Console.WriteLine("| (3) Persuadir os sereianos a libertar o seu amigo                             |");
-            Console.WriteLine("| (4) Enfeitiçar os sereianos                                                   |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-
-            Console.WriteLine();
-            Console.Write("Informe a opção desejada para continuar: ");
-            string option = Console.ReadLine();
-
-            switch (option)
-            {
-                case "1":
-                    fightMerpeople();
-                    break;
-                case "2":
-                    saveFriends();
-                    break;
-                case "3":
-                    wooMerpeople();
-                    break;
-                case "4":
-                    enchantMerpeople();
-                    break;
-            }
-
+          breakForNextChallenge(character);
         }
 
-        //---------> OPÇÂO 1 <---------
-        static void fightMerpeople()
+      }
+
+      //---------> OPÇÂO 1 <---------
+      static void fightMerpeople(List<Character> character)
+      {
+        Console.WriteLine();
+        Console.WriteLine("Opção 1");
+        Console.WriteLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                         LUTAR CONTRA OS SEREIANOS                             |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu enfrentar os sereianos! A partir de agora role o dado para     |");
+        Console.WriteLine("| descobrir se a sua decisão deu certo! Boa sorte!                              |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 1");
-            Console.WriteLine();
+          Console.WriteLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                         LUTAR CONTRA OS SEREIANOS                             |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu enfrentar os sereianos! A partir de agora role o dado para     |");
-            Console.WriteLine("| descobrir se a sua decisão deu certo! Boa sorte!                              |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
+          if (diceValue > 10)
+          {
             Console.WriteLine("Opção 1 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -356,10 +430,12 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;      
-            //gryffindor++++;
+            character[i].score += 1;
+            character[i].house.scoreGryffindor += 2;
 
-            //else
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 1 -- fracasso");
 
@@ -374,31 +450,48 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //gryffindor++++;
-            //point--;
-            //life--;
+            character[i].house.scoreGryffindor += 2;
+            character[i].score -= 1;
+            character[i].life -= 1;
+          }
+
+
+
 
         }
-        //---------> OPÇÂO 2 <---------
-        static void saveFriends()
+
+
+      }
+      //---------> OPÇÂO 2 <---------
+      static void saveFriends(List<Character> character)
+      {
+
+        Console.WriteLine();
+        Console.WriteLine("Opção 2");
+        Console.WriteLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           SALVAR TODOS OS REFÉNS                              |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu tentar salvar todos os reféns! Será que você tem ar            |");
+        Console.WriteLine("|  suficiente? Jogue os dados para descobrir!                                   |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 2");
-            Console.WriteLine();
+          Console.WriteLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           SALVAR TODOS OS REFÉNS                              |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu tentar salvar todos os reféns! Será que você tem ar            |");
-            Console.WriteLine("|  suficiente? Jogue os dados para descobrir!                                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
+          if (diceValue > 10)
+          {
             Console.WriteLine("Opção 2 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -410,11 +503,12 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;
-            //Hufflepuff++
-            //life++
-
-            //else
+            character[i].house.scoreHufflePuff += 1;
+            character[i].score += 1;
+            character[i].life += 1;
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 2 -- fracasso");
 
@@ -427,31 +521,44 @@ namespace RPG
             Console.WriteLine("| aos reféns.                                                                   |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            //point--;
-            //life--;
-            //Hufflepuff++
 
+            character[i].house.scoreHufflePuff += 1;
+            character[i].score -= 1;
+            character[i].life -= 1;
+
+          }
         }
-        //---------> OPÇÂO 3 <---------
-        static void wooMerpeople()
+      }
+
+      //---------> OPÇÂO 3 <---------
+      static void wooMerpeople(List<Character> character)
+      {
+
+        Console.WriteLine();
+        Console.WriteLine("Opção 3");
+        Console.WriteLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                            PERSUADIR OS SEREIANOS                             |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu persuadir os sereianos a libertar seu amigo! Role os dados e   |");
+        Console.WriteLine("| veja o quão persuasivo você é!                                                |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
 
+          if (diceValue > 10)
+          {
             Console.WriteLine();
-            Console.WriteLine("Opção 3");
-            Console.WriteLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            PERSUADIR OS SEREIANOS                             |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu persuadir os sereianos a libertar seu amigo! Role os dados e   |");
-            Console.WriteLine("| veja o quão persuasivo você é!                                                |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
             Console.WriteLine("Opção 3 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -464,10 +571,13 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;
-            //slytherin++
+            character[i].house.scoreSlytherin += 1;
+            character[i].score += 1;
 
-            //else
+
+          }
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 3 -- fracasso");
 
@@ -481,31 +591,43 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point--;
-            //life--;
-            //slytherin++
+            character[i].house.scoreSlytherin += 1;
+            character[i].score -= 1;
+            character[i].life -= 1;
 
+          }
         }
-        //---------> OPÇÂO 4 <---------
-        static void enchantMerpeople()
+      }
+
+      //---------> OPÇÂO 4 <---------
+      static void enchantMerpeople(List<Character> character)
+      {
+
+        Console.WriteLine();
+        Console.WriteLine("Opção 4");
+        Console.WriteLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           ENFEITIÇAR OS SEREIANOS                             |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu enfeitiçar os sereianos!! Role o dado e descubra se o feitiço  |");
+        Console.WriteLine("| foi efetivo!                                                                  |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
+          Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 4");
-            Console.WriteLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           ENFEITIÇAR OS SEREIANOS                             |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu enfeitiçar os sereianos!! Role o dado e descubra se o feitiço  |");
-            Console.WriteLine("| foi efetivo!                                                                  |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
+          if (diceValue > 10)
+          {
             Console.WriteLine("Opção 4 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -519,10 +641,12 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;
-            //ravenclaw++
+            character[i].house.scoreRavenclaw += 1;
+            character[i].score += 1;
+          }
 
-            //else
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 4 -- fracasso");
 
@@ -537,102 +661,122 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point--;
-            //life--;
-            //ravenclaw++
+            character[i].house.scoreRavenclaw += 1;
+            character[i].score -= 1;
+            character[i].life -= 1;
+          }
+        }
+      }
+
+
+      //---------> BREAK <---------
+      static void breakForNextChallenge(List<Character> character)
+      {
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                                   DESCANSO                                    |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|           Finalmente encerra-se a segunda parte do desafio.                   |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Porém, alguns campeões tiveram dificuldades em cumprir sua parte do desafio. |");
+        Console.WriteLine("| Preocupados com a possível sabotagem, decidiram investigar por conta própria, |");
+        Console.WriteLine("| antes da etapa seguinte. Cada campeão decide investir seu tempo de formas     |");
+        Console.WriteLine("| diferentes. Enquanto uns decidem procurar pistas sobre os rumores,            |");
+        Console.WriteLine("| outros preparam-se para o próximo desafio.                                    |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        Console.WriteLine();
+        Console.WriteLine("Pressione Enter para continuar");
+        Console.ReadLine();
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                                    DESCANSO                                   |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("| O que você prefere fazer:                                                     |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("| (1) Descansar no salão comunal                                                |");
+        Console.WriteLine("| (2) Investigar interferências nas provas                                      |");
+        Console.WriteLine("| (3) Contar as histórias do desafio para seus amigos                           |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
+        {
+          Console.WriteLine();
+          Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+          string option = Console.ReadLine();
+
+          switch (option)
+          {
+            case "1":
+              takeRest(character);
+              break;
+
+            case "2":
+              investigate(character);
+              break;
+
+            case "3":
+              tellStories(character);
+
+              break;
+          }
 
         }
+      }
 
+      //---------> OPÇÂO 1 <---------
+      static void takeRest(List<Character> character)
+      {
 
-        //---------> BREAK <---------
-        public static void breakForNextChallenge()
+        Console.WriteLine();
+        Console.WriteLine("Opção 1");
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                            DESCANSAR NO SÃO COMUNAL                           |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu descansar! Cansado, decidiu poupar as energias para o dia      |");
+        Console.WriteLine("| seguinte. Nada como beber suco de abóbora junto aos seus amigos.              |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                   DESCANSO                                    |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|           Finalmente encerra-se a segunda parte do desafio.                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Porém, alguns campeões tiveram dificuldades em cumprir sua parte do desafio. |");
-            Console.WriteLine("| Preocupados com a possível sabotagem, decidiram investigar por conta própria, |");
-            Console.WriteLine("| antes da etapa seguinte. Cada campeão decide investir seu tempo de formas     |");
-            Console.WriteLine("| diferentes. Enquanto uns decidem procurar pistas sobre os rumores,            |");
-            Console.WriteLine("| outros preparam-se para o próximo desafio.                                    |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
-            Console.ReadLine();
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    DESCANSO                                   |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| O que você prefere fazer:                                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Descansar no salão comunal                                                |");
-            Console.WriteLine("| (2) Investigar interferências nas provas                                      |");
-            Console.WriteLine("| (3) Contar as histórias do desafio para seus amigos                           |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            Console.WriteLine();
-            Console.Write("Informe a opção desejada para continuar: ");
-            string option = Console.ReadLine();
-
-            switch (option)
-            {
-                case "1":
-                    takeRest();
-                    break;
-                case "2":
-                    investigate();
-                    break;
-                case "3":
-                    tellStories();
-                    break;
-            }
+          character[i].house.scoreSlytherin += 1;
+          character[i].life -= 1;
         }
+      }
 
-        //---------> OPÇÂO 1 <---------
-        static void takeRest()
+      //---------> OPÇÂO 2 <---------
+      static void investigate(List<Character> character)
+      {
+        Console.WriteLine();
+        Console.WriteLine("Opção 2");
+
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           INVESTIGAR INTERFERÊNCIAS                           |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Você escolheu investigar! A partir de agora role o dado para descobrir       |");
+        Console.WriteLine("| alguma pista!                                                                 |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Pressione ENTER para jogar o dado");
+          Console.ReadLine();
+          diceValue = RPG.Dice.throwDice();
+          Console.WriteLine();
+          Console.WriteLine($"O Valor do dado é {diceValue}");
+          Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 1");
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            DESCANSAR NO SÃO COMUNAL                           |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu descansar! Cansado, decidiu poupar as energias para o dia      |");
-            Console.WriteLine("| seguinte. Nada como beber suco de abóbora junto aos seus amigos.              |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //slytherin++
-            //life++
-        }
-        //---------> OPÇÂO 2 <---------
-        static void investigate()
-        {
-
-            Console.WriteLine();
-            Console.WriteLine("Opção 2");
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           INVESTIGAR INTERFERÊNCIAS                           |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu investigar! A partir de agora role o dado para descobrir       |");
-            Console.WriteLine("| alguma pista!                                                                 |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //throwDice(); 
-            Console.WriteLine();
-            //if success()
+          if (diceValue > 10)
+          {
             Console.WriteLine("Opção 2 - sucesso");
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -649,51 +793,64 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point++;
-            //gryffindor++++;
-            //ravenclaw++;
+            character[i].house.scoreGryffindor += 2;
+            character[i].house.scoreRavenclaw += 1;
+            character[i].score += 1;
 
-            //throwDice(); 
             Console.WriteLine();
-            //if success()
-            Console.WriteLine("Opção 2 -- Investigar mais -- sucesso");
-
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                   AUMENTAR RAIO DE INVESTIGAÇÃO  -- SUCESSO                   |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Incrível! Durante o restante da sua investigação, você decide voltar para    |");
-            Console.WriteLine("| castelo e investigar na biblioteca ocorrências nos últimos torneios,          |");
-            Console.WriteLine("| você acaba encontrando o Mapa do Maroto! Ele pode te ajudar a descobrir       |");
-            Console.WriteLine("| quem está por trás das sabotagens.                                                                              |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            //ravenclaw++++;
-            //gryffindor++;
-            //point++++++++;
-            //hasMap = true;
-
-            //else
+            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.ReadLine();
+            diceValue = RPG.Dice.throwDice();
             Console.WriteLine();
-            Console.WriteLine("Opção 2 -- Investigar mais -- fracasso");
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            Console.WriteLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                AUMENTAR RAIO DE INVESTIGAÇÃO  --  FRACASSO                    |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você procurou por mais pistas, mas sem sucesso. Melhor ir descansar e        |");
-            Console.WriteLine("| se preparar para o desafio de amanhã. Talvez tenha mais sorte no dia          |");
-            Console.WriteLine("| seguinte...                                                                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            if (diceValue > 17)
+            {
+              Console.WriteLine("Opção 2 -- Investigar mais -- sucesso");
 
-            //point--;
-            //life--;
-            //gryffindor++++;
-            //ravenclaw++;
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+              Console.WriteLine("|                   AUMENTAR RAIO DE INVESTIGAÇÃO  -- SUCESSO                   |");
+              Console.WriteLine("|-------------------------------------------------------------------------------|");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine("|  Incrível! Durante o restante da sua investigação, você decide voltar para    |");
+              Console.WriteLine("| castelo e investigar na biblioteca ocorrências nos últimos torneios,          |");
+              Console.WriteLine("| você acaba encontrando o Mapa do Maroto! Ele pode te ajudar a descobrir       |");
+              Console.WriteLine("| quem está por trás das sabotagens.                                            |");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //else
+              character[i].house.scoreRavenclaw += 2;
+              character[i].house.scoreGryffindor += 1;
+              character[i].hasMap = true;
+              character[i].score += 4;
+            }
+
+            else
+            {
+              Console.WriteLine();
+              Console.WriteLine("Opção 2 -- Investigar mais -- fracasso");
+
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+              Console.WriteLine("|                AUMENTAR RAIO DE INVESTIGAÇÃO  --  FRACASSO                    |");
+              Console.WriteLine("|-------------------------------------------------------------------------------|");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine("|  Você procurou por mais pistas, mas sem sucesso. Melhor ir descansar e        |");
+              Console.WriteLine("| se preparar para o desafio de amanhã. Talvez tenha mais sorte no dia          |");
+              Console.WriteLine("| seguinte...                                                                   |");
+              Console.WriteLine("|                                                                               |");
+              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+              character[i].house.scoreRavenclaw += 1;
+              character[i].house.scoreGryffindor += 2;
+              character[i].score -= 1;
+              character[i].life -= 1;
+
+            }
+          }
+
+          else
+          {
             Console.WriteLine();
             Console.WriteLine("Opção 2 -- fracasso");
 
@@ -702,38 +859,45 @@ namespace RPG
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|  Eita, infelizmente sua investigação não levou a nada. Você só perdeu tempo!  |");
-            Console.WriteLine("|  Boa sorte tentando não ficar cansado para a prova de amanhã...                |");
+            Console.WriteLine("|  Boa sorte tentando não ficar cansado para a prova de amanhã...               |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            //point--;
-            //life--;
-            //gryffindor++++;
-            //ravenclaw++;
+            character[i].house.scoreRavenclaw += 1;
+            character[i].house.scoreGryffindor += 2;
+            character[i].score -= 1;
+            character[i].life += 1;
 
 
+          }
         }
-        //---------> OPÇÂO 3 <---------
-        static void tellStories()
+      }
+
+      //---------> OPÇÂO 3 <---------
+      static void tellStories(List<Character> character)
+      {
+
+        for (int i = 0; i < character.Count; i++)
         {
+          Console.WriteLine();
+          Console.WriteLine("Opção 3");
 
-            Console.WriteLine();
-            Console.WriteLine("Opção 3");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                                 CONTAR HISTÓRIAS                              |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|  Você decide passar um tempo com seus amigos, contando do seu embate com os   |");
+          Console.WriteLine("| sereianos, do perrengue de nadar contra o tempo. A conversa foi divertida     |");
+          Console.WriteLine("| e você se sente com mais disposição para o dia seguinte!                      |");
+          Console.WriteLine("| Ganhou um ponto de vida!                                                      |");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                 CONTAR HISTÓRIAS                              |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você decide passar um tempo com seus amigos, contando do seu embate com os   |");
-            Console.WriteLine("| sereianos, do perrengue de nadar contra o tempo. A conversa foi divertida     |");
-            Console.WriteLine("| e você se sente com mais disposição para o dia seguinte!                      |");
-            Console.WriteLine("| Ganhou um ponto de vida!                                                      |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          character[i].house.scoreHufflePuff += 1;
+          character[i].life += 1;
 
-            //hufflepuff+
-            //life++
         }
-
+      }
     }
+  }
 }
