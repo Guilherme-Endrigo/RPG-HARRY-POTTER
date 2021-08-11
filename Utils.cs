@@ -149,17 +149,17 @@ namespace RPG
             Console.WriteLine(@"        `-. .-'| |/ / | | | |   | | \ \//     |  |    | | | || |   | | | |_\ || |\_|                 ");
             Console.WriteLine(@"          | |  | || \_| | | |   /_\  \ /      | |`    | | | || |   | | | .---'| |                    ");
             Console.WriteLine(@"          | |  | |\___,_\ /_\ _      //       | |     | \_/ || |   | | | |  /\| |                    ");
-            Console.WriteLine(@"          /_\  | |           //_____//       .||`  _   `._,' | |   | | \ `-' /| |                    ");
+            Console.WriteLine(@"          /_\  | |           //_____//       .||`      `._,' | |   | | \ `-' /| |                    ");
             Console.WriteLine(@"               /_\           `------'        \ |    AND      `.\   | |  `._,' /_\                    ");
             Console.WriteLine(@"                                              \|      THE          `.\                               ");
 
             Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
 
-            Console.WriteLine(@"                                                          ____             __    __    ___           ");
-            Console.WriteLine(@"                                                         |     _|___|_    |  \  |  \  |              ");
-            Console.WriteLine(@"                                                         |     _|___|_    |\_ | |\__| | ___          ");
-            Console.WriteLine(@"                                                         |____  |   |     |  \  |     |___|          ");
+            Console.WriteLine(@"                                                          ____            __    __    ___           ");
+            Console.WriteLine(@"                                                         |     _|___|_   |  \  |  \  |              ");
+            Console.WriteLine(@"                                                         |     _|___|_   |\__| |\__| | ___          ");
+            Console.WriteLine(@"                                                         |____  |   |    |  \  |     |___|          ");
             Console.WriteLine(@"                                                                                                     ");
 
             Console.ResetColor();
@@ -203,10 +203,6 @@ namespace RPG
             Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⠀⠀⠀⢰⣷⣄⡈⠙⠳⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣃⠈⣿⣿⣿⡁⢀⠀⠀⠀⠂⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
             Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠆⠀⢀⣿⣿⡆⠁⠂⠄⡀⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⡥⣿⣿⣿⣷⠀⠀⠀⠀⠀⡀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
             Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠊⠀⠀⢘⣿⣿⣇⣄⣄⣾⣷⣷⠦⡀⢻⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣧⠀⠀⢀⠈⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   ⠀  ");
-            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠠⠙⢿⣿⣿⣿⣿⣿⠯⠁⠀⠐⠀⠹⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣇⠀⠀⠈⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
-            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡀⠀⠀⠀⠀⠈⢽⣿⣿⣿⡿⠁⠀⠀⠀⣨⣄⠘⢿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣆⠂⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
-            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠀⠀⠀⠀⠀⢸⣿⣿⣿⠟⠀⠀⠀⠀⣿⣿⣦⡀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀  ⠀   ");
-            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⢸⣿⣿⢿⡁⠀⠀⢀⣼⣿⣿⣿⣿⡒⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
 
             Console.ResetColor();
 
@@ -409,6 +405,36 @@ namespace RPG
             return character.house;
         }
 
+        public static House whatHouse(Character character)
+        {
+
+            House house = character.house;
+
+            if (house.scoreGryffindor > house.scoreSlytherin && house.scoreGryffindor > house.scoreRavenclaw && house.scoreGryffindor > house.scoreHufflePuff)
+            {
+
+                character.house.houseName = "Grifinória";
+                //Gryffindor
+            }
+            else if (house.scoreSlytherin > house.scoreGryffindor && house.scoreSlytherin > house.scoreRavenclaw && house.scoreSlytherin > house.scoreHufflePuff)
+            {
+                character.house.houseName = "Sonserina";
+                //Slytherin
+            }
+            else if (house.scoreRavenclaw > house.scoreGryffindor && house.scoreRavenclaw > house.scoreSlytherin && house.scoreRavenclaw > house.scoreHufflePuff)
+            {
+                character.house.houseName = "Corvinal";
+                //Ravenclaw
+            }
+            else
+            {
+                character.house.houseName = "Lufa-lufa";
+                //HufflePuff
+            }
+
+            return character.house;
+
+        }
         public static void spellAttack(int diceValue)
         {
             if (diceValue > 6 && diceValue < 11)

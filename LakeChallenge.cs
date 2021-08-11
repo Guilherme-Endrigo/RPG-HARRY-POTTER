@@ -308,7 +308,7 @@ namespace RPG
                 Console.WriteLine("|  O feitiço deu errado, ao invés de transformá-lo inteiramente em um peixe,    |");
                 Console.WriteLine("| apenas as suas pernas foram modificadas! Além da vergonha, você ficou sem     |");
                 Console.WriteLine("| guelras pra te ajudar no desafio. Melhor nadar rápido! Humm, acho que não     |");
-                Console.WriteLine("| vaidar tempo de completar a prova.                                            |");
+                Console.WriteLine("| vai dar tempo de completar a prova.                                           |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

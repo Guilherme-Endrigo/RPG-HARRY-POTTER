@@ -261,7 +261,7 @@ namespace RPG
 
             return character;
         }
-        public static void endTheGame(Character character)
+        public static void endTheGame(List<Character> character)
         {
 
             Console.WriteLine();
@@ -347,75 +347,119 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para continuar: ");
             Console.ReadLine();
 
-            //if(hufflepuff)
+            for (int i = 0; i < character.Count; i++)
+            {
+                character[i].house = RPG.Update.whatHouse(character[i]);
+            }
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    LUFA-LUFA                                  |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Por sua gentileza, foram sorteados para a Lufa-lufa! Pacientes e honestos,   |");
-            Console.WriteLine("|  trabalhadores e amigos incríveis! Porém, são extremamente ingênuos! Essa     |");
-            Console.WriteLine("|  ingenuidade se reflete também nos números, sendo a casa com o menor número   |");
-            Console.WriteLine("|  de bruxos das trevas já produzidos na história. Sem a sua compreensão, o     |");
-            Console.WriteLine("|  mundo seria mais frio                                                        |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            var hufflePuff = character.FindAll(x => x.house.houseName == "Lufa-lufa");
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
-            Console.ReadLine();
-            //if (ravenclaw)
+            if (hufflePuff != null)
+            {
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                    LUFA-LUFA                                  |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    CORVINAL                                   |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Como vocês já sabem, foram sorteados para a Corvinal! Se destacam por sua  |");
-            Console.WriteLine("|  exímia inteligência, sabedoria e criatividade. Também são conhecidos por sua |");
-            Console.WriteLine("|  excentricidade e perfeccionismo. Muitas vezes frios e insensíveis com os     |");
-            Console.WriteLine("|  outros. Graças a sua inteligência, muito do que se conhece do mundo bruxo é  |");
-            Console.WriteLine("|  devido a essa forma de enxergar o mundo.                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                foreach (var charHouse in hufflePuff)
+                {
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
-            Console.ReadLine();
+                    Console.Write($"                               {charHouse.name},                               ");
+                }
+
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|  Por sua gentileza, foram sorteados para a Lufa-lufa! Pacientes e honestos,   |");
+                Console.WriteLine("|  trabalhadores e amigos incríveis! Porém, são extremamente ingênuos! Essa     |");
+                Console.WriteLine("|  ingenuidade se reflete também nos números, sendo a casa com o menor número   |");
+                Console.WriteLine("|  de bruxos das trevas já produzidos na história. Sem a sua compreensão, o     |");
+                Console.WriteLine("|  mundo seria mais frio                                                        |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.ReadLine();
+            }
+
+
+            var ravenclaw = character.FindAll(x => x.house.houseName == "Corvinal");
+
+            if (ravenclaw != null)
+            {
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                    CORVINAL                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                foreach (var charHouse in ravenclaw)
+                {
+
+                    Console.Write($"                               {charHouse.name},                               ");
+                }
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|    Como vocês já sabem, foram sorteados para a Corvinal! Se destacam por sua  |");
+                Console.WriteLine("|  exímia inteligência, sabedoria e criatividade. Também são conhecidos por sua |");
+                Console.WriteLine("|  excentricidade e perfeccionismo. Muitas vezes frios e insensíveis com os     |");
+                Console.WriteLine("|  outros. Graças a sua inteligência, muito do que se conhece do mundo bruxo é  |");
+                Console.WriteLine("|  devido a essa forma de enxergar o mundo.                                     |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.ReadLine();
+            }
             //if (gryffindor)
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                   GRIFINÓRIA                                   |");
-            Console.WriteLine("|------------------------------------------------------------------------------- |");
-            Console.WriteLine("|                                                                                |");
-            Console.WriteLine("|    Para os destemidos de plantão, irão para a Grifinória! São de extrema       |");
-            Console.WriteLine("|  coragem, sempre se superando devido ao seu altruísmo! Aventureiros e leais!   |");
-            Console.WriteLine("|  Porém, imprudentes e teimosos, alguns diriam egoístas. No entanto, o mundo,   |");
-            Console.WriteLine("|  mesmo assim, precisa de coragem e inspiração de bruxos como vocês             |");
-            Console.WriteLine("|                                                                                |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            var gryffindor = character.FindAll(x => x.house.houseName == "Grifinória");
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
-            Console.ReadLine();
-            //if (slytherin)
+            if (gryffindor != null)
+            {
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   GRIFINÓRIA                                   |");
+                Console.WriteLine("|------------------------------------------------------------------------------- |");
+                foreach (var charHouse in gryffindor)
+                {
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                   SONSERINA                                    |");
-            Console.WriteLine("|------------------------------------------------------------------------------- |");
-            Console.WriteLine("|                                                                                |");
-            Console.WriteLine("|    Vocês que competiram com garra até o final, tentando sempre o seu melhor,   |");
-            Console.WriteLine("| irão para a Sonserina! Membros da sonserina como vocês, são, sobretudo,        |");
-            Console.WriteLine("| ambiciosos, presunçosos e egoístas. Porém, diferente do que muitos acham,      |");
-            Console.WriteLine("| vocês também são grandes alunos, líderes natos, inteligentes e dedicados a     |");
-            Console.WriteLine("| expandir e alcançar metas, além de perseguirem sua paixão com uma determinação |");
-            Console.WriteLine("| que beira quase à teimosia. E talvez por seu senso de competição, as outras    |");
-            Console.WriteLine("| casas não os vejam tão bem.                                                    |");
-            Console.WriteLine("|                                                                                |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.Write($"                                {charHouse.name},                               ");
+                }
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine("|    Para os destemidos de plantão, irão para a Grifinória! São de extrema       |");
+                Console.WriteLine("|  coragem, sempre se superando devido ao seu altruísmo! Aventureiros e leais!   |");
+                Console.WriteLine("|  Porém, imprudentes e teimosos, alguns diriam egoístas. No entanto, o mundo,   |");
+                Console.WriteLine("|  mesmo assim, precisa de coragem e inspiração de bruxos como vocês             |");
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
-            Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.ReadLine();
+            } //if (slytherin)
+
+            var slytherin = character.FindAll(x => x.house.houseName == "Sonserina");
+
+            if (slytherin != null)
+            {
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   SONSERINA                                    |");
+                Console.WriteLine("|------------------------------------------------------------------------------- |");
+                foreach (var charHouse in slytherin)
+                {
+
+                    Console.Write($"                               {charHouse.name},                               ");
+                }
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine("|    Vocês que competiram com garra até o final, tentando sempre o seu melhor,   |");
+                Console.WriteLine("| irão para a Sonserina! Membros da sonserina como vocês, são, sobretudo,        |");
+                Console.WriteLine("| ambiciosos, presunçosos e egoístas. Porém, diferente do que muitos acham,      |");
+                Console.WriteLine("| vocês também são grandes alunos, líderes natos, inteligentes e dedicados a     |");
+                Console.WriteLine("| expandir e alcançar metas, além de perseguirem sua paixão com uma determinação |");
+                Console.WriteLine("| que beira quase à teimosia. E talvez por seu senso de competição, as outras    |");
+                Console.WriteLine("| casas não os vejam tão bem.                                                    |");
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.ReadLine();
+            }
 
         }
     }
