@@ -1,11 +1,15 @@
 using System;
+using System.Collections.Generic;
 
 namespace RPG
 {
   class ChessChallenge
   {
-    public static void wizardChessChallenge()
+    static int diceValue = 0;
+
+    public static void wizardChessChallenge(List<Character> character)
     {
+      
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
       Console.WriteLine("|                                   XADREZ BRUXO                                |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -37,26 +41,29 @@ namespace RPG
       Console.WriteLine("| (3) Bispo Negro                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      Console.WriteLine();
-      Console.Write("Informe a opção desejada para continuar: ");
+    for(int i = 0; i<character.Count; i++){
+      Console.WriteLine($"{character[i].name}, informe a opção desejada para continuar: ");
       string option = Console.ReadLine();
 
       switch (option)
       {
         case "1":
-          kingHorse(option);
+         character[i] = kingHorse(character[i]);
           break;
         case "2":
-          queenTower(option);
+          character[i] = queenTower(character[i]);
           break;
         case "3":
-          blackBishop(option);
+          character[i] = blackBishop(character[i]);
           break;
       }
     }
 
+      RPG.Dragon.breakAfterDragonsChallenge(character);
+    }
+
     //--------> OPÇÃO 1 <----------
-    static void kingHorse(string option)
+    static Character kingHorse(Character character)
     {
       //corvinal++;
 
@@ -70,120 +77,134 @@ namespace RPG
       Console.WriteLine("| o bispo poderá se encaminhar para o xeque-mate graças a sua jogada            |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      //throwDice();
-
-      //se success()
-
       Console.WriteLine();
-      Console.WriteLine("Opção 1 - sucesso");
+      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado: ");
+      Console.ReadLine();
+    
+      character.house.scoreRavenclaw += 1;
+      //throwDice();
+      diceValue = RPG.Dice.throwDice();
+      //se success()
+      if(diceValue >= 6){
+        Console.WriteLine($"O Valor do dado é {diceValue}");
 
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           CAVALO DO REI  --  SUCESSO                          |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Magnífico, é preciso muita coragem e lealdade,                             |");
-      Console.WriteLine("| para se sacrificar para um bem maior, você teve um jogo digno de grande mestre|");
-      Console.WriteLine("| como dizia um Grande Mestre:                                                  |");
-      Console.WriteLine("|      -Não há nenhum grande mestre de xadrez que seja normal, diferenciam-se   |");
-      Console.WriteLine("| apenas pela magnitude da loucura.                                             |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|              Ganhou dois ponto por isso :D                                    |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        //point+=2;    
-
-      //if (name == "rony wesley")
         Console.WriteLine();
+        Console.WriteLine("Opção 1 - sucesso");
 
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                           ESTER EGG ENCONTRADO                                 |");
+        Console.WriteLine("|                           CAVALO DO REI  --  SUCESSO                          |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|     Shazam! Por ter o mesmo nome que o corajoso Ronald Bilius Weasley,        |");
-        Console.WriteLine("| você ganhou mais um ponto de vida.                                            |");
-        Console.WriteLine("| Parabéns! Aqui vão 5 pontos extras por essa conquista                         |");           
+        Console.WriteLine("|    Magnífico, é preciso muita coragem e lealdade,                             |");
+        Console.WriteLine("| para se sacrificar para um bem maior, você teve um jogo digno de grande mestre|");
+        Console.WriteLine("| como dizia um Grande Mestre:                                                  |");
+        Console.WriteLine("|      -Não há nenhum grande mestre de xadrez que seja normal, diferenciam-se   |");
+        Console.WriteLine("| apenas pela magnitude da loucura.                                             |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|              Ganhou dois ponto por isso :D                                    |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        //point+=5;
-        // life++;
-      // endif
+          //point+=2;    
+        character.score += 2;
 
-      //else
-      Console.WriteLine();
-      Console.WriteLine("Opção 1 - fracasso");
+        if(name == "Rony Wesley"){
+        //if (name == "rony wesley")
+          Console.WriteLine();
 
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           CAVALO DO REI   --  FRACASSO                        |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Lindo xeque no rei, mas não foi o suficiente, a Rainha do adversário       |");
-      Console.WriteLine("| acabou com você te reduzindo a pó, está fora do jogo de xadrez!               |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Que pena acabou de perder um ponto e uma vida”                               |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                           ESTER EGG ENCONTRADO                                 |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|     Shazam! Por ter o mesmo nome que o corajoso Ronald Bilius Weasley,        |");
+          Console.WriteLine("| você ganhou mais um ponto de vida.                                            |");
+          Console.WriteLine("| Parabéns! Aqui vão 5 pontos extras por essa conquista                         |");           
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          
+          character.score += 5;
+          character.life ++;
+      
+        } 
+      }else {
+      
+        Console.WriteLine();
+        Console.WriteLine("Opção 1 - fracasso");
 
-      //point--;
-      //life--;
-
-      //shift+alt 
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           CAVALO DO REI   --  FRACASSO                        |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    Lindo xeque no rei, mas não foi o suficiente, a Rainha do adversário       |");
+        Console.WriteLine("| acabou com você te reduzindo a pó, está fora do jogo de xadrez!               |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|  Que pena acabou de perder um ponto e uma vida”                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      }
+        
+        character.score ++;
+        character.life ++;
+      
+      return character;
     }
 
     //---------> OPÇÃO 2 <---------
-    static void queenTower(string option)
+    static Character queenTower(Character character)
     {
-      //lufalufa++;
+        character.house.scoreHufflePuff += 1;
+        //lufalufa++;
 
-      //throwDice();
-      //se success()
+        Console.WriteLine();
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|   Torre da rainha uma escolha de garantia                                     |");
+        Console.WriteLine("| você ficou observando o jogo sem correr grande perigo até o momento!          |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine();
 
-      Console.WriteLine();
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|   Torre da rainha uma escolha de garantia                                     |");
-      Console.WriteLine("| você ficou observando o jogo sem correr grande perigo até o momento!          |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine();
+        diceValue = RPG.Dice.throwDice();
 
-      Console.WriteLine("Opção 2 - sucesso");
+      if(diceValue >= 6){
+        Console.WriteLine($"O Valor do dado é {diceValue}");
+        Console.WriteLine("Opção 2 - sucesso");
 
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           TORRE DA RAINHA  --  SUCESSO                        |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|   Após o lance cavalo na h3, uma jogada de honra, sacrificando-o              |");
-      Console.WriteLine("| para vencer o jogo, você se manteve no lugar,                                 |");
-      Console.WriteLine("| lembrando que está em um tabuleiro e que todo o movimento conta!              |");
-      Console.WriteLine("| Parabéns! Você ganhou um ponto por isso :D                                    |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           TORRE DA RAINHA  --  SUCESSO                        |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|   Após o lance cavalo na h3, uma jogada de honra, sacrificando-o              |");
+        Console.WriteLine("| para vencer o jogo, você se manteve no lugar,                                 |");
+        Console.WriteLine("| lembrando que está em um tabuleiro e que todo o movimento conta!              |");
+        Console.WriteLine("| Parabéns! Você ganhou um ponto por isso :D                                    |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      //point++;
+        character.score += 1;
+        //point++;
 
-      //else
+      } else{  
+        Console.WriteLine();
+        Console.WriteLine("Opção 2 - fracasso");
 
-      Console.WriteLine();
-      Console.WriteLine("Opção 2 - fracasso");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                        TORRE DA RAINHA --  FRACASSO                           |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    Vish, parece que ao ver o sacrifício do cavalo na h3,                      |");
+        Console.WriteLine("| você correu até lá para ajudar, além de ter feito uma jogada em vão,          |");
+        Console.WriteLine("| sniff sniff, acabou de perder um ponto e uma vida”                            |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                        TORRE DA RAINHA --  FRACASSO                           |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Vish, parece que ao ver o sacrifício do cavalo na h3,                      |");
-      Console.WriteLine("| você correu até lá para ajudar, além de ter feito uma jogada em vão,          |");
-      Console.WriteLine("| sniff sniff, acabou de perder um ponto e uma vida”                            |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-      //point--;
-      //life--;
-
+        character.score += 1;
+        character.life += 1;
+      }
+        
+      return character;
     }
 
     //---------> OPÇÃO 3 <---------
     static void blackBishop(string option)
     {
-      //grifinoria++;
-      //sonserina++;
-
-      //throwDice();
-      //se success()
+      character.house.scoreGryffindor += 1;
+      character.house.scoreSlytherin += 1;
+   
       Console.WriteLine();
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
@@ -192,82 +213,82 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
       Console.WriteLine();
-       //throwDice();
+      
 
-      //se success()
+      diceValue = RPG.Dice.throwDice();
 
-      Console.WriteLine();
-      Console.WriteLine("Opção 1 - sucesso");
+      if(diceValue >= 6){
+        Console.WriteLine();
+        Console.WriteLine("Opção 1 - sucesso");
 
-      Console.WriteLine(" -------------------------------------------------------------------------------");
-      Console.WriteLine("|                                 BISPO NEGRO                                   |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Com muita sabedoria você conteve a torre da rainha no seu devido lugar,    |");
-      Console.WriteLine("| e assim podendo efetuar seu lance!                                            |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| Jogue o dado novamente para tentar o xeque mate!”                             |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine(" -------------------------------------------------------------------------------");
+        Console.WriteLine("|                                 BISPO NEGRO                                   |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    Com muita sabedoria você conteve a torre da rainha no seu devido lugar,    |");
+        Console.WriteLine("| e assim podendo efetuar seu lance!                                            |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("| Jogue o dado novamente para tentar o xeque mate!”                             |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      
+      
+        diceValue = RPG.Dice.throwDice();
+      
+        if(diceValue >= 6){
+          Console.WriteLine();
+          Console.WriteLine("Opção 1 - Joga dado novamente -- sucesso");
 
-      //throwDice();
-      //receiveDice = throwDice();
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                           BISPO NEGRO  --  SUCESSO                            |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Parabéns! Seu xeque mate foi magnífico, deixando seu adversário em pedaços |");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|   URRUL! Bônus de 5 pontos por essa conquista,  e também um ponto de vida”    |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          
+          character.score += 5;
+          character.life += 1;
+        } else{
+        //else
 
-      //se receiveDice for sucesso
+          Console.WriteLine();
+          Console.WriteLine("Opção 1 - Joga dado novamente -- fracasso");
 
-      Console.WriteLine();
-      Console.WriteLine("Opção 1 - Joga dado novamente -- sucesso");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+          Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
+          Console.WriteLine("|-------------------------------------------------------------------------------|");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|    Ih não foi dessa vez. Você avançou o número de casas de maneira errada,    |");
+          Console.WriteLine("| e foi decapitado pela rainha,  perdeu um ponto e um ponto de vida             |");
+          Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           BISPO NEGRO  --  SUCESSO                            |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Parabéns! Seu xeque mate foi magnífico, deixando seu adversário em pedaços |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|   URRUL! Bônus de 5 pontos por essa conquista,  e também um ponto de vida”    |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      //point+=5;
-      //life++;
+          character.score -= 1;
+          character.life -= 1;
+        }
 
+      } else{ 
+        Console.WriteLine();
+        Console.WriteLine("Opção 1 - fracasso");
 
-      //else
-
-      Console.WriteLine();
-      Console.WriteLine("Opção 1 - Joga dado novamente -- fracasso");
-
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Ih não foi dessa vez. Você avançou o número de casas de maneira errada,    |");
-      Console.WriteLine("| e foi decapitado pela rainha,  perdeu um ponto e um ponto de vida             |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-      //point--;
-      //life--;
-
-      //else
-      Console.WriteLine();
-      Console.WriteLine("Opção 1 - fracasso");
-
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
-      Console.WriteLine("|-------------------------------------------------------------------------------|");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    “Grrr parece que a torre da rainha se movimentou na sua vez,               |");
-      Console.WriteLine("| o adversário além de derrotar a torre, conseguiu se defender do xeque mate.   |");
-      Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| menos três pontos e uma vida a menos                                          |");
-      Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-      //point-=3;;
-      //life--;
-
-      //shift+alt 
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    “Grrr parece que a torre da rainha se movimentou na sua vez,               |");
+        Console.WriteLine("| o adversário além de derrotar a torre, conseguiu se defender do xeque mate.   |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("| menos três pontos e uma vida a menos                                          |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        
+        character.score -= 3;
+        character.life -= 1;
+      }
     }
 
 
   //---------> BREAK <-----------
-  public static void breakAfterXadrezBruxoChallenge()
+  public static void breakAfterXadrezBruxoChallenge(List<Character> character)
   {
 
     Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -298,113 +319,133 @@ namespace RPG
     Console.WriteLine("| (4) Ir visitar Hagrid                                                         |");
     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    Console.WriteLine();
-    Console.Write("Informe a opção desejada para continuar: ");
-    string option = Console.ReadLine();
-
-    switch (option)
-    {
-      case "1":
-        mainHallParty(option);
-        break;
-      case "2":
-        nap(option);
-        break;
-      case "3":
-        relaxInTheGreenHouse(option);
-        break;
-      case "4":
-        visitHagrid(option);
-        break;
+     for(int i = 0; i<character.Count; i++){
+      Console.WriteLine($"{character[i].name}, informe a opção desejada para continuar: ");
+      string option = Console.ReadLine();
+     
+      switch (option)
+      {
+        case "1":
+        character[i] =  mainHallParty(character[i]);
+          break;
+        case "2":
+        character[i] =  nap(character[i]);
+          break;
+        case "3":
+        character[i] =  relaxInTheGreenHouse(character[i]);
+          break;
+        case "4":
+        character[i] =  visitHagrid(character[i]);
+          break;
+      }
     }
-  }
-
-
+  RPG.Lake.lakeChallenge(character);
+}
   //---------> OPÇÃO 1 <---------
-  static void mainHallParty(string option)
+  static void mainHallParty(Character character)
   {
+    character.house.scoreRavenclaw += 1;
     //corvinal++;
+      Console.WriteLine();
+      Console.WriteLine("Pressione ENTER para jogar o dado");
+      Console.ReadLine();
+      diceValue = RPG.Dice.throwDice();
 
-    //throwDice();
-    //se success()
+    if(diceValue >= 6){
+      Console.WriteLine($"O Valor do dado é {diceValue}");
+      Console.WriteLine();
+      Console.WriteLine("Opção 1 - sucesso");
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 1 - sucesso");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  SUCESSO                |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" Conseguiu novas amizades com essa festa, tempos difíceis revelam grandes amigos|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  SUCESSO                |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" Conseguiu novas amizades com essa festa, tempos difíceis revelam grandes amigos|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-    //vida++
+      character.life += 1;
   
 
-    //else
+    } else{
+      Console.WriteLine($"O Valor do dado é {diceValue}");
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 1 - fracasso");
+      Console.WriteLine();
+      Console.WriteLine("Opção 1 - fracasso");
 
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  FRACASO                |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
-    Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  FRACASO                |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
+      Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    
+    }
+    return character;
   }
 
   //---------> OPÇÃO 2 <---------
-  static void nap(string option)
+  static Character nap(Character character)
   {
     //sonserina++;
+    character.house.scoreSlytherin += 1;
 
     //throwDice();
     //se success()
+      diceValue = RPG.Dice.throwDice();
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 2 - sucesso");
+      if(diceValue >= 6){
+        Console.WriteLine($"O Valor do dado é {diceValue}");
 
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                      TIRAR COCHILO  --  SUCESSO                               |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    Que sono revigorante, e teve um sonho,                                     |");
-    Console.WriteLine("| através dele você aprendeu a como abrir o Oráculo dos sonhos!                 |");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine();
+        Console.WriteLine("Opção 2 - sucesso");
 
-    //life++
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                      TIRAR COCHILO  --  SUCESSO                               |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    Que sono revigorante, e teve um sonho,                                     |");
+        Console.WriteLine("| através dele você aprendeu a como abrir o Oráculo dos sonhos!                 |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+        character.life += 1;
+      } else{
 
-    //else
+        Console.WriteLine();
+        Console.WriteLine("Opção 2 - fracasso");
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 2 - fracasso");
-
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                      TIRAR COCHILO  --  FRACASSO                              |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    “Acho que alguém dormiu muito, ZzzzZzZ, te deram a poção do morto vivo”    |");
-    Console.WriteLine("|        não conseguiu realizar nenhuma ação e dormiu por dias.                 |");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-    //life--
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        Console.WriteLine("|                      TIRAR COCHILO  --  FRACASSO                              |");
+        Console.WriteLine("|-------------------------------------------------------------------------------|");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine("|    “Acho que alguém dormiu muito, ZzzzZzZ, te deram a poção do morto vivo”    |");
+        Console.WriteLine("|        não conseguiu realizar nenhuma ação e dormiu por dias.                 |");
+        Console.WriteLine("|                                                                               |");
+        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+       
+       character.score -=1;
+      }
+      return character;
   }
 
   //---------> OPÇÃO 3 <---------
-  static void relaxInTheGreenHouse(string option)
+  static Character relaxInTheGreenHouse(Character character)
   {
-    //lufalufa++
+    character.house.scoreHufflePuff += 1;
 
     Console.WriteLine();
-    Console.WriteLine("Opção 3");
+    Console.WriteLine("Pressione ENTER para jogar o dado");
+    Console.ReadLine();
+
+    diceValue = RPG.Dice.throwDice();
+   
+   
+
+    Console.WriteLine();
+    Console.WriteLine("Opção 3 - sucesso");
 
     Console.WriteLine(" ------------------------------------------------------------------------------- ");
     Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT                          |");
@@ -415,75 +456,88 @@ namespace RPG
     Console.WriteLine("|                                                                               |");
     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    Console.WriteLine();
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - SUCESSO                |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|              “Você achou uma poção para reverter quem foi petrificado.”       |");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+    if(diceValue >= 6){
+      Console.WriteLine($"O Valor do dado é {diceValue}");
 
-    //point++
+      Console.WriteLine();
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - SUCESSO                |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|              “Você achou uma poção para reverter quem foi petrificado.”       |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    //else
+      character.score += 1;
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 3 - fracasso");
+    } else{
 
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - FRACASSO               |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    Shazam! Você foi petrificado pelo Basilisco de Salazar Slytherin, que azar |");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine();
+      Console.WriteLine("Opção 3 - fracasso");
+
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - FRACASSO               |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Shazam! Você foi petrificado pelo Basilisco de Salazar Slytherin, que azar |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
     
-    // point--
-    // life--
+      character.score -= 1;
+      character.life -= 1;
+
+    }
+    return character;
   }
 
   //---------> OPÇÃO 4 <---------
-  static void visitHagrid(string option)
+  static Character visitHagrid(Character character)
   {
+    character.house.scoreGryffindor += 1;
+      
+      Console.WriteLine();
+      Console.WriteLine("Pressione ENTER para jogar o dado");
+      Console.ReadLine();
+
+      diceValue = RPG.Dice.throwDice();
     //grifinoria++
 
     //throwDice();
     //se success()
+    if(diceValue >=6){
+      Console.WriteLine();
+      Console.WriteLine("Opção 4 - sucesso");
 
-    Console.WriteLine();
-    Console.WriteLine("Opção 4 - sucesso");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    “Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”,        |");
+      Console.WriteLine("| você ganhou um delicioso bolo feito com muito amor <3.                        |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    “Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”,        |");
-    Console.WriteLine("| você ganhou um delicioso bolo feito com muito amor <3.                        |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      character.score += 1;
+      character.life += 1;
+    
+    } else{
+      Console.WriteLine($"O Valor do dado é {diceValue}");
+      
+      Console.WriteLine();
+      Console.WriteLine("Opção 4 - fracasso");
 
-    //point++
-    //life++
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
+      Console.WriteLine("|-------------------------------------------------------------------------------|");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    “Xiiii, Hagrid te levou para a floresta proibida                           |");
+      Console.WriteLine("| e para seu azar o zelador te viu e te levou a diretoria”                      |");
+      Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-    //point++
-    //intelligence++
+      character.score -= 1;
+      character.life -= 1;
 
-    //else
-
-    Console.WriteLine();
-    Console.WriteLine("Opção 4 - fracasso");
-
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-    Console.WriteLine("|                          IR VISITAR HAGRID -- FRACASSO                        |");
-    Console.WriteLine("|-------------------------------------------------------------------------------|");
-    Console.WriteLine("|                                                                               |");
-    Console.WriteLine("|    “Xiiii, Hagrid te levou para a floresta proibida                           |");
-    Console.WriteLine("| e para seu azar o zelador te viu e te levou a diretoria”                      |");
-    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-    //point--
-    //life--
-
+    }
+    return character;
   }
 }
 }
