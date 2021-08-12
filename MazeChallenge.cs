@@ -45,24 +45,27 @@ namespace RPG
                     Console.WriteLine("|                                 Mapa do Maroto                                |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Ah, que incrível! Você possui o Mapa do Maroto e tem a vantagem de saber   |");
-                    Console.WriteLine("| qual o melhor caminho do labirinto e onde os seus concorrentes estão! Siga    |");
-                    Console.WriteLine("| direto para o final.                                                          |");
+                    Console.WriteLine("| qual o melhor caminho do labirinto e onde os seus concorrentes estão!         |");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Por isso, você pulou QUASE todos os obstáculos do labirinto... Infeliz-    |");
-                    Console.WriteLine("| mente, nem o Mapa poderia ter previsto a presença da enigmática Esfinge. Como |");
-                    Console.WriteLine("| guerreiro, resta a você enfrentá-la. Se você está jogando com um ou mais ami- |");
-                    Console.WriteLine("| gos, espere que eles enfrentem os desafios do labirinto e, então, vocês en-   |");
-                    Console.WriteLine("| frentarão a Esfinge.                                                          |");
+                    Console.WriteLine("|    Por isso, você ganhou dois pontos e pulou QUASE todos os obstáculos do la- |");
+                    Console.WriteLine("| birinto. Infelizmente, nem o Mapa poderia ter previsto a presença da enigmá-  |");
+                    Console.WriteLine("| tica Esfinge. Como guerreiro, resta a você enfrentá-la. Se você está jogando  |");
+                    Console.WriteLine("| com um ou mais amigos, espere que eles enfrentem os desafios do labirinto e,  |");
+                    Console.WriteLine("| então, vocês enfrentarão a Esfinge.                                           |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                    character[i].score += 2;
 
                     Console.WriteLine();
                     Console.WriteLine($"Pressione ENTER para continuar");
                     Console.ReadLine();
-
                 }
                 else
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    RPG.Drawings.maze();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -88,7 +91,7 @@ namespace RPG
                     while (option != "1" && option != "2" && option != "3" && option == "")
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Opção Invalida, tente novamente");
+                        Console.WriteLine("Opção inválida, tente novamente");
                         Console.WriteLine();
                         Console.Write($"{character[i].name}, escolha novamente: ");
                         option = Console.ReadLine();
@@ -111,6 +114,7 @@ namespace RPG
                 }
 
             }
+            sphinxChallenge(character);
         }
 
         
@@ -160,7 +164,7 @@ namespace RPG
             while (option != "1" && option != "2" && option != "3" && option == "")
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
                 option = Console.ReadLine();
@@ -203,7 +207,7 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue >= 6)
+            if (diceValue >= 15)
             {
 
                 Console.WriteLine();
@@ -243,9 +247,9 @@ namespace RPG
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                if (diceValue >= 6)
+                if (diceValue >= 13)
                 {
-
+                    Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                 ABRACADABRA                                   |");
@@ -262,6 +266,8 @@ namespace RPG
                 }
                 else
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                    BICHO PAPÃO                                |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -294,7 +300,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
 
-            if (diceValue >= 18)
+            if (diceValue >= 10)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -314,6 +320,8 @@ namespace RPG
             }
             else
             {
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                 SOCORRO MÃE!                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -349,9 +357,10 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue >= 6 && diceValue <= 17)
+            if (diceValue >= 10)
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    BICHO PAPÃO                                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -367,7 +376,8 @@ namespace RPG
             }
             else
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                BICHO PAPÃO                                    |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -415,7 +425,7 @@ namespace RPG
             while (option != "1" && option != "2" && option != "3" && option == "")
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
                 option = Console.ReadLine();
@@ -458,7 +468,7 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue >= 6)
+            if (diceValue >= 8)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -497,7 +507,7 @@ namespace RPG
                 while (option != "1" && option != "2" && option == "")
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine("Opção inválida, tente novamente");
                     Console.WriteLine();
                     Console.Write($"{character.name}, escolha novamente: ");
                     option = Console.ReadLine();
@@ -558,7 +568,7 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue > 6)
+            if (diceValue >= 15)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -586,7 +596,7 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.life -= 1;
 
-                if (diceValue > 6)
+                if (diceValue >= 13)
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -602,6 +612,8 @@ namespace RPG
                 }
                 else
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                       PARECE QUE A ALERGIA É FORTE                            |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -638,7 +650,7 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue > 6)
+            if (diceValue >= 15)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -672,7 +684,7 @@ namespace RPG
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                if (diceValue > 6)
+                if (diceValue >= 12)
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -733,7 +745,7 @@ namespace RPG
             while (option != "1" && option != "2" && option == "")
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
                 option = Console.ReadLine();
@@ -771,7 +783,7 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue > 6)
+            if (diceValue >= 8)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -813,7 +825,7 @@ namespace RPG
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                if (diceValue > 6)
+                if (diceValue >= 12)
                 {
 
                     Console.WriteLine();
@@ -835,6 +847,8 @@ namespace RPG
                 }
                 else
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                  FERROADA                                     |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -856,6 +870,8 @@ namespace RPG
         //---------> OPÇÃO 2 <---------
         static Character run(Character character)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                    ARACNOFOBIA                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -877,10 +893,10 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue > 6)
+            if (diceValue >= 10)
             {
-
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                           DÊ UM TROCADO PARA SEU BRUXO                        |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -899,7 +915,8 @@ namespace RPG
             }
             else
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                  QUE DESASTRADO                               |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -937,7 +954,7 @@ namespace RPG
             Console.WriteLine("| enigmas e charadas.                                                           |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Quando o Ministério da Magia começou a categorizar criaturas mágicas, a    |");
-            Console.WriteLine("| Esfinge foi colocada na categoria fera e não na categorseria, devido às suas  |");
+            Console.WriteLine("| Esfinge foi colocada na categoria fera e não na categoria, devido às suas     |");
             Console.WriteLine("| tendências violentas. Mas, não se preocupe, aqui você não precisará enfrentar |");
             Console.WriteLine("| a força física dela, mas a sua mente. Será que você dá conta do recado?       |");
             Console.WriteLine("|                                                                               |");
@@ -981,7 +998,7 @@ namespace RPG
                 while (option != "1" && option != "2" && option != "3" && option == "")
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine("Opção inválida, tente novamente");
                     Console.WriteLine();
                     Console.Write($"{character[i].name}, escolha novamente: ");
                     option = Console.ReadLine();
@@ -991,7 +1008,7 @@ namespace RPG
                 {
                     character[i].sphinxAnswer = true;
                 }
-
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
@@ -1011,6 +1028,8 @@ namespace RPG
 
             if (isRight != null)
             {
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -1027,7 +1046,7 @@ namespace RPG
                 foreach (var player in isRight)
                 {
 
-                    Console.WriteLine($"Parabéns! {player.name}");
+                    Console.WriteLine($"Parabéns, {player.name}!");
                     player.score += 1;
                     player.life += 1;
 
@@ -1040,6 +1059,8 @@ namespace RPG
             }
             else if (isAlive != null)
             {
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -1068,6 +1089,7 @@ namespace RPG
                 }
             }
 
+        //chamada da função do duelo
 
         }
     }
