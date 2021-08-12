@@ -355,7 +355,7 @@ namespace RPG
             var model = new Character();
             model.idChar = _idChar + 1;
             model.name = _name;
-            model.life = 10;
+            model.life = 8;
             model.score = 0;
             model.isAlive = true;
             model.hasMap = false;
@@ -485,43 +485,43 @@ namespace RPG
             return charChoice;
 
         }
-        public static void spellAttack(int diceValue)
+        public static string spellAttack(int diceValue)
         {
             if (diceValue > 6 && diceValue < 11)
             {
-                Console.WriteLine("Wingardium Leviosa");
+                return "Wingardium Leviosa!";
             }
             else if (diceValue > 10 && diceValue < 18)
             {
-                Console.WriteLine("Expelliarmus");
+                return "Expelliarmus!";
             }
             else if (diceValue > 17)
             {
-                Console.WriteLine("Sectusempra");
+                return "Sectusempra!";
             }
             else
             {
-                Console.WriteLine("e errou");
+                return "e errou!";
             }
         }
 
-        public static void spellDefense(int diceValue)
+        public static string spellDefense(int diceValue)
         {
             if (diceValue > 6 && diceValue < 11)
             {
-                Console.WriteLine("Protego");
+                return "Protego";
             }
             else if (diceValue > 10 && diceValue < 18)
             {
-                Console.WriteLine("Protego maxima");
+                return "Protego maxima";
             }
             else if (diceValue > 17)
             {
-                Console.WriteLine("Repello Inimicum");
+                return "Repello Inimicum";
             }
             else
             {
-                Console.WriteLine("porém conjurou errado");
+                return "porém conjurou errado";
             }
         }
 

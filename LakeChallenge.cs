@@ -130,7 +130,7 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 character.house.scoreRavenclaw += 1;
-                character.score -= 1;
+                character.score += 1;
                 character.life += 1;
 
             }
@@ -153,6 +153,14 @@ namespace RPG
 
                 character.score -= 1;
                 character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
             }
 
@@ -235,6 +243,14 @@ namespace RPG
                     Console.WriteLine("| da bolha encher-se de água!                                                   |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                    Console.WriteLine();
+                    Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                    Console.ReadLine();
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
 
                     //ravenclaw++; acho q n merece
                 }
@@ -322,6 +338,14 @@ namespace RPG
                 //slytherin++ não acho q mereça ahah
                 character.score -= 1;
                 character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
 
             return character;
@@ -465,6 +489,14 @@ namespace RPG
                 character.house.scoreGryffindor += 2;
                 character.score -= 1;
                 character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
 
             return character;
@@ -525,6 +557,14 @@ namespace RPG
                 character.house.scoreHufflePuff += 1;
                 character.score -= 1;
                 character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
             }
 
@@ -589,6 +629,14 @@ namespace RPG
                 character.score -= 1;
                 character.life -= 1;
 
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
+
             }
             return character;
         }
@@ -651,6 +699,14 @@ namespace RPG
                 character.house.scoreRavenclaw += 1;
                 character.score -= 1;
                 character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
 
             return character;
@@ -683,46 +739,53 @@ namespace RPG
 
             for (int i = 0; i < character.Count; i++)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                    DESCANSO                                   |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| O que você prefere fazer:                                                     |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| (1) Descansar no salão comunal                                                |");
-                Console.WriteLine("| (2) Investigar interferências nas provas                                      |");
-                Console.WriteLine("| (3) Contar as histórias do desafio para seus amigos                           |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                Console.WriteLine();
-                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
-                string option = Console.ReadLine();
-                while (option != "1" && option != "2" && option != "3" && option == "")
+                if (character[i].isAlive)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção Invalida, tente novamente");
                     Console.WriteLine();
-                    Console.Write($"{character[i].name}, escolha novamente: ");
-                    option = Console.ReadLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                                    DESCANSO                                   |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------|");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("| O que você prefere fazer:                                                     |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("| (1) Descansar no salão comunal                                                |");
+                    Console.WriteLine("| (2) Investigar interferências nas provas                                      |");
+                    Console.WriteLine("| (3) Contar as histórias do desafio para seus amigos                           |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                    Console.WriteLine();
+                    Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                    string option = Console.ReadLine();
+                    while (option != "1" && option != "2" && option != "3" && option == "")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Opção Invalida, tente novamente");
+                        Console.WriteLine();
+                        Console.Write($"{character[i].name}, escolha novamente: ");
+                        option = Console.ReadLine();
+                    }
+                    switch (option)
+                    {
+                        case "1":
+                            character[i] = takeRest(character[i]);
+                            break;
+
+                        case "2":
+                            character[i] = investigate(character[i]);
+                            break;
+
+                        case "3":
+                            character[i] = tellStories(character[i]);
+                            break;
+                    }
                 }
-                switch (option)
+                else
                 {
-                    case "1":
-                        character[i] = takeRest(character[i]);
-                        break;
+                    Console.WriteLine("Você foi desclassificado! Infelizmente o torneio acabou para você, nade mais rápido da próxima vez!");
 
-                    case "2":
-                        character[i] = investigate(character[i]);
-                        break;
-
-                    case "3":
-                        character[i] = tellStories(character[i]);
-                        break;
                 }
-
             }
 
             RPG.ChessChallenge.wizardChessChallenge(character);
@@ -838,6 +901,14 @@ namespace RPG
                     character.score -= 1;
                     character.life -= 1;
 
+                    Console.WriteLine();
+                    Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                    Console.ReadLine();
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
+
                 }
             }
 
@@ -857,7 +928,15 @@ namespace RPG
                 character.house.scoreRavenclaw += 1;
                 character.house.scoreGryffindor += 2;
                 character.score -= 1;
-                character.life += 1;
+                character.life -= 1;
+
+                Console.WriteLine();
+                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
 
             }

@@ -19,8 +19,8 @@ namespace RPG
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Ao chegar no fim do labirinto, vocês percebem que os desafios estavam mais |");
-            Console.WriteLine("| perigosos e mortais do que deveriam. Algumas já se perderam até aqui, e       |");
-            Console.WriteLine("| alguns já foram desclassificados ou estão gravemente feridos. Apenas aqueles  |");
+            Console.WriteLine("| perigosos e mortais do que deveriam. Alguns já se perderam até aqui, e        |");
+            Console.WriteLine("| outros já foram desclassificados ou estão gravemente feridos. Apenas aqueles  |");
             Console.WriteLine("| com título de maior pontuador no torneio estão próximos! Porém, vocês não     |");
             Console.WriteLine("| estão sozinhos. Uma figura misteriosa se coloca frente a vocês, impedindo que |");
             Console.WriteLine("| que saiam dessa disputa.                                                      |");
@@ -54,7 +54,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você tem uma escolha importante a tomar:                                   |");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|   (1) Você deseja sair correndo ?                                             |");
+                Console.WriteLine("|   (1) Você deseja sair correndo?                                              |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|   (2) Voce deseja duelar?                                                     |");
                 Console.WriteLine("|                                                                               |");
@@ -80,6 +80,7 @@ namespace RPG
 
                     case "2":
                         character[i] = wandChoice(character[i]);
+                        character[i] = wandDuel(character[i]);
                         break;
 
                 }
@@ -197,19 +198,88 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            // static string resultAttack = spellAttack(diceValue);
-            // static string resultDefense = spellDefense(diceValue);
 
-            // Console.WriteLine();
-            // Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
-            // Console.ReadLine();
-            // diceValue = RPG.Dice.throwDice();
-            // Console.WriteLine($"O Valor do dado é {diceValue}");
-            // Console.WriteLine($"Amos lançou o feitiço {resultAttack}");
+            Console.WriteLine();
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+            Console.ReadLine();
 
-            // Console.WriteLine();
-            // Console.WriteLine("Pressione ENTER para lançar o feitiço de defesa");
-            // Console.ReadLine();
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            Console.WriteLine($"{character}, você lançou o feitiço...");
+            string resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine(resultDefense);
+
+            Console.WriteLine($"Amos contra-ataca e lança o feitiço!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            string resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            Console.WriteLine();
+            Console.WriteLine("Rápido!Pressione ENTER para lançar o feitiço de defesa");
+            Console.ReadLine();
+
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine($"{character}, você lançou o feitiço para se defender...");
+            Console.WriteLine(resultDefense);
+
+            Console.WriteLine();
+            Console.WriteLine($"Os animos estão ruins para o seu lado, Amos parece cada vez mais nervoso e ataca novamente!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            Console.WriteLine($"{character}, está cada vez mais complicado para se defender!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            Console.WriteLine($"Amos tenta se defender do seu contra-golpe com um feitiço!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine($"{resultDefense}");
+
+            Console.WriteLine($"{character}, você sente que o jogo está virando! Lançou o feitiço!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            Console.WriteLine($"Amos está ficando cansado, lançou o feitiço bem devagar!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine($"{resultDefense}");
+
+            Console.WriteLine($"Em sequencia, lançou um feitiço de ataque pra tentar acabar com o duelo!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine($"{character}, você se defende!");
+            Console.WriteLine(resultDefense);
+
+            Console.WriteLine($"{character}, com um último golpe você encerrou o duelo!");
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultAttack = RPG.Update.spellAttack(diceValue);
+            Console.WriteLine($"{resultAttack}");
+
+            diceValue = RPG.Dice.throwDice();
+            Console.WriteLine($"O Valor do dado é {diceValue}");
+            resultDefense = RPG.Update.spellDefense(diceValue);
+            Console.WriteLine("Em uma tentativa final, Amos se defende!");
+            Console.WriteLine(resultDefense);
+
             // diceValuePlayer = RPG.Dice.throwDice();
             // Console.WriteLine($"O Valor do dado é {diceValue}");
             // Console.WriteLine($"{character}, lançou o feitiço {resultDefense}");
