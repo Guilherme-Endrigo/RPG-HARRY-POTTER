@@ -2,7 +2,12 @@
 <h4>Um jogo RPG no universo de Harry Potter totalmente virtual construído em C#</h4>
 
 <h2 id="sobre">Sobre</h2>
-O RPG HP em C# é um Role Playing Game do universo de Harry Potter durante a primeira edição pós-guerra do Torneio Tribruxo. Nele, os jogadores terão que enfrentar diversos desafios mágicos para conquistar o Cálice de Fogo, criando uma narrativa automaticamente que, no RPG tradicional, seria criada pelo Mestre.
+O RPG HP em C# é um Role Playing Game que se passa no universo pós-guerra de Harry Potter. Nele, os jogadores terão que enfrentar diversos desafios mágicos num Torneio Tribruxo reformulado para conquistar o Cálice de Fogo.
+
+<h3>  RPG HP C#              !=              RPG Tradicional</h3>
+Narrativa já elaborada.                 Narrativa criada pelo mestre.
+Dado virtual que roda automaticamente.  Dado físico rodado pelos jogadores.
+Jogadores inifinitos.                   Jogadores limitados.
 
 - jogadores inifinitos
 - dado de 20 lados
@@ -17,8 +22,8 @@ O RPG HP em C# é um Role Playing Game do universo de Harry Potter durante a pri
    * <a href="#tabela">Tabela de conteúdo</a>
    * <a href="#instalacao">Instalação</a>
    * <a href="#como-usar">Como usar</a>
-      * [Pre Requisitos](#pre-requisitos)
-      * [Local files](#local-files)
+      * <a href="#pre-requisitos">Pré-requisitos</a>
+      * <a href="#tabela">Arquivos locais</a>
       * [Remote files](#remote-files)
       * [Multiple files](#multiple-files)
       * [Combo](#combo)
