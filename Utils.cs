@@ -361,6 +361,7 @@ namespace RPG
             model.hasMap = false;
             model.hasPotion = false;
             model.isBlocked = false;
+            model.sphinxAnswer = false;
             model.hasSucceedSabotage = false;
             model.house = createHouse(_idChar);
 
@@ -485,6 +486,7 @@ namespace RPG
             return charChoice;
 
         }
+
         public static string spellAttack(int diceValue)
         {
             if (diceValue > 6 && diceValue < 11)
@@ -525,6 +527,23 @@ namespace RPG
             }
         }
 
+        public static List<Character> biggestScore(List<Character> characters)
+        {
+            List<Character> draw = new List<Character>();
+            for (int i = 0; i < characters.Count; i++)
+            {
+                int biggestScore = 0;
+
+
+                if (biggestScore < characters[i].score)
+                {
+                    biggestScore = characters[i].score;
+                }
+
+            }
+            return draw;
+
+        }
     }
 
 }

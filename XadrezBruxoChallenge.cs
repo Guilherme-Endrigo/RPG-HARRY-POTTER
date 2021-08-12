@@ -441,7 +441,8 @@ namespace RPG
                         break;
                 }
             }
-            RPG.Lake.lakeChallenge(character);
+
+            RPG.Maze.mazeChallenge(character);
         }
         //---------> OPÇÃO 1 <---------
         static Character mainHallParty(Character character)

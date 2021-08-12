@@ -252,7 +252,6 @@ namespace RPG
                     Console.WriteLine("Pressione ENTER para continuar");
                     Console.ReadLine();
 
-                    //ravenclaw++; acho q n merece
                 }
                 else
                 {

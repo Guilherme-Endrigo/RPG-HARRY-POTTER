@@ -8,7 +8,7 @@ namespace RPG
     {
 
         static int diceValue;
-        static int diceValuePlayer;
+
         public static void epilogue(List<Character> character)
         {
             // if (Jogador1.pontos == Jogador2.pontos) ;
@@ -340,6 +340,7 @@ namespace RPG
 
             return character;
         }
+        
         public static void endTheGame(List<Character> character)
         {
 
@@ -410,6 +411,31 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para continuar: ");
             Console.ReadLine();
 
+            selectorHat(character);
+
+            foreach (var player in character)
+            {
+
+                string alive = player.isAlive == true ? "Está vivo" : "Está morto/desclassificado";
+
+                Console.WriteLine($"Parabéns! {player.name}");
+                Console.WriteLine($"Casa do participante: {player.house.houseName}");
+                Console.WriteLine($"Sua pontuação no torneio: {player.score}");
+                Console.WriteLine($"Pontos de vida: {player.life}");
+                Console.WriteLine($"Sobreviveu ao torneio: {alive}");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.ReadLine();
+
+            }
+
+
+        }
+
+        public static void selectorHat(List<Character> character)
+        {
+
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                 UMA SURPRESA                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -435,6 +461,8 @@ namespace RPG
 
             if (hufflePuff != null)
             {
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    LUFA-LUFA                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -442,7 +470,7 @@ namespace RPG
                 foreach (var charHouse in hufflePuff)
                 {
 
-                    Console.Write($"                               {charHouse.name},                               ");
+                    Console.WriteLine($"                               {charHouse.name}                               ");
                 }
 
                 Console.WriteLine("|                                                                               |");
@@ -454,6 +482,8 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                Console.ResetColor();
+
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar: ");
                 Console.ReadLine();
@@ -464,13 +494,14 @@ namespace RPG
 
             if (ravenclaw != null)
             {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    CORVINAL                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 foreach (var charHouse in ravenclaw)
                 {
 
-                    Console.Write($"                               {charHouse.name},                               ");
+                    Console.WriteLine($"                               {charHouse.name}                               ");
                 }
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Como vocês já sabem, foram sorteados para a Corvinal! Se destacam por sua  |");
@@ -480,6 +511,8 @@ namespace RPG
                 Console.WriteLine("|  devido a essa forma de enxergar o mundo.                                     |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.ResetColor();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar: ");
@@ -491,13 +524,15 @@ namespace RPG
 
             if (gryffindor != null)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
+
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   GRIFINÓRIA                                   |");
                 Console.WriteLine("|------------------------------------------------------------------------------- |");
                 foreach (var charHouse in gryffindor)
                 {
 
-                    Console.Write($"                                {charHouse.name},                               ");
+                    Console.WriteLine($"                                {charHouse.name}                               ");
                 }
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine("|    Para os destemidos de plantão, irão para a Grifinória! São de extrema       |");
@@ -506,6 +541,8 @@ namespace RPG
                 Console.WriteLine("|  mesmo assim, precisa de coragem e inspiração de bruxos como vocês             |");
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.ResetColor();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar: ");
@@ -516,13 +553,14 @@ namespace RPG
 
             if (slytherin != null)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   SONSERINA                                    |");
                 Console.WriteLine("|------------------------------------------------------------------------------- |");
                 foreach (var charHouse in slytherin)
                 {
 
-                    Console.Write($"                               {charHouse.name},                               ");
+                    Console.WriteLine($"                               {charHouse.name}                               ");
                 }
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine("|    Vocês que competiram com garra até o final, tentando sempre o seu melhor,   |");
@@ -535,12 +573,15 @@ namespace RPG
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                Console.ResetColor();
+
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar: ");
                 Console.ReadLine();
             }
 
         }
+
     }
 }
 

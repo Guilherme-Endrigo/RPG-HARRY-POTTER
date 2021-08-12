@@ -53,7 +53,7 @@ namespace RPG
         }
         public static void startGame()
         {
-            // Console.ForegroundColor = ConsoleColor.Red;
+
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                UM NOVO ANO!                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -214,9 +214,6 @@ namespace RPG
 
         public static void firstBreak(List<Character> character)
         {
-            //Console.BackgroundColor = ConsoleColor.Red;
-            //Console.ResetColor(); //quando quiser parar de colorir
-
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
@@ -273,7 +270,7 @@ namespace RPG
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 0, 0, 1, 0);
-                        //character[i].house.scoreSlytherin += 1;
+
 
                         break;
                     case "2":
@@ -288,7 +285,7 @@ namespace RPG
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 0, 1, 0, 0);
-                        //corvinal++;
+
                         break;
                     case "3":
                         Console.WriteLine();

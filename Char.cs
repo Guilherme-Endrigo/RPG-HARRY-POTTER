@@ -21,7 +21,9 @@ namespace RPG
 
         public bool isBlocked { get; set; }
 
-        public bool hasSucceedSabotage {get; set;}
+        public bool hasSucceedSabotage { get; set; }
+
+        public bool sphinxAnswer { get; set; }
 
         public House house { get; set; }
 
