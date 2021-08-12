@@ -4,7 +4,11 @@ namespace RPG
 {
     class Maze
     {
-        public static void mazeChallenge()
+      public static int dice;
+      public static List<Character> charactersWithMap = new List<Character>();
+      public static List<Character> charactersWithoutMap = new List<Character>();
+      public static List<Character> charactersSphinx = new List<Character>();
+        public static void mazeChallenge(List<Character> characters)
         {
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -24,15 +28,24 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
-            //hasMap=true
-            // if (hasMap) {
+          for (int i = 0; i < characters.Count; i++) {
+            if (characters[i].hasMap) {
+              charactersWithMap.Add(characters[i]);
+            } else {
+              charactersWithoutMap.Add(characters[i]);
+            }
+          }
+
+          if (charactersWithMap.Any()) {
+          for (int a = 0; a < charactersWithMap.Count; a++) {
+          Console.WriteLine($"JOGADOR ATUAL: {charactersWithMap[a].name}:");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                   LABIRINTO                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|                                 Mapa do Maroto                                |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Ah, que incrível! Você possui o Mapa do Maroto e tem a vantagem de saber   |");
+            Console.WriteLine($"|    Ah, que incrível! Você possui o Mapa do Maroto e tem a vantagem de saber  |");
             Console.WriteLine("| qual o melhor caminho do labirinto e onde os seus concorrentes estão! Siga    |");
             Console.WriteLine("| direto para o final ou escolha enfrentar os desafios:                         |");
             Console.WriteLine("|                                                                               |");
@@ -43,153 +56,44 @@ namespace RPG
 
             Console.WriteLine();
             int optionMap;
-            do
-            {
-                Console.Write("Sua escolha é: ");
-                optionMap = Int32.Parse(Console.ReadLine());
-                if (optionMap != 1 && optionMap != 2) Console.WriteLine("Opção inválida");
+            do {
+              Console.Write("Sua escolha é: ");
+              optionMap = Int32.Parse(Console.ReadLine());
+              if (optionMap == 2) {
+                charactersWithMap.Remove(characters[a]);
+                charactersWithoutMap.Add(characters[a]);
+              }
+              if (optionMap != 1 && optionMap != 2) Console.WriteLine("Opção inválida");
             } while (optionMap != 1 && optionMap != 2);
+          }
+          }
 
-            switch (optionMap)
-            {
-                case 1:
+            if (charactersWithMap.Any()) {
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                   LABIRINTO                                   |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|                                 Mapa do Maroto                                |");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Sábia decisão, querido bruxo, você pulou [QUASE] todos os obstáculos do    |");
-                    Console.WriteLine("| labirinto... Infelizmente, nem o Mapa poderia ter previsto a presença da      |");
-                    Console.WriteLine("| enigmática Esfinge ao final do labirinto. Como guerreiro, resta a você en-    |");
-                    Console.WriteLine("| frentar esse desafio.                                                         |");
+                    Console.WriteLine("|    Sábia decisão, querido bruxo, você pulou QUASE todos os obstáculos do la-  |");
+                    Console.WriteLine("| birinto... Infelizmente, nem o Mapa poderia ter previsto a presença da eni-   |");
+                    Console.WriteLine("| gmática Esfinge ao final do labirinto. Como guerreiro, resta a você enfren-   |");
+                    Console.WriteLine("| tar esse desafio. Se você está jogando com um ou mais amigos, espere que ele  |");
+                    Console.WriteLine("| enfrente os desafios e labirinto e, então, vocês enfrentarão o último desafio.|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                     Console.WriteLine();
-                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.WriteLine($"Pressione ENTER para continuar");
                     Console.ReadLine();
-
-                    sphinxChallenge();
-                    break;
-                case 2:
-                    mazeDirections();
-                    break;
             }
-            // } else {
-            mazeDirections();
-            // }
+            mazeDirections(charactersWithoutMap);
+          }
 
-            static void sphinxChallenge()
+
+            static void mazeDirections(List<Character> charactersWithoutMap)
             {
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                   LABIRINTO                                   |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|                              Desafio da Esfinge                               |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    De acordo com o Ministério da Magia, a Esfinge é uma criatura mágica nati- |");
-                Console.WriteLine("| va do Egito que tem a cabeça de um humano e o corpo do leão. Esfinges são     |");
-                Console.WriteLine("| capazes de fala humana e são conhecidas por seu amor por quebra-cabeças,      |");
-                Console.WriteLine("| enigmas e charadas.                                                           |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar");
-                Console.ReadLine();
-
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                   LABIRINTO                                   |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|                              Desafio da Esfinge                               |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Quando o Ministério da Magia começou a categorizar criaturas mágicas, a    |");
-                Console.WriteLine("| Esfinge foi colocada na categoria fera e não na categorseria, devido às suas |");
-                Console.WriteLine("| tendências violentas. Mas, não se preocupe, aqui você não precisará enfrentar |");
-                Console.WriteLine("| a força física dela, mas a sua mente. Será que você dá conta do recado?       |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar");
-                Console.ReadLine();
-
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                   LABIRINTO                                   |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|                               Enigma da Esfinge                               |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Responda à seguinte charada para continuar o seu caminho:                  |");
-                Console.WriteLine("|    Se ao meu encontro vier, os olhos deve fechar. Caso contrário, bruxão, a   |");
-                Console.WriteLine("| morte te levará! Quem sou eu?                                                 |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| (1) VOLDEMORT                                                                 |");
-                Console.WriteLine("| (2) BASILISCO                                                                 |");
-                Console.WriteLine("| (3) HIPOGRIFO                                                                 |");
-                Console.WriteLine("| (4) NAGINI                                                                    |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                Console.WriteLine();
-                int optionSphinx;
-                do
-                {
-                    Console.Write("Sua resposta é: ");
-                    optionSphinx = Int32.Parse(Console.ReadLine());
-                    if (optionSphinx != 1 && optionSphinx != 2 && optionSphinx != 3 && optionSphinx != 4) Console.WriteLine("Opção inválida");
-                } while (optionSphinx != 1 && optionSphinx != 2 && optionSphinx != 3 && optionSphinx != 4);
-
-                switch (optionSphinx)
-                {
-                    case 2:
-                        //score++; life++; Ravenclaw++; Gryffindor++; Hufflepuff++; Slytherin++;
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                   LABIRINTO                                   |");
-                        Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|                               Enigma da Esfinge                               |");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|    Uau! Esse momento foi tenso, hein? Mas você conseguiu superar a feroz Es-  |");
-                        Console.WriteLine("| finge e o seu enigma. Parabéns! Por isso, você ganhou um score e uma vida! Se |");
-                        Console.WriteLine("| houver um vencedor no jogo, você vai descobrir quem é agora. Se houver em-    |");
-                        Console.WriteLine("| pate, prepare-se para mais um desafio...                                      |");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione ENTER para continuar");
-                        Console.ReadLine();
-                        break;
-                    case 1:
-                    case 3:
-                    case 4:
-                        //score--; life--; Slytherin++; Gryffindor++; Hufflepuff++;
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                   LABIRINTO                                   |");
-                        Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|                               Enigma da Esfinge                               |");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|    Humm… Não. Quem sabe da próxima vez? Você perdeu um score e uma vida :(,   |");
-                        Console.WriteLine("| mas conseguiu se livrar da Esfinge com menos um score e uma vida! Agora, cor- |");
-                        Console.WriteLine("| ra o mais rápido que puder para a saída do labirinto! Se houver um vencedor   |");
-                        Console.WriteLine("| no jogo, você vai descobrir quem é agora. Se houver empate, prepare-se para   |");
-                        Console.WriteLine("| mais um desafio...                                                            |");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione ENTER para continuar");
-                        Console.ReadLine();
-                        break;
-                }
-            }
-
-            static void mazeDirections()
-            {
+              for (int i = 0; i < charactersWithoutMap.Count; i++) {
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -217,18 +121,21 @@ namespace RPG
                 switch (optionDirections)
                 {
                     case 1:
-                        devilsSnareMaze();
+                        charactersWithoutMap[i] = devilsSnareMaze(charactersWithoutMap[i]);
                         break;
                     case 2:
-                        blastEndedSkrewtMaze();
+                        charactersWithoutMap[i] = blastEndedSkrewtMaze(charactersWitouthMap[i]);
                         break;
                     case 3:
-                        boggartMaze();
+                        charactersWithoutMap[i] = boggartMaze(charactersWithoutMap[i]);
                         break;
                 }
+                }
 
-                static void devilsSnareMaze()
+
+                static Character devilsSnareMaze(Character character)
                 {
+                  Console.WriteLine($"JOGADOR ATUAL: {character.name}");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                 VISGO DO DIABO                                |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -257,147 +164,247 @@ namespace RPG
 
                     switch (optionDevilsSnareMaze)
                     {
-                        case 1:
-                        //Slytherin++; Hufflepuff++; Gryffindor++;
-                        //throwDice()
-                        //if success {
-                        //score++; life++; Ravenclaw++; 
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                        // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("|    Você conseguiu se livrar do Visgo! Continue seu caminho.                   |");
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        //}
-                        //if fail (else) {
-                        //score--; life--; Ravenclaw--; Hufflepuff++;
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                        // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("|    Você foi muito corajoso(a/e), mas não conseguiu realizar o feitiço. Tente  |");
-                        // Console.WriteLine("| outra estratégia:                                                             |");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("| (1) FICAR PARADO ATÉ O EFEITO PASSAR                                          |");
-                        // Console.WriteLine("| (2) GRITAR POR AJUDA E TORCER PARA QUE ALGUÉM APAREÇA                         |");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      case 1:
+                          character.house.scoreSlytherin++;
+                          character.house.scoreHufflePuff++;
+                          character.house.scoreGryffindor++;
 
-                        // Console.WriteLine();
-                        // int optionDevilsSnareMazeFail;
-                        // do {
-                        // Console.Write("Sua resposta é: ");
-                        // optionDevilsSnareMazeFail = Int32.Parse(Console.ReadLine());
-                        // if (optionDevilsSnareMazeFail != 1 && optionDevilsSnareMazeFail != 2 && optionDevilsSnareMazeFail != 3) Console.WriteLine("Opção inválida"); 
-                        // } while (optionDevilsSnareMazeFail != 1 && optionDevilsSnareMazeFail != 2 && optionDevilsSnareMazeFail != 3);
+                          dice = RPG.Dice.throwDice();
+                          Console.WriteLine("DADO LANÇADO!");
+                          Console.WriteLine($"Você tirou: {dice}");
 
-                        // switch (optionDevilsSnareMazeFail)
-                        //{
-                        //case 1:
-                        //isAlive = false;
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                        // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("|    O efeito não passa e você é engolido pela planta. Por isso, você é obriga- |");
-                        // Console.WriteLine("| do a desistir do jogo. Tchauzinho :(                                          |");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          if (dice >= 6 && dice <= 17) {
 
-                        // Console.WriteLine();
-                        // Console.WriteLine("Pressione ENTER para continuar");
-                        // Console.ReadLine();
-                        //break;
-                        //case 2:
-                        //throwDice()
-                        //ifSuccess {
-                        //score++; life++; Hufflepuff++; Ravenclaw++
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                        // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
-                        // Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou um score e uma life!      |");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          character.house.scoreRavenclaw++;
+                          character.score++;
+                          character.life++;
 
-                        // Console.WriteLine();
-                        // Console.WriteLine("Pressione ENTER para continuar");
-                        // Console.ReadLine();
-                        //}
-                        //if fail (else) {
-                        //score--; life--;
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                        // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
-                        // Console.WriteLine("| culos do visgo com um estalo dos dedos.Mas você perdeu um score e uma life :( |");
-                        // Console.WriteLine("|                                                                               |");
-                        // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|  Você conseguiu se livrar do Visgo! Continue seu caminho com +1 vida e ponto. |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          
+                          } else if (dice >= 18) {
 
-                        // Console.WriteLine();
-                        // Console.WriteLine("Pressione ENTER para continuar");
-                        // Console.ReadLine();
-                        //}
-                        //break;
-                        //}
-                        case 2:
-                            //score--; life--; Hufflepuff++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    O efeito não passa e você é totalmente preso pela planta, ficando sem mo-  |");
-                            // Console.WriteLine("| vimentos e impossibilitado de sequer fazer um feitiço direcionado à planta.   |");
-                            // Console.WriteLine("| Sua única saída é emitir o sinalizador vermelho e desistir do jogo. Tchauzi-  |");
-                            // Console.WriteLine("| nho :(                                                                        |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          character.house.scoreRavenclaw++;
+                          character.score += 2;
+                          character.life++;
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|Você conseguiu se livrar do Visgo! Continue seu caminho com +1 vida e +2 pontos|");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          } else {
+                            
+                          character.house.scoreHufflePuff++;
+                          character.score--;
+                          character.life--;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    Você foi muito corajoso(a/e), mas não conseguiu realizar o feitiço. Tente  |");
+                          Console.WriteLine("| outra estratégia:                                                             |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("| (1) FICAR PARADO ATÉ O EFEITO PASSAR                                          |");
+                          Console.WriteLine("| (2) GRITAR POR AJUDA E TORCER PARA QUE ALGUÉM APAREÇA                         |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          int optionDevilsSnareMazeFail;
+                          do {
+                          Console.Write("Sua resposta é: ");
+                          optionDevilsSnareMazeFail = Int32.Parse(Console.ReadLine());
+                          if (optionDevilsSnareMazeFail != 1 && optionDevilsSnareMazeFail != 2 && optionDevilsSnareMazeFail != 3) Console.WriteLine("Opção inválida"); 
+                          } while (optionDevilsSnareMazeFail != 1 && optionDevilsSnareMazeFail != 2 && optionDevilsSnareMazeFail != 3);
+
+                          switch (optionDevilsSnareMazeFail)
+                          {
+                          case 1:
+                          
+                          character.isAlive = false;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    O efeito não passa e você é engolido pela planta. Por isso, você é obriga- |");
+                          Console.WriteLine("| do a desistir do jogo. Tchauzinho :(                                          |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          Console.WriteLine("Pressione ENTER para continuar");
+                          Console.ReadLine();
+                          break;
+                          case 2:
+
+                          dice = RPG.Dice.throwDice();
+                          Console.WriteLine("DADO LANÇADO!");
+                          Console.WriteLine($"Você tirou: {dice}");
+
+                          if (dice >= 6 && dice <= 17) {
+                            
+                          character.house.scoreHufflePuff++;
+                          character.house.scoreRavenclaw++;
+                          character.score++;
+                          character.life++;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                          Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou um ponto e uma vida!      |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          Console.WriteLine("Pressione ENTER para continuar");
+                          Console.ReadLine();
+
+                          } else if (dice >= 18) {
+
+                          character.house.scoreHufflePuff++;
+                          character.house.scoreRavenclaw++;
+                          character.score += 2;
+                          character.life++;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                          Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou 2 pontos e uma vida!      |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          Console.WriteLine("Pressione ENTER para continuar");
+                          Console.ReadLine();
+
+                          
+                          } else {
+                            
+                          character.score--;
+                          character.life--;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                          Console.WriteLine("| culos do visgo com um estalo dos dedos.Mas você perdeu um score e uma life :( |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          Console.WriteLine("Pressione ENTER para continuar");
+                          Console.ReadLine();
+                          }
+                          break;
+                          }
+                        }
+                        break;
+                      case 2:
+                      
+                            character.score--;
+                            character.life--;
+                            character.house.scoreHufflePuff++;
+
+                            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                            Console.WriteLine("|-------------------------------------------------------------------------------|");
+                            Console.WriteLine("|                                                                               |");
+                            Console.WriteLine("|    O efeito não passa e você é totalmente preso pela planta, ficando sem mo-  |");
+                            Console.WriteLine("| vimentos e impossibilitado de sequer fazer um feitiço direcionado à planta.   |");
+                            Console.WriteLine("| Sua única saída é emitir o sinalizador vermelho e desistir do jogo. Tchauzi-  |");
+                            Console.WriteLine("| nho :(                                                                        |");
+                            Console.WriteLine("|                                                                               |");
+                            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                            Console.WriteLine();
+                            Console.WriteLine("Pressione ENTER para continuar");
+                            Console.ReadLine();
                             break;
-                        case 3:
-                            //Hufflepuff++;
-                            //throwDice()
-                            //if success {
-                            //score++; life++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
-                            // Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou um score e uma life!      |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      case 3:
+                            
+                            character.house.scoreHufflePuff++;
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
-                            //if fail (else) {
-                            //score--; life--;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                 VISGO DO DIABO                                |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
-                            // Console.WriteLine("| culos do visgo com um estalo dos dedos.Mas você perdeu um score e uma life :( |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            dice = RPG.Dice.throwDice();
+                            Console.WriteLine("DADO LANÇADO!");
+                            Console.WriteLine($"Você tirou: {dice}");
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
+                            if (dice >= 6 && dice <= 17) {
+                              
+                              character.score++;
+                              character.life++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                              Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou um ponto e uma vida!      |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            } else if (dice >= 18) {
+
+                            character.score++;
+                            character.life++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                              Console.WriteLine("| culos do visgo com um estalo dos dedos. Você ganhou 2 pontos e uma vida!      |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            
+                            } else {
+                              
+                              character.score--;
+                              character.life--;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                 VISGO DO DIABO                                |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    PUFF! Dobby aparece e atende o seu pedido de ajuda, tirando-te dos tentá-  |");
+                              Console.WriteLine("| culos do visgo com um estalo dos dedos.Mas você perdeu um score e uma life :( |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            }
                             break;
                     }
+
+                    return character;
                 }
 
-                static void blastEndedSkrewtMaze()
+                static Character blastEndedSkrewtMaze(Character character)
                 {
+                  Console.WriteLine($"JOGADOR ATUAL: {character.name}");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                   EXPLOSIVIM                                  |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -424,140 +431,267 @@ namespace RPG
                     switch (optionBlastEndedSkrewt)
                     {
                         case 1:
-                            //throwDice()
-                            //if success {
-                            //score++; life++; Gryffindor++; Ravenclaw++; Slytherin++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Uau, que batalha, hein? Siga o seu caminho, guerreiro... E ganhe um score  |");
-                            // Console.WriteLine("| e uma life por isso!                                                          |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            dice = RPG.Dice.throwDice();
+                            Console.WriteLine("DADO LANÇADO!");
+                            Console.WriteLine($"Você tirou: {dice}");
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
-                            //if fail (else) {
-                            //score--; life--; Hufflepuff++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Eita, você não conseguiu petrificar o explosivim e perdeu um score! Mas    |");
-                            // Console.WriteLine("| pode tentar fugir...                                                          |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            if (dice >= 6 && dice <= 17) {
+                              
+                            character.score++;
+                            character.life++;
+                            character.house.scoreGryffindor++;
+                            character.house.scoreRavenclaw++;
+                            character.house.scoreSlytherin++;
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Uau, que batalha, hein? Siga o seu caminho, guerreiro... E ganhe um score  |");
+                              Console.WriteLine("| e uma life por isso!                                                          |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                            //throwDice()
-                            //if success {
-                            //score++; life++; Slytherin++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou um score e uma life! Boa, bru- |");
-                            // Console.WriteLine("| xão, continue seu caminho no labirinto!                                       |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
-                            //if fail (else) {
-                            //isAlive=false;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Você não foi rápido o suficiente, o explosivim te atacou e você morreu!    |");
-                            // Console.WriteLine("| Sinto muito :(                                                                |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            } else if (dice >= 18) {
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
+                            character.score += 2;
+                            character.life++;
+                            character.house.scoreGryffindor++;
+                            character.house.scoreRavenclaw++;
+                            character.house.scoreSlytherin++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Uau, que batalha, hein? Siga o seu caminho, guerreiro... E ganhe 2 pontos  |");
+                              Console.WriteLine("| e uma vida por isso!                                                          |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            
+                            } else {
+                              
+                            character.score--;
+                            character.life--;
+                            character.house.scoreHufflePuff++;
+                            
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Eita, você não conseguiu petrificar o explosivim e perdeu um score! Mas    |");
+                              Console.WriteLine("| pode tentar fugir...                                                          |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            dice = RPG.Dice.throwDice();
+                            Console.WriteLine("DADO LANÇADO!");
+                            Console.WriteLine($"Você tirou: {dice}");
+
+                            if (dice >= 6 && dice <= 17) {
+                              
+                            character.score++;
+                            character.life++;
+                            character.house.scoreSlytherin++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou um ponto e uma vida! Boa, bru- |");
+                              Console.WriteLine("| xão, continue seu caminho no labirinto!                                       |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            } else if (dice >= 18) {
+
+                            character.score += 2;
+                            character.life++;
+                            character.house.scoreSlytherin++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou 2 pontos e uma vida! Boa, bru- |");
+                              Console.WriteLine("| xão, continue seu caminho no labirinto!                                       |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            
+                            } else {
+                              
+                              character.isAlive = false;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você não foi rápido o suficiente, o explosivim te atacou e você morreu!    |");
+                              Console.WriteLine("| Sinto muito :(                                                                |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            }
                             break;
+                            }
                         case 2:
-                            //score--;
-                            //throwDice()
-                            //if success {
-                            //score++; life++; Slytherin++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou um score e uma life! Continue  |");
-                            // Console.WriteLine("| no labirinto.                                                                 |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            
+                            character.score--;
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
-                            //if fail (else) {
-                            //score--; life--; Hufflepuff++:
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Você não conseguiu fugir do explosivim, ele te alcança e você é obrigado a |");
-                            // Console.WriteLine("| lutar.                                                                        |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                            dice = RPG.Dice.throwDice();
+                            Console.WriteLine("DADO LANÇADO!");
+                            Console.WriteLine($"Você tirou: {dice}");
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
+                            if (dice >= 6 && dice <= 17) {
+                              
+                            character.score++;
+                            character.life++;
+                            character.house.scoreSlytherin++;
 
-                            //throwDice()
-                            //if success {
-                            //life++; score++; Ravenclaw++; Gryffindor++;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Uhuul, você venceu esse bicho metade caranguejo-de-fogo e metade Mantícora |");
-                            // Console.WriteLine("| e ganhou um score e uma life por isso! Siga seu caminho, bruxão!              |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou um ponto e uma vida! Continue  |");
+                              Console.WriteLine("| no labirinto.                                                                 |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
-                            //if fail (else) {
-                            //isAlive=false;
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                            // Console.WriteLine("|                                   EXPLOSIVIM                                  |");
-                            // Console.WriteLine("|-------------------------------------------------------------------------------|");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine("|    Oops, você não conseguiu fugir do explosivim, ele te atacou e você morreu. |");
-                            // Console.WriteLine("| Tente novamente mais tarde!                                                   |");
-                            // Console.WriteLine("|                                                                               |");
-                            // Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
 
-                            // Console.WriteLine();
-                            // Console.WriteLine("Pressione ENTER para continuar");
-                            // Console.ReadLine();
-                            //}
+                            } else if (dice >= 18) {
+
+                            character.score += 2;
+                            character.life++;
+                            character.house.scoreSlytherin++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você conseguiu fugir do explosivim e ganhou 2 pontos e uma vida! Continue  |");
+                              Console.WriteLine("| no labirinto.                                                                 |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            } else {
+                              
+                            character.score--;
+                            character.life--;
+                            character.house.scoreHufflePuff++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Você não conseguiu fugir do explosivim, ele te alcança e você é obrigado a |");
+                              Console.WriteLine("| lutar.                                                                        |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            dice = RPG.Dice.throwDice();
+                            Console.WriteLine("DADO LANÇADO!");
+                            Console.WriteLine($"Você tirou: {dice}");
+
+                            if (dice >= 6 && dice <= 17) {
+                              
+                            character.life++;
+                            character.score++;
+                            character.house.scoreRavenclaw++;
+                            character.house.scoreGryffindor++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Uhuul, você venceu esse bicho metade caranguejo-de-fogo e metade Mantícora |");
+                              Console.WriteLine("| e ganhou um ponto e uma vida por isso! Siga seu caminho, bruxão!              |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+
+                            } else if (dice >= 18) {
+
+                            character.life++;
+                            character.score += 2;
+                            character.house.scoreRavenclaw++;
+                            character.house.scoreGryffindor++;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Uhuul, você venceu esse bicho metade caranguejo-de-fogo e metade Mantícora |");
+                              Console.WriteLine("| e ganhou 2 pontos e uma vida por isso! Siga seu caminho, bruxão!              |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            
+                            } else {
+                              
+                            character.isAlive = false;
+
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+                              Console.WriteLine("|-------------------------------------------------------------------------------|");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine("|    Oops, você não conseguiu fugir do explosivim, ele te atacou e você morreu. |");
+                              Console.WriteLine("| Tente novamente mais tarde!                                                   |");
+                              Console.WriteLine("|                                                                               |");
+                              Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                              Console.WriteLine();
+                              Console.WriteLine("Pressione ENTER para continuar");
+                              Console.ReadLine();
+                            }
                             break;
                     }
+
+                    return character;
                 }
 
-                static void boggartMaze()
+                static void boggartMaze(Character character)
                 {
-
+                  Console.WriteLine($"JOGADOR ATUAL: {character.name}");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                   BICHO PAPÃO                                 |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -603,43 +737,67 @@ namespace RPG
                     int optionBoggart;
                     do
                     {
-                        Console.Write("Sua resposta é: ");
-                        optionBoggart = Int32.Parse(Console.ReadLine());
-                        if (optionBoggart != 1 && optionBoggart != 2 && optionBoggart != 3) Console.WriteLine("Opção inválida");
+                      Console.Write("Sua resposta é: ");
+                      optionBoggart = Int32.Parse(Console.ReadLine());
+                      if (optionBoggart != 1 && optionBoggart != 2 && optionBoggart != 3) Console.WriteLine("Opção inválida");
                     } while (optionBoggart != 1 && optionBoggart != 2 && optionBoggart != 3);
 
                     switch (optionBoggart)
                     {
                         case 1:
-                            //Ravenclaw++; Slytherin++; Gryffindor++;
-                            //throwDice();
+                        
+                            character.house.scoreRavenclaw++;
+                            character.house.scoreSlytherin++;
+                            character.house.scoreGryffindor++;
 
-                            //se success()
-                            case1Boggart();
+                            case1Boggart(character);
                             break;
                         case 2:
-                            Case2Boggart();
+                            Case2Boggart(character);
                             break;
                         case 3:
-                            case3Boggart();
+                            case3Boggart(character);
                             break;
                     }
 
-                    static void case1Boggart()
+                    static void case1Boggart(Character character)
                     {
+                      dice = RPG.Dice.throwDice();
+                      Console.WriteLine("DADO LANÇADO!");
+                      Console.WriteLine($"Você tirou: {dice}");
 
-                        //se success
-                        //score++; life++;
+                      if (dice >= 6 && dice <= 17) {
+
+                        character.score++;
+                        character.life++;
+
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                    BICHO PAPÃO                                |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                        Console.WriteLine("| rinto com mais um score e uma vida.                                           |");
+                        Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      
+                      } else if (dice >= 18) {
 
-                        //se fail()
-                        //score--; life--; Hufflepuff--;
+                        character.score+=2;
+                        character.life++;
+
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
+                        Console.WriteLine("| rinto com mais 2 pontos score e uma vida.                                     |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      
+                      
+                      } else {
+                        
+                        character.score--;
+                        character.life--;
+                        
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                    BICHO PAPÃO                                |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -648,31 +806,65 @@ namespace RPG
                         Console.WriteLine("| mente.                                                                        |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                        //throwDice()
-                        //se sucess()
-                        //score++; Ravenclaw++; life++; Slytherin++; Gryffindor++; Hufflepuff++;
+                      dice = RPG.Dice.throwDice();
+                      Console.WriteLine("DADO LANÇADO!");
+                      Console.WriteLine($"Você tirou: {dice}");
+
+                      if (dice >= 6 && dice <= 17) {
+                        
+                        character.score++;
+                        character.life++;
+                        character.house.scoreGryffindor++;
+                        character.house.scoreHufflePuff++;
+                        character.house.scoreRavenclaw++;
+                        character.house.scoreSlytherin++;
+
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                    BICHO PAPÃO                                |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                        Console.WriteLine("| rinto com mais um score e uma vida.                                           |");
+                        Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      
+                      } else if (dice >= 18) {
 
-                        //se fail()
-                        //isAlive=false;
+                        character.score+=2;
+                        character.life++;
+                        character.house.scoreGryffindor++;
+                        character.house.scoreHufflePuff++;
+                        character.house.scoreRavenclaw++;
+                        character.house.scoreSlytherin++;
+
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
+                        Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    
+                      } else {
+                        
+                        character.isAlive = false;
+
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                    BICHO PAPÃO                                |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tchauzinho :(   |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
+                      }
                     }
 
-                    static void Case2Boggart()
+                    return character;
+                    }
+
+                    static void Case2Boggart(Character character)
                     {
-                        //score--; life--;
+                        character.score--;
+                        character.life--;
+
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                    BICHO PAPÃO                                |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -696,18 +888,45 @@ namespace RPG
                         switch (optionBoggartCase2Boggart)
                         {
                             case 1:
-                                //throwDice()
-                                //se success()
-                                //score++; Ravenclaw++; life++; Slytherin++; Gryffindor++;
+                                dice = RPG.Dice.throwDice();
+                                Console.WriteLine("DADO LANÇADO!");
+                                Console.WriteLine($"Você tirou: {dice}");
+
+                                if (dice >= 6 && dice <= 17) {
+
+                                character.score++;
+                                character.life++;
+                                character.house.scoreGryffindor++;
+                                character.house.scoreHufflePuff++;
+                                character.house.scoreRavenclaw++;
+                                character.house.scoreSlytherin++;
+
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                                 Console.WriteLine("|                                    BICHO PAPÃO                                |");
                                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                                 Console.WriteLine("|                                                                               |");
                                 Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                                Console.WriteLine("| rinto com mais um score e uma vida.                                           |");
+                                Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              
+                              } else if (dice >= 18) {
 
-                                //se fail()
+                                character.score+=2;
+                                character.life++;
+                                character.house.scoreGryffindor++;
+                                character.house.scoreHufflePuff++;
+                                character.house.scoreRavenclaw++;
+                                character.house.scoreSlytherin++;
+
+                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                Console.WriteLine("|                                                                               |");
+                                Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
+                                Console.WriteLine("| rinto com mais 2 pontos score e uma vida.                                           |");
+                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+       
+                              } else {
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                                 Console.WriteLine("|                                    BICHO PAPÃO                                |");
                                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -715,108 +934,320 @@ namespace RPG
                                 Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tente novamente |");
                                 Console.WriteLine("|  mais tarde :(                                                                |");
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                break;
-
+                              }
+                            break;
                             case 2:
-                                //se success()
-                                //score++; life++;
+                              if (dice >= 6 && dice <= 17) {
+
+                                character.score++;
+                                character.life++;
+
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                                 Console.WriteLine("|                                    BICHO PAPÃO                                |");
                                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                                 Console.WriteLine("|                                                                               |");
                                 Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
-                                Console.WriteLine("| mais um score e uma vida.                                                     |");
+                                Console.WriteLine("| mais um ponto e uma vida.                                                     |");
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                              
+                              } else if (dice >= 18) {
 
-                                //se fail()
+                                character.score+=2;
+                                character.life++;
+
+                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                Console.WriteLine("|                                                                               |");
+                                Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
+                                Console.WriteLine("| mais 2 pontos e uma vida.                                                     |");
+                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                         
+
+                              } else {
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                                 Console.WriteLine("|                                    BICHO PAPÃO                                |");
                                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                                 Console.WriteLine("|                                                                               |");
                                 Console.WriteLine("| Você não conseguiu fugir, foi paralisado pelo medo e desmaiou. Sinto muito :( |");
                                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                break;
+                              }
+                            break;
                         }
 
+                    return character;
                     }
 
-                    static void case3Boggart()
+                    static void case3Boggart(Character character)
                     {
-                        //throwDice()
-                        //se success()
-                        //score++; life++;
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                        Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
-                        Console.WriteLine("| mais um score e uma vida.                                                     |");
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                      dice = RPG.Dice.throwDice();
+                      Console.WriteLine("DADO LANÇADO!");
+                      Console.WriteLine($"Você tirou: {dice}");
 
-                        //se fail()
-                        //score--
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                        Console.WriteLine("|-------------------------------------------------------------------------------|");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|    Você não conseguiu fugir do bicho papão (e perdeu um score), então é obri- |");
-                        Console.WriteLine("| gado a enfrentá-lo. Escolha a sua estratégia:                                 |");
-                        Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("| (1) Lançar feitiço Riddikulus                                                 |");
-                        Console.WriteLine("| (2) Lançar o feitiço Expectro Patronum                                        |");
-                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        if (dice>= 6 && dice <=17){
+                          
+                          character.score++;
+                          character.life++;
 
-                        Console.WriteLine();
-                        int optionBoggartcase3BoggartFail;
-                        do
-                        {
-                            Console.Write("Sua resposta é: ");
-                            optionBoggartcase3BoggartFail = Int32.Parse(Console.ReadLine());
-                            if (optionBoggartcase3BoggartFail != 1 && optionBoggartcase3BoggartFail != 2) Console.WriteLine("Opção inválida");
-                        } while (optionBoggartcase3BoggartFail != 1 && optionBoggartcase3BoggartFail != 2);
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
+                          Console.WriteLine("| mais um ponto e uma vida.                                                     |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        
+                        } else if (dice >= 18) {
 
-                        switch (optionBoggartcase3BoggartFail)
-                        {
-                            case 1:
-                                //throwDice()
-                                //se success()
-                                //score++; life++; Ravenclaw++; Hufflepuff++;
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                                Console.WriteLine("|                                                                               |");
-                                Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                                Console.WriteLine("| rinto com mais um score e uma vida.                                           |");
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          character.score+=2;
+                          character.life++;
 
-                                //se fail()
-                                //isAlive=false;
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                                Console.WriteLine("|                                                                               |");
-                                Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tente novamente |");
-                                Console.WriteLine("|  mais tarde :(                                                                |");
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                break;
-                            case 2:
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
+                          Console.WriteLine("| mais 2 pontos e uma vida.                                                     |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                                Console.WriteLine("|                                                                               |");
-                                Console.WriteLine("|    O feitiço não funcionou porque o bicho papão não é um dementador de        |");
-                                Console.WriteLine("| verdade e não pode ser derrotado com o Expecto Patronum. Você é paralisado    |");
-                                Console.WriteLine("| pelo medo e desmaia. Tente novamente mais tarde :(                            |");
-                                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                                break;
+                        
+                        } else {
+                          
+                          character.score--;
+
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                          Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                          Console.WriteLine("|-------------------------------------------------------------------------------|");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("|    Você não conseguiu fugir do bicho papão (e perdeu um score), então é obri- |");
+                          Console.WriteLine("| gado a enfrentá-lo. Escolha a sua estratégia:                                 |");
+                          Console.WriteLine("|                                                                               |");
+                          Console.WriteLine("| (1) Lançar feitiço Riddikulus                                                 |");
+                          Console.WriteLine("| (2) Lançar o feitiço Expectro Patronum                                        |");
+                          Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                          Console.WriteLine();
+                          int optionBoggartcase3BoggartFail;
+                          do
+                          {
+                              Console.Write("Sua resposta é: ");
+                              optionBoggartcase3BoggartFail = Int32.Parse(Console.ReadLine());
+                              if (optionBoggartcase3BoggartFail != 1 && optionBoggartcase3BoggartFail != 2) Console.WriteLine("Opção inválida");
+                          } while (optionBoggartcase3BoggartFail != 1 && optionBoggartcase3BoggartFail != 2);
+
+                          switch (optionBoggartcase3BoggartFail)
+                          {
+                              case 1:
+
+                                  dice = RPG.Dice.throwDice();
+                                  Console.WriteLine("DADO LANÇADO!");
+                                  Console.WriteLine($"Você tirou: {dice}");
+
+                                  if (dice >= 6 && dice <= 17){
+                                    
+                                  character.score++;
+                                  character.life++;
+                                  character.house.scoreRavenclaw++;
+                                  character.house.scoreHufflePuff++;
+
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                  Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                  Console.WriteLine("|                                                                               |");
+                                  Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
+                                  Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                                  } else if (dice >= 18) {
+
+                                  character.score+=2;
+                                  character.life++;
+                                  character.house.scoreRavenclaw++;
+                                  character.house.scoreHufflePuff++;
+
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                  Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                  Console.WriteLine("|                                                                               |");
+                                  Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
+                                  Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  
+                                  } else {
+
+                                  character.isAlive = false;
+
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                  Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                  Console.WriteLine("|                                                                               |");
+                                  Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tente novamente |");
+                                  Console.WriteLine("|  mais tarde :(                                                                |");
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  }
+                                  break;
+                              case 2:
+
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                                  Console.WriteLine("|-------------------------------------------------------------------------------|");
+                                  Console.WriteLine("|                                                                               |");
+                                  Console.WriteLine("|    O feitiço não funcionou porque o bicho papão não é um dementador de        |");
+                                  Console.WriteLine("| verdade e não pode ser derrotado com o Expecto Patronum. Você é paralisado    |");
+                                  Console.WriteLine("| pelo medo e desmaia. Tente novamente mais tarde :(                            |");
+                                  Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                                  break;
+                          }
                         }
-
                     }
 
                 }
+                return character;
             }
 
+        sphinxChallenge(characters);
         }
-    }
+  
+
+    static void sphinxChallenge(List<Character> characters)
+           {
+              List<int> answersSphinx = new List<int>();
+
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   LABIRINTO                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|                              Desafio da Esfinge                               |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|    De acordo com o Ministério da Magia, a Esfinge é uma criatura mágica nati- |");
+                Console.WriteLine("| va do Egito que tem a cabeça de um humano e o corpo do leão. Esfinges são     |");
+                Console.WriteLine("| capazes de fala humana e são conhecidas por seu amor por quebra-cabeças,      |");
+                Console.WriteLine("| enigmas e charadas.                                                           |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
+
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   LABIRINTO                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|                              Desafio da Esfinge                               |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|    Quando o Ministério da Magia começou a categorizar criaturas mágicas, a    |");
+                Console.WriteLine("| Esfinge foi colocada na categoria fera e não na categorseria, devido às suas |");
+                Console.WriteLine("| tendências violentas. Mas, não se preocupe, aqui você não precisará enfrentar |");
+                Console.WriteLine("| a força física dela, mas a sua mente. Será que você dá conta do recado?       |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
+
+              for (int i = 0; i < charactersSphinx.Count; i++) {
+                Console.WriteLine($"JOGADOR ATUAL: {charactersSphinx[i].name}");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   LABIRINTO                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|                               Enigma da Esfinge                               |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|    Responda à seguinte charada para continuar o seu caminho:                  |");
+                Console.WriteLine("|    Se ao meu encontro vier, os olhos deve fechar. Caso contrário, bruxão, a   |");
+                Console.WriteLine("| morte te levará! Quem sou eu?                                                 |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("| (1) VOLDEMORT                                                                 |");
+                Console.WriteLine("| (2) BASILISCO                                                                 |");
+                Console.WriteLine("| (3) HIPOGRIFO                                                                 |");
+                Console.WriteLine("| (4) NAGINI                                                                    |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.WriteLine();
+                int optionSphinx;
+                do
+                {
+                    Console.Write("Sua resposta é: ");
+                    optionSphinx = Int32.Parse(Console.ReadLine());
+                    if (optionSphinx != 1 && optionSphinx != 2 && optionSphinx != 3 && optionSphinx != 4) Console.WriteLine("Opção inválida");
+                } while (optionSphinx != 1 && optionSphinx != 2 && optionSphinx != 3 && optionSphinx != 4);
+
+                answersSphinx.Add(optionSphinx);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                   LABIRINTO                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|                          Resposta do enigma da Esfinge                        |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("|    Humm, será que você(s) acertou(aram)? Veremos agora...                     |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine();
+
+                for (int i = 0; i < answersSphinx.Count; i++) {
+                switch (optionSphinx)
+                {
+                    case 2:
+                    
+                        charactersSphinx[i].score++;
+                        charactersSphinx[i].life++;
+                        charactersSphinx[i].house.scoreRavenclaw++;
+                        charactersSphinx[i].house.scoreGryffindor++;
+                        charactersSphinx[i].house.scoreHufflePuff++;
+                        charactersSphinx[i].house.scoreSlytherin++;
+
+                        Console.WriteLine($"{charactersSphinx[i].name}:");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                   LABIRINTO                                   |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|                               Enigma da Esfinge                               |");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Uau! Esse momento foi tenso, hein? Mas você conseguiu superar a feroz Es-  |");
+                        Console.WriteLine("| finge e o seu enigma. Parabéns! Por isso, você ganhou um ponto e uma vida! Se |");
+                        Console.WriteLine("| houver um vencedor no jogo, você vai descobrir quem é agora. Se houver em-    |");
+                        Console.WriteLine("| pate, prepare-se para mais um desafio...                                      |");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                        Console.WriteLine();
+                        Console.WriteLine($"{charactersSphinx[i].name}, pressione ENTER para continuar");
+                        Console.ReadLine();
+                        break;
+                    case 1:
+                    case 3:
+                    case 4:
+                    
+                        charactersSphinx[i].score--;
+                        charactersSphinx[i].life--;
+                        charactersSphinx[i].house.scoreHufflePuff++;
+
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                        Console.WriteLine("|                                   LABIRINTO                                   |");
+                        Console.WriteLine("|-------------------------------------------------------------------------------|");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|                               Enigma da Esfinge                               |");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine("|    Humm… Não. Quem sabe da próxima vez? Você perdeu um score e uma vida :(,   |");
+                        Console.WriteLine("| mas conseguiu se livrar da Esfinge com menos um score e uma vida! Agora, cor- |");
+                        Console.WriteLine("| ra o mais rápido que puder para a saída do labirinto! Se houver um vencedor   |");
+                        Console.WriteLine("| no jogo, você vai descobrir quem é agora. Se houver empate, prepare-se para   |");
+                        Console.WriteLine("| mais um desafio...                                                            |");
+                        Console.WriteLine("|                                                                               |");
+                        Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                        Console.WriteLine();
+                        Console.WriteLine($"{charactersSphinx[i].name}, pressione ENTER para continuar");
+                        Console.ReadLine();
+                        break;
+                }
+              }
+            }
+
+}
 }
