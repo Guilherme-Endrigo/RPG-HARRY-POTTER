@@ -11,7 +11,7 @@ namespace RPG
             RPG.newGame.menuInitial();
             //RPG.Dragon.dragonsChallenge();
             //RPG.Dragon.breakAfterDragonsChallenge();
-            //RPG.Maze.mazeChallenge();
+            // RPG.Maze.mazeChallenge();
             //RPG.endGame.draw();
             //RPG.Lake.lakeChallenge();
             // RPG.Drawings.trophy();

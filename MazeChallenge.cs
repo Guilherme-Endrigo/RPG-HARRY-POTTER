@@ -1,13 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace RPG
 {
     class Maze
     {
       static int dice;
-      static List<Character> charactersWithMap = new List<Character>();
-      static List<Character> charactersWithoutMap = new List<Character>();
-      static List<Character> charactersSphinx = new List<Character>();
 
         public static void mazeChallenge(List<Character> characters)
         {
@@ -28,17 +26,9 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
-          for (int i = 0; i < characters.Count; i++) {
-            if (characters[i].hasMap) {
-              charactersWithMap.Add(characters[i]);
-            } else {
-              charactersWithoutMap.Add(characters[i]);
-            }
-          }
-
-          if (charactersWithMap.Any()) {
-          for (int a = 0; a < charactersWithMap.Count; a++) {
-          Console.WriteLine($"JOGADOR ATUAL: {charactersWithMap[a].name}:");
+          for (int a = 0; a < characters.Count; a++) {
+            if (characters[a].hasMap) {
+          Console.WriteLine($"JOGADOR ATUAL: {characters[a].name}:");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                   LABIRINTO                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -59,41 +49,43 @@ namespace RPG
             do {
               Console.Write("Sua escolha é: ");
               optionMap = Int32.Parse(Console.ReadLine());
-              if (optionMap == 2) {
-                charactersWithMap.Remove(characters[a]);
-                charactersWithoutMap.Add(characters[a]);
-              }
               if (optionMap != 1 && optionMap != 2) Console.WriteLine("Opção inválida");
             } while (optionMap != 1 && optionMap != 2);
+          
+          switch (optionMap)
+          {
+            case 1:
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|                                   LABIRINTO                                   |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|                                 Mapa do Maroto                                |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|    Sábia decisão, querido bruxo, você pulou QUASE todos os obstáculos do la-  |");
+            Console.WriteLine("| birinto... Infelizmente, nem o Mapa poderia ter previsto a presença da eni-   |");
+            Console.WriteLine("| gmática Esfinge ao final do labirinto. Como guerreiro, resta a você enfren-   |");
+            Console.WriteLine("| tar esse desafio. Se você está jogando com um ou mais amigos, espere que ele  |");
+            Console.WriteLine("| enfrente os desafios e labirinto e, então, vocês enfrentarão o último desafio.|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+            Console.WriteLine();
+            Console.WriteLine($"Pressione ENTER para continuar");
+            Console.ReadLine();
+          break;
+          case 2:
+          characters[a].hasMap = false;
+          break;
           }
           }
+        } 
+      mazeDirections(characters);
+}
 
-            if (charactersWithMap.Any()) {
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                   LABIRINTO                                   |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|                                 Mapa do Maroto                                |");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Sábia decisão, querido bruxo, você pulou QUASE todos os obstáculos do la-  |");
-                    Console.WriteLine("| birinto... Infelizmente, nem o Mapa poderia ter previsto a presença da eni-   |");
-                    Console.WriteLine("| gmática Esfinge ao final do labirinto. Como guerreiro, resta a você enfren-   |");
-                    Console.WriteLine("| tar esse desafio. Se você está jogando com um ou mais amigos, espere que ele  |");
-                    Console.WriteLine("| enfrente os desafios e labirinto e, então, vocês enfrentarão o último desafio.|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                    Console.WriteLine();
-                    Console.WriteLine($"Pressione ENTER para continuar");
-                    Console.ReadLine();
-            }
-            mazeDirections(charactersWithoutMap);
-          }
-
-
-            static void mazeDirections(List<Character> charactersWithoutMap)
+            static void mazeDirections(List<Character> characters)
             {
-              for (int i = 0; i < charactersWithoutMap.Count; i++) {
+              for (int i = 0; i < characters.Count; i++) {
+                if (!characters[i].hasMap){
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -121,15 +113,14 @@ namespace RPG
                 switch (optionDirections)
                 {
                     case 1:
-                        charactersWithoutMap[i] = devilsSnareMaze(charactersWithoutMap[i]);
+                        characters[i] = devilsSnareMaze(characters[i]);
                         break;
                     case 2:
-                        charactersWithoutMap[i] = blastEndedSkrewtMaze(charactersWitouthMap[i]);
+                        characters[i] = blastEndedSkrewtMaze(characters[i]);
                         break;
                     case 3:
-                        charactersWithoutMap[i] = boggartMaze(charactersWithoutMap[i]);
+                        characters[i] = boggartMaze(characters[i]);
                         break;
-                }
                 }
 
 
@@ -555,8 +546,8 @@ namespace RPG
                               Console.WriteLine("Pressione ENTER para continuar");
                               Console.ReadLine();
                             }
-                            break;
                             }
+                            break;
                         case 2:
                             
                             character.score--;
@@ -683,13 +674,13 @@ namespace RPG
                               Console.WriteLine("Pressione ENTER para continuar");
                               Console.ReadLine();
                             }
+                            }
                             break;
                     }
-
-                    return character;
+                  return character;
                 }
-
-                static void boggartMaze(Character character)
+                
+                static Character boggartMaze(Character character)
                 {
                   Console.WriteLine($"JOGADOR ATUAL: {character.name}");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -750,17 +741,17 @@ namespace RPG
                             character.house.scoreSlytherin++;
                             character.house.scoreGryffindor++;
 
-                            case1Boggart(character);
+                            character = case1Boggart(character);
                             break;
                         case 2:
-                            Case2Boggart(character);
+                            character = Case2Boggart(character);
                             break;
                         case 3:
-                            case3Boggart(character);
+                            character = case3Boggart(character);
                             break;
                     }
 
-                    static void case1Boggart(Character character)
+                    static Character case1Boggart(Character character)
                     {
                       dice = RPG.Dice.throwDice();
                       Console.WriteLine("DADO LANÇADO!");
@@ -860,7 +851,7 @@ namespace RPG
                     return character;
                     }
 
-                    static void Case2Boggart(Character character)
+                    static Character Case2Boggart(Character character)
                     {
                         character.score--;
                         character.life--;
@@ -978,7 +969,7 @@ namespace RPG
                     return character;
                     }
 
-                    static void case3Boggart(Character character)
+                    static Character case3Boggart(Character character)
                     {
                       dice = RPG.Dice.throwDice();
                       Console.WriteLine("DADO LANÇADO!");
@@ -1099,15 +1090,15 @@ namespace RPG
                                   break;
                           }
                         }
+                    return character;
                     }
-
-                }
-                return character;
+                    return character;
+                  }
+                
             }
-
-        sphinxChallenge(characters);
-        }
-  
+          }
+        sphinxChallenge(characters);        
+      }
 
     static void sphinxChallenge(List<Character> characters)
            {
@@ -1147,8 +1138,8 @@ namespace RPG
                 Console.WriteLine("Pressione ENTER para continuar");
                 Console.ReadLine();
 
-              for (int i = 0; i < charactersSphinx.Count; i++) {
-                Console.WriteLine($"JOGADOR ATUAL: {charactersSphinx[i].name}");
+              for (int i = 0; i < characters.Count; i++) {
+                Console.WriteLine($"JOGADOR ATUAL: {characters[i].name}");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   LABIRINTO                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -1190,18 +1181,18 @@ namespace RPG
                 Console.WriteLine();
 
                 for (int i = 0; i < answersSphinx.Count; i++) {
-                switch (optionSphinx)
+                switch (answersSphinx[i])
                 {
                     case 2:
                     
-                        charactersSphinx[i].score++;
-                        charactersSphinx[i].life++;
-                        charactersSphinx[i].house.scoreRavenclaw++;
-                        charactersSphinx[i].house.scoreGryffindor++;
-                        charactersSphinx[i].house.scoreHufflePuff++;
-                        charactersSphinx[i].house.scoreSlytherin++;
+                        characters[i].score++;
+                        characters[i].life++;
+                        characters[i].house.scoreRavenclaw++;
+                        characters[i].house.scoreGryffindor++;
+                        characters[i].house.scoreHufflePuff++;
+                        characters[i].house.scoreSlytherin++;
 
-                        Console.WriteLine($"{charactersSphinx[i].name}:");
+                        Console.WriteLine($"{characters[i].name}:");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                   LABIRINTO                                   |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -1216,16 +1207,16 @@ namespace RPG
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         Console.WriteLine();
-                        Console.WriteLine($"{charactersSphinx[i].name}, pressione ENTER para continuar");
+                        Console.WriteLine($"{characters[i].name}, pressione ENTER para continuar");
                         Console.ReadLine();
                         break;
                     case 1:
                     case 3:
                     case 4:
                     
-                        charactersSphinx[i].score--;
-                        charactersSphinx[i].life--;
-                        charactersSphinx[i].house.scoreHufflePuff++;
+                        characters[i].score--;
+                        characters[i].life--;
+                        characters[i].house.scoreHufflePuff++;
 
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         Console.WriteLine("|                                   LABIRINTO                                   |");
@@ -1242,7 +1233,7 @@ namespace RPG
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         Console.WriteLine();
-                        Console.WriteLine($"{charactersSphinx[i].name}, pressione ENTER para continuar");
+                        Console.WriteLine($"{characters[i].name}, pressione ENTER para continuar");
                         Console.ReadLine();
                         break;
                 }
