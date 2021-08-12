@@ -4,10 +4,11 @@ namespace RPG
 {
     class Maze
     {
-      public static int dice;
-      public static List<Character> charactersWithMap = new List<Character>();
-      public static List<Character> charactersWithoutMap = new List<Character>();
-      public static List<Character> charactersSphinx = new List<Character>();
+      static int dice;
+      static List<Character> charactersWithMap = new List<Character>();
+      static List<Character> charactersWithoutMap = new List<Character>();
+      static List<Character> charactersSphinx = new List<Character>();
+
         public static void mazeChallenge(List<Character> characters)
         {
 
@@ -19,8 +20,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Agora, você entrará em um temível labirinto, onde perigosos desafios te    |");
             Console.WriteLine("| aguardam. Escolha sabiamente e, se puder, faça uso de toda e qualquer vanta-  |");
-            Console.WriteLine("| gem. Caso queira desistir, emita um sinalizador vermelho digitando a letra S. |");
-            Console.WriteLine("| Assim, você será retirado do labirinto e do jogo.                             |");
+            Console.WriteLine("| gem.                                                                          |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
