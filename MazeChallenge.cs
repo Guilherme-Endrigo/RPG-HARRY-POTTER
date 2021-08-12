@@ -146,8 +146,8 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("| Faça uma escolha:                                                             |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Lançar feitiço Riddikulus                                                 |");
-            Console.WriteLine("| (2) Lançar feitiço Expecto Patronum                                           |");
+            Console.WriteLine("| (1) Lançar feitiço Expecto Patronum                                           |");
+            Console.WriteLine("| (2) Lançar feitiço Riddikulus                                                 |");
             Console.WriteLine("| (3) Fugir                                                                     |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -191,7 +191,7 @@ namespace RPG
             Console.WriteLine("|                                 BICHO PAPÃO                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  Você escolheu enfeitiçar o bicho-papão! Cuidado pra você não passar ridiculo!|");
+            Console.WriteLine("|  Você escolheu enfeitiçar o bicho-papão! Cuidado pra você não passar ridículo!|");
             Console.WriteLine("| Boa sorte, que rolem os dados!                                                |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -203,41 +203,23 @@ namespace RPG
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            if (diceValue >= 6 && diceValue <= 17)
+            if (diceValue >= 6)
             {
 
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                        A PUT A SPELL ON YOU -- SUCESSO                        |");
+                Console.WriteLine("|                             I PUT A SPELL ON YOU                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                character.house.scoreGryffindor += 1;
-                character.score += 1;
-                character.life += 1;
-            }
-            else if (diceValue >= 18)
-            {
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           NOW YOUR MINE -- SUCESSO                            |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                Console.WriteLine("| rinto com mais 2 pontos score e uma vida.                                     |");
+                Console.WriteLine("| rinto com mais dois pontos e uma vida.                                        |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 character.house.scoreGryffindor += 1;
                 character.score += 2;
                 character.life += 1;
-
             }
             else
             {
@@ -261,7 +243,7 @@ namespace RPG
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                if (diceValue >= 6 && diceValue <= 17)
+                if (diceValue >= 6)
                 {
 
                     Console.WriteLine();
@@ -270,17 +252,16 @@ namespace RPG
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                    Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
+                    Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                    character.score += 1;
                     character.house.scoreGryffindor += 1;
 
                 }
                 else
                 {
-
-
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                                    BICHO PAPÃO                                |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -307,8 +288,8 @@ namespace RPG
             Console.WriteLine("|                                  RIDDIKULUS                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você escolheu a opção menos ridicula pra lutar contra o bicho papão!       |");
-            Console.WriteLine("| Jogue os dados e vejo se o feitiço foi eficiente ao espantar a criatura!      |");
+            Console.WriteLine("|    Você escolheu a opção menos ridícula para lutar contra o Bicho Papão!      |");
+            Console.WriteLine("| Jogue os dados e veja se o feitiço foi eficiente ao espantar a criatura!      |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -322,7 +303,7 @@ namespace RPG
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                Console.WriteLine("| rinto com mais 2 pontos score e uma vida.                                     |");
+                Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -337,7 +318,7 @@ namespace RPG
                 Console.WriteLine("|                                 SOCORRO MÃE!                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| Você chorou de medo chamando por sua mãe, porém chegou na esfinge!            |");
+                Console.WriteLine("| Você chorou de medo chamando por sua mãe, porém chegou na Esfinge!            |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -358,7 +339,7 @@ namespace RPG
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você escolheu a opção menos corajosa possível! Você é uma vergonha!        |");
-            Console.WriteLine("| Jogue os dados e vejo se conseguiu escapar seu medroso!                       |");
+            Console.WriteLine("| Jogue os dados e veja se conseguiu escapar, seu medroso!                      |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -376,39 +357,19 @@ namespace RPG
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
-                Console.WriteLine("| mais um ponto e uma vida.                                                     |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                character.score += 1;
-                character.life += 1;
-
-            }
-
-
-            else if (diceValue >= 18)
-            {
-
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                    BICHO PAPÃO                                |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-                Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
+                Console.WriteLine("| mais dois pontos e uma vida.                                                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 character.score += 2;
                 character.life += 1;
-                character.house.scoreRavenclaw += 1;
-                character.house.scoreHufflePuff += 1;
 
             }
             else
             {
 
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                    BICHO PAPÃO                                |");
+                Console.WriteLine("|                                BICHO PAPÃO                                    |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tente novamente |");
