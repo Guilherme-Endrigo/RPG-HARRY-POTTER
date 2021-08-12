@@ -31,26 +31,24 @@ namespace RPG
         {
             Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("                 ___====-_      _-====___                    ");
-            Console.WriteLine("             _--^^^#####//      \\#####^^^--_                ");
-            Console.WriteLine("          _-^##########// (    ) \\##########^-_             ");
-            Console.WriteLine("         -############// |\\^^/|  \\############-            ");
-            Console.WriteLine("       _/############//  (@::@)   \\############\\_          ");
-            Console.WriteLine("      /#############((     \\//     ))#############\\        ");
-            Console.WriteLine("     //#############\\     (oo)     //##############\\       ");
-            Console.WriteLine("    //###############\\  // VV \\  //################\\      ");
-            Console.WriteLine("   //#################\\//      \\//##################\\     ");
-            Console.WriteLine("  _#/|##########/\\#####(         )#####/\\#########|#\\_    ");
-            Console.WriteLine("    |/ |#//\\#/\\#/\\/###//|       |\\ \\ #//##/\\#/ \\/\\#  ");
-            Console.WriteLine("  `    |/   \\  \\V`\\V  | | |   | | |  \\V\\V  \\V   \\V '  ");
-            Console.WriteLine("     `     `       ` // | |   | | \\   '  '    '    '        ");
-            Console.WriteLine("                     (  | |   | |  )                         ");
-            Console.WriteLine("                     _\\ | |   | | /__                       ");
-            Console.WriteLine("                    (vvv(VVV)(VVV)vvv)                       ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("                                                             ");
+            Console.WriteLine(@"                                                                                     ");
+            Console.WriteLine(@"                                                             ____________            ");
+            Console.WriteLine(@"                                      (`-..________....---''  ____..._.-`            ");
+            Console.WriteLine(@"                                       \\`._______.._,.---'''     ,'                 ");
+            Console.WriteLine(@"                                        ; )`.      __..-'`-.      /                  ");
+            Console.WriteLine(@"                                      / /     _.-' _,.;;._ `-._,'                    ");
+            Console.WriteLine(@"                                     / /   ,-' _.-'  //   ``--._``._                 ");
+            Console.WriteLine(@"                                   ,','_.-' ,-' _.- (( =-    -. `-._`-._____         ");
+            Console.WriteLine(@"                                 ,;.''__..-'   _..--.\\.--'````--.._``-.`-._`.       ");
+            Console.WriteLine(@"                  _          |\,' .-''        ```-'`---'`-...__,._  ``-.`-.`-.`.     ");
+            Console.WriteLine(@"      _     _.-, '(__)\__)\-'' `     ___  .          `     \      `--._              ");
+            Console.WriteLine(@"     ,',)---' /|)          `     `      ``-.   `     /     /     `     `-.           ");
+            Console.WriteLine(@"     \_____--.  '`  `               __..-.  \     . (   < _...-----..._   `.         ");
+            Console.WriteLine(@"      \_,--..__. \\ .-`.\----'';``,..-.__ \  \      ,`_. `.,-'`--'`---''`.  )        ");
+            Console.WriteLine(@"                `.\`.\  `_.- ..' ,'   _, -..'  /..,-''(, ,' ; (_______`___..'__      ");
+            Console.WriteLine(@"                        ((,(,__(    ((,(,__,'  ``'-- `'`.(\  `.,..______             ");
+            Console.WriteLine(@"                                                           ``--------..._``--.__     ");
+
 
             Console.ResetColor();
 
@@ -103,6 +101,8 @@ namespace RPG
             Console.WriteLine("                                                      ");
             Console.WriteLine("                                                      ");
 
+
+
             Console.ResetColor();
 
         }
@@ -110,33 +110,57 @@ namespace RPG
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
-            Console.WriteLine("                                                  ");
-            Console.WriteLine("                                                  ");
-            Console.WriteLine("  888                                             ");
-            Console.WriteLine("  888                                             ");
-            Console.WriteLine("  888                                             ");
-            Console.WriteLine("  88888b.   8888b.  888d8888 88d888 888  888      ");
-            Console.WriteLine("  888  88b      88b 888P    888P    888  888      ");
-            Console.WriteLine("  888  888 .d888888 888     888     888  888      ");
-            Console.WriteLine("  888  888 888  888 888     888     Y88b 888      ");
-            Console.WriteLine("  888  888  Y888888 888     888       Y88888      ");
-            Console.WriteLine("                                         888      ");
-            Console.WriteLine("                                   Y8b d88P       ");
-            Console.WriteLine("                                     Y88P         ");
-            Console.WriteLine("                    888    888                    ");
-            Console.WriteLine("                    888    888                    ");
-            Console.WriteLine("                    888    888                    ");
-            Console.WriteLine("  88888b.   .d88b. 88888 8888888  .d88b.  888d888 ");
-            Console.WriteLine("  888  88b d88  88b 888    888   d8P  Y8b 888P    ");
-            Console.WriteLine("  888  888 888  888 888    888   88888888 888     ");
-            Console.WriteLine("  888 d88P Y88..88P Y88b.  Y88b. Y8b.     888     ");
-            Console.WriteLine("  88888P     Y88P    Y888   Y888  Y8888   888     ");
-            Console.WriteLine("  888                                             ");
-            Console.WriteLine("  888                                             ");
-            Console.WriteLine("  888                                      THE C# ");
-            Console.WriteLine("                                         RPG GAME ");
-            Console.WriteLine("                                                  ");
-            Console.WriteLine("                                                  ");
+            // Console.WriteLine("                                                  ");
+            // Console.WriteLine("                                                  ");
+            // Console.WriteLine("  888                                             ");
+            // Console.WriteLine("  888                                             ");
+            // Console.WriteLine("  888                                             ");
+            // Console.WriteLine("  88888b.   8888b.  888d8888 88d888 888  888      ");
+            // Console.WriteLine("  888  88b      88b 888P    888P    888  888      ");
+            // Console.WriteLine("  888  888 .d888888 888     888     888  888      ");
+            // Console.WriteLine("  888  888 888  888 888     888     Y88b 888      ");
+            // Console.WriteLine("  888  888  Y888888 888     888       Y88888      ");
+            // Console.WriteLine("                                         888      ");
+            // Console.WriteLine("                                   Y8b d88P       ");
+            // Console.WriteLine("                                     Y88P         ");
+            // Console.WriteLine("                    888    888                    ");
+            // Console.WriteLine("                    888    888                    ");
+            // Console.WriteLine("                    888    888                    ");
+            // Console.WriteLine("  88888b.   .d88b. 88888 8888888  .d88b.  888d888 ");
+            // Console.WriteLine("  888  88b d88  88b 888    888   d8P  Y8b 888P    ");
+            // Console.WriteLine("  888  888 888  888 888    888   88888888 888     ");
+            // Console.WriteLine("  888 d88P Y88..88P Y88b.  Y88b. Y8b.     888     ");
+            // Console.WriteLine("  88888P     Y88P    Y888   Y888  Y8888   888     ");
+            // Console.WriteLine("  888                                             ");
+            // Console.WriteLine("  888                                             ");
+            // Console.WriteLine("  888                                      THE C# ");
+            // Console.WriteLine("                                         RPG GAME ");
+            // Console.WriteLine("                                                  ");
+            // Console.WriteLine("                                                  ");
+
+
+            Console.WriteLine(@"                                                _ __                                                 ");
+            Console.WriteLine(@"               ___                             | '  \                                                ");
+            Console.WriteLine(@"          ___  \ /  ___         ,'\_           | .-. \        /|                                     ");
+            Console.WriteLine(@"          \ /  | |,'__ \  ,'\_  |   \          | | | |      ,' |_   /|                               ");
+            Console.WriteLine(@"        _ | |  | |\/  \ \ |   \ | |\_|    _    | |_| |   _ '-. .-',' |_   _                          ");
+            Console.WriteLine(@"       // | |  | |____| | | |\_|| |__    //    |     | ,'_`. | | '-. .-',' `. ,'\_                   ");
+            Console.WriteLine(@"       \\_| |_,' .-, _  | | |   | |\ \  //    .| |\_/ | / \ || |   | | / |\  \|   \                  ");
+            Console.WriteLine(@"        `-. .-'| |/ / | | | |   | | \ \//     |  |    | | | || |   | | | |_\ || |\_|                 ");
+            Console.WriteLine(@"          | |  | || \_| | | |   /_\  \ /      | |`    | | | || |   | | | .---'| |                    ");
+            Console.WriteLine(@"          | |  | |\___,_\ /_\ _      //       | |     | \_/ || |   | | | |  /\| |                    ");
+            Console.WriteLine(@"          /_\  | |           //_____//       .||`      `._,' | |   | | \ `-' /| |                    ");
+            Console.WriteLine(@"               /_\           `------'        \ |    AND      `.\   | |  `._,' /_\                    ");
+            Console.WriteLine(@"                                              \|      THE          `.\                               ");
+
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+            Console.WriteLine(@"                                                          ____            __    __    ___           ");
+            Console.WriteLine(@"                                                         |     _|___|_   |  \  |  \  |              ");
+            Console.WriteLine(@"                                                         |     _|___|_   |\__| |\__| | ___          ");
+            Console.WriteLine(@"                                                         |____  |   |    |  \  |     |___|          ");
+            Console.WriteLine(@"                                                                                                     ");
 
             Console.ResetColor();
 
@@ -146,48 +170,39 @@ namespace RPG
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
-            Console.WriteLine(@"                                       /,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*****************/(                         ");
-            Console.WriteLine(@"                                    **,,,,,,,,,,,,,,*******************************************(,                      ");
-            Console.WriteLine(@"                              **,,,,,,********,,*********,*,,,,,,,,,,,,,*(/**********************//                    ");
-            Console.WriteLine(@"                             ,*,,,,,,,,,,,,,,*//**,,,,,,,,,,,,,,,,,,,,,,,,,*/(*********************//                  ");
-            Console.WriteLine(@"                             ./.         ,*****,,,,,,,,,,,,**,,,....,,*/,,,,,**/*********************/.                ");
-            Console.WriteLine(@"                            *                 *,,,,,***.                 .*,,**************/((//((///**/               ");
-            Console.WriteLine(@"                            ,                 /*/                          ***************(*///////////(#,             ");
-            Console.WriteLine(@"         ./(/**************/(/,  (@,        ****/,                         ,/*************//////////////#///(.         ");
-            Console.WriteLine(@"    .%/******************************/(((/********,                        (**************(///////(//////(/////#       ");
-            Console.WriteLine(@"   **,,,,,,,,,,,,,,,,,,,,,,,,**********************/.        %@@,        ,/*************/(////////#///////(//////(     ");
-            Console.WriteLine(@"     ............,*/(/,,,,,,,,,,,,,,,,*************////               */*****,**********(/////////#///////////////#    ");
-            Console.WriteLine(@"                          .*(,,,,,,**//,,,,,,,,,*/***/(**//******//****,,,,,,,,,******/////////////////////////////(   ");
-            Console.WriteLine(@"                          */***//*,,,,****///,,*/********//*,,,,,,,,,,,,,,,,,,,,****/(///////////(////////(//////(//*  ");
-            Console.WriteLine(@"                       ,/********************************************,,,,,,,,,,,*****/(/////////((((/////////////(//(  ");
-            Console.WriteLine(@"                  ./,,,,,,,,**************************,,,,,,,,,,,,,,,,,,,,,,,,,,,*(/*******#///(*******(////////(///(  ");
-            Console.WriteLine(@"                  (,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*//*,.        ,/*,,,//********(////(***(//////(////*  ");
-            Console.WriteLine(@"                   //,,,,,,,,,*//*///////*,,..               %,     %@,  .#@@@/,*(@@,,,(***,,*****(*****(//*(//////(   ");
-            Console.WriteLine(@"                        ,#*,,,,,,,,,,,,,,,///    ..     / *@@@@@@@@@@@@@@@@@@@@@@@@@@/,,/****,,,,******(/////////(.    ");
-            Console.WriteLine(@"                               ..,,*/((///*****//*/////   ..  %@@@@@@@@@@@@@@@@@@@@@@@,,,#***/(/,,,,(/////////(*       ");
-            Console.WriteLine(@"                                                     .*///*,,*   #@@@@@@@@@@@@@@@@@@@@*,*//**(///(((/(///((*.          ");
-            Console.WriteLine(@"                                                           *(***/%@@@@@@@@@@@@@@@@@@@@,,**/(/////((/*,.                ");
-            Console.WriteLine(@"                                                              ,////@@@@@@@@@@@@@@@@@@(,**#,                            ");
-            Console.WriteLine(@"                                                            /&%%%%%%%%%%%%%%%%&@@@@@&,,*/*                             ");
-            Console.WriteLine(@"                                                           %%%%%%%%%%%%%%%%%%%%%%@@@****/                              ");
-            Console.WriteLine(@"                                                           .&%%%%%%%%@@@%%%%%%%%%%@(***#                               ");
-            Console.WriteLine(@"                                                               /**/@@@@@@&%%%%%%%%/***/                                ");
-            Console.WriteLine(@"                                                         ./////////,      .,   //***////                               ");
-            Console.WriteLine(@"                                                       ./*,,,,,,,,**********************/&%%%#*                        ");
-            Console.WriteLine(@"                                                          ****/,,,,,,,,,,,,,,,,,***********(%%%%%(                     ");
-            Console.WriteLine(@"                                                               **,,,,,,,,,,,,***************(/(%%%%&#*.                ");
-            Console.WriteLine(@"                                                  ((,            /,,,,,,,,,,,,,************(////%%%%%%%%%&(.           ");
-            Console.WriteLine(@"                                         .*,   ./*/**/             (*,,,,,,,,,,,,*********(/////(%%%%%%%%%%%%%#        ");
-            Console.WriteLine(@"                                        /,***** **/****(           &&@(,,,,,,,,,,,,*****/////////%%%%%%%%%%%%%%%%#     ");
-            Console.WriteLine(@"                                        .*,,/,**((**(,***//       /&&@##(/,,,,,,,,,,**((/////////#%%%%%%%%%%%%%%%%%%.  ");
-            Console.WriteLine(@"                                         *,,,**,**/(*/(*,***/(,   (&&&##(//((,,,,,/((////////////#%%%%%%%%%%%%%%%%%%%% ");
-            Console.WriteLine(@"                                         *,,,,*.*,,**//../,,*****/#@&&##(////((((///////////////(#%%%%%%%%%%%%%%%%%%%%%");
-            Console.WriteLine(@"                                        .*,,,,* **/,,,***//***,,****/%%##////#(((((#(//////////(((###%%%%%%%%%%%%%%%%%%");
-            Console.WriteLine(@"                                        (,/,,//./***//,,,**************(%(//#(((((((#%#(//////(#/(######%%%%%%%%%%%%%%%");
-            Console.WriteLine(@"                                       /,,*,**,,**(((   /*,**************/(((#(((((#%#///((//#(//(########%%%%%%%%%%%%%");
-            Console.WriteLine(@"                                      #,,,/,,,/#,,,,***********************((//#(((%%////////////############%%%%%%%%%%");
-            Console.WriteLine(@"                                     *,,,,*,,,/***/%,,,,,********************(/#(((#%(///////////%########%%%%%%%%%%%%%");
-            Console.WriteLine(@"                                    (,,,,/,,,,/***(    ,(*,,,,,***************(#((((%%#/////////(%####%#######%%%%%%%%%");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ⠀⢀⠀⠄⠐⠒⠀⠀⠉⠙⠻⢶⣤⣶⣶⣄⣄⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣷⣧⣆⡄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣴⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣾⡿⢿⣿⣿⣿⡿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠊⠀⠀⠉⠉⠙⠛⢷⣦⣀⣼⠿⠟⠛⠉⠉⠁⠀⠀⠀⠀⠀⠈⠉⢟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠔⠀⠀⠀⠐⠀⠄⡀⣿⠈⠀⠀⠀⠀⠀⢀⠀⠠⠄⠀⠀⠤⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢀⢀⠀⠄⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⢀⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠈⠛⠹⠟⡥⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⢀⢀⣤⣀⣴⣶⣶⣦⣄⣤⣼⠀⡀⢀⣀⠀⠀⠀⠀⢀⣬⣿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠑⡁⠢⢀⠀⠀⠀⠀⠀⠀⠀⠀   ");
+            Console.WriteLine(@"⠀⡠⠰⠞⠚⠛⠛⠻⠿⠿⠿⠿⣿⣿⣿⣿⣿⣾⣯⣴⣤⣤⣦⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⣠⣄⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠑⠄⠀⠀⠀⠀  ⠀");
+            Console.WriteLine(@"⠀⠣⣀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠉⠉⠛⠻⠿⣿⣿⣿⣿⣿⣿⣿⡿⢤⡀⠀⠀⠀⠙⠋⠀⠀⠀⢀⣴⣿⣿⢿⣿⣿⣿⣿⣿⡋⠀⠀⠀⠀⢠⠀⠀⠀⠀⠁⠀⠀⠀⢂⠀⠀⠀⠀⠀  ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠒⠠⢀⠀⠀⠠⠤⠀⡈⠉⠛⠛⠉⢿⣿⣾⡷⢶⣤⣤⣤⣤⡠⠴⠾⠟⠋⠉⠀⠀⠻⣿⣿⡿⠗⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⡀⠀⠀⠀⡀⠆⠀⠀⠀⠀  ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣽⣿⣾⣆⣀⣤⣶⣶⣿⣴⣠⣰⣿⣿⣿⣿⣿⣴⣤⣄⢀⣀⣀⣀⠀⠀⠀⠀⠀⢀⣿⣿⣍⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠠⠁⠀⠀⠀⠇⢰⠀⠀⠀⠀   ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠓⠛⠿⠿⠿⠿⠿⠿⢿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠚⠻⣿⣿⣾⣷⣦⡀⢀⣼⣿⣾⣷⣄⠁⠀⠀⠀⠰⠀⠀⠀⠀⠀  ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢂⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠠⠤⠀⠀⠐⠒⠀⠈⠉⣁⠀⠂⠠⡀⠙⢻⣿⣿⢻⣿⣯⣶⣽⣿⣿⡄⠀⠀⡀⠁⠀⠘⠀⠀⠀⠀    ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠂⠄⡀⠀⠀⠈⠢⠭⠭⠉⠭⠀⡀⠔⠠⠀⠀⠐⠀⠄⢀⣤⣷⣦⣤⣶⣿⣶⣶⣾⣿⣿⣶⣿⣿⡄⠈⠽⣷⡀⠙⠿⣿⣿⣿⣿⠄⠐⠈⠀⠀⡀⠁⠀⠀  ⠀ ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠒⠂⠀⠠⠤⠤⠤⠤⠀⠠⢦⣅⢀⡐⣀⠠⠉⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠸⣿⣿⡦⡄⠀⠠⠙⠁⠀⢀⡀⠤⠊⠀⠀⠀⠀⠀  ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠛⠖⣶⣦⣀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣾⠸⠟⠁⠈⠁⢀⡀⠨⠑⠈⠁⠀⠀⠀⠀⠀⠀⠀     ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣏⠎⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣼⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀     ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣾⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀ ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡸⠳⠾⢿⠿⠿⢿⣿⣿⣿⣟⣾⣟⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀ ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠶⠿⠶⠶⠿⣦⣶⣤⣀⣈⣤⣴⣶⣿⣿⣷⣷⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀ ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠠⠤⡀⠀⠀⠀⠀⠀⠉⠉⢉⣭⣽⣿⣿⣿⣿⣿⡿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        ⠀");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⠆⠈⢻⣿⣷⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠰⡼⢿⣧⡀⠀⠀⠀⠀⠀⠈⠢⡀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⡛⠀⠀⠘⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀       ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠘⠲⣷⣄⢿⡥⠻⣦⣄⠀⠀⠀⠀⠀⣸⣿⣦⡀⠀⠀⠀⠀⠀⢻⣿⣿⠍⠐⠀⠈⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀       ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢈⠻⣿⣿⣷⢌⠻⣦⣦⢀⠀⠀⣿⣿⣿⠈⠂⢄⠀⠀⢀⡠⠙⠁⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀      ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⡈⠙⢧⣦⡑⠈⠙⠿⣾⣴⣿⣿⣿⡄⠀⠀⣰⣮⣀⡀⠀⠀⠀⠀⠀⠀⢀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀      ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢀⠄⣜⠀⣳⣄⣀⠙⠻⣧⣮⣠⣼⣿⣿⣮⡻⣇⠒⢰⣿⣿⣿⣷⣤⡀⠀⠀⠈⠈⠌⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   ⠀  ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠂⠀⠁⠈⠚⢽⣿⢅⡑⠠⢈⣿⣿⣿⣿⣿⣿⣿⣾⠄⡜⢿⣿⣿⣿⡿⢈⠐⢄⢀⠎⠐⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   ⠀ ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⠀⠀⠀⢰⣷⣄⡈⠙⠳⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣃⠈⣿⣿⣿⡁⢀⠀⠀⠀⠂⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠆⠀⢀⣿⣿⡆⠁⠂⠄⡀⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⡥⣿⣿⣿⣷⠀⠀⠀⠀⠀⡀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀     ");
+            Console.WriteLine(@"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠊⠀⠀⢘⣿⣿⣇⣄⣄⣾⣷⣷⠦⡀⢻⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣧⠀⠀⢀⠈⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀   ⠀  ");
 
             Console.ResetColor();
 
@@ -322,7 +337,7 @@ namespace RPG
 
             if (diceValue >= 5)
             {
-                Console.Write($"Sucesso! Valor do dado: {diceValue}");
+                Console.WriteLine($"Sucesso! Valor do dado: {diceValue}");
             }
             else
             {
@@ -389,6 +404,78 @@ namespace RPG
 
             return character.house;
         }
+
+        public static House whatHouse(Character character)
+        {
+
+            House house = character.house;
+
+            if (house.scoreGryffindor > house.scoreSlytherin && house.scoreGryffindor > house.scoreRavenclaw && house.scoreGryffindor > house.scoreHufflePuff)
+            {
+
+                character.house.houseName = "Grifinória";
+                //Gryffindor
+            }
+            else if (house.scoreSlytherin > house.scoreGryffindor && house.scoreSlytherin > house.scoreRavenclaw && house.scoreSlytherin > house.scoreHufflePuff)
+            {
+                character.house.houseName = "Sonserina";
+                //Slytherin
+            }
+            else if (house.scoreRavenclaw > house.scoreGryffindor && house.scoreRavenclaw > house.scoreSlytherin && house.scoreRavenclaw > house.scoreHufflePuff)
+            {
+                character.house.houseName = "Corvinal";
+                //Ravenclaw
+            }
+            else
+            {
+                character.house.houseName = "Lufa-lufa";
+                //HufflePuff
+            }
+
+            return character.house;
+
+        }
+        public static void spellAttack(int diceValue)
+        {
+            if (diceValue > 6 && diceValue < 11)
+            {
+                Console.WriteLine("Wingardium Leviosa");
+            }
+            else if (diceValue > 10 && diceValue < 18)
+            {
+                Console.WriteLine("Expelliarmus");
+            }
+            else if (diceValue > 17)
+            {
+                Console.WriteLine("Sectusempra");
+            }
+            else
+            {
+                Console.WriteLine("e errou");
+            }
+        }
+
+        public static void spellDefense(int diceValue)
+        {
+            if (diceValue > 6 && diceValue < 11)
+            {
+                Console.WriteLine("Protego");
+            }
+            else if (diceValue > 10 && diceValue < 18)
+            {
+                Console.WriteLine("Protego maxima");
+            }
+            else if (diceValue > 17)
+            {
+                Console.WriteLine("Repello Inimicum");
+            }
+            else
+            {
+                Console.WriteLine("porém conjurou errado");
+            }
+        }
+
+
     }
 
 }

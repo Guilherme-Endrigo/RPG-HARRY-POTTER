@@ -7,30 +7,33 @@ namespace RPG
         static int diceValue;
         public static void lakeChallenge(List<Character> character)
         {
-
             Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                    O LAGO                                     |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|  A segunda tarefa do Torneio Tribruxo começa, todos os campeões encaminham-se |");
-            Console.WriteLine("| ao Lago Negro. Algo importante, querido, deve ser resgatado do fundo do lago. |");
+            Console.WriteLine("|    Após o susto do primeiro desafio, todos acordam mais dispostos prontos     |");
+            Console.WriteLine("| para a  segunda tarefa do Torneio Tribruxo, e encaminham-se até o Lago Negro. |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|    Algo importante, querido, deve ser resgatado do fundo do lago.             |");
             Console.WriteLine("| Mas, cuidado com aqueles que espreitam-se nas profundezas. Mergulhe de cabeça |");
             Console.WriteLine("| para recuperar o que foi perdido!                                             |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
+            Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
 
             for (int i = 0; i < character.Count; i++)
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -40,8 +43,10 @@ namespace RPG
                 Console.WriteLine("| (1) Guelricho                                                                 |");
                 Console.WriteLine("| (2) Feitiço Cabeça de Bolha                                                   |");
                 Console.WriteLine("| (3) Transfigurar-se num peixe                                                 |");
+                Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine();
+
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
 
@@ -69,9 +74,7 @@ namespace RPG
         static Character eatGuelricho(Character character)
         {
             Console.WriteLine();
-            Console.WriteLine("Opção 1");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                  GUELRICHO                                    |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -91,7 +94,7 @@ namespace RPG
             if (diceValue > 10)
             {
                 Console.WriteLine();
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                            GUELRICHO -- SUCESSO                               |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -109,8 +112,7 @@ namespace RPG
             else if (character.hasPotion && diceValue > 10)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 1 - pocaoEscolhida = true");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                            GUELRICHO  --  SUCESSO                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -128,8 +130,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 1 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                           GUELRICHO  --  FRACASSO                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -157,11 +158,8 @@ namespace RPG
         static Character bubbleHead(Character character)
         {
 
-
             Console.WriteLine();
-            Console.WriteLine("Opção 2");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           FEITIÇO CABEÇA DE BOLHA                             |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -175,14 +173,12 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
             if (diceValue > 10)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 2 - sucesso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                    FEITIÇO CABEÇA DE BOLHA -- SUCESSO                         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -199,8 +195,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 2 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                     FEITIÇO CABEÇA DE BOLHA  --  FRACASSO                     |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -219,13 +214,12 @@ namespace RPG
                 Console.WriteLine("Pressione ENTER para jogar o dado");
                 Console.ReadLine();
                 diceValue = RPG.Dice.throwDice();
-                Console.WriteLine();
+                Console.WriteLine($"O Valor do dado é {diceValue}");
 
                 if (diceValue < 10)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção 2 -- Fugir do afogamento -- sucesso");
-
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                         FUGIR DO AFOGAMENTO  -- SUCESSO                       |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -241,8 +235,7 @@ namespace RPG
                 {
 
                     Console.WriteLine();
-                    Console.WriteLine("Opção 2 -- Fugir do afogamento -- fracasso");
-
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                         FUGIR DO AFOGAMENTO   --  FRACASSO                    |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -268,9 +261,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 3");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                TRANSFIGURAÇÃO                                 |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -286,14 +277,12 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
             if (diceValue > 10)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 3 - sucesso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                         TRANSFIGURAÇÃO -- SUCESSO                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -311,8 +300,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 3 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                        TRANSFIGURAÇÃO  --  FRACASSO                           |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -320,7 +308,7 @@ namespace RPG
                 Console.WriteLine("|  O feitiço deu errado, ao invés de transformá-lo inteiramente em um peixe,    |");
                 Console.WriteLine("| apenas as suas pernas foram modificadas! Além da vergonha, você ficou sem     |");
                 Console.WriteLine("| guelras pra te ajudar no desafio. Melhor nadar rápido! Humm, acho que não     |");
-                Console.WriteLine("| vaidar tempo de completar a prova.                                            |");
+                Console.WriteLine("| vai dar tempo de completar a prova.                                           |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -339,7 +327,8 @@ namespace RPG
         //---------> ENFRENTAR SEREIANOS <---------
         static void merpeoplePhase(List<Character> character)
         {
-
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           ENFRENTANDO OS SEREIANOS                            |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -352,7 +341,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine("Pressione Enter para continuar");
+            Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -403,9 +392,7 @@ namespace RPG
         static Character fightMerpeople(Character character)
         {
             Console.WriteLine();
-            Console.WriteLine("Opção 1");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                         LUTAR CONTRA OS SEREIANOS                             |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -419,15 +406,14 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
             Console.WriteLine();
 
             if (diceValue > 10)
             {
-                Console.WriteLine("Opção 1 - sucesso");
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                    LUTAR CONTRA OS SEREIANOS -- SUCESSO                       |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -445,8 +431,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 1 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                    LUTAR CONTRA OS SEREIANOS  --  FRACASSO                    |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -470,9 +455,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 2");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           SALVAR TODOS OS REFÉNS                              |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -482,20 +465,17 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
-            Console.WriteLine();
 
             if (diceValue > 10)
             {
-                Console.WriteLine("Opção 2 - sucesso");
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                     SALVAR TODOS OS REFÉNS -- SUCESSO                         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -512,8 +492,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 2 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                      SALVAR TODOS OS REFÉNS  --  FRACASSO                     |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -538,9 +517,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 3");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                            PERSUADIR OS SEREIANOS                             |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -554,14 +531,12 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
 
             if (diceValue > 10)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 3 - sucesso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                     PERSUADIR OS SEREIANOS -- SUCESSO                         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -580,8 +555,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 3 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                      PERSUADIR OS SEREIANOS  --  FRACASSO                     |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -605,9 +579,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 4");
             Console.WriteLine();
-
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           ENFEITIÇAR OS SEREIANOS                             |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -621,14 +593,12 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
-            Console.WriteLine();
 
             if (diceValue > 10)
             {
-                Console.WriteLine("Opção 4 - sucesso");
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                      ENFEITIÇAR OS SEREIANOS -- SUCESSO                       |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -647,8 +617,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 4 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                     ENFEITIÇAR OS SEREIANOS -- FRACASSO                       |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -672,6 +641,8 @@ namespace RPG
         //---------> BREAK <---------
         static void breakForNextChallenge(List<Character> character)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                   DESCANSO                                    |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -724,6 +695,8 @@ namespace RPG
                 }
 
             }
+
+            RPG.ChessChallenge.wizardChessChallenge(character);
         }
 
         //---------> OPÇÂO 1 <---------
@@ -731,8 +704,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 1");
-
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                            DESCANSAR NO SÃO COMUNAL                           |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -753,8 +725,7 @@ namespace RPG
         static Character investigate(Character character)
         {
             Console.WriteLine();
-            Console.WriteLine("Opção 2");
-
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                           INVESTIGAR INTERFERÊNCIAS                           |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -768,14 +739,12 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para jogar o dado");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
-            Console.WriteLine();
             Console.WriteLine($"O Valor do dado é {diceValue}");
-            Console.WriteLine();
 
             if (diceValue > 10)
             {
-                Console.WriteLine("Opção 2 - sucesso");
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                    INVESTIGAR INTERFERÊNCIAS -- SUCESSO                       |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -798,14 +767,12 @@ namespace RPG
                 Console.WriteLine("Pressione ENTER para jogar o dado");
                 Console.ReadLine();
                 diceValue = RPG.Dice.throwDice();
-                Console.WriteLine();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
-                Console.WriteLine();
 
                 if (diceValue > 17)
                 {
-                    Console.WriteLine("Opção 2 -- Investigar mais -- sucesso");
-
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                   AUMENTAR RAIO DE INVESTIGAÇÃO  -- SUCESSO                   |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -826,8 +793,7 @@ namespace RPG
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção 2 -- Investigar mais -- fracasso");
-
+                    Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     Console.WriteLine("|                AUMENTAR RAIO DE INVESTIGAÇÃO  --  FRACASSO                    |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -849,8 +815,7 @@ namespace RPG
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção 2 -- fracasso");
-
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                   INVESTIGAR INTERFERÊNCIAS  --  FRACASSO                     |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -875,8 +840,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Opção 3");
-
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                 CONTAR HISTÓRIAS                              |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
