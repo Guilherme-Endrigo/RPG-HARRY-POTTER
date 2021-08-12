@@ -212,7 +212,7 @@ namespace RPG
 
     class Tune
     {
-        public static void hedwigsTune()
+        public static void EdwigesTune()
         {
             int frequency = 15;
 
