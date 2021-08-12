@@ -48,11 +48,11 @@ namespace RPG
                     Console.WriteLine("| qual o melhor caminho do labirinto e onde os seus concorrentes estão! Siga    |");
                     Console.WriteLine("| direto para o final.                                                          |");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Sábia decisão, querido bruxo, você pulou QUASE todos os obstáculos do la-  |");
-                    Console.WriteLine("| birinto... Infelizmente, nem o Mapa poderia ter previsto a presença da eni-   |");
-                    Console.WriteLine("| gmática Esfinge ao final do labirinto. Como guerreiro, resta a você enfren-   |");
-                    Console.WriteLine("| tar esse desafio. Se você está jogando com um ou mais amigos, espere que ele  |");
-                    Console.WriteLine("| enfrente os desafios e labirinto e, então, vocês enfrentarão o último desafio.|");
+                    Console.WriteLine("|    Por isso, você pulou QUASE todos os obstáculos do labirinto... Infeliz-    |");
+                    Console.WriteLine("| mente, nem o Mapa poderia ter previsto a presença da enigmática Esfinge. Como |");
+                    Console.WriteLine("| guerreiro, resta a você enfrentá-la. Se você está jogando com um ou mais ami- |");
+                    Console.WriteLine("| gos, espere que eles enfrentem os desafios do labirinto e, então, vocês en-   |");
+                    Console.WriteLine("| frentarão a Esfinge.                                                          |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -168,7 +168,7 @@ namespace RPG
             switch (option)
             {
                 case "1":
-                    character = escapeBoggart(character);
+                    character = expectoBoggart(character);
                     break;
 
                 case "2":
@@ -176,14 +176,14 @@ namespace RPG
                     break;
 
                 case "3":
-                    character = expectroBoggart(character);
+                    character = escapeBoggart(character);
                     break;
             }
 
             return character;
         }
         //---------> OPÇÃO 1 <---------
-        static Character expectroBoggart(Character character)
+        static Character expectoBoggart(Character character)
         {
             Console.WriteLine();
             Console.WriteLine();
@@ -429,7 +429,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            CUIDADO UM VISGO DO DIABO                          |");
+            Console.WriteLine("|                           CUIDADO, UM VISGO DO DIABO                          |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você achou que seria um labirinto bobinho, né? Ir sempre para a direita    |");
@@ -485,9 +485,9 @@ namespace RPG
             Console.WriteLine("|                                 LUMUS SOLEM!!                                 |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você rapidamente saca sua varinha com toda sua bravura pronto para mostrar |");
-            Console.WriteLine("| que não chegou até aqui atoa... será que o nervosismo vai te atrapalhar jogue |");
-            Console.WriteLine("| um dado para descobrir.                                                       |");
+            Console.WriteLine("|    Você rapidamente saca sua varinha, com toda sua bravura, pronto para mos-  |");
+            Console.WriteLine("| trar que não chegou até aqui à toa... Será que o nervosismo vai te atrapa-    |");
+            Console.WriteLine("| lhar? Jogue um dado para descobrir.                                           |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -520,11 +520,11 @@ namespace RPG
                 Console.WriteLine("|                            PARECE QUE O TEMPO FECHOU                          |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    O visgo aproveita a luz e fica mais forte, agarrando você apertando muito. |");
+                Console.WriteLine("|    O feitiço não funciona e o Visgo fica mais forte, apertando muito você.    |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você tem duas opções:                                                      |");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| (1) Tentar novamente soltar um lumus poderoso.                                |");
+                Console.WriteLine("| (1) Tentar novamente soltar um Lumus poderoso.                                |");
                 Console.WriteLine("| (2) Aceitar a morte.                                                          |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -565,8 +565,8 @@ namespace RPG
                         Console.WriteLine("|                                 EU DESISTO!                                   |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
-                        Console.WriteLine("|    Em um ato desesperado você desiste e é engolido pela planta, ou seja, você |");
-                        Console.WriteLine("| não vai ser capaz de continuar o jogo. Tchauzinho :(                          |");
+                        Console.WriteLine("|    Em um ato desesperado, você desiste e é engolido pela planta e não será    |");
+                        Console.WriteLine("| capaz de continuar o jogo. Tchauzinho :(                                      |");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
                         character.isAlive = false;
@@ -586,8 +586,8 @@ namespace RPG
             Console.WriteLine("|                                  QUE CORAGEM                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você foi muito corajoso! Porém será que essa coragem deu frutos? Jogue o   |");
-            Console.WriteLine("| o dado para ver se conseguiu ficar parado.                                    |");
+            Console.WriteLine("|    Você foi muito corajoso! Porém, será que essa coragem deu frutos? Jogue o  |");
+            Console.WriteLine("| dado para ver se conseguiu ficar parado.                                      |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -616,12 +616,12 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                               PUTS BEM AGORA?                                 |");
+                Console.WriteLine("|                               PUTS, BEM AGORA?                                 |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|   Atchim! parece que você espirrou na pior hora possivel, ela te aperta mais, |");
-                Console.WriteLine("| porém você ainda tem uma chance de ficar parado. Jogue o dado novamente para  |");
-                Console.WriteLine("| descobrir se sua alergia a polém passou                                       |");
+                Console.WriteLine("|   Atchim! Parece que você espirrou na pior hora possível! A planta te aperta  |");
+                Console.WriteLine("| mais, porém você ainda tem uma chance de ficar parado. Jogue o dado novamente |");
+                Console.WriteLine("| para descobrir se sua alergia a pólen passou.                                 |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.life -= 1;
 
@@ -645,9 +645,9 @@ namespace RPG
                     Console.WriteLine("|                       PARECE QUE A ALERGIA É FORTE                            |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|   Atchim! Atchim! Atchim! Puts que hora horrível para sua alergia, por conta  |");
-                    Console.WriteLine("| a planta te aperta até ser impossivel escapar... Parece que não vai ter sua   |");
-                    Console.WriteLine("| chance de terminar o torneio..                                                |");
+                    Console.WriteLine("|   Atchim! Atchim! Atchim! Puts, que hora horrível para sua alergia... A       |");
+                    Console.WriteLine("| planta te aperta até ser impossível escapar... Parece que não vai ter a sua   |");
+                    Console.WriteLine("| chance de terminar o torneio...                                               |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.isAlive = false;
@@ -662,11 +662,11 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                        PARECE QUE ALGUEM TA COM MEDO                          |");
+            Console.WriteLine("|                       PARECE QUE ALGUÉM ESTÁ COM MEDO                         |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Não esperavamos isso de você nesse ponto do torneio. jogue o dado para ver |");
-            Console.WriteLine("| se você não tropeçou pelo caminho.                                            |");
+            Console.WriteLine("|    Não esperávamos isso de você neste ponto do torneio. Jogue o dado para ver |");
+            Console.WriteLine("| se alguém vai aparecer para te ajudar.                                        |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine();
@@ -685,8 +685,8 @@ namespace RPG
                 Console.WriteLine("|                              VOCÊ É MUITO QUERIDO                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Parece que seus amigos sensibilizados pelo seu desespero decidem ir te     |");
-                Console.WriteLine("| ajudar, parece que dessa vez ser uma boa pessoa trouxe resultados.            |");
+                Console.WriteLine("|    Seus amigos, sensibilizados pelo seu desespero, decidem ir te ajudar.      |");
+                Console.WriteLine("| Parece que, dessa vez, ser uma boa pessoa trouxe resultados.                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.house.scoreHufflePuff += 1;
@@ -696,12 +696,12 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                             NINGUEM GOSTA DE VOCÊ                             |");
+                Console.WriteLine("|                             NINGUÉM GOSTA DE VOCÊ                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|   Parece que pensar só em pegadinhas, fazer bullying e gabar vantagem trás    |");
-                Console.WriteLine("| alguns problemas. Jogue o dado para enquanto você chora, alguem ainda se      |");
-                Console.WriteLine("| sensibiliza vom você.                                                         |");
+                Console.WriteLine("|   Parece que pensar só em pegadinhas, fazer bullying e gabar vantagem traz    |");
+                Console.WriteLine("| alguns problemas. Jogue o dado para ver se, enquanto você chora, alguém ainda |");
+                Console.WriteLine("| se sensibiliza com você.                                                      |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.house.scoreSlytherin += 1;
@@ -716,11 +716,11 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                             ALGUEM SABE QUEM VOCÊ                             |");
+                    Console.WriteLine("|                      ALGUÉM SABE QUEM VOCÊ É DE VERDADE                       |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Parece que ao ouvir seu gritos alguem sente sua dor e decide ir te ajudar. |");
-                    Console.WriteLine("| você pode ter escapado porém é melhor repensar nas suas atitudes.             |");
+                    Console.WriteLine("|    Parece que, ao ouvir seu gritos, alguém sente sua dor e decide ir te       |");
+                    Console.WriteLine("| ajudar. Você pode ter escapado, porém é melhor repensar suas atitudes.        |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.house.scoreHufflePuff += 1;
@@ -734,7 +734,8 @@ namespace RPG
                     Console.WriteLine("|                                  ESQUECIDO                                    |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Você grita e pede por ajuda até o fim mas realmente ninguem aparece. ADEUS |");
+                    Console.WriteLine("|    Você grita e pede por ajuda até o fim, mas realmente ninguém aparece.      |");
+                    Console.WriteLine("| ADEUS.                                                                         |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.isAlive = false;
@@ -800,7 +801,7 @@ namespace RPG
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você se posiciona para atacar enquanto a criatura vem em sua direção.      |");
-            Console.WriteLine("| Jogue o dado para saber se você foi capaz de petrifica-la.                    |");
+            Console.WriteLine("| Jogue o dado para saber se você foi capaz de petrificá-la.                    |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine();
@@ -838,7 +839,7 @@ namespace RPG
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Eita, você não conseguiu petrificar o explosivim e se machucou! Mas pode   |");
-                Console.WriteLine("| tentar fugir... Jogue o dado para ver se não esta machucado demais para       |");
+                Console.WriteLine("| tentar fugir... Jogue o dado para ver se não está machucado demais para       |");
                 Console.WriteLine("| correr.                                                                       |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -901,10 +902,10 @@ namespace RPG
             Console.WriteLine("|    O menor, o maior o do meio. É sempre o mal. Não estou te julgando, eu não  |");
             Console.WriteLine("| passei a minha vida fazendo só o bem.                                         |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Mas agora, se eu tiver mesmo que escolher entro o mal ou outro, eu prefiro |");
-            Console.WriteLine("| não escolher nenhum.  Está tudo bem fugir desta vez..                         |");
+            Console.WriteLine("|    Mas agora se eu tiver mesmo que escolher entre o mal ou outro, eu prefiro  |");
+            Console.WriteLine("| não escolher nenhum. Está tudo bem fugir desta vez...                         |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Jogue o dado para saber se conseguiu                                       |");
+            Console.WriteLine("|    Jogue o dado para saber se conseguiu.                                      |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             character.score -= 1;
@@ -920,7 +921,7 @@ namespace RPG
 
 
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                              DE UM TROCADO PARA SEU BRUXO                     |");
+                Console.WriteLine("|                           DÊ UM TROCADO PARA SEU BRUXO                        |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você conseguiu fugir e merece um trocado! Dessa vez você não terá que      |");
@@ -942,8 +943,8 @@ namespace RPG
                 Console.WriteLine("|                                  QUE DESASTRADO                               |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Enquanto corre deseperado, você, devido ao medo tropeça e acaba desmaiando |");
-                Console.WriteLine("| infelizmente você acorda na infermaria dias depois do torneio                 |");
+                Console.WriteLine("|    Enquanto corre desesperado, você, devido ao medo, tropeça e desmaia.       |");
+                Console.WriteLine("|    Infelizmente você acorda na enfermaria dias depois do torneio.             |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.isAlive = false;
