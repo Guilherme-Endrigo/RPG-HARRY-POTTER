@@ -64,6 +64,14 @@ namespace RPG
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
 
+                while (option != "1" && option != "2" && option == "")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine();
+                    Console.Write($"{character[i].name}, escolha novamente: ");
+                    option = Console.ReadLine();
+                }
                 switch (option)
                 {
                     case "1":
@@ -100,16 +108,17 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine($"{character}, qual varinha você quer escolher?");
+            Console.WriteLine($"{character.name}, qual varinha você quer escolher?");
             string wand = Console.ReadLine();
 
-            while (wand != "1" && wand != "2" && wand != "3")
+            while (wand != "1" && wand != "2" && wand != "3" && wand != "4" && wand != "")
             {
+                Console.WriteLine();
                 Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine();
+                Console.Write($"{character.name}, escolha novamente: ");
                 wand = Console.ReadLine();
             }
-
-
             switch (wand)
             {
                 case "1":
@@ -192,7 +201,7 @@ namespace RPG
             // static string resultDefense = spellDefense(diceValue);
 
             // Console.WriteLine();
-            // Console.WriteLine("Pressione ENTER para jogar o dado");
+            // Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             // Console.ReadLine();
             // diceValue = RPG.Dice.throwDice();
             // Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -225,7 +234,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");

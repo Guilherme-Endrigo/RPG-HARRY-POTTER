@@ -32,23 +32,32 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                             XADREZ DE BRUXO!                                  |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Cavalo do Rei                                                             |");
-            Console.WriteLine("| (2) Torre da Rainha                                                           |");
-            Console.WriteLine("| (3) Bispo Negro                                                               |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
             for (int i = 0; i < character.Count; i++)
             {
-                Console.WriteLine($"{character[i].name}, informe a opção desejada para continuar: ");
-                string option = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                             XADREZ DE BRUXO!                                  |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("| (1) Cavalo do Rei                                                             |");
+                Console.WriteLine("| (2) Torre da Rainha                                                           |");
+                Console.WriteLine("| (3) Bispo Negro                                                               |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                string option = Console.ReadLine();
+                while (option != "1" && option != "2" && option != "3" && option == "")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine();
+                    Console.Write($"{character[i].name}, escolha novamente: ");
+                    option = Console.ReadLine();
+                }
                 switch (option)
                 {
                     case "1":
@@ -89,7 +98,7 @@ namespace RPG
             character.house.scoreRavenclaw += 1;
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -171,7 +180,7 @@ namespace RPG
 
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -237,7 +246,7 @@ namespace RPG
             character.house.scoreSlytherin += 1;
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -259,7 +268,7 @@ namespace RPG
 
 
                 Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para jogar o dado");
+                Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
                 Console.ReadLine();
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -342,24 +351,34 @@ namespace RPG
             Console.WriteLine("Pressione Enter para continuar");
             Console.ReadLine();
 
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    DESCANSO                                   |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| Faça uma escolha:                                                             |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (1) Fazer uma festa no Salão Principal com os irmãos Weasley                  |");
-            Console.WriteLine("| (2) Tirar cochilo                                                             |");
-            Console.WriteLine("| (3) Relaxar na estufa da Prof. Sprout                                         |");
-            Console.WriteLine("| (4) Ir visitar Hagrid                                                         |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
             for (int i = 0; i < character.Count; i++)
             {
-                Console.WriteLine($"{character[i].name}, informe a opção desejada para continuar: ");
-                string option = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                                    DESCANSO                                   |");
+                Console.WriteLine("|-------------------------------------------------------------------------------|");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("| Faça uma escolha:                                                             |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine("| (1) Fazer uma festa no Salão Principal com os irmãos Weasley                  |");
+                Console.WriteLine("| (2) Tirar cochilo                                                             |");
+                Console.WriteLine("| (3) Relaxar na estufa da Prof. Sprout                                         |");
+                Console.WriteLine("| (4) Ir visitar Hagrid                                                         |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine();
 
+                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                string option = Console.ReadLine();
+                while (option != "1" && option != "2" && option != "3" && option != "4" && option == "")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine();
+                    Console.Write($"{character[i].name}, escolha novamente: ");
+                    option = Console.ReadLine();
+                }
                 switch (option)
                 {
                     case "1":
@@ -383,7 +402,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -432,7 +451,7 @@ namespace RPG
 
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -480,7 +499,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -541,7 +560,7 @@ namespace RPG
         {
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para jogar o dado");
+            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");

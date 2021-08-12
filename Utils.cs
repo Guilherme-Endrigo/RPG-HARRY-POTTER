@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace RPG
@@ -165,7 +166,6 @@ namespace RPG
             Console.ResetColor();
 
         }
-
         public static void diabolicLaugh()
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -353,13 +353,15 @@ namespace RPG
         public static Character createChar(string _name, int _idChar)
         {
             var model = new Character();
-            model.idChar = _idChar;
+            model.idChar = _idChar + 1;
             model.name = _name;
             model.life = 10;
             model.score = 0;
             model.isAlive = true;
             model.hasMap = false;
             model.hasPotion = false;
+            model.isBlocked = false;
+            model.hasSucceedSabotage = false;
             model.house = createHouse(_idChar);
 
             return model;
@@ -435,6 +437,54 @@ namespace RPG
             return character.house;
 
         }
+
+        public static int sabotageSucceed(Character character, List<Character> listCharacter)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para ver a lista de participantes que deseja sabotar:");
+            Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|                                NOMES NO CÁLICE                                |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+
+            foreach (var nomeParticipante in listCharacter)
+            {
+                if (character.idChar != nomeParticipante.idChar)
+                {
+
+                    Console.WriteLine($" ({nomeParticipante.idChar}) {nomeParticipante.name}                           ");
+
+                }
+            }
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+            Console.WriteLine();
+
+            Console.Write("Informe sua decisão: ");
+            int charChoice = Int32.Parse(Console.ReadLine());
+
+            int qtdPlayers = listCharacter.Count - 1;
+
+
+            while (character.idChar == charChoice && charChoice < qtdPlayers)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine();
+                Console.Write($"{character.name}, escolha novamente: ");
+                charChoice = Int32.Parse(Console.ReadLine());
+            }
+
+            Console.Write($"Participante {listCharacter[charChoice].name} foi bloqueado! ");
+            Console.WriteLine();
+
+            return charChoice;
+
+        }
         public static void spellAttack(int diceValue)
         {
             if (diceValue > 6 && diceValue < 11)
@@ -474,7 +524,6 @@ namespace RPG
                 Console.WriteLine("porém conjurou errado");
             }
         }
-
 
     }
 
