@@ -18,8 +18,8 @@ namespace RPG
       Console.WriteLine("|                              Desafio do labirinto                             |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Agora, você entrará em um temível labirinto, onde perigosos desafios te    |");
-      Console.WriteLine("| aguardam. Escolha sabiamente e, se puder, faça uso de toda e qualquer vanta-  |");
-      Console.WriteLine("| gem.                                                                          |");
+      Console.WriteLine("| aguardam. Escolha sabiamente e, se puder, faça uso de toda e qualquer         |");
+      Console.WriteLine("| vantagem.                                                                     |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -45,19 +45,19 @@ namespace RPG
           Console.WriteLine("|    Ah, que incrível! Você possui o Mapa do Maroto e tem a vantagem de saber   |");
           Console.WriteLine("| qual o melhor caminho do labirinto e onde os seus concorrentes estão!         |");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Por isso, você ganhou dois pontos e pulou QUASE todos os obstáculos do la- |");
-          Console.WriteLine("| birinto. Infelizmente, nem o Mapa poderia ter previsto a presença da enigmá-  |");
-          Console.WriteLine("| tica Esfinge. Como guerreiro, resta a você enfrentá-la. Se você está jogando  |");
-          Console.WriteLine("| com um ou mais amigos, espere que eles enfrentem os desafios do labirinto e,  |");
-          Console.WriteLine("| então, vocês enfrentarão a Esfinge.                                           |");
+          Console.WriteLine("|    Por isso, você ganhou quatro pontos e pulou QUASE todos os obstáculos do   |");
+          Console.WriteLine("| labirinto. Infelizmente, nem o Mapa poderia ter previsto a presença da        |");
+          Console.WriteLine("| enigmática Esfinge. Como guerreiro, resta a você enfrentá-la. Se você está    |");
+          Console.WriteLine("| jogando com um ou mais amigos, espere que eles enfrentem os desafios do       |");
+          Console.WriteLine("| labirinto e, então, vocês enfrentarão a Esfinge.                              |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
           character[i].score += 4;
           Console.WriteLine();
-          Console.Write($"{character[i].name}, boa sorte na esfinge! ");
+          Console.Write($"{character[i].name}, boa sorte na Esfinge! ");
           Console.WriteLine();
-          Console.WriteLine($"Você dirige-se pelo atalho descoberto, porém não chega muito antes dos demais.");
+          Console.WriteLine($"Você se dirige pelo atalho descoberto, porém não chega muito antes dos demais.");
           Console.ReadLine();
 
           Console.WriteLine();
@@ -79,9 +79,9 @@ namespace RPG
           Console.WriteLine("|    Qual caminho você deseja seguir? Cuidado… isso dirá muito sobre você e os  |");
           Console.WriteLine("| desafios que enfrentará.                                                      |");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("| (1) IR SEMPRE PARA A DIREITA                                                  |");
-          Console.WriteLine("| (2) ALTERNAR ENTRE ESQUERDA E DIREITA                                         |");
-          Console.WriteLine("| (3) IR SEMPRE PARA A ESQUERDA                                                 |");
+          Console.WriteLine("| (1) Ir sempre para a direita                                                  |");
+          Console.WriteLine("| (2) Alternar entre esquerda e direita                                         |");
+          Console.WriteLine("| (3) Ir sempre para a esquerda                                                 |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -197,7 +197,7 @@ namespace RPG
       Console.WriteLine("|                                 BICHO PAPÃO                                   |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu enfeitiçar o bicho-papão! Cuidado pra você não passar ridículo!|");
+      Console.WriteLine("|    Você escolheu enfeitiçar o Bicho-Papão! Cuidado para não passar ridículo!  |");
       Console.WriteLine("| Boa sorte, que rolem os dados!                                                |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -218,8 +218,8 @@ namespace RPG
         Console.WriteLine("|                             I PUT A SPELL ON YOU                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-        Console.WriteLine("| rinto com mais dois pontos e uma vida.                                        |");
+        Console.WriteLine("|    O feitiço funcionou! Você conseguiu fugir do Bicho Papão e segue no        |");
+        Console.WriteLine("| labirinto com mais dois pontos e uma vida.                                    |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -236,10 +236,10 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                          FOI ENGOLIDO PELO BICHO PAPÃO                        |");
+        Console.WriteLine("|                        NÃO TEM NENHUMA MEMÓRIA FELIZ?                         |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    O feitiço não funcionou e você perdeu um score e uma vida, mas tente nova- |");
+        Console.WriteLine("|    O feitiço não funcionou e você perdeu um ponto e uma vida, mas tente nova- |");
         Console.WriteLine("| mente.                                                                        |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -247,6 +247,10 @@ namespace RPG
         character.score -= 1;
         character.life -= 1;
 
+        Console.WriteLine();
+        Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+        Console.ReadLine();
+          
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
@@ -259,11 +263,11 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                                 ABRACADABRA                                   |");
+          Console.WriteLine("|                                  ABRACADABRA                                  |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-          Console.WriteLine("| rinto com mais um ponto e uma vida.                                           |");
+          Console.WriteLine("|    Remo Lupin provavelmente está orgulhoso de você! Arrasa com esse Patronum, |");
+          Console.WriteLine("| bruxão! Mais um ponto para você!                                              |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -280,12 +284,11 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                                    BICHO PAPÃO                                |");
+          Console.WriteLine("|                      MORREU DE MEDINHO DO BICHO PAPÃO                         |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    O feitiço não funcionou porque o bicho papão não é um dementador de        |");
-          Console.WriteLine("| verdade e não pode ser derrotado com o Expecto Patronum. Você é paralisado    |");
-          Console.WriteLine("| pelo medo e desmaia. Tente novamente daqui a cinco anos :(                    |");
+          Console.WriteLine("|    Ficou desconsertado, hein? O feitiço não funcionou devido à sua falta de   |");
+          Console.WriteLine("| foco! Você foi paralisado pelo medo e não pode mais jogar. Sinto muito :(     |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -310,7 +313,7 @@ namespace RPG
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Você escolheu a opção menos ridícula para lutar contra o Bicho Papão!      |");
-      Console.WriteLine("| Jogue os dados e veja se o feitiço foi eficiente ao espantar a criatura!      |");
+      Console.WriteLine("| Jogue os dados e veja se o feitiço foi eficiente contra a criatura!           |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -320,11 +323,11 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                             O FEITIÇO DEU CERTO!                              |");
+        Console.WriteLine("|                     RÍDICULO? SE ISSO É SER RIDÍCULO...                       |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    O feitiço funcionou! Você consegue fugir do Bicho Papão e segue no labi-   |");
-        Console.WriteLine("| rinto com mais 2 pontos e uma vida.                                           |");
+        Console.WriteLine("|    O feitiço funcionou! Você combateu o Bicho Papão transformando-o em um     |");
+        Console.WriteLine("| boneco de palhaço de mola. Siga com mais 2 pontos e uma vida!                 |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -338,16 +341,20 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                 SOCORRO MÃE!                                  |");
+        Console.WriteLine("|                                SOCORRO, MÃE!                                  |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("| Você chorou de medo chamando por sua mãe, porém chegou na Esfinge!            |");
+        Console.WriteLine("|    Você chorou de medo chamando por sua mãe, porém chegou na Esfinge!         |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
         character.score -= 1;
         character.life -= 1;
         character.house.scoreSlytherin += 1;
+
+        Console.WriteLine();
+        Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+        Console.ReadLine();
 
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
@@ -382,7 +389,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                    BICHO PAPÃO                                |");
+        Console.WriteLine("|                      BRUXÃO? BRUXÃO? VOLTA AQUI, BRUXÃO!                      |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Você conseguiu fugir do Bicho Papão! Continue seu caminho no labirinto com |");
@@ -403,11 +410,11 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                BICHO PAPÃO                                    |");
+        Console.WriteLine("|                            PRESS F TO PAY RESPECTS                            |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Você não consegue fugir, é paralisado pelo medo e desmaia. Tente novamente |");
-        Console.WriteLine("|  após cinco anos, se tiver sorte :(                                           |");
+        Console.WriteLine("|  daqui quatro anos, se o Cálice permitir :)                                   |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -428,7 +435,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                           CUIDADO, UM VISGO DO DIABO                          |");
+      Console.WriteLine("|                          CUIDADO, UM VISGO DO DIABO!                          |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Você achou que seria um labirinto bobinho, né? Ir sempre para a direita    |");
@@ -438,9 +445,9 @@ namespace RPG
       Console.WriteLine("| ra o seu pé e começa te puxar e te prender com os seus tentáculos. O que você |");
       Console.WriteLine("| faz?                                                                          |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (1) REALIZA O FEITIÇO LUMUS SOLEM                                             |");
-      Console.WriteLine("| (2) FICA PARADO ATÉ O EFEITO PASSAR                                           |");
-      Console.WriteLine("| (3) GRITA POR AJUDA E TORCE PARA QUE ALGUÉM APAREÇA                           |");
+      Console.WriteLine("| (1) Realiza o feitiço Lumus Solem                                             |");
+      Console.WriteLine("| (2) Fica parado até o efeito passar                                           |");
+      Console.WriteLine("| (3) Grita por ajuda e torce para que alguém apareça                           |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
       Console.WriteLine();
@@ -469,7 +476,7 @@ namespace RPG
           break;
 
         case "3":
-          character = Scream(character);
+          character = scream(character);
           break;
       }
       return character;
@@ -484,9 +491,9 @@ namespace RPG
       Console.WriteLine("|                                 LUMUS SOLEM!!                                 |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Você rapidamente saca sua varinha, com toda sua bravura, pronto para mos-  |");
-      Console.WriteLine("| trar que não chegou até aqui à toa... Será que o nervosismo vai te atrapa-    |");
-      Console.WriteLine("| lhar? Jogue um dado para descobrir.                                           |");
+      Console.WriteLine("|    Você rapidamente saca sua varinha com toda sua bravura, pronto para        |");
+      Console.WriteLine("| mostrar que não chegou até aqui à toa... Será que o nervosismo vai te         |");
+      Console.WriteLine("| atrapalhar? Jogue um dado para descobrir.                                     |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -502,7 +509,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                 CLAREOU A SITUAÇÃO                            |");
+        Console.WriteLine("|                               CLAREOU A SITUAÇÃO                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Você conseguiu se livrar do Visgo! Continue seu caminho com dois pontos.   |");
@@ -527,7 +534,7 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    O feitiço não funciona e o Visgo fica mais forte, apertando muito você.    |");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Você tem duas opções:                                                      |");
+        Console.WriteLine("| Você tem duas opções:                                                         |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("| (1) Tentar novamente soltar um Lumus poderoso.                                |");
         Console.WriteLine("| (2) Aceitar a morte.                                                          |");
@@ -553,7 +560,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                               CLAREOU A SITUAÇÃO                              |");
+            Console.WriteLine("|                        A LUMUS DO SOL SUPEROU O DIABO                         |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você conseguiu se livrar do Visgo! Continue seu caminho com um ponto.      |");
@@ -573,11 +580,11 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                 EU DESISTO!                                   |");
+            Console.WriteLine("|                             TREPADEIRA MALDITA                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Em um ato desesperado, você desiste e é engolido pela planta e não será    |");
-            Console.WriteLine("| capaz de continuar o jogo. Tchauzinho :(                                      |");
+            Console.WriteLine("|    Você perde as forças para lutar e é engolido pela planta. Por isso, não    |");
+            Console.WriteLine("| será capaz de continuar o jogo. Tchauzinho!                                   |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -620,10 +627,10 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                 CLAREOU A SITUAÇÃO                            |");
+        Console.WriteLine("|                               SORTUDO(A), HEIN?                               |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Você conseguiu se livrar do Visgo! Continue seu caminho com dois pontos.   |");
+        Console.WriteLine("|    Ainda bem que o Visgo te soltou! Continue seu caminho com dois pontos.     |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -645,18 +652,24 @@ namespace RPG
         Console.WriteLine("|   Atchim! Parece que você espirrou na pior hora possível! A planta te aperta  |");
         Console.WriteLine("| mais, porém você ainda tem uma chance de ficar parado. Jogue o dado novamente |");
         Console.WriteLine("| para descobrir se sua alergia a pólen passou.                                 |");
+        Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
+        
         character.life -= 1;
+
+        Console.WriteLine();
+        Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+        Console.ReadLine();
 
         if (diceValue >= 13)
         {
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                               CLAREOU A SITUAÇÃO                              |");
+          Console.WriteLine("|                          LIVRE DE ALERGIA, MARGARIDA                          |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Você conseguiu se livrar do Visgo! Continue seu caminho com um ponto.      |");
+          Console.WriteLine("|    Ainda bem que você segurou seu nariz! Continue seu caminho com um ponto!   |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -692,7 +705,7 @@ namespace RPG
     }
 
     //---------> OPÇÃO 3 <---------
-    static Character Scream(Character character)
+    static Character scream(Character character)
     {
       Console.WriteLine();
       Console.WriteLine();
@@ -767,6 +780,10 @@ namespace RPG
           character.life -= 1;
 
           Console.WriteLine();
+          Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+          Console.ReadLine();
+
+          Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
         }
@@ -779,7 +796,8 @@ namespace RPG
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine("|    Você grita e pede por ajuda até o fim, mas realmente ninguém aparece.      |");
-          Console.WriteLine("| ADEUS.                                                                        |");
+          Console.WriteLine("|                                                                               |");
+          Console.WriteLine("|                                   ADEUS.                                      |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -808,8 +826,8 @@ namespace RPG
       Console.WriteLine("| criada por Rúbeo Hagrid, em 1994, através do cruzamento de Manticoras e ca-   |");
       Console.WriteLine("| ranguejos-de-fogo. O que você faz?                                            |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| (1) LANÇA O FEITIÇO PETRIFICUS TOTALUS                                        |");
-      Console.WriteLine("| (2) FOGE                                                                      |");
+      Console.WriteLine("| (1) Lança o feitiço Petrificus Totalus                                        |");
+      Console.WriteLine("| (2) Foge                                                                      |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -898,6 +916,10 @@ namespace RPG
         character.life -= 1;
 
         Console.WriteLine();
+        Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+        Console.ReadLine();
+
+        Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
         Console.ReadLine();
@@ -910,7 +932,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                                   EXPLOSIVIM                                  |");
+          Console.WriteLine("|          NÃO TEVE DOPPING? UM FERIMENTO DESSE É DIFÍCIL DE AGUENTAR           |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine("|    Você conseguiu fugir do explosivim, continue seu caminho no labirinto!     |");
@@ -929,7 +951,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                                  FERROADA                                     |");
+          Console.WriteLine("|                                   FERROADA                                    |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine("|    Você não foi rápido o suficiente, o explosivim te atacou e você morreu!    |");
@@ -952,7 +974,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                                    ARACNOFOBIA                                |");
+      Console.WriteLine("|                                  ARACNOFOBIA                                  |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    O menor, o maior o do meio. É sempre o mal. Não estou te julgando, eu não  |");
@@ -1002,7 +1024,7 @@ namespace RPG
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Enquanto corre desesperado, você, devido ao medo, tropeça e desmaia.       |");
-        Console.WriteLine("|    Infelizmente você acorda na enfermaria dias depois do torneio.             |");
+        Console.WriteLine("| Infelizmente, você acorda na enfermaria somente dias depois do torneio.       |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
         character.isAlive = false;
@@ -1028,8 +1050,8 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|                              Desafio da Esfinge                               |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    De acordo com o Ministério da Magia, a Esfinge é uma criatura mágica nati- |");
-      Console.WriteLine("| va do Egito que tem a cabeça de um humano e o corpo do leão. Esfinges são     |");
+      Console.WriteLine("|    De acordo com o Ministério da Magia, a Esfinge é uma criatura mágica       |");
+      Console.WriteLine("| nativa do Egito que tem a cabeça de um humano e o corpo do leão. Esfinges são |");
       Console.WriteLine("| capazes de fala humana e são conhecidas por seu amor por quebra-cabeças,      |");
       Console.WriteLine("| enigmas e charadas.                                                           |");
       Console.WriteLine("|                                                                               |");
@@ -1119,8 +1141,8 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Uau! Esse momento foi tenso, hein? Mas você conseguiu superar a feroz Es-  |");
         Console.WriteLine("| finge e o seu enigma. Parabéns! Por isso, você ganhou um ponto e uma vida! Se |");
-        Console.WriteLine("| houver um vencedor no jogo, você vai descobrir quem é agora. Se houver em-    |");
-        Console.WriteLine("| pate, prepare-se para mais um desafio...                                      |");
+        Console.WriteLine("| houver um vencedor no jogo, você vai descobrir quem é agora. Se houver        |");
+        Console.WriteLine("| empate, prepare-se para mais um desafio...                                    |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -1132,7 +1154,6 @@ namespace RPG
           {
             if (character[i].idChar == player.idChar)
             {
-
               character[i].score += 1;
               character[i].life += 1;
             }
@@ -1158,7 +1179,7 @@ namespace RPG
         Console.WriteLine("|                               Enigma da Esfinge                               |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Humm… Não. Quem sabe da próxima vez? Você perdeu um score e uma vida :(,   |");
-        Console.WriteLine("| mas conseguiu se livrar da Esfinge com menos um score e uma vida! Agora, cor- |");
+        Console.WriteLine("| mas conseguiu se livrar da Esfinge com menos um ponto e uma vida! Agora, cor- |");
         Console.WriteLine("| ra o mais rápido que puder para a saída do labirinto! Se houver um vencedor   |");
         Console.WriteLine("| no jogo, você vai descobrir quem é agora. Se houver empate, prepare-se para   |");
         Console.WriteLine("| mais um desafio...                                                            |");
