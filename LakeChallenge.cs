@@ -1033,11 +1033,11 @@ namespace RPG
       Console.WriteLine("|                                 CONTAR HISTÓRIAS                              |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|   Você decide passar um tempo com seus amigos, contando do seu embate com os  |");
+      Console.WriteLine("|    Você decide passar um tempo com seus amigos, contando do seu embate com os |");
       Console.WriteLine("| sereianos, do perrengue de nadar contra o tempo. A conversa foi divertida e   |");
       Console.WriteLine("| você se sente com mais disposição para o dia seguinte!                        |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Ganhou um ponto de vida!                                                      |");
+      Console.WriteLine("|    Ganhou um ponto de vida!                                                   |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

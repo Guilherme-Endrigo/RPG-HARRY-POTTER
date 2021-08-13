@@ -100,7 +100,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -122,7 +122,7 @@ namespace RPG
 
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+        Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
         Console.ReadLine();
         diceValue = RPG.Dice.throwDice();
         Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -212,7 +212,7 @@ namespace RPG
       character.house.scoreGryffindor += 2;
 
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -347,10 +347,9 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|                        A primeira parte chegou ao fim                         |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Muito bem, jove(ns competidores! Após um dia inteiro competindo, você(s)       |");
-      Console.WriteLine("| finalmente pode descansar o corpo e a mente de um desafio tão exaustivo.      |");
-      Console.WriteLine("| Após deixar o campo, você está nos corredores do castelo perguntando-se       |");
-      Console.WriteLine("| o que pode fazer antes do 2º desafio começar...                               |");
+      Console.WriteLine("|    Muito bem, jovem(ns) competidor(es)! Após um dia inteiro competindo,       |");
+      Console.WriteLine("| você(s) finalmente pode(m) descansar o corpo e a mente de um desafio tão      |");
+      Console.WriteLine("| exaustivo. Após deixar o campo, você(s) vai(ão) para os corredores do castelo.|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -367,7 +366,7 @@ namespace RPG
         Console.WriteLine("|                                    DESCANSO                                   |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("| Faça uma escolha:                                                             |");
+        Console.WriteLine("| O que você deseja fazer antes do próximo desafio?                             |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("| (1) Estudar poções                                                            |");
         Console.WriteLine("| (2) Sabotar outros participantes                                              |");
@@ -430,7 +429,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -445,8 +444,8 @@ namespace RPG
         Console.WriteLine("|                             UMA POÇÃO EXTRAORDINÁRIA                          |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Você aprendeu uma nova formula! Mas para que serve a Wiggenweld ?          |");
-        Console.WriteLine("| Será que isso lhe dará alguma uma vantagem?                                   |");
+        Console.WriteLine("|    Você aprendeu uma nova fórmula! Mas para que serve a Wiggenweld? Será que  |");
+        Console.WriteLine("| ela te dará alguma vantagem?                                                  |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
         character.house.scoreRavenclaw += 1;
@@ -465,8 +464,8 @@ namespace RPG
         Console.WriteLine("|                                 NA HORA ERRADA                                |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Você estava cansado demais e caiu no sono sobre o livro de poções.         |");
-        Console.WriteLine("| O monitor o encontrou no laboratório no meio da madrugada e mandou que        |");
+        Console.WriteLine("|    Você estava cansado demais e caiu no sono sobre o livro de poções. O       |");
+        Console.WriteLine("| monitor te encontrou no laboratório no meio da madrugada e mandou que         |");
         Console.WriteLine("| subisse para o dormitório.                                                    |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -497,7 +496,7 @@ namespace RPG
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|  Você escolheu sabotar os outros participantes. Um movimento estrategicamente |");
-      Console.WriteLine("| calculado que pode temporariamente tirar um concorrente do jogo e lhe conferir|");
+      Console.WriteLine("| calculado que pode temporariamente tirar um concorrente do jogo e te conferir |");
       Console.WriteLine("| vantagens, porém com um alto risco envolvido. Role o dado para descobrir se a |");
       Console.WriteLine("| sabotagem deu certo. Boa sorte!                                               |");
       Console.WriteLine("|                                                                               |");
@@ -507,7 +506,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -522,8 +521,7 @@ namespace RPG
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Muito bem, você foi sorrateiro e conseguiu encantar os equipamentos de um  |");
-        Console.WriteLine("| participante para que ele não consiga disputar a prova seguinte. Diga quem    |");
-        Console.WriteLine("| será a pessoa que não participará do próximo desafio.                         |");
+        Console.WriteLine("| participante. Informe o número da pessoa que será sabotada.                   |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -544,16 +542,16 @@ namespace RPG
         Console.WriteLine("|                                 NA HORA ERRADA                                |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Hmmm não deu muito certo. Um professor passou pelo corredor enquanto       |");
-        Console.WriteLine("| você tentava sabotar outro participante e o mandou para a detenção. Fique uma |");
+        Console.WriteLine("|    Humm, não deu muito certo. Um professor passou pelo corredor enquanto você |");
+        Console.WriteLine("| tentava sabotar outro participante e te mandou para a detenção. Fique uma     |");
         Console.WriteLine("| uma rodada sem participar. Porém, antes, jogue o dado novamente para impedir  |");
-        Console.WriteLine("| que o grupo descubra a sua trapaça.                                           |");
+        Console.WriteLine("| que a sua vítima descubra a sua trapaça.                                      |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+        Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
         Console.ReadLine();
         diceValue = RPG.Dice.throwDice();
         Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -589,7 +587,7 @@ namespace RPG
           Console.WriteLine("|                                 PEGO NO FLAGRA!                               |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Você foi flagrado! Agora todos sabem que você tentou sabotá-los.           |");
+          Console.WriteLine("|    Você foi flagrado! Agora todos sabem que você tentou sabotar outro aluno.  |");
           Console.WriteLine("| Quando estiver andando por aí, fique de olhos abertos...                      |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -614,15 +612,15 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                      COM AMIGOS TUDO SE TORNA MAIS DIVERTIDO                  |");
+      Console.WriteLine("|                     COM AMIGOS, TUDO SE TORNA MAIS DIVERTIDO                  |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    “Existem coisas mais importantes, como amizade e bravura. Todos nós temos  |");
-      Console.WriteLine("| luz e trevas dentro de nós. O que importa é o lado no qual escolhemos agir”,  |");
-      Console.WriteLine("| e nossos amigos trazem o melhor de nós.                                       |");
+      Console.WriteLine("| luz e trevas dentro de nós. O que importa é o lado no qual escolhemos agir” e |");
+      Console.WriteLine("| nossos amigos trazem à tona o melhor de nós.                                  |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("| Você conversou com seus amigos e agora sente-se revigorado! Ganhou um ponto   |");
-      Console.WriteLine("| de vida extra!                                                                |");
+      Console.WriteLine("|    Você conversou com seus amigos e agora se sente revigorado! Ganhou uma     |");
+      Console.WriteLine("| vida extra!                                                                   |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -645,9 +643,9 @@ namespace RPG
       Console.WriteLine("|                                TREINAR FEITIÇOS                               |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu treinar feitiços, esperando melhorar seus ataques e estar mais |");
+      Console.WriteLine("|  Você escolheu treinar feitiços esperando melhorar seus ataques e estar mais  |");
       Console.WriteLine("| preparado para os desafios seguintes. Jogue o dado para saber se você dominou |");
-      Console.WriteLine("| dominou, ou não o feitiço. Boa sorte!                                         |");
+      Console.WriteLine("| ou não um novo feitiço. Boa sorte!                                            |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -655,7 +653,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
