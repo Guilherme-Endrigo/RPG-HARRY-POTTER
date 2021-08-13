@@ -9,8 +9,6 @@ namespace RPG
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar");
-            Console.ReadLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                    O LAGO                                     |");
@@ -26,12 +24,16 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
+            RPG.Drawings.merPeople();
+            Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
 
 
             for (int i = 0; i < character.Count; i++)
             {
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -49,7 +51,7 @@ namespace RPG
 
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
-                while (option != "1" && option != "2" && option != "3" && option == "")
+                while (option != "1" && option != "2" && option != "3" || option == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção Invalida, tente novamente");
@@ -57,6 +59,13 @@ namespace RPG
                     Console.Write($"{character[i].name}, escolha novamente: ");
                     option = Console.ReadLine();
                 }
+
+                if (character[i].isBlocked == true)
+                {
+                    Console.WriteLine($"Eita! Surpresa, você não participará desse desafio, foi sabotado nessa rodada! hehehehe");
+                    break;
+                }
+
                 switch (option)
                 {
                     case "1":
@@ -91,7 +100,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
@@ -114,6 +123,10 @@ namespace RPG
                 character.house.scoreGryffindor += 2;
                 character.house.scoreHufflePuff += 1;
                 character.score += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
 
             else if (character.hasPotion && diceValue > 10)
@@ -132,6 +145,10 @@ namespace RPG
                 character.house.scoreRavenclaw += 1;
                 character.score += 1;
                 character.life += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
             }
             else
@@ -185,6 +202,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
@@ -206,6 +224,10 @@ namespace RPG
                 character.house.scoreRavenclaw += 1;
                 character.score += 1;
 
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
+
             }
             else
             {
@@ -224,14 +246,14 @@ namespace RPG
                 character.score -= 1;
                 character.life -= 1;
 
-
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
                 Console.ReadLine();
                 diceValue = RPG.Dice.throwDice();
                 Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                if (diceValue < 10)
+                if (diceValue > 10)
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -263,11 +285,15 @@ namespace RPG
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|  O feitiço virou-se contra o feiticeiro! A bolha estourou, você está ficando  |");
-                    Console.WriteLine("| sem ar, tente novamente na próxima rodada fugir desse destino!                |");
+                    Console.WriteLine("| sem ar, e não pode mais participar do torneio!                                |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                     character.isAlive = false;
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
 
                 }
 
@@ -294,7 +320,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
@@ -316,6 +342,10 @@ namespace RPG
 
                 character.house.scoreSlytherin += 1;
                 character.score += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
 
             }
@@ -378,6 +408,12 @@ namespace RPG
 
             for (int i = 0; i < character.Count; i++)
             {
+                if (character[i].isBlocked == true || character[i].isAlive == false)
+                {
+                    break;
+                }
+
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -399,7 +435,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
-                while (option != "1" && option != "2" && option != "3" && option != "4" && option == "")
+                while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção Invalida, tente novamente");
@@ -445,6 +481,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
@@ -468,6 +505,10 @@ namespace RPG
 
                 character.score += 1;
                 character.house.scoreGryffindor += 2;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
             }
             else
@@ -516,6 +557,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
@@ -538,6 +580,10 @@ namespace RPG
                 character.house.scoreHufflePuff += 1;
                 character.score += 1;
                 character.life += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
             else
             {
@@ -586,6 +632,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
@@ -607,6 +654,10 @@ namespace RPG
 
                 character.house.scoreSlytherin += 1;
                 character.score += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
 
 
             }
@@ -656,6 +707,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
@@ -678,6 +730,10 @@ namespace RPG
 
                 character.house.scoreRavenclaw += 1;
                 character.score += 1;
+
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
 
             else
@@ -738,6 +794,12 @@ namespace RPG
 
             for (int i = 0; i < character.Count; i++)
             {
+                if (character[i].isBlocked == true)
+                {
+                    Console.WriteLine("Após o final do desafio, você consegue escapar da pegadinha!");
+                    character[i].isBlocked = false;
+                }
+
                 if (character[i].isAlive)
                 {
                     Console.WriteLine();
@@ -757,7 +819,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                     string option = Console.ReadLine();
-                    while (option != "1" && option != "2" && option != "3" && option == "")
+                    while (option != "1" && option != "2" && option != "3" || option == "")
                     {
                         Console.WriteLine();
                         Console.WriteLine("Opção Invalida, tente novamente");
@@ -765,6 +827,7 @@ namespace RPG
                         Console.Write($"{character[i].name}, escolha novamente: ");
                         option = Console.ReadLine();
                     }
+
                     switch (option)
                     {
                         case "1":
@@ -808,6 +871,10 @@ namespace RPG
             character.house.scoreSlytherin += 1;
             character.life -= 1;
 
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadLine();
+
             return character;
 
         }
@@ -826,6 +893,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
@@ -855,6 +923,7 @@ namespace RPG
                 character.score += 1;
 
                 Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
                 Console.ReadLine();
                 diceValue = RPG.Dice.throwDice();
@@ -879,6 +948,10 @@ namespace RPG
                     character.house.scoreGryffindor += 1;
                     character.hasMap = true;
                     character.score += 4;
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
                 }
 
                 else
@@ -961,6 +1034,10 @@ namespace RPG
 
             character.house.scoreHufflePuff += 1;
             character.life += 1;
+
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadLine();
 
             return character;
         }

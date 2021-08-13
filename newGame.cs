@@ -27,7 +27,7 @@ namespace RPG
             Console.WriteLine();
 
 
-            while (option != "1" && option != "2" && option != "3" && option == "")
+            while (option != "1" && option != "2" && option != "3" || option == "")
             {
                 Console.WriteLine();
                 Console.WriteLine("Opção Invalida, tente novamente");
@@ -54,6 +54,7 @@ namespace RPG
         public static void startGame()
         {
 
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                UM NOVO ANO!                                   |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -118,12 +119,12 @@ namespace RPG
 
             for (int i = 0; i < number; i++)
             {
-                Console.WriteLine();
+
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
                 Console.ReadLine();
 
-
+                Console.WriteLine();
                 Console.WriteLine(" -------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                               ACEITA O DESAFIO?                               |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -138,17 +139,18 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 Console.WriteLine();
+                Console.WriteLine();
                 Console.Write("Informe sua decisão: ");
                 string newNameChoice = Console.ReadLine();
                 Console.WriteLine();
 
 
-                while (newNameChoice != "1" && newNameChoice != "2" && newNameChoice != "")
+                while (newNameChoice != "1" && newNameChoice != "2" || newNameChoice == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção Invalida, tente novamente");
                     Console.WriteLine();
-                    Console.Write("Informe seu nome novamente: ");
+                    Console.Write("Informe sua decisão novamente: ");
                     newNameChoice = Console.ReadLine();
                 }
                 switch (newNameChoice)
@@ -156,6 +158,15 @@ namespace RPG
                     case "1":
                         Console.Write("Você corajosamente se posiciona na frente do calice e coloca seu nome que é: ");
                         string name = Console.ReadLine();
+
+                        while (name == "")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Opção Invalida, tente novamente");
+                            Console.WriteLine();
+                            Console.Write("Informe seu nome novamente: ");
+                            name = Console.ReadLine();
+                        }
                         var charc = RPG.Creations.createChar(name, _idChar: i);
                         character.Add(charc);
                         break;
@@ -163,6 +174,14 @@ namespace RPG
                     case "2":
                         Console.Write("Você é empurrado pelo restante dos seus amigos e pela vergonha de estar diante do calice decide colocar seu nome: ");
                         name = Console.ReadLine();
+                        while (name == "")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Opção Invalida, tente novamente");
+                            Console.WriteLine();
+                            Console.Write("Informe seu nome novamente: ");
+                            name = Console.ReadLine();
+                        }
                         var charct = RPG.Creations.createChar(name, _idChar: i);
                         character.Add(charct);
                         break;
@@ -173,7 +192,8 @@ namespace RPG
             }
 
             Console.WriteLine();
-            firstBreak(character);
+            // firstBreak(character);
+            RPG.Update.biggestScore(character);
 
         }
 
@@ -214,6 +234,7 @@ namespace RPG
 
         public static void firstBreak(List<Character> character)
         {
+            Console.WriteLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
@@ -223,8 +244,10 @@ namespace RPG
             Console.WriteLine("| e o primeiro de muitos desafios. Antes de tudo, escolha o que deseja fazer    |");
             Console.WriteLine("| até amanhã. Lembre-se apenas, jovem bruxo, que toda ação pode levar tanto a   |");
             Console.WriteLine("| vantagens quanto a uma respectiva consequência                                |");
+            Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
@@ -234,7 +257,6 @@ namespace RPG
             for (int i = 0; i < character.Count; i++)
             {
                 Console.WriteLine();
-                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -243,12 +265,13 @@ namespace RPG
                 Console.WriteLine("| (2) Passar a tarde lendo um livro                                             |");
                 Console.WriteLine("| (3) Treinar quadribol                                                         |");
                 Console.WriteLine("| (4) Cuidar de uma planta                                                      |");
+                Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 Console.WriteLine();
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
-                while (option != "1" && option != "2" && option != "3" && option != "4" && option == "")
+                while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção Invalida, tente novamente");
@@ -267,10 +290,14 @@ namespace RPG
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Você escreveu uma fofoca para o blog da escola, colocando em prática sua   |");
                         Console.WriteLine("| astúcia, porém com os ataques que fez, perdeu amizades.                       |");
+                        Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 0, 0, 1, 0);
 
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione ENTER para continuar");
+                        Console.ReadLine();
 
                         break;
                     case "2":
@@ -282,9 +309,14 @@ namespace RPG
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Ao esperar o resultado lendo um livro você aumentou sua inteligência, mas  |");
                         Console.WriteLine("| sua percepção diminuiu porque está com a vista cansada.                       |");
+                        Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 0, 1, 0, 0);
+
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione ENTER para continuar");
+                        Console.ReadLine();
 
                         break;
                     case "3":
@@ -295,9 +327,15 @@ namespace RPG
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Treinar quadribol aumentou sua força, porém o deixou mais cansado.         |");
+                        Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 1, 0, 0, 0);
+
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione ENTER para continuar");
+                        Console.ReadLine();
+
                         break;
                     case "4":
                         Console.WriteLine();
@@ -308,9 +346,15 @@ namespace RPG
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Escolher cuidar de uma planta em um mundo pós-guerra é um gesto de         |");
                         Console.WriteLine("| gentileza apreciado, você aumentou seu carisma com essa ação.                 |");
+                        Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                         character[i].house = RPG.Update.updateHouse(character[i], 0, 0, 0, 1);
+
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione ENTER para continuar");
+                        Console.ReadLine();
+
                         break;
                 }
 

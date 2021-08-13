@@ -453,10 +453,10 @@ namespace RPG
 
             foreach (var nomeParticipante in listCharacter)
             {
-                if (character.idChar != nomeParticipante.idChar)
+                if (character.idChar != nomeParticipante.idChar && nomeParticipante.isBlocked == false)
                 {
 
-                    Console.WriteLine($" ({nomeParticipante.idChar}) {nomeParticipante.name}                           ");
+                    Console.WriteLine($"               ({nomeParticipante.idChar}) {nomeParticipante.name}             ");
 
                 }
             }
@@ -466,24 +466,40 @@ namespace RPG
             Console.WriteLine();
 
             Console.Write("Informe sua decisão: ");
-            int charChoice = Int32.Parse(Console.ReadLine());
 
-            int qtdPlayers = listCharacter.Count - 1;
+            string charChoice = Console.ReadLine();
+            int number;
+
+            while (!int.TryParse(charChoice, out number) || charChoice == "0" || number < 1)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine();
+                Console.Write("Informe novamente a quantidade de amigos: ");
+                charChoice = Console.ReadLine();
+                Console.WriteLine();
+            }
 
 
-            while (character.idChar == charChoice && charChoice < qtdPlayers)
+
+            int qtdPlayers = listCharacter.Count;
+
+
+            while (number >= qtdPlayers || number == character.idChar)
             {
                 Console.WriteLine();
                 Console.WriteLine("Opção Invalida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
-                charChoice = Int32.Parse(Console.ReadLine());
+                number = Int32.Parse(Console.ReadLine());
             }
 
-            Console.Write($"Participante {listCharacter[charChoice].name} foi bloqueado! ");
+            int index = number - 1;
+
+            Console.Write($"Participante {listCharacter[index].name} foi sabotado!");
             Console.WriteLine();
 
-            return charChoice;
+            return index;
 
         }
 
@@ -527,21 +543,41 @@ namespace RPG
             }
         }
 
-        public static List<Character> biggestScore(List<Character> characters)
+        public static void biggestScore(List<Character> characters)
         {
-            List<Character> draw = new List<Character>();
+            int biggestScore = 0;
+
             for (int i = 0; i < characters.Count; i++)
             {
-                int biggestScore = 0;
 
-
-                if (biggestScore < characters[i].score)
+                if (biggestScore < characters[i].score && characters[i].isAlive == true)
                 {
                     biggestScore = characters[i].score;
                 }
 
             }
-            return draw;
+
+            var draw = characters.FindAll(x => x.score == biggestScore && x.isAlive == true);
+
+            if (draw != null && draw.Count >= 2)
+            {
+                RPG.endGame.epilogue(draw);
+            }
+            else
+            {
+                foreach (var winner in characters)
+                {
+
+                    if (winner.score == biggestScore)
+                    {
+                        Console.WriteLine($"Parabéns, {winner.name}! Você foi o vencedor do Torneio Tribuxo!");
+                        Console.WriteLine($"Sua pontuação final foi: {winner.score}!");
+                        Drawings.trophy();
+                    }
+
+                }
+                RPG.endGame.endTheGame(characters);
+            }
 
         }
     }
