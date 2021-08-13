@@ -227,7 +227,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                        TORRE DA RAINHA --  FRACASSO                           |");
+                Console.WriteLine("|              A IMPACIÊNCIA É UM GRANDE OBSTÁCULO PARA O BOM ÊXITO.            |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Vish, parece que ao ver o sacrifício do cavalo na h3,                      |");
@@ -282,7 +282,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" -------------------------------------------------------------------------------");
-                Console.WriteLine("|                             BISPO NEGRO - BEM PENSADO                         |");
+                Console.WriteLine("|             ACALMA ESSE CORAÇÃO, QUE DESESPERO NUNCA RESOLVEU PROBLEMA        |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Com muita sabedoria você conteve a torre da rainha no seu devido lugar,    |");
@@ -304,7 +304,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                           BISPO NEGRO  --  SUCESSO                            |");
+                    Console.WriteLine("|     NA VIDA, AO CONTRÁRIO DO XADREZ, O JOGO CONTINUA APÓS O XEQUE-MATE        |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Parabéns! Seu xeque mate foi magnífico, deixando seu adversário em pedaços |");
@@ -322,7 +322,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
+                    Console.WriteLine("|         SOMOS PEDRAS DE UM JOGO DE XADREZ PRESTE A TOMAR OU DAR UM XEQUE MATE |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Ih não foi dessa vez. Você avançou o número de casas de maneira errada,    |");
@@ -348,7 +348,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           BISPO NEGRO  --  FRACASSO                           |");
+                Console.WriteLine("|                           NEM SEMPRE TUDO QUE ESTÁ INDO BEM, ACABA BEM        |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    “Grrr parece que a torre da rainha se movimentou na sua vez,               |");
@@ -552,7 +552,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                DORMIR É UM MODO INTERINO DE MORRE                             |");
+                Console.WriteLine("|                DORMIR É UM MODO INTERINO DE MORRER                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    “Acho que alguém dormiu muito, ZzzzZzZ, te deram a poção do morto vivo”    |");
