@@ -115,18 +115,18 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           CAVALO DO REI  --  SUCESSO                          |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Magnífico, é preciso muita coragem e lealdade,                             |");
-                Console.WriteLine("| para se sacrificar para um bem maior, você teve um jogo digno de grande mestre|");
-                Console.WriteLine("| como dizia um Grande Mestre:                                                  |");
-                Console.WriteLine("|      -Não há nenhum grande mestre de xadrez que seja normal, diferenciam-se   |");
-                Console.WriteLine("| apenas pela magnitude da loucura.                                             |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|              Ganhou dois ponto por isso :D                                    |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine("|                           CAVALO DO REI AVANÇA PARA CHEQUE                     |");
+                Console.WriteLine("|------------------------------------------------------------------------------- |");
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine("|    Magnífico, é preciso muita coragem e lealdade, para se sacrificar para um   |");
+                Console.WriteLine("| bem maior, você teve um jogo digno de grande mestre                            |");
+                Console.WriteLine("| como dizia um Grande Mestre:                                                   |");
+                Console.WriteLine("|    -Não há nenhum grande mestre de xadrez que seja normal, diferenciam-se      |");
+                Console.WriteLine("| apenas pela magnitude da loucura.                                              |");
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine("|              Ganhou dois ponto por isso :D                                     |");
+                Console.WriteLine("|                                                                                |");
+                Console.WriteLine(" -------------------------------------------------------------------------------  ");
 
                 character.score += 2;
 
@@ -154,13 +154,12 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           CAVALO DO REI   --  FRACASSO                        |");
+                Console.WriteLine("|                    CAVALO DO REI DA CHEQUE, MAS NÃO MATE                      |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Lindo xeque no rei, mas não foi o suficiente, a Rainha do adversário       |");
                 Console.WriteLine("| acabou com você te reduzindo a pó, está fora do jogo de xadrez!               |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|  Que pena acabou de perder um ponto e um ponto de vida”                       |");
+                Console.WriteLine("| que pena acabou de perder um ponto e um ponto de vida”                        |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -190,7 +189,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|   Torre da rainha uma escolha de garantia.                                    |");
+            Console.WriteLine("|    Torre da rainha uma escolha de garantia.                                   |");
             Console.WriteLine("| você ficou observando o jogo sem correr grande perigo até o momento!          |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -209,13 +208,13 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           TORRE DA RAINHA  --  SUCESSO                        |");
+                Console.WriteLine("|                           XADREZ É PACIENCIA E AUTOCONFIANÇA                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|   Após o lance cavalo na h3, uma jogada de honra, sacrificando-o              |");
+                Console.WriteLine("|    Após o lance cavalo na h3, uma jogada de honra, sacrificando-o             |");
                 Console.WriteLine("| para vencer o jogo, você se manteve no lugar,                                 |");
-                Console.WriteLine("| lembrando que está em um tabuleiro e que todo o movimento conta!              |");
-                Console.WriteLine("| Parabéns! Você ganhou um ponto por isso :D                                    |");
+                Console.WriteLine("| lembrando que está em um tabuleiro, e que todo o movimento conta!             |");
+                Console.WriteLine("|    Parabéns! Você ganhou um ponto por isso :D                                 |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -379,7 +378,9 @@ namespace RPG
         public static void breakAfterXadrezBruxoChallenge(List<Character> character)
         {
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadLine();
+
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                   DESCANSO                                    |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -417,6 +418,7 @@ namespace RPG
 
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
+
                 while (option != "1" && option != "2" && option != "3" && option != "4" && option == "")
                 {
                     Console.WriteLine();
@@ -447,55 +449,81 @@ namespace RPG
         //---------> OPÇÃO 1 <---------
         static Character mainHallParty(Character character)
         {
-
-            Console.WriteLine();
-            Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
-            Console.ReadLine();
-            diceValue = RPG.Dice.throwDice();
-            Console.WriteLine($"O Valor do dado é {diceValue}");
-
-
-            if (diceValue >= 6)
-            {
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine(" -------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  SUCESSO                 |");
+                Console.WriteLine(" --------------------------------------------------------------------------------  ");
+                Console.WriteLine("|                          A GRANDE FESTA                                         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------- |");
                 Console.WriteLine("|                                                                                 |");
-                Console.WriteLine("| Conseguiu novas amizades com essa festa, tempos difíceis revelam grandes amigos |");
+                Console.WriteLine("|    Você foi a festa e lá viveu vários momentos inesquesíveis                    |");
                 Console.WriteLine("|                                                                                 |");
-                Console.WriteLine(" -------------------------------------------------------------------------------- ");
-
+                Console.WriteLine(" --------------------------------------------------------------------------------  ");
+                
                 character.house.scoreRavenclaw += 1;
-                character.life += 1;
-
-
-            }
-            else
-            {
-
+                
                 Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                          FESTA NO SALÃO PRINCIPAL  --  FRACASO                |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
-                Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+                Console.ReadLine();
+                diceValue = RPG.Dice.throwDice();
+                Console.WriteLine($"O Valor do dado é {diceValue}");
 
-                character.house.scoreRavenclaw += 1;
-            }
-            return character;
+
+                if (diceValue >= 6)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine(" --------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                        COM AMIGOS TUDO SE TORNA MAIS DIVERTIDO                  |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------- |");
+                    Console.WriteLine("|                                                                                 |");
+                    Console.WriteLine("| Conseguiu novas amizades com essa festa, tempos difíceis revelam grandes amigos |");
+                    Console.WriteLine("|                                                                                 |");
+                    Console.WriteLine(" --------------------------------------------------------------------------------- ");
+
+                    character.house.scoreRavenclaw += 1;
+                    character.life += 1;
+
+                    Console.WriteLine();
+                    Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+                    Console.ReadLine();
+
+
+                } else{
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                         ANTES SÓ DO QUE MAL ACOMPANHADO                       |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------|");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
+                    Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
+
+                }
+                return character;
         }
 
         //---------> OPÇÃO 2 <---------
         static Character nap(Character character)
         {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|            XIIIII, MANTENHA-SE EM SILENCIO, ESTAMOS NO COCHILO ZZzzzZ         |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine("|    Você escolheu tirar um cochilo, e descansar sempre é importante.           |");
+            Console.WriteLine("| vamos ver os beneficios e maleficios desse cochilo, tudo tem o dois lados     |");
+            Console.WriteLine("| o bom e o ruim! Let's go                                                      |");
+            Console.WriteLine("|                                                                               |");
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
+            character.house.scoreSlytherin += 1;
 
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
@@ -505,12 +533,10 @@ namespace RPG
 
             if (diceValue >= 6)
             {
-
-
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                      TIRAR COCHILO  --  SUCESSO                               |");
+                Console.WriteLine("|                      VAMOS PARA O SONO DA BELEZA                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Que sono revigorante, e teve um sonho,                                     |");
@@ -520,14 +546,12 @@ namespace RPG
 
                 character.house.scoreSlytherin += 1;
                 character.life += 1;
-            }
-            else
-            {
+            } else{
 
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                      TIRAR COCHILO  --  FRACASSO                              |");
+                Console.WriteLine("|                DORMIR É UM MODO INTERINO DE MORRE                             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    “Acho que alguém dormiu muito, ZzzzZzZ, te deram a poção do morto vivo”    |");
@@ -552,25 +576,23 @@ namespace RPG
         //---------> OPÇÃO 3 <---------
         static Character relaxInTheGreenHouse(Character character)
         {
-
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|            ESTUFA DA PROF SPROUT, UM LUGAR QUE GUARDA VARIOS MISTÉRIOS        |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|"); 
+            Console.WriteLine("|    Nesse lugar misterioso podemos encontrar desde ervas e fungos              |");
+            Console.WriteLine("| até... aaah não irei revelar, bora lá ?                                       |");
+            Console.WriteLine("|                                                                               |");                
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            
+            character.house.scoreHufflePuff += 1;
+            
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
-
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT                          |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Na estufa da prof Sprout, podemos encontrar desde as plantas mais estranhas|");
-            Console.WriteLine("| e os fungos do mundo mágico                                                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-            character.house.scoreHufflePuff += 1;
 
             if (diceValue >= 6)
             {
@@ -578,7 +600,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - SUCESSO                |");
+                Console.WriteLine("|                    NÃO HÁ SORTE NA VIDA, O QUE HÁ, É OPORTUNIDADE             |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|              “Você achou uma poção para reverter quem foi petrificado.”       |");
@@ -588,14 +610,11 @@ namespace RPG
                 character.house.scoreHufflePuff += 1;
                 character.score += 1;
 
-            }
-            else
-            {
-
+            } else{
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                     RELAXAR NA ESTUDA DA PROF SPROUT - FRACASSO               |");
+                Console.WriteLine("|                    TEM PESSOAS QUE TEM AZAR NO AMOR, E AZAR NO JOGO           |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Shazam! Você foi petrificado pelo Basilisco de Salazar Slytherin, que azar |");
@@ -621,7 +640,20 @@ namespace RPG
         //---------> OPÇÃO 4 <---------
         static Character visitHagrid(Character character)
         {
-
+            
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("|           VAMOS ATÉ A CASA DO HAGRID FAZER AQUELA VISITINHA? SIM OU CLARO?    |");
+            Console.WriteLine("|-------------------------------------------------------------------------------|"); 
+            Console.WriteLine("|                                                                               |");  
+            Console.WriteLine("|    Não adianta a gente ficar sentado se preocupando.                          |");
+            Console.WriteLine("| O que tiver que ser será, e nós enfrentaremos quando vier.                    |");
+            Console.WriteLine("|                                                                               |");                
+            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            
+            character.house.scoreGryffindor += 1;
+            
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
@@ -634,7 +666,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                          IR VISITAR HAGRID - SUCESSO                          |");
+                Console.WriteLine("|                          HMMM, SÓ DE SENTIR O CHEIRO DEU AGUA NA BOCA         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    “Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”,        |");
@@ -646,14 +678,12 @@ namespace RPG
                 character.score += 1;
                 character.life += 1;
 
-            }
-            else
-            {
+            } else{
 
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                          IR VISITAR HAGRID - FRACASSO                         |");
+                Console.WriteLine("|                         NEM TUDO É FLORES                                     |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    “Xiiii, Hagrid te levou para a floresta proibida                           |");
