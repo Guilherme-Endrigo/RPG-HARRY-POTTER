@@ -14,12 +14,12 @@ namespace RPG
       Console.WriteLine("|                                    O LAGO                                     |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Após o susto do primeiro desafio, todos acordam mais dispostos prontos     |");
-      Console.WriteLine("| para a  segunda tarefa do Torneio Tribruxo, e encaminham-se até o Lago Negro. |");
+      Console.WriteLine("|    Após o susto do primeiro desafio, todos acordam mais dispostos e prontos   |");
+      Console.WriteLine("| para a  segunda tarefa do Torneio Tribruxo, encaminhando-se até o Lago Negro. |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Algo importante, querido, deve ser resgatado do fundo do lago.             |");
-      Console.WriteLine("| Mas, cuidado com aqueles que espreitam-se nas profundezas. Mergulhe de cabeça |");
-      Console.WriteLine("| para recuperar o que foi perdido!                                             |");
+      Console.WriteLine("|    Algo importante, querido, deve ser resgatado do fundo do lago. Mas,        |");
+      Console.WriteLine("| cuidado com aqueles que espreitam-se nas profundezas. Mergulhe de cabeça para |");
+      Console.WriteLine("| recuperar o que foi perdido!                                                  |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -54,7 +54,7 @@ namespace RPG
         while (option != "1" && option != "2" && option != "3" || option == "")
         {
           Console.WriteLine();
-          Console.WriteLine("Opção Invalida, tente novamente");
+          Console.WriteLine("Opção inválida, tente novamente");
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
@@ -100,15 +100,19 @@ namespace RPG
         Console.WriteLine("|                          NOITES SEM DORMIR COMPENSARAM                        |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|   Surpresa! A poção realmente foi util!!!                                     |");
+        Console.WriteLine("|   Surpresa! A poção realmente foi útil!!!                                     |");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|   Por dedicar-se aos estudos, você ganhou  2 ponto extra de vida!             |");
+        Console.WriteLine("|   Por dedicar-se aos estudos, você ganhou  2 ponto extras de vida!             |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
         character.house.scoreRavenclaw += 1;
         character.score += 1;
         character.life += 2;
+
+        Console.WriteLine();
+        Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
+        Console.ReadLine();
 
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
@@ -128,7 +132,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -163,9 +167,9 @@ namespace RPG
         Console.WriteLine("|                            O GOSTO RUIM DO FRACASSO                            |");
         Console.WriteLine("|--------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                                |");
-        Console.WriteLine("|  Eita, algo de errado não está certo! Você engasgou com o guelricho e a planta |");
-        Console.WriteLine("| desceu pelo lado errado. Perdeu 1 ponto nessa jogada e seu tempo de prova foi  |");
-        Console.WriteLine("| encurtado!                                                                     |");
+        Console.WriteLine("|    Eita, algo de errado não está certo! Você engasgou com o guelricho e a      |");
+        Console.WriteLine("| planta desceu pelo lado errado. Perdeu 1 ponto nessa jogada e seu tempo de     |");
+        Console.WriteLine("| prova foi encurtado!                                                           |");
         Console.WriteLine("|                                                                                |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -207,7 +211,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -252,7 +256,7 @@ namespace RPG
 
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+        Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
         Console.ReadLine();
         diceValue = RPG.Dice.throwDice();
         Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -265,10 +269,13 @@ namespace RPG
           Console.WriteLine("|                            'AFOGANDO' COM O NAVIO                             |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|  Parabéns, você conseguiu fugir do seu destino! Nadou para fora do lago antes |");
-          Console.WriteLine("| da bolha encher-se de água!                                                   |");
+          Console.WriteLine("|    Parabéns, você conseguiu fugir do seu destino! Nadou para fora do lago     |");
+          Console.WriteLine("| antes da bolha encher-se de água!                                             |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+          character.score++;
+          character.life++;
 
           Console.WriteLine();
           Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
@@ -288,7 +295,7 @@ namespace RPG
           Console.WriteLine("|                           UM DESTINO TRISTE! SNIFF SNIFF                      |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|  Ihhhh o seu tempo se esgotou. Você tentou nadar, mas se desesperou e não     |");
+          Console.WriteLine("|  Ihhh, o seu tempo se esgotou! Você tentou nadar, mas se desesperou e não     |");
           Console.WriteLine("| conseguiu bater as pernas rápido o bastante, ficando sem ar e perdendo a vida |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -326,7 +333,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -340,7 +347,7 @@ namespace RPG
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|  O seu corpo está mudando! Após muito estudo, sua transmutação ocorreu com    |");
-        Console.WriteLine("| sucesso. Você se transformou num peixe.                                       |");
+        Console.WriteLine("| sucesso. Você se transformou num peixe!                                       |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -361,7 +368,7 @@ namespace RPG
         Console.WriteLine("|                             A EVOLUÇÃO DEU ERRADO                             |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  O feitiço deu errado, ao invés de transformá-lo inteiramente em um peixe,    |");
+        Console.WriteLine("|    O feitiço deu errado! Ao invés de transformá-lo inteiramente em um peixe,  |");
         Console.WriteLine("| apenas as suas pernas foram modificadas! Além da vergonha, você ficou sem     |");
         Console.WriteLine("| guelras pra te ajudar no desafio. Melhor nadar rápido! Humm, acho que não     |");
         Console.WriteLine("| vai dar tempo de completar a prova.                                           |");
@@ -397,9 +404,9 @@ namespace RPG
       Console.WriteLine("|                           ENFRENTANDO OS SEREIANOS                            |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Muito bem campeões, hora de iniciar a busca pelo que foi roubado!            |");
-      Console.WriteLine("| O tempo está passando, cada competidor tem 1h para completar o desafio! Você  |");
-      Console.WriteLine("| está nadando na floresta de algas no fundo do Lago Negro, quando avista seus  |");
+      Console.WriteLine("|    Muito bem, campeões, hora de iniciar a busca pelo que foi roubado! O tempo |");
+      Console.WriteLine("| está passando, cada competidor tem 1h para completar o desafio! Você está     |");
+      Console.WriteLine("| nadando na floresta de algas no fundo do Lago Negro, quando avista seus       |");
       Console.WriteLine("| amigos presos pelos pés em uma armadilha.                                     |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -424,8 +431,8 @@ namespace RPG
         Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Mas espere! Parece que eles têm companhia, estão sendo vigiados por          |");
-        Console.WriteLine("| sereianos! Você precisa resgatá-los, o que você pretende fazer:               |");
+        Console.WriteLine("|    Mas espere! Parece que eles têm companhia, estão sendo vigiados por        |");
+        Console.WriteLine("| sereianos! Você precisa resgatá-los! O que você pretende fazer?               |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("| (1) Lutar contra os sereianos                                                 |");
         Console.WriteLine("| (2) Tentar salvar todos os reféns                                             |");
@@ -440,7 +447,7 @@ namespace RPG
         while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
         {
           Console.WriteLine();
-          Console.WriteLine("Opção Invalida, tente novamente");
+          Console.WriteLine("Opção inválida, tente novamente");
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
@@ -477,14 +484,14 @@ namespace RPG
       Console.WriteLine("|                         LUTAR CONTRA OS SEREIANOS                             |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu enfrentar os sereianos! A partir de agora role o dado para     |");
+      Console.WriteLine("|    Você escolheu enfrentar os sereianos! A partir de agora role o dado para   |");
       Console.WriteLine("| descobrir se a sua decisão deu certo! Boa sorte!                              |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -496,7 +503,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                              FIGHT!  SEREIANOS                                |");
+        Console.WriteLine("|                               FIGHT! SEREIANOS                                |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|  Petrificus Totalus! Deu certo, você pegou os sereianos desprevenidos! Graças |");
@@ -523,8 +530,8 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|  Oh, não! Os sereianos são muitos e você acaba sendo enrolado por eles também.|");
         Console.WriteLine("| Como será que perceberam sua movimentação tão rápido? Só havia você e os      |");
-        Console.WriteLine("| outros competidores no lago, ou será que não? Perdeu 1 ponto nessa jogada e   |");
-        Console.WriteLine("| não vai ser possível completar a prova.                                       |");
+        Console.WriteLine("| outros competidores no lago, ou será que não? Perdeu 1 ponto e 1 vida nessa   |");
+        Console.WriteLine("| jogada e não vai ser possível completar a prova.                              |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -553,14 +560,14 @@ namespace RPG
       Console.WriteLine("|                           SALVAR TODOS OS REFÉNS                              |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu tentar salvar todos os reféns! Será que você tem ar            |");
+      Console.WriteLine("|    Você escolheu tentar salvar todos os reféns! Será que você tem ar          |");
       Console.WriteLine("|  suficiente? Jogue os dados para descobrir!                                   |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -574,7 +581,7 @@ namespace RPG
         Console.WriteLine("|                             UM RESGATE BEM-SUCEDIDO                           |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Confundus! Em uma jogada de mestre, você atordoou os sereianos e conseguiu   |");
+        Console.WriteLine("|    Confundus! Em uma jogada de mestre, você atordoou os sereianos e conseguiu |");
         Console.WriteLine("| livrar todos os reféns! Parabéns, você recebeu um ponto de vida a mais!       |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -628,7 +635,7 @@ namespace RPG
       Console.WriteLine("|                            PERSUADIR OS SEREIANOS                             |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu persuadir os sereianos a libertar seu amigo! Role os dados e   |");
+      Console.WriteLine("|    Você escolheu persuadir os sereianos a libertar seu amigo! Role os dados e |");
       Console.WriteLine("| veja o quão persuasivo você é!                                                |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -648,8 +655,8 @@ namespace RPG
         Console.WriteLine("|                                  BOM DE PAPO                                  |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Você escolheu atacar com diálogo e seu movimento foi super efetivo! Usando a |");
-        Console.WriteLine("| lábia, conseguiu convencer os sereianos a te deixar libertar seu amigo!       |");
+        Console.WriteLine("|    Você escolheu atacar com diálogo e seu movimento foi super efetivo! Usando |");
+        Console.WriteLine("| a lábia, conseguiu convencer os sereianos a te deixar libertar seu amigo!     |");
         Console.WriteLine("| Parabéns, receba um ponto pela ótima conversa!                                |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -703,14 +710,14 @@ namespace RPG
       Console.WriteLine("|                           ENFEITIÇAR OS SEREIANOS                             |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você escolheu enfeitiçar os sereianos!! Role o dado e descubra se o feitiço  |");
-      Console.WriteLine("| foi efetivo!                                                                  |");
+      Console.WriteLine("|    Você escolheu enfeitiçar os sereianos!! Role o dado e descubra se o        |");
+      Console.WriteLine("| feitiço foi efetivo!                                                          |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -723,7 +730,7 @@ namespace RPG
         Console.WriteLine("|                              UMA IDEIA BRILHANTE                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Incrível! Você conseguiu distrair os sereianos usando um novo feitiço.       |");
+        Console.WriteLine("|    Incrível! Você conseguiu distrair os sereianos usando um novo feitiço.     |");
         Console.WriteLine("| Usando a sua varinha, você emitiu uma luz na direção oposta e atraiu os       |");
         Console.WriteLine("| sereianos para o outro lado, deixando o caminho livre para libertar os        |");
         Console.WriteLine("| reféns! Ganhou um ponto pela esperteza!                                       |");
@@ -746,8 +753,8 @@ namespace RPG
         Console.WriteLine("|                                QUE CHEIRO É ESSE?                             |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Vish! Seu plano não deu certo, um dos sereianos ouviu um barulho próximo de  |");
-        Console.WriteLine("| você e acabou percebendo o seu movimento com a varinha! Você estranha ter     |");
+        Console.WriteLine("|    Vish! Seu plano não deu certo, um dos sereianos ouviu um barulho próximo   |");
+        Console.WriteLine("| de você e acabou percebendo o seu movimento com a varinha! Você estranha ter  |");
         Console.WriteLine("| sido descoberto desse jeito. Algo não cheira bem e não são os peixes!         |");
         Console.WriteLine("| Não tem como você ter sido descoberto sem sabotagem externa!                  |");
         Console.WriteLine("|                                                                               |");
@@ -779,12 +786,12 @@ namespace RPG
       Console.WriteLine("|                                   DESCANSO                                    |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|           Finalmente encerra-se a segunda parte do desafio.                   |");
+      Console.WriteLine("|              Finalmente encerra-se a segunda parte do desafio.                |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Porém, alguns campeões tiveram dificuldades em cumprir sua parte do desafio. |");
-      Console.WriteLine("| Preocupados com a possível sabotagem, decidiram investigar por conta própria, |");
-      Console.WriteLine("| antes da etapa seguinte. Cada campeão decide investir seu tempo de formas     |");
-      Console.WriteLine("| diferentes. Enquanto uns decidem procurar pistas sobre os rumores,            |");
+      Console.WriteLine("|     Porém, alguns campeões tiveram dificuldades em cumprir sua parte do       |");
+      Console.WriteLine("| desafio. Preocupados com a possível sabotagem, decidiram investigar por conta |");
+      Console.WriteLine("| própria, antes da etapa seguinte. Cada campeão decide investir seu tempo de   |");
+      Console.WriteLine("| forma diferente. Enquanto uns decidem procurar pistas sobre os rumores,       |");
       Console.WriteLine("| outros preparam-se para o próximo desafio.                                    |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -824,7 +831,7 @@ namespace RPG
           while (option != "1" && option != "2" && option != "3" || option == "")
           {
             Console.WriteLine();
-            Console.WriteLine("Opção Invalida, tente novamente");
+            Console.WriteLine("Opção inválida, tente novamente");
             Console.WriteLine();
             Console.Write($"{character[i].name}, escolha novamente: ");
             option = Console.ReadLine();
@@ -847,7 +854,7 @@ namespace RPG
         }
         else
         {
-          Console.WriteLine("Você foi desclassificado! Infelizmente o torneio acabou para você, nade mais rápido da próxima vez!");
+          Console.WriteLine("Você foi desclassificado! Infelizmente o Torneio acabou para você, nade mais rápido da próxima vez!");
 
         }
       }
@@ -862,7 +869,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                            DESCANSAR NO SÃO COMUNAL                           |");
+      Console.WriteLine("|                          DESCANSAR NO SALÃO COMUNAL                           |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|  Você escolheu descansar! Cansado, decidiu poupar as energias para o dia      |");
@@ -897,7 +904,7 @@ namespace RPG
 
       Console.WriteLine();
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -910,7 +917,7 @@ namespace RPG
         Console.WriteLine("|                                QUAL O DESFECHO?                               |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|  Encucado com os relatos estranhos durante a última prova, você decide        |");
+        Console.WriteLine("|   Encucado com os relatos estranhos durante a última prova, você decide       |");
         Console.WriteLine("| iniciar sua investigação nos terrenos ao redor do lago. Você acaba            |");
         Console.WriteLine("| encontrando pegadas próximas ao píer, em um barranco enlameado. Muito longe   |");
         Console.WriteLine("| das arquibancadas para que possam ter sido feitas por alguém que estivesse    |");
@@ -926,7 +933,7 @@ namespace RPG
 
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+        Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
         Console.ReadLine();
         diceValue = RPG.Dice.throwDice();
         Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -939,7 +946,7 @@ namespace RPG
           Console.WriteLine("|                        AUMENTAR RAIO DE INVESTIGAÇÃO                          |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|  Incrível! Durante o restante da sua investigação, você decide voltar para o  |");
+          Console.WriteLine("|   Incrível! Durante o restante da sua investigação, você decide voltar para o |");
           Console.WriteLine("| castelo e investigar na biblioteca ocorrências nos últimos torneios,          |");
           Console.WriteLine("| você acaba encontrando o Mapa do Maroto! Ele pode te ajudar a descobrir       |");
           Console.WriteLine("| quem está por trás das sabotagens.                                            |");
@@ -964,9 +971,8 @@ namespace RPG
           Console.WriteLine("|                                FOI POR POUCO!                                 |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|  Você procurou por mais pistas, mas sem sucesso. Melhor ir descansar e        |");
-          Console.WriteLine("| se preparar para o desafio de amanhã. Talvez tenha mais sorte no dia          |");
-          Console.WriteLine("| seguinte...                                                                   |");
+          Console.WriteLine("|   Você procurou por mais pistas, mas sem sucesso. Melhor ir descansar e se    |");
+          Console.WriteLine("| preparar para o desafio de amanhã. Talvez tenha mais sorte no dia seguinte... |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -991,7 +997,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                                VOCÊ DESCOBRIU ALGO?                           |");
+        Console.WriteLine("|                               VOCÊ DESCOBRIU ALGO?                            |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|  Eita, infelizmente sua investigação não levou a nada. Você só perdeu tempo!  |");
@@ -1027,10 +1033,11 @@ namespace RPG
       Console.WriteLine("|                                 CONTAR HISTÓRIAS                              |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Você decide passar um tempo com seus amigos, contando do seu embate com os   |");
-      Console.WriteLine("| sereianos, do perrengue de nadar contra o tempo. A conversa foi divertida     |");
-      Console.WriteLine("| e você se sente com mais disposição para o dia seguinte!                      |");
-      Console.WriteLine("| Ganhou um ponto de vida!                                                      |");
+      Console.WriteLine("|   Você decide passar um tempo com seus amigos, contando do seu embate com os  |");
+      Console.WriteLine("| sereianos, do perrengue de nadar contra o tempo. A conversa foi divertida e   |");
+      Console.WriteLine("| você se sente com mais disposição para o dia seguinte!                        |");
+      Console.WriteLine("|                                                                               |");
+      Console.WriteLine("|    Ganhou um ponto de vida!                                                      |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

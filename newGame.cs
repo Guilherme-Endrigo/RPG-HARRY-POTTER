@@ -205,7 +205,7 @@ namespace RPG
       Console.WriteLine("|                                AS REGRAS                                      |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Role o dado D20, acrescente os modificadores apropriados e consulte a tabela |");
+      Console.WriteLine("|  Tabela de pontuação para cada número do dado D20 |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|   * Falha Crítica (0 - 3) -- Não poderia ter sido pior, mesmo que             |");
       Console.WriteLine("| tentasse... (perde 2 pontos de vida).                                         |");

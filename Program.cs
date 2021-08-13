@@ -20,6 +20,7 @@ namespace RPG
             RPG.Drawings.merPeople();
             RPG.Drawings.dragon();
             RPG.Drawings.chess();
+            RPG.Drawings.diabolicLaugh();
         }
 
     }
