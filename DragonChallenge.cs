@@ -510,7 +510,7 @@ namespace RPG
       Console.WriteLine($"O Valor do dado é {diceValue}");
 
       //sucesso brilhante
-      if (diceValue > 11)
+      if (diceValue >= 11)
       {
         Console.WriteLine();
         Console.WriteLine();

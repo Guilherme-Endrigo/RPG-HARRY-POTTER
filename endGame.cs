@@ -481,6 +481,8 @@ namespace RPG
 
                 string alive = player.isAlive == true ? "Está vivo" : "Está morto/desclassificado";
 
+                RPG.Drawings.tumb();
+
                 if (!player.isAlive)
                 {
                     Console.WriteLine($"Parabéns! {player.name}");
@@ -654,6 +656,8 @@ namespace RPG
                 Console.WriteLine("Pressione ENTER para continuar: ");
                 Console.ReadLine();
             }
+
+            RPG.Tune.EdwigesTune();
 
         }
 
