@@ -684,8 +684,8 @@ namespace RPG
         Console.WriteLine("|                 HMMM, SÓ DE SENTIR O CHEIRO DEU ÁGUA NA BOCA                  |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”,         |");
-        Console.WriteLine("| você ganhou um delicioso bolo feito com muito amor <3.                        |");
+        Console.WriteLine("|    Como diz Rúbeo Hagrid: “Eu sou o que sou e eu não tenho vergonha”. Você    |");
+        Console.WriteLine("| ganhou um delicioso bolo feito com muito amor <3.                             |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -702,8 +702,8 @@ namespace RPG
         Console.WriteLine("|                                NEM TUDO É FLORES                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Xiiii, Hagrid te levou para a floresta proibida e para seu azar o zelador  |");
-        Console.WriteLine("| te viu e te levou a diretoria”                                                |");
+        Console.WriteLine("|    Xiiii, Hagrid te levou para a Floresta Proibida e, para seu azar, o Filch  |");
+        Console.WriteLine("| viu vocês e te levou à diretoria.                                             |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
