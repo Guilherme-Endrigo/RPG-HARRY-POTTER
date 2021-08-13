@@ -455,7 +455,7 @@ namespace RPG
                 Console.WriteLine("|                          A GRANDE FESTA                                         |");
                 Console.WriteLine("|-------------------------------------------------------------------------------- |");
                 Console.WriteLine("|                                                                                 |");
-                Console.WriteLine("|    Você foi a festa e lá viveu vários momentos inesquesíveis                    |");
+                Console.WriteLine("|    Você escolheu ir a festa. Agora role o dado para saber o que virá!           |");
                 Console.WriteLine("|                                                                                 |");
                 Console.WriteLine(" --------------------------------------------------------------------------------  ");
                 
@@ -495,8 +495,8 @@ namespace RPG
                     Console.WriteLine("|                         ANTES SÓ DO QUE MAL ACOMPANHADO                       |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado não                  |");
-                    Console.WriteLine("|                  ”não a pior inimigo que falso amigo”                         |");
+                    Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado                      |");
+                    Console.WriteLine("|                  ”não há pior inimigo que um falso amigo”                     |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -519,7 +519,8 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você escolheu tirar um cochilo, e descansar sempre é importante.           |");
             Console.WriteLine("| vamos ver os beneficios e maleficios desse cochilo, tudo tem o dois lados     |");
-            Console.WriteLine("| o bom e o ruim! Let's go                                                      |");
+            Console.WriteLine("| pode ser que dê bom ou ruim. Prepare-se e....                                 |");
+            Console.WriteLine("| Let's go! Jogue os dados para saber o que vai acontecer!                      |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -539,8 +540,8 @@ namespace RPG
                 Console.WriteLine("|                      VAMOS PARA O SONO DA BELEZA                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Que sono revigorante, e teve um sonho,                                     |");
-                Console.WriteLine("| através dele você aprendeu a como abrir o Oráculo dos sonhos!                 |");
+                Console.WriteLine("|    Que sono revigorante, você teve um sonho,                                  |");
+                Console.WriteLine("| através dele aprendeu a como abrir o Oráculo dos sonhos!                      |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -585,7 +586,7 @@ namespace RPG
             Console.WriteLine("| até... aaah não irei revelar, bora lá ?                                       |");
             Console.WriteLine("|                                                                               |");                
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            
+
             character.house.scoreHufflePuff += 1;
             
             Console.WriteLine();
@@ -649,6 +650,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");  
             Console.WriteLine("|    Não adianta a gente ficar sentado se preocupando.                          |");
             Console.WriteLine("| O que tiver que ser será, e nós enfrentaremos quando vier.                    |");
+            Console.WriteLine("| Jogue o dado para descobrir como será essa visita.                            |");
             Console.WriteLine("|                                                                               |");                
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             
