@@ -16,13 +16,13 @@ namespace RPG
       Console.WriteLine("|                                   TORNEIO                                     |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|                              O torneio começou!                               |");
+      Console.WriteLine("|                          O Torneio Tribruxo começou!                          |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
-      Console.WriteLine("| arquibancadas e é quando na tenda dos participantes você se reúne com os      |");
+      Console.WriteLine("| arquibancadas e é quando, na tenda dos participantes, você se reúne com os    |");
       Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
       Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
-      Console.WriteLine("| que não será um desafio qualquer, você começará com o mesmo desafio que um    |");
+      Console.WriteLine("| que não será um desafio qualquer: você começará com o mesmo desafio que um    |");
       Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -58,7 +58,7 @@ namespace RPG
         while (option != "1" && option != "2" && option != "3" || option == "")
         {
           Console.WriteLine();
-          Console.WriteLine("Opção Invalida, tente novamente");
+          Console.WriteLine("Opção inválida, tente novamente");
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
@@ -89,8 +89,8 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    O ovo dourado está sendo guardado por um dragão, dentro de uma ninhada de  |");
-      Console.WriteLine("| ovos de dragão reais - porém como você escolheu não enfrentar o dragão pelo   |");
-      Console.WriteLine("| ovo cuja localização é conhecida, agora entrará em uma busca pelo outro ovo   |");
+      Console.WriteLine("| ovos de dragões Rabo-Córneo Húngaros - porém como você escolheu não enfrentar |");
+      Console.WriteLine("| o dragão cujo ovo a localização é conhecida, agora entrará em uma busca pelo  |");
       Console.WriteLine("| que pode estar em qualquer lugar de Hogwarts.                                 |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -111,12 +111,12 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                          PARECE QUE TEMOS UM XEROQUE ROMES                   |");
+        Console.WriteLine("|                       PARECE QUE TEMOS UM XEROQUE ROMES                       |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Parabéns! Você conseguiu avançar nas investigações, colheu pistas pelo     |");
         Console.WriteLine("|  castelo de Hogwarts e está bem perto de conseguir encontrar o ovo! Jogue o   |");
-        Console.WriteLine("|  dado novamente para saber se encontrará a última pista para chegar ao ovo!   |");
+        Console.WriteLine("|  dado novamente para saber se encontrará a última pista para chegar a ele!    |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -133,10 +133,10 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                                PARABÉNS SHORLOCK                              |");
+          Console.WriteLine("|                               PARABÉNS, SHERLOCK                              |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Parabéns! Parece que o ovo estava embaixo da água! Você trabalhou duro e   |");
+          Console.WriteLine("|    Parabéns! Parece que o ovo estava embaixo d'água! Você trabalhou duro e    |");
           Console.WriteLine("| conseguiu achar o ovo! Bônus de 5 pontos por essa conquista.                  |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -154,11 +154,11 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-          Console.WriteLine("|                         PARECE QUE ALGUEM SOFRE BULLYING                      |");
+          Console.WriteLine("|                         PARECE QUE ALGUÉM SOFRE BULLYING                      |");
           Console.WriteLine("|-------------------------------------------------------------------------------|");
           Console.WriteLine("|                                                                               |");
-          Console.WriteLine("|    Ih não foi dessa vez. A Murta Que Geme não quis te ajudar e                |");
-          Console.WriteLine("| você não conseguiu encontrar o ovo. Você perdeu um ponto no torneio e de vida |");
+          Console.WriteLine("|    Ih, não foi dessa vez. A Murta Que Geme não quis te ajudar e você não      |");
+          Console.WriteLine("| conseguiu encontrar o ovo. Você perdeu um ponto no torneio e uma vida.        |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -184,10 +184,10 @@ namespace RPG
         Console.WriteLine("|                           PRECISA DE UM OCULUS REPARO                         |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Hmm parece que foi uma busca que não deu em nada, você se perdeu na        |");
-        Console.WriteLine("| floresta e nem mesmo chegou a investigar pelo castelo, onde as principais     |");
-        Console.WriteLine("| pistas estavam. Infelizmente seu tempo se esgotou, portanto vai ficar com     |");
-        Console.WriteLine("| um ponto e um ponto de vida a menos                                           |");
+        Console.WriteLine("|    Humm, parece que foi uma busca que deu em nada. Você se perdeu na floresta |");
+        Console.WriteLine("| e nem mesmo chegou a investigar pelo castelo, onde as principais pistas       |");
+        Console.WriteLine("| estavam. Infelizmente seu tempo se esgotou, portanto vai ficar com um ponto e |");
+        Console.WriteLine("| um ponto de vida a menos.                                                     |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
         character.score -= 1;
@@ -227,7 +227,7 @@ namespace RPG
         Console.WriteLine("|                              PRONTO PARA O DUELO                              |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Uau, é preciso muita audácia para enfrentarmos os nossos inimigos, você    |");
+        Console.WriteLine("|    Uau, é preciso muita audácia para enfrentarmos os nossos inimigos! Você    |");
         Console.WriteLine("| teve uma batalha árdua e desafiante, mas no final conseguiu derrotar o dragão |");
         Console.WriteLine("| e impressionar os juízes! Para você, a vida não tem graça sem alguns dragões, |");
         Console.WriteLine("| certo? Parabéns! Você ganhou um ponto por isso :D                             |");
@@ -250,8 +250,8 @@ namespace RPG
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Vish, parece que o Dragão cuspiu fogo enquanto você lutava com ele no ar,  |");
-        Console.WriteLine("| as chamas o desestabilizaram e arruinaram as cerdas da vassoura… Urgh, foi    |");
-        Console.WriteLine("| uma queda feia! Que pena, acabou de perder um ponto e um ponto de vida        |");
+        Console.WriteLine("| as chamas te desestabilizaram e arruinaram as cerdas da vassoura… Urgh, foi   |");
+        Console.WriteLine("| uma queda feia! Que pena, acabou de perder um ponto e um ponto de vida.       |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -277,7 +277,7 @@ namespace RPG
 
 
       Console.WriteLine();
-      Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
+      Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
       Console.ReadLine();
       diceValue = RPG.Dice.throwDice();
       Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -345,9 +345,9 @@ namespace RPG
       Console.WriteLine("|                                 HORA DO RECREIO                               |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|                        A primeira parte chegou ao fim.                        |");
+      Console.WriteLine("|                        A primeira parte chegou ao fim                         |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Muito bem, jovens competidores! Após um dia inteiro competindo, você       |");
+      Console.WriteLine("|    Muito bem, jove(ns competidores! Após um dia inteiro competindo, você(s)       |");
       Console.WriteLine("| finalmente pode descansar o corpo e a mente de um desafio tão exaustivo.      |");
       Console.WriteLine("| Após deixar o campo, você está nos corredores do castelo perguntando-se       |");
       Console.WriteLine("| o que pode fazer antes do 2º desafio começar...                               |");
@@ -383,7 +383,7 @@ namespace RPG
         while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
         {
           Console.WriteLine();
-          Console.WriteLine("Opção Invalida, tente novamente");
+          Console.WriteLine("Opção inválida, tente novamente");
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
