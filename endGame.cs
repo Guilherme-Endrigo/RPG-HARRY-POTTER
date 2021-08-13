@@ -128,7 +128,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                              Varinha de Cerejeira                             |");
+                    Console.WriteLine("|                              VARINHA DE CEREJEIRA                             |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    A varinha escolhida nunca pode ficar nas mãos de um bruxo que não tenha    |");
@@ -143,7 +143,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                             Varinha de Castanheira                            |");
+                    Console.WriteLine("|                             VARINHA DE CASTANHEIRA                            |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    A varinha escolhida se atrai por bruxos e bruxas que são habilidosos em    |");
@@ -159,7 +159,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                                 Varinha de Olmo                               |");
+                    Console.WriteLine("|                                VARINHA DE OLMO                                |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Acredita-se que apenas puros-sangues podem produzir magia a partir das     |");
@@ -173,7 +173,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                               Varinha de Pereira                              |");
+                    Console.WriteLine("|                               VARINHA DE PEREIRA                              |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Essa varinha de poderes mágicos esplêndidos se dá melhor nas mãos dos      |");
@@ -350,7 +350,7 @@ namespace RPG
         {
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                            VOCÊ ESCAPOU?                                      |");
+            Console.WriteLine("|                                VOCÊ ESCAPOU?                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você foge por sua vida. Não será lembrado por sua coragem, porém o medo    |");
@@ -368,11 +368,11 @@ namespace RPG
             if (diceValue >= 6)
             {
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                          SUCESSO - VOCÊ ESCAPOU                               |");
+                Console.WriteLine("|                           ESSA PASSOU RASPANDO                                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você conseguiu fugir por pouco, porém isso não pegou bem na escola, porque |");
-                Console.WriteLine("| ninguém soube do real perigo de morte iminente que enfrentou                  |");
+                Console.WriteLine("| ninguém soube do real perigo de morte iminente que enfrentou!                 |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 character.score -= 2;
@@ -382,7 +382,7 @@ namespace RPG
             {
 
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           FRACASSO - VOCÊ VIROU ARTE                          |");
+                Console.WriteLine("|                               VOCÊ VIROU ARTE                                 |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|     Você foi atingido pelo Petrificus Totalus Paralyticus, uma versão do      |");
                 Console.WriteLine("| feitiço de paralisia com magia negra, capaz de transformar a vítima em pedra! |");
@@ -399,7 +399,6 @@ namespace RPG
 
         public static void endTheGame(List<Character> character)
         {
-
 
             Console.WriteLine();
             Console.WriteLine();
@@ -424,7 +423,7 @@ namespace RPG
             Console.ReadLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                        A VIDA PÓS TORNEIO...É O FIM?                          |");
+            Console.WriteLine("|                            EXISTA VIDA PÓS TORNEIO?                           |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Encerra-se mais um ano letivo memorável em Hogwarts, onde contamos com as  |");
@@ -458,15 +457,41 @@ namespace RPG
 
                 string alive = player.isAlive == true ? "Está vivo" : "Está morto/desclassificado";
 
-                Console.WriteLine($"Parabéns! {player.name}");
-                Console.WriteLine($"Casa do participante: {player.house.houseName}");
-                Console.WriteLine($"Sua pontuação no torneio: {player.score}");
-                Console.WriteLine($"Pontos de vida: {player.life}");
-                Console.WriteLine($"Sobreviveu ao torneio: {alive}");
+                if (player.isAlive)
+                {
+                    Console.WriteLine($"Parabéns! {player.name}");
+                    Console.WriteLine($"Casa do participante: {player.house.houseName}");
+                    Console.WriteLine($"Sua pontuação no torneio: {player.score}");
+                    Console.WriteLine($"Pontos de vida: {player.life}");
+                    Console.WriteLine($"Sobreviveu ao torneio: {alive}");
 
-                Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar: ");
-                Console.ReadLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                }
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.ReadLine();
+
+
+            foreach (var player in character)
+            {
+
+                string alive = player.isAlive == true ? "Está vivo" : "Está morto/desclassificado";
+
+                if (!player.isAlive)
+                {
+                    Console.WriteLine($"Parabéns! {player.name}");
+                    Console.WriteLine($"Casa do participante: {player.house.houseName}");
+                    Console.WriteLine($"Sua pontuação no torneio: {player.score}");
+                    Console.WriteLine($"Pontos de vida: {player.life}");
+                    Console.WriteLine($"Sobreviveu ao torneio: {alive}");
+
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                }
 
             }
 
@@ -506,21 +531,22 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    LUFA-LUFA                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
-
-                foreach (var charHouse in hufflePuff)
-                {
-
-                    Console.WriteLine($"                               {charHouse.name}                               ");
-                }
-
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|  Por sua gentileza, foram sorteados para a Lufa-lufa! Pacientes e honestos,   |");
                 Console.WriteLine("|  trabalhadores e amigos incríveis! Porém, são extremamente ingênuos! Essa     |");
                 Console.WriteLine("|  ingenuidade se reflete também nos números, sendo a casa com o menor número   |");
                 Console.WriteLine("|  de bruxos das trevas já produzidos na história. Sem a sua compreensão, o     |");
-                Console.WriteLine("|  mundo seria mais frio                                                        |");
+                Console.WriteLine("|  mundo seria mais frio.                                                        |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.Write($"LUFANOS: ");
+
+                foreach (var charHouse in hufflePuff)
+                {
+
+                    Console.Write($"{charHouse.name}, ");
+                }
 
                 Console.ResetColor();
 
@@ -538,11 +564,6 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    CORVINAL                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
-                foreach (var charHouse in ravenclaw)
-                {
-
-                    Console.WriteLine($"                               {charHouse.name}                               ");
-                }
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Como vocês já sabem, foram sorteados para a Corvinal! Se destacam por sua  |");
                 Console.WriteLine("|  exímia inteligência, sabedoria e criatividade. Também são conhecidos por sua |");
@@ -551,6 +572,14 @@ namespace RPG
                 Console.WriteLine("|  devido a essa forma de enxergar o mundo.                                     |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.Write($"CORVINAIS: ");
+
+                foreach (var charHouse in ravenclaw)
+                {
+
+                    Console.Write($"{charHouse.name}, ");
+                }
 
                 Console.ResetColor();
 
@@ -569,18 +598,21 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   GRIFINÓRIA                                   |");
                 Console.WriteLine("|------------------------------------------------------------------------------- |");
-                foreach (var charHouse in gryffindor)
-                {
-
-                    Console.WriteLine($"                                {charHouse.name}                               ");
-                }
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine("|    Para os destemidos de plantão, irão para a Grifinória! São de extrema       |");
                 Console.WriteLine("|  coragem, sempre se superando devido ao seu altruísmo! Aventureiros e leais!   |");
                 Console.WriteLine("|  Porém, imprudentes e teimosos, alguns diriam egoístas. No entanto, o mundo,   |");
-                Console.WriteLine("|  mesmo assim, precisa de coragem e inspiração de bruxos como vocês             |");
+                Console.WriteLine("|  mesmo assim, precisa de coragem e inspiração de bruxos como vocês.            |");
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.Write($"GRIFINÓRIOS: ");
+
+                foreach (var charHouse in gryffindor)
+                {
+
+                    Console.Write($"{charHouse.name}, ");
+                }
 
                 Console.ResetColor();
 
@@ -597,11 +629,6 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                   SONSERINA                                    |");
                 Console.WriteLine("|------------------------------------------------------------------------------- |");
-                foreach (var charHouse in slytherin)
-                {
-
-                    Console.WriteLine($"                               {charHouse.name}                               ");
-                }
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine("|    Vocês que competiram com garra até o final, tentando sempre o seu melhor,   |");
                 Console.WriteLine("| irão para a Sonserina! Membros da sonserina como vocês, são, sobretudo,        |");
@@ -612,6 +639,14 @@ namespace RPG
                 Console.WriteLine("| casas não os vejam tão bem.                                                    |");
                 Console.WriteLine("|                                                                                |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                Console.Write($"SONSERINOS: ");
+
+                foreach (var charHouse in slytherin)
+                {
+
+                    Console.Write($"{charHouse.name}, ");
+                }
 
                 Console.ResetColor();
 
