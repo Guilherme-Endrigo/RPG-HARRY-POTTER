@@ -209,7 +209,7 @@ namespace RPG
     //---------> OPÇÃO 2 <---------
     static Character fightDragon(Character character)
     {
-      character.house.scoreGryffindor += 2;
+      character.house.scoreGryffindor += 1;
 
       Console.WriteLine();
       Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
@@ -272,8 +272,8 @@ namespace RPG
     //---------> OPÇÃO 3 <---------
     static Character avoidDragon(Character character)
     {
-      character.house.scoreSlytherin += 2;
-      character.house.scoreHufflePuff += 2;
+      character.house.scoreSlytherin += 1;
+      character.house.scoreHufflePuff += 1;
 
 
       Console.WriteLine();
@@ -425,8 +425,6 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      character.house.scoreRavenclaw += 1;
-
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
@@ -448,7 +446,7 @@ namespace RPG
         Console.WriteLine("| ela te dará alguma vantagem?                                                  |");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        character.house.scoreRavenclaw += 1;
+        character.house.scoreRavenclaw += 2;
         character.hasPotion = true;
 
         Console.WriteLine();
@@ -570,8 +568,6 @@ namespace RPG
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-          // RPG.Drawings.diabolicLaugh();
-
           character.house.scoreSlytherin += 1;
 
           Console.WriteLine();
@@ -649,7 +645,7 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      character.house.scoreGryffindor += 2;
+      character.house.scoreGryffindor += 1;
 
       Console.WriteLine();
       Console.WriteLine();
@@ -674,6 +670,7 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+        character.house.scoreGryffindor += 1;
         character.score += 1;
 
         Console.WriteLine();

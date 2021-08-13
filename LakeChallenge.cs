@@ -106,7 +106,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreRavenclaw += 1;
         character.score += 1;
         character.life += 2;
 
@@ -128,6 +127,7 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+      character.house.scoreGryffindor += 1;
 
 
       Console.WriteLine();
@@ -150,8 +150,7 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreGryffindor += 2;
-        character.house.scoreHufflePuff += 1;
+        character.house.scoreHufflePuff += 2;
         character.score += 1;
 
         Console.WriteLine();
@@ -173,9 +172,7 @@ namespace RPG
         Console.WriteLine("|                                                                                |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreGryffindor += 2;
-        character.house.scoreHufflePuff += 1;
-
+        character.house.scoreGryffindor += 1;
         character.score -= 1;
         character.life -= 1;
 
@@ -208,6 +205,8 @@ namespace RPG
       Console.WriteLine("| agora role o para descobrir os efeitos colaterais da sua decisão!             |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
+      character.house.scoreRavenclaw += 1;
+
 
       Console.WriteLine();
       Console.WriteLine();
@@ -250,7 +249,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        //ravenclaw++ NÃO COLOQUEI PQ ACHEI Q N MERECE HAH
         character.score -= 1;
         character.life -= 1;
 
@@ -273,9 +271,6 @@ namespace RPG
           Console.WriteLine("| antes da bolha encher-se de água!                                             |");
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-          character.score++;
-          character.life++;
 
           Console.WriteLine();
           Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
@@ -331,6 +326,9 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+      character.house.scoreSlytherin += 1;
+
+
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
@@ -351,7 +349,7 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreSlytherin += 2;
+        character.house.scoreSlytherin += 1;
         character.score += 1;
 
         Console.WriteLine();
@@ -375,7 +373,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreSlytherin += 1;
         character.score -= 1;
         character.life -= 1;
 
@@ -489,6 +486,8 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+      character.house.scoreGryffindor += 1;
+
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
@@ -512,8 +511,8 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+        character.house.scoreGryffindor += 1;
         character.score += 1;
-        character.house.scoreGryffindor += 2;
 
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
@@ -535,7 +534,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreGryffindor += 2;
         character.score -= 1;
         character.life -= 1;
 
@@ -564,6 +562,8 @@ namespace RPG
       Console.WriteLine("|  suficiente? Jogue os dados para descobrir!                                   |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      character.house.scoreHufflePuff += 1;
 
       Console.WriteLine();
       Console.WriteLine();
@@ -608,7 +608,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreHufflePuff += 1;
         character.score -= 1;
         character.life -= 1;
 
@@ -640,6 +639,8 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+      character.house.scoreSlytherin += 1;
+
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
@@ -661,7 +662,7 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreSlytherin += 2;
+        character.house.scoreSlytherin += 1;
         character.score += 1;
 
         Console.WriteLine();
@@ -715,6 +716,8 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+      character.house.scoreRavenclaw += 1;
+
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine($"{character.name}, pressione ENTER para jogar o dado.");
@@ -760,7 +763,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreRavenclaw += 1;
         character.score -= 1;
         character.life -= 1;
 
@@ -877,7 +879,7 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      character.house.scoreSlytherin += 1;
+      character.house.scoreSlytherin += 2;
       character.life -= 1;
 
       Console.WriteLine();
@@ -901,6 +903,9 @@ namespace RPG
       Console.WriteLine("| alguma pista!                                                                 |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+      character.house.scoreGryffindor += 1;
+      character.house.scoreRavenclaw += 1;
 
       Console.WriteLine();
       Console.WriteLine();
@@ -927,8 +932,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreGryffindor += 2;
-        character.house.scoreRavenclaw += 1;
         character.score += 1;
 
         Console.WriteLine();
@@ -953,8 +956,7 @@ namespace RPG
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-          character.house.scoreRavenclaw += 2;
-          character.house.scoreGryffindor += 1;
+          character.house.scoreRavenclaw += 1;
           character.hasMap = true;
           character.score += 4;
 
@@ -976,8 +978,7 @@ namespace RPG
           Console.WriteLine("|                                                                               |");
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-          character.house.scoreRavenclaw += 1;
-          character.house.scoreGryffindor += 2;
+          character.house.scoreGryffindor += 1;
           character.score -= 1;
           character.life -= 1;
 
@@ -1005,8 +1006,6 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-        character.house.scoreRavenclaw += 1;
-        character.house.scoreGryffindor += 2;
         character.score -= 1;
         character.life -= 1;
 
@@ -1041,7 +1040,7 @@ namespace RPG
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-      character.house.scoreHufflePuff += 1;
+      character.house.scoreHufflePuff += 2;
       character.life += 1;
 
       Console.WriteLine();

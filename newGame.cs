@@ -88,14 +88,14 @@ namespace RPG
 
 
       Console.WriteLine(" -------------------------------------------------------------------------------- ");
-      Console.WriteLine("|                              OS ESCOLHIDOS                                     |");
+      Console.WriteLine("|                                OS ESCOLHIDOS                                   |");
       Console.WriteLine("|------------------------------------------------------------------------------- |");
       Console.WriteLine("|    A diretora McGonagall dirige-se à frente do Salão Comunal e começa seu      |");
       Console.WriteLine("| típico discurso de volta às aulas.                                             |");
       Console.WriteLine("|                                                                                |");
       Console.WriteLine("|  - Temos a infame honra de sediar o Torneio Tribruxo, e como todos sabem,      |");
       Console.WriteLine("| após os eventos recentes, nós decidimos que neste ano o jogo será aberto a     |");
-      Console.WriteLine($"|{groupSize} participante(s).                                                    |");
+      Console.WriteLine($"{groupSize} participante(s).                                                   "); // TIREI A BARRA
       Console.WriteLine("|                                                                                |");
       Console.WriteLine("|   As instruções para as tarefas que os campeões deverão enfrentar este ano     |");
       Console.WriteLine("| serão informadas após você(s) ser(em) selecionado(s) pelo Cálice. Haverá cinco |");
@@ -174,7 +174,7 @@ namespace RPG
           case "2":
             Console.Write("Você é empurrado pelo restante dos seus amigos e, pela vergonha de estar diante do Cálice, decide colocar seu nome: ");
             name = Console.ReadLine();
-            while (name == "")
+            while (name == "") // INVALIDAR NUMERO?
             {
               Console.WriteLine();
               Console.WriteLine("Opção inválida, tente novamente");
@@ -187,13 +187,10 @@ namespace RPG
             break;
 
         }
-
-
       }
 
       Console.WriteLine();
       firstBreak(character);
-
 
     }
 
@@ -205,7 +202,7 @@ namespace RPG
       Console.WriteLine("|                                AS REGRAS                                      |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|  Tabela de pontuação para cada número do dado D20 |");
+      Console.WriteLine("|  Tabela de pontuação para cada número do dado D20                             |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|   * Falha Crítica (0 - 3) -- Não poderia ter sido pior, mesmo que             |");
       Console.WriteLine("| tentasse... (perde 2 pontos de vida).                                         |");
@@ -219,7 +216,7 @@ namespace RPG
       Console.WriteLine("|   * Sucesso Brilhante (18 - 20) -- Um sucesso além de todas as expectativas   |");
       Console.WriteLine("|   (ganha 2 pontos)                                                            |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|   Caso haja empate, será feita uma disputa de duelo)                          |");
+      Console.WriteLine("|   Caso haja empate, será feita uma disputa de duelo                           |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
