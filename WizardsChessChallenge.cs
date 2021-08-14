@@ -34,7 +34,7 @@ namespace RPG
             {
                 if (!character[i].isAlive)
                 {
-                    break;
+                    continue;
                 }
 
                 Console.WriteLine();
@@ -417,7 +417,7 @@ namespace RPG
 
                 if (!character[i].isAlive)
                 {
-                    break;
+                    continue;
                 }
 
                 Console.WriteLine();
