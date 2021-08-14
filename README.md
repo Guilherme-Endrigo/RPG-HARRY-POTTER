@@ -1,5 +1,5 @@
 <h1>RPG Harry Potter</h1>
-<img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/tree/main/Docs/photo4947683324789369336.jpg"/>
+<img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/photo4947683324789369336.jpg?raw=true" aling="center">
 <h4>Um jogo RPG no universo de Harry Potter totalmente virtual construído em C#</h4>
 
 <h2 id="sobre">Sobre</h2>
@@ -10,7 +10,7 @@ O objetivo principal do jogo foi torná-lo simples, dinâmico e com uma históri
 
 A história foi, primeiramente, organizada em um script, sendo organizada pelos caminhos que o usuário poderia enfrentar em cada desafio
 
-<h3>Special features</h3>
+<h3 id="features">Special features</h3>
 
 * Música tema da Edwiges no início do jogo
 * Imagens em Ascii que representam os cenários dos jogadores
@@ -26,6 +26,7 @@ A história foi, primeiramente, organizada em um script, sendo organizada pelos 
    * <a href="#tabela">Arquivos locais</a>
    * <a href="#table">RPG C# X RPG Tradicional</a>
    * <a href="#tecnologias">Tecnologias</a>
+   * <a href="#autores">Autores</a>
    * <a href="#documentacao">Documentação</a>
 
 <h2 id="instalacao">Instalação</h2>
@@ -56,9 +57,21 @@ Após clonar o repositório no Github, é necessário a instalação da framewor
 
 
 <h2 id="tecnologias">Tecnologias</h2>
-<p>C# & Ascii</p>
+<p>C# e .NET</p>
 
-<h2>Documentação</h2>
+<h2 id="autores">Autores</h2>
+
+Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="www.linkedin.com/in/beatrizresende">LinkedIn</a>
+Giuliana Munaretto - <a href="https://github.com/gimunaretto">Github</a> | <a href="https://www.linkedin.com/in/gimunaretto/">LinkedIn</a>
+Guilherme Endrigo - <a href="https://github.com/Guilherme-Endrigo">Github</a> | <a href="https://www.linkedin.com/in/guilhermeendrigo/">LinkedIn</a>
+Laerte Fernandes - <a href="https://github.com/LaerteFr02">Github</a> | <a href="https://www.linkedin.com/in/laertefr/">LinkedIn</a>
+Melissa Akatuka - <a href="https://github.com/MelissaAkatuka">Github</a> | <a href="https://www.linkedin.com/in/melissa-akatuka-de-oliveira/">LinkedIn</a>
+
+<h2 id="documentacao">Documentação</h2>
+
+Fluxograma | Script
+
+<a href="https://miro.com/welcomeonboard/TVVjZDdJT2FDMEFoWFVLazBhRHhLVjJTZ0JSU2E4aFk1cDFFWmRvWk9mSE5yV0c3N2hvTTgyS0Y2bUdnQVBFR3wzMDc0NDU3MzYyMDU3NjYzOTc0" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/miro.png?raw=true" height="55px" width="55px"></a> | <a href="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/RPG_HP.pdf" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/google%20docs.png?raw=true" height="25px" width="25px"></a>
 
 
 
