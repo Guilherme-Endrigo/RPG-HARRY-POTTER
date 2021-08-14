@@ -196,8 +196,7 @@ namespace RPG
             }
 
             Console.WriteLine();
-            RPG.ChessChallenge.wizardChessChallenge(character);
-            // firstBreak(character);
+            firstBreak(character);
         }
 
         public static void rules()
