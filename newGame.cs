@@ -197,7 +197,6 @@ namespace RPG
 
             Console.WriteLine();
             firstBreak(character);
-
         }
 
         public static void rules()
@@ -294,7 +293,7 @@ namespace RPG
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Você escreveu uma fofoca para o Profeta Diário, colocando em prática sua   |");
-                        Console.WriteLine("| astúcia. Porém, com os ataques que fez, perdeu amizades.                       |");
+                        Console.WriteLine("| astúcia. Porém, com os ataques que fez, perdeu amizades.                      |");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

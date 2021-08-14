@@ -25,6 +25,8 @@ namespace RPG
 
         public bool sphinxAnswer { get; set; }
 
+        public bool isDraw { get; set; }
+
         public House house { get; set; }
 
     }

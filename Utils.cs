@@ -10,19 +10,19 @@ namespace RPG
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine("                                         ");
-            Console.WriteLine("                                         ");
-            Console.WriteLine("                     .-=========-.       ");
-            Console.WriteLine("                     \'-=======-'/       ");
-            Console.WriteLine("                     _|   .=.   |_       ");
-            Console.WriteLine("                    | |  {{1}}  | |      ");
-            Console.WriteLine("                    |_|         |_|      ");
-            Console.WriteLine("                      |__ '`' __|        ");
-            Console.WriteLine("                        _`) (`_          ");
-            Console.WriteLine("                      _|_______|_        ");
-            Console.WriteLine("                     |___________|       ");
-            Console.WriteLine("                                         ");
-            Console.WriteLine("                                         ");
+            Console.WriteLine("                                                    ");
+            Console.WriteLine("                                                    ");
+            Console.WriteLine("                                .-=========-.       ");
+            Console.WriteLine("                                \'-=======-'/       ");
+            Console.WriteLine("                                _|   .=.   |_       ");
+            Console.WriteLine("                               | |  {{1}}  | |      ");
+            Console.WriteLine("                               |_|         |_|      ");
+            Console.WriteLine("                                 |__ '`' __|        ");
+            Console.WriteLine("                                   _`) (`_          ");
+            Console.WriteLine("                                 _|_______|_        ");
+            Console.WriteLine("                                |___________|       ");
+            Console.WriteLine("                                                    ");
+            Console.WriteLine("                                                    ");
 
             Console.ResetColor();
 
@@ -56,7 +56,6 @@ namespace RPG
             Console.WriteLine("                                                                                 ");
             Console.WriteLine("                                                                                 ");
         }
-
         public static void chess()
         {
             Console.WriteLine(@"                                                                               ");
@@ -164,8 +163,6 @@ namespace RPG
         public static void logoGame()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-
-
 
             Console.WriteLine(@"                                                _ __                                                 ");
             Console.WriteLine(@"               ___                             | '  \                                                ");
@@ -353,6 +350,7 @@ namespace RPG
             model.isBlocked = false;
             model.sphinxAnswer = false;
             model.hasSucceedSabotage = false;
+            model.isDraw = false;
             model.house = createHouse(_idChar);
 
             return model;
@@ -552,9 +550,32 @@ namespace RPG
             if (draw != null && draw.Count >= 2)
             {
                 RPG.endGame.epilogue(draw);
+
             }
             else
             {
+                var draw2 = characters.FindAll(x => x.isDraw == true);
+
+                if (draw2.Count != 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                                    A FUGA!                                    |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------|");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|     Percebendo que não irá escapar e nem te derrotar, ele tenta fugir. Porém, |");
+                    Console.WriteLine("| devido ao tempo de prova, os professores decidem ir atrás de vocês para ver   |");
+                    Console.WriteLine("| se há algum problema, dão de cara com ele e o prendem.                        |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|     Os professores ficam surpresos por você ter sobrevivido ao combate e      |");
+                    Console.WriteLine("| certamente lembrarão disso.                                                   |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+
                 foreach (var winner in characters)
                 {
 

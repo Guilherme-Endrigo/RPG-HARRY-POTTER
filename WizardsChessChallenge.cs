@@ -28,6 +28,7 @@ namespace RPG
             Console.WriteLine("|                                                                                 |");
             Console.WriteLine(" --------------------------------------------------------------------------------- ");
 
+            RPG.Drawings.chess();
 
             for (int i = 0; i < character.Count; i++)
             {

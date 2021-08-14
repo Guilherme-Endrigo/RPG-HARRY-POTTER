@@ -38,7 +38,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                O DESAFIANTE                                   |");
+                Console.WriteLine("|                                 O DESAFIANTE                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Ninguém menos que o pai do Cedrico, Amos Diggory, convencido que a memória |");
@@ -81,12 +81,13 @@ namespace RPG
                     case "2":
                         character[i] = wandChoice(character[i]);
                         character[i] = wandDuel(character[i]);
+                        character[i].isDraw = true;
                         break;
 
                 }
             }
 
-            endTheGame(character);
+            RPG.Update.biggestScore(character);
         }
 
         public static Character wandChoice(Character character)
@@ -137,6 +138,10 @@ namespace RPG
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.house.scoreGryffindor += 2;
 
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
+
                     break;
 
                 case "2":
@@ -153,6 +158,10 @@ namespace RPG
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.house.scoreHufflePuff += 2;
 
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
+
                     break;
 
                 case "3":
@@ -167,6 +176,10 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.house.scoreSlytherin += 2;
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
                     break;
 
                 case "4":
@@ -181,6 +194,10 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
                     character.house.scoreRavenclaw += 2;
+
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione ENTER para continuar");
+                    Console.ReadLine();
                     break;
             }
 
@@ -228,7 +245,7 @@ namespace RPG
             resultScore = diceAmos - diceValue;
 
             Console.WriteLine();
-            Console.WriteLine("Rápido!Pressione ENTER para lançar o feitiço de defesa");
+            Console.WriteLine("Rápido! Pressione ENTER para lançar o feitiço de defesa");
             Console.ReadLine();
 
             Console.WriteLine();
@@ -247,7 +264,15 @@ namespace RPG
             resultAttack = RPG.Update.spellAttack(diceAmos);
             Console.WriteLine($"{resultAttack}");
 
+
             resultScore = diceAmos - diceValue;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para contra-atacar com um feitiço!");
+            Console.ReadLine();
+
 
             Console.WriteLine();
             Console.WriteLine();
@@ -269,6 +294,12 @@ namespace RPG
 
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para defender-se do feitiço!");
+            Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
             Console.WriteLine($"{character.name}, você sente que o jogo está virando! Lançou o feitiço!");
             diceValue = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -287,6 +318,12 @@ namespace RPG
 
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para tentar se defender novamente do feitiço de Amos!");
+            Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
             Console.WriteLine($"Em sequencia, lançou um feitiço de ataque pra tentar acabar com o duelo!");
             diceAmos = RPG.Dice.throwDice();
             Console.WriteLine($"O Valor do dado é {diceAmos}");
@@ -302,6 +339,13 @@ namespace RPG
             Console.WriteLine(resultDefense);
 
             resultScore = diceAmos - diceValue;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Pressione ENTER para lançar um feitiço em Amos!");
+            Console.ReadLine();
+
 
             Console.WriteLine();
             Console.WriteLine();
@@ -325,21 +369,11 @@ namespace RPG
 
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    A FUGA!                                    |");
-            Console.WriteLine("|-------------------------------------------------------------------------------|");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|     Percebendo que não irá escapar e nem te derrotar, ele tenta fugir. Porém, |");
-            Console.WriteLine("| devido ao tempo de prova, os professores decidem ir atrás de vocês para ver   |");
-            Console.WriteLine("| se há algum problema com a prova, dão de cara com ele e o prendem.            |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Os professores ficam surpresos por você ter sobrevivido ao combate e       |");
-            Console.WriteLine("| certamente lembrarão disso.                                                   |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine(" ------------------------------------------------------------------------------- ");
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadLine();
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.WriteLine($"{character.name}, o que mais te aguarda no fim desse torneio. Vamos esperar o discurso final...");
             Console.ReadLine();
 
             return character;
@@ -348,7 +382,8 @@ namespace RPG
 
         public static Character tryEscape(Character character)
         {
-
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|                                VOCÊ ESCAPOU?                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -367,6 +402,8 @@ namespace RPG
 
             if (diceValue >= 6)
             {
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                           ESSA PASSOU RASPANDO                                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -380,7 +417,8 @@ namespace RPG
             }
             else
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                               VOCÊ VIROU ARTE                                 |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
@@ -391,6 +429,8 @@ namespace RPG
                 Console.WriteLine("| lembrado por todos que verem a obra de arte no jardim que você se tornou      |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                character.isAlive = false;
 
             }
 
@@ -419,7 +459,7 @@ namespace RPG
 
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.WriteLine("Pressione ENTER para continuar ");
             Console.ReadLine();
 
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -447,7 +487,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.WriteLine("Pressione ENTER para continuar ");
             Console.ReadLine();
 
             selectorHat(character);
@@ -472,8 +512,15 @@ namespace RPG
             }
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.WriteLine("Pressione ENTER para continuar ");
             Console.ReadLine();
+
+            var isDead = character.FindAll(x => x.isAlive == false);
+
+            if (isDead.Count != 0)
+            {
+                RPG.Drawings.tumb();
+            }
 
 
             foreach (var player in character)
@@ -481,7 +528,6 @@ namespace RPG
 
                 string alive = player.isAlive == true ? "Está vivo" : "Está morto/desclassificado";
 
-                RPG.Drawings.tumb();
 
                 if (!player.isAlive)
                 {
@@ -516,7 +562,7 @@ namespace RPG
 
 
             Console.WriteLine();
-            Console.WriteLine("Pressione ENTER para continuar: ");
+            Console.WriteLine("Pressione ENTER para continuar ");
             Console.ReadLine();
 
             for (int i = 0; i < character.Count; i++)
@@ -538,7 +584,7 @@ namespace RPG
                 Console.WriteLine("|  trabalhadores e amigos incríveis! Porém, são extremamente ingênuos! Essa     |");
                 Console.WriteLine("|  ingenuidade se reflete também nos números, sendo a casa com o menor número   |");
                 Console.WriteLine("|  de bruxos das trevas já produzidos na história. Sem a sua compreensão, o     |");
-                Console.WriteLine("|  mundo seria mais frio.                                                        |");
+                Console.WriteLine("|  mundo seria mais frio.                                                       |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -553,7 +599,8 @@ namespace RPG
                 Console.ResetColor();
 
                 Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar ");
                 Console.ReadLine();
             }
 
@@ -575,7 +622,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                Console.Write($"CORVINAIS: ");
+                Console.Write($"CORVINOS: ");
 
                 foreach (var charHouse in ravenclaw)
                 {
@@ -586,7 +633,8 @@ namespace RPG
                 Console.ResetColor();
 
                 Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar ");
                 Console.ReadLine();
             }
             //if (gryffindor)
@@ -619,7 +667,8 @@ namespace RPG
                 Console.ResetColor();
 
                 Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar ");
                 Console.ReadLine();
             } //if (slytherin)
 
@@ -653,7 +702,8 @@ namespace RPG
                 Console.ResetColor();
 
                 Console.WriteLine();
-                Console.WriteLine("Pressione ENTER para continuar: ");
+                Console.WriteLine();
+                Console.WriteLine("Pressione ENTER para continuar ");
                 Console.ReadLine();
             }
 
