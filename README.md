@@ -37,7 +37,7 @@ Após clonar o repositório no Github, é necessário a instalação da framewor
 <table>
   <tr>
     <th>RPG HP C#</th>
-    <th>!=</th>
+    <th>X</th>
     <th>RPG Tradicional</th>
   </tr>
   <tr>
