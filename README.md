@@ -71,7 +71,7 @@ Melissa Akatuka - <a href="https://github.com/MelissaAkatuka">Github</a> | <a hr
 
 Fluxograma | Script
 
-<a href="https://miro.com/welcomeonboard/TVVjZDdJT2FDMEFoWFVLazBhRHhLVjJTZ0JSU2E4aFk1cDFFWmRvWk9mSE5yV0c3N2hvTTgyS0Y2bUdnQVBFR3wzMDc0NDU3MzYyMDU3NjYzOTc0" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/miro.png?raw=true" height="55px" width="55px"></a> | <a href="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/RPG_HP.pdf" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/google%20docs.png?raw=true" height="25px" width="25px"></a>
+<a href="https://miro.com/welcomeonboard/TVVjZDdJT2FDMEFoWFVLazBhRHhLVjJTZ0JSU2E4aFk1cDFFWmRvWk9mSE5yV0c3N2hvTTgyS0Y2bUdnQVBFR3wzMDc0NDU3MzYyMDU3NjYzOTc0" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/miro.png?raw=true" height="25px" width="25px"></a> | <a href="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/RPG_HP.pdf" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/google%20docs.png?raw=true" height="25px" width="25px"></a>
 
 
 
