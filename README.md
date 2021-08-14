@@ -1,5 +1,5 @@
 <h1>RPG Harry Potter</h1>
-<img src="./docs/photo4947683324789369336.jpg"/>
+<img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/tree/main/Docs/photo4947683324789369336.jpg"/>
 <h4>Um jogo RPG no universo de Harry Potter totalmente virtual construído em C#</h4>
 
 <h2 id="sobre">Sobre</h2>
