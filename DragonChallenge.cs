@@ -167,7 +167,7 @@ namespace RPG
 
                     Console.WriteLine();
                     Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                    Console.ReadLine();
+                    Console.WriteLine();
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -195,7 +195,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -260,7 +260,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -325,7 +325,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -474,7 +474,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -590,7 +590,7 @@ namespace RPG
 
                     Console.WriteLine();
                     Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                    Console.ReadLine();
+                    Console.WriteLine();
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -696,7 +696,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");

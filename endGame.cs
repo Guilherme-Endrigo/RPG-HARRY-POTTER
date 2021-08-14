@@ -67,7 +67,7 @@ namespace RPG
                 while (option != "1" && option != "2" || option == "")
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção Invalida, tente novamente");
+                    Console.WriteLine("Opção inválida, tente novamente");
                     Console.WriteLine();
                     Console.Write($"{character[i].name}, escolha novamente: ");
                     option = Console.ReadLine();
@@ -118,7 +118,7 @@ namespace RPG
             while (wand != "1" && wand != "2" && wand != "3" && wand != "4" || wand == "")
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
                 wand = Console.ReadLine();
@@ -430,6 +430,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                character.life = 0;
                 character.isAlive = false;
 
             }

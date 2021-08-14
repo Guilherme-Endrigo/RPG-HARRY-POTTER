@@ -53,7 +53,7 @@ namespace RPG
 
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
-                while (option != "1" && option != "2" && option != "3" && option == "")
+                while (option != "1" && option != "2" && option != "3" || option == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção inválida, tente novamente");
@@ -170,7 +170,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -250,7 +250,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -349,7 +349,7 @@ namespace RPG
 
                     Console.WriteLine();
                     Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                    Console.ReadLine();
+                    Console.WriteLine();
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -378,7 +378,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -439,7 +439,7 @@ namespace RPG
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
 
-                while (option != "1" && option != "2" && option != "3" && option != "4" && option == "")
+                while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Opção inválida, tente novamente.");
@@ -505,7 +505,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
 
             }
@@ -592,7 +592,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -660,7 +660,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -731,7 +731,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");

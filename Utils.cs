@@ -461,7 +461,7 @@ namespace RPG
             while (!int.TryParse(charChoice, out number) || charChoice == "0" || number < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine("OPC INVALIDA");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write("Informe novamente a quantidade de amigos: ");
                 charChoice = Console.ReadLine();
@@ -476,7 +476,7 @@ namespace RPG
             while (number > qtdPlayers || number == character.idChar)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("Opção inválida, tente novamente");
                 Console.WriteLine();
                 Console.Write($"{character.name}, escolha novamente: ");
                 number = Int32.Parse(Console.ReadLine());

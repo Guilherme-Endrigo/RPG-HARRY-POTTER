@@ -141,7 +141,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.Write("Informe sua decisão: ");
+                Console.Write($"Informe sua decisão, jogador nº {i + 1}: ");
                 string newNameChoice = Console.ReadLine();
                 Console.WriteLine();
 
@@ -196,7 +196,8 @@ namespace RPG
             }
 
             Console.WriteLine();
-            firstBreak(character);
+            RPG.ChessChallenge.wizardChessChallenge(character);
+            // firstBreak(character);
         }
 
         public static void rules()

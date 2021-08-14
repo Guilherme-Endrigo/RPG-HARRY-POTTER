@@ -252,7 +252,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -294,6 +294,7 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                    character.life = 0;
                     character.isAlive = false;
 
                     Console.WriteLine();
@@ -360,7 +361,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -428,6 +429,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                character.life = 0;
                 character.isAlive = false;
 
                 Console.WriteLine();
@@ -604,6 +606,7 @@ namespace RPG
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                        character.life = 0;
                         character.isAlive = false;
 
                         Console.WriteLine();
@@ -678,7 +681,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 if (diceValue >= 11)
                 {
@@ -712,6 +715,7 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                    character.life = 0;
                     character.isAlive = false;
 
                     Console.WriteLine();
@@ -802,7 +806,7 @@ namespace RPG
 
                     Console.WriteLine();
                     Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                    Console.ReadLine();
+                    Console.WriteLine();
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -822,6 +826,7 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                    character.life = 0;
                     character.isAlive = false;
 
                     Console.WriteLine();
@@ -942,7 +947,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.ReadLine();
+                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -985,6 +990,7 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                    character.life = 0;
                     character.isAlive = false;
 
                     Console.WriteLine();
@@ -1060,6 +1066,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
+                character.life = 0;
                 character.isAlive = false;
 
                 Console.WriteLine();
@@ -1234,6 +1241,7 @@ namespace RPG
                             if (character[i].life < 1)
                             {
                                 character[i].isAlive = false;
+                                character[i].life = 0;
                             }
                         }
                     }
