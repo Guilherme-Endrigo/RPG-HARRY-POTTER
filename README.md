@@ -61,7 +61,7 @@ Após clonar o repositório no Github, é necessário a instalação da framewor
 
 <h2 id="autores">Autores</h2>
 
-Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="www.linkedin.com/in/beatrizresende">LinkedIn</a>
+Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="https://www.linkedin.com/in/beatrizresende">LinkedIn</a>
 
 Giuliana Munaretto - <a href="https://github.com/gimunaretto">Github</a> | <a href="https://www.linkedin.com/in/gimunaretto/">LinkedIn</a>
 
