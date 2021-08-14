@@ -270,8 +270,8 @@ namespace RPG
             Console.WriteLine("|                                    BISPO NEGRO                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Bispo Negro, após o sacrifício de cavalo h3, uma jogada de honra e coragem, ");
-            Console.WriteLine("| o XEQUE MATE ficou por sua conta!                                            |");
+            Console.WriteLine("|    Bispo Negro, após o sacrifício de cavalo h3, uma jogada de honra e coragem,|");
+            Console.WriteLine("| o XEQUE MATE ficou por sua conta!                                             |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine();
@@ -314,7 +314,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|       NA VIDA, AO CONTRÁRIO DO XADREZ, O JOGO CONTINUA APÓS O XEQUE-MATE     ' |");
+                    Console.WriteLine("|       NA VIDA, AO CONTRÁRIO DO XADREZ, O JOGO CONTINUA APÓS O XEQUE-MATE      |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Parabéns! Seu xeque-mate foi magnífico, deixando seu adversário em pedaços |");
@@ -517,8 +517,8 @@ namespace RPG
                 Console.WriteLine("|                         ANTES SÓ DO QUE MAL ACOMPANHADO                       |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado \"não há pior        |");
-                Console.WriteLine("| inimigo que um falso amigo\".                                                 |");
+                Console.WriteLine("|    Você não fez nenhuma amizade, porém já dizia o ditado \"não há pior         |");
+                Console.WriteLine("| inimigo que um falso amigo\".                                                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

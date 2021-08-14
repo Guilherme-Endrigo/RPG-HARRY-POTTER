@@ -76,7 +76,7 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|                              Direção do labirinto                             |");
                     Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Qual caminho você deseja seguir? Cuidado… isso dirá muito sobre você e os  |");
+                    Console.WriteLine("|    Qual caminho você deseja seguir? Cuidado, isso dirá muito sobre você e os  |");
                     Console.WriteLine("| desafios que enfrentará.                                                      |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("| (1) Ir sempre para a direita                                                  |");

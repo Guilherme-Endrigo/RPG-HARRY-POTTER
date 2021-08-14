@@ -593,7 +593,7 @@ namespace RPG
                 foreach (var charHouse in hufflePuff)
                 {
 
-                    Console.Write($"{charHouse.name}, ");
+                    Console.Write($"{charHouse.name}; ");
                 }
 
                 Console.ResetColor();
@@ -627,7 +627,7 @@ namespace RPG
                 foreach (var charHouse in ravenclaw)
                 {
 
-                    Console.Write($"{charHouse.name}, ");
+                    Console.Write($"{charHouse.name}; ");
                 }
 
                 Console.ResetColor();
@@ -661,7 +661,7 @@ namespace RPG
                 foreach (var charHouse in gryffindor)
                 {
 
-                    Console.Write($"{charHouse.name}, ");
+                    Console.Write($"{charHouse.name}; ");
                 }
 
                 Console.ResetColor();
@@ -696,7 +696,7 @@ namespace RPG
                 foreach (var charHouse in slytherin)
                 {
 
-                    Console.Write($"{charHouse.name}, ");
+                    Console.Write($"{charHouse.name}; ");
                 }
 
                 Console.ResetColor();

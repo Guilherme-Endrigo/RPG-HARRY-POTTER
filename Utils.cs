@@ -461,7 +461,7 @@ namespace RPG
             while (!int.TryParse(charChoice, out number) || charChoice == "0" || number < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine("Opção Invalida, tente novamente");
+                Console.WriteLine("OPC INVALIDA");
                 Console.WriteLine();
                 Console.Write("Informe novamente a quantidade de amigos: ");
                 charChoice = Console.ReadLine();
