@@ -29,7 +29,7 @@ namespace RPG
             {
                 if (!character[i].isAlive)
                 {
-                    break;
+                    continue;
                 }
 
                 if (character[i].hasMap)
@@ -1099,7 +1099,7 @@ namespace RPG
             {
                 if (!character[i].isAlive)
                 {
-                    break;
+                    continue;
                 }
 
                 Console.WriteLine();

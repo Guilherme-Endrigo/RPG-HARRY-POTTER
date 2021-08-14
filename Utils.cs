@@ -473,7 +473,7 @@ namespace RPG
             int qtdPlayers = listCharacter.Count;
 
 
-            while (number >= qtdPlayers || number == character.idChar)
+            while (number > qtdPlayers || number == character.idChar)
             {
                 Console.WriteLine();
                 Console.WriteLine("Opção Invalida, tente novamente");

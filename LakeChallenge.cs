@@ -63,7 +63,7 @@ namespace RPG
                 if (character[i].isBlocked == true)
                 {
                     Console.WriteLine($"Eita! Surpresa, você não participará desse desafio, foi sabotado nessa rodada! hehehehe");
-                    break;
+                    continue;
                 }
 
                 switch (option)
@@ -416,11 +416,10 @@ namespace RPG
 
             for (int i = 0; i < character.Count; i++)
             {
-                if (character[i].isBlocked == true || character[i].isAlive == false)
+                if (character[i].isBlocked == true)
                 {
-                    break;
+                    continue;
                 }
-
 
                 Console.WriteLine();
                 Console.WriteLine();
