@@ -15,7 +15,7 @@ A história foi, primeiramente, organizada em um script, sendo organizada pelos 
 * Música tema da Edwiges no início do jogo
 * Imagens em Ascii que representam os cenários dos jogadores
 * Textos bem humorados e personalizados
-* História toda criada do 0
+* História toda criada do 0 pelos autores do código
 
 <h2 id="tabela">Tabela de conteúdos</h2>
 
