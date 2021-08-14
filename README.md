@@ -10,17 +10,10 @@ O objetivo principal do jogo foi torná-lo simples, dinâmico e com uma históri
 
 A história foi, primeiramente, organizada em um script, sendo organizada pelos caminhos que o usuário poderia enfrentar em cada desafio
 
-<h3 id="features">Special features</h3>
-
-* Música tema da Edwiges no início do jogo
-* Imagens em Ascii que representam os cenários dos jogadores
-* Textos bem humorados e personalizados
-* História toda criada do 0 pelos autores do código
-
 <h2 id="tabela">Tabela de conteúdos</h2>
 
    * <a href="#sobre">Sobre</a>
-     * <a href="#features">Special features</a> 
+   * <a href="#features">Special features</a> 
    * <a href="#tabela">Tabela de conteúdo</a>
    * <a href="#instalacao">Instalação</a>
    * <a href="#tabela">Arquivos locais</a>
@@ -28,6 +21,13 @@ A história foi, primeiramente, organizada em um script, sendo organizada pelos 
    * <a href="#tecnologias">Tecnologias</a>
    * <a href="#autores">Autores</a>
    * <a href="#documentacao">Documentação</a>
+
+<h3 id="features">Special features</h3>
+
+* Música tema da Edwiges no início do jogo
+* Imagens em Ascii que representam os cenários dos jogadores
+* Textos bem humorados e personalizados
+* História toda criada do 0 pelos autores do código
 
 <h2 id="instalacao">Instalação</h2>
 
@@ -62,9 +62,13 @@ Após clonar o repositório no Github, é necessário a instalação da framewor
 <h2 id="autores">Autores</h2>
 
 Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="www.linkedin.com/in/beatrizresende">LinkedIn</a>
+
 Giuliana Munaretto - <a href="https://github.com/gimunaretto">Github</a> | <a href="https://www.linkedin.com/in/gimunaretto/">LinkedIn</a>
+
 Guilherme Endrigo - <a href="https://github.com/Guilherme-Endrigo">Github</a> | <a href="https://www.linkedin.com/in/guilhermeendrigo/">LinkedIn</a>
+
 Laerte Fernandes - <a href="https://github.com/LaerteFr02">Github</a> | <a href="https://www.linkedin.com/in/laertefr/">LinkedIn</a>
+
 Melissa Akatuka - <a href="https://github.com/MelissaAkatuka">Github</a> | <a href="https://www.linkedin.com/in/melissa-akatuka-de-oliveira/">LinkedIn</a>
 
 <h2 id="documentacao">Documentação</h2>
