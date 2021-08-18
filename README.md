@@ -1,4 +1,4 @@
-<h1>RPG Harry Potter</h1>
+# RPG Harry Potter
 
 <p align="center">
 <img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/logo.jpg">
@@ -6,7 +6,7 @@
 
 <h4>Um jogo RPG no universo de Harry Potter totalmente virtual construído em C#</h4>
 
-<h2 id="sobre">Sobre</h2>
+## Sobre
 
 O RPG HP em C# é um Role Playing Game que se passa no universo pós-guerra de Harry Potter. Nele, os jogadores terão que enfrentar diversos desafios mágicos num novo Torneio Tribruxo reformulado para conquistar o Taça Tribruxo.
 
@@ -15,7 +15,7 @@ O objetivo principal do jogo foi torná-lo dinâmico, com uma história envolven
 Será que você será capaz de jogar todos os caminhos e encontrar todos os easter eggs do mundo geek e bruxo ?
 
 
-<h2 id="features">Special features</h2>
+## Special features
 
 <img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/dragonChallenge.gif">
 
@@ -32,12 +32,12 @@ Elaboramos diversos fatores com o objetivo de causar maior interatividade, compe
 * pontuação baseada nas suas escolhas e na suas vitorias durante o jogo, sendo capaz de morrer e inclusive descobrir sobre a casa de Howgarts a que você pertence.
 
 
-<h2 id="instalacao">Instalação</h2>
+## Instalação
 
 
 Após clonar o repositório no Github, é necessário a instalação da framework .NET na máquina e, a partir de um editor de código ou do prompt de comando, dentro da pasta onde o código se encontra, deve-se rodar o comando "dotnet run". Então, é só aproveitar!
 
-<h2 id="table">RPG C#     X     RPG Tradicional</h2>
+## RPG C#     X     RPG Tradicional
 
 <img align="right" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/lakeChallengeGif.gif">
 
@@ -66,10 +66,10 @@ Segue uma tabela diferenciando a mestragem do RPG normal de mesa para nosso RPG:
 
 Pode-se perceber que com essas pequenas mudanças facilitamos a mestragem do jogo, uma vez que, com essas alterações o jogo não necessita de mestragem e nem de um dado fisico. Porém, devido a esse fator por mais que o jogo possa receber um numero infinito de jogadores, o mesmo possui como sugestão ser jogado em até 6 jogadores. 
 
-<h2 id="tecnologias">Tecnologias</h2>
+## Tecnologias
 <p>C# e .NET</p>
 
-<h2 id="autores">Autores</h2>
+## Autores
 
 <img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/mazeChallenge.gif">
 
@@ -83,7 +83,7 @@ Laerte Fernandes - <a href="https://github.com/LaerteFr02">Github</a> | <a href=
 
 Melissa Akatuka - <a href="https://github.com/MelissaAkatuka">Github</a> | <a href="https://www.linkedin.com/in/melissa-akatuka-de-oliveira/">LinkedIn</a>
 
-<h2 id="documentacao">Documentação</h2>
+## Documentação
 
 
 
