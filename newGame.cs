@@ -197,8 +197,7 @@ namespace RPG
       }
 
       Console.WriteLine();
-      RPG.Update.biggestScore(character);
-      // firstBreak(character);
+      firstBreak(character);
     }
 
     public static void rules()
