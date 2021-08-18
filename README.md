@@ -1,5 +1,9 @@
 <h1>RPG Harry Potter</h1>
-<img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/photo4947683324789369336.jpg?raw=true" aling="center">
+
+<p align="center">
+<img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/logo.jpg">
+</p>
+
 <h4>Um jogo RPG no universo de Harry Potter totalmente virtual construído em C#</h4>
 
 <h2 id="sobre">Sobre</h2>
@@ -13,8 +17,9 @@ Será que você será capaz de jogar todos os caminhos e encontrar todos os east
 
 <h2 id="features">Special features</h2>
 
-Elaboramos diversos fatores com o objetivo de causar maior interatividade, competitividade e imersão do jogador, dentree eles podemos destacar:
+<img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/dragonChallenge.gif">
 
+Elaboramos diversos fatores com o objetivo de causar maior interatividade, competitividade e imersão do jogador, dentree eles podemos destacar:
 
 * Música tema da Edwiges no início do jogo e final do jogo com o objetivo de tornar a aventura mais imersiva. 
 
@@ -33,6 +38,8 @@ Elaboramos diversos fatores com o objetivo de causar maior interatividade, compe
 Após clonar o repositório no Github, é necessário a instalação da framework .NET na máquina e, a partir de um editor de código ou do prompt de comando, dentro da pasta onde o código se encontra, deve-se rodar o comando "dotnet run". Então, é só aproveitar!
 
 <h2 id="table">RPG C#     X     RPG Tradicional</h2>
+
+<img align="right" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/lakeChallengeGif.gif">
 
 Segue uma tabela diferenciando a mestragem do RPG normal de mesa para nosso RPG:
 
@@ -64,19 +71,23 @@ Pode-se perceber que com essas pequenas mudanças facilitamos a mestragem do jog
 
 <h2 id="autores">Autores</h2>
 
-Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="https://www.linkedin.com/in/beatrizresende">LinkedIn</a>                      Giuliana Munaretto - <a href="https://github.com/gimunaretto">Github</a> | <a href="https://www.linkedin.com/in/gimunaretto/">LinkedIn</a>
+<img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/mazeChallenge.gif">
 
+Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="https://www.linkedin.com/in/beatrizresende">LinkedIn</a>
 
-Guilherme Endrigo - <a href="https://github.com/Guilherme-Endrigo">Github</a> | <a href="https://www.linkedin.com/in/guilhermeendrigo/">LinkedIn</a>                          Laerte Fernandes - <a href="https://github.com/LaerteFr02">Github</a> | <a href="https://www.linkedin.com/in/laertefr/">LinkedIn</a>
+Giuliana Munaretto - <a href="https://github.com/gimunaretto">Github</a> | <a href="https://www.linkedin.com/in/gimunaretto/">LinkedIn</a>
 
+Guilherme Endrigo - <a href="https://github.com/Guilherme-Endrigo">Github</a> | <a href="https://www.linkedin.com/in/guilhermeendrigo/">LinkedIn</a>                          
+
+Laerte Fernandes - <a href="https://github.com/LaerteFr02">Github</a> | <a href="https://www.linkedin.com/in/laertefr/">LinkedIn</a>
 
 Melissa Akatuka - <a href="https://github.com/MelissaAkatuka">Github</a> | <a href="https://www.linkedin.com/in/melissa-akatuka-de-oliveira/">LinkedIn</a>
 
 <h2 id="documentacao">Documentação</h2>
 
-Fluxograma              |             Script
 
-<a href="https://miro.com/welcomeonboard/TVVjZDdJT2FDMEFoWFVLazBhRHhLVjJTZ0JSU2E4aFk1cDFFWmRvWk9mSE5yV0c3N2hvTTgyS0Y2bUdnQVBFR3wzMDc0NDU3MzYyMDU3NjYzOTc0" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/miro.png?raw=true" height="25px" width="25px"></a> || <a href="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/RPG_HP.pdf" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/google%20docs.png?raw=true" height="25px" width="25px"></a>
+
+<a href="https://miro.com/welcomeonboard/TVVjZDdJT2FDMEFoWFVLazBhRHhLVjJTZ0JSU2E4aFk1cDFFWmRvWk9mSE5yV0c3N2hvTTgyS0Y2bUdnQVBFR3wzMDc0NDU3MzYyMDU3NjYzOTc0" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/miro.png" height="50px" width="50px"></a> <a href="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/RPG_HP.pdf" target="_blank"><img src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/google docs.png" height="50px" width="50px"></a>
 
 
 
