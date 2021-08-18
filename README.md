@@ -19,7 +19,7 @@ Será que você será capaz de jogar todos os caminhos e encontrar todos os east
 
 ## Special features
 
-<img align="left" width="300" height="340" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/dragonChallenge.gif">
+<img align="left" width="300" height="340" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/full.gif">
 
 Elaboramos diversos fatores com o objetivo de causar maior interatividade, competitividade e imersão do jogador, dentree eles podemos destacar:
 
@@ -80,7 +80,7 @@ Pode-se perceber que com essas pequenas mudanças facilitamos a mestragem do jog
 
 ## Autores
 
-<img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/mazeChallenge.gif">
+<img align="left" width="300" height="300" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/goblet.gif">
 
 Beatriz de Castro Resende - <a href="https://github.com/beatrizresende">Github</a> | <a href="https://www.linkedin.com/in/beatrizresende">LinkedIn</a>
 
