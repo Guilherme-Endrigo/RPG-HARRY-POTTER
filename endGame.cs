@@ -402,6 +402,8 @@ namespace RPG
 
             if (diceValue >= 6)
             {
+                character.score -= 2;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -412,11 +414,13 @@ namespace RPG
                 Console.WriteLine("| ninguém soube do real perigo de morte iminente que enfrentou!                 |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                character.score -= 2;
 
             }
             else
             {
+                character.life = 0;
+                character.isAlive = false;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -429,9 +433,6 @@ namespace RPG
                 Console.WriteLine("| lembrado por todos que verem a obra de arte no jardim que você se tornou      |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                character.life = 0;
-                character.isAlive = false;
 
             }
 
@@ -610,7 +611,7 @@ namespace RPG
 
             if (ravenclaw.Count != 0)
             {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
                 Console.WriteLine("|                                    CORVINAL                                   |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");

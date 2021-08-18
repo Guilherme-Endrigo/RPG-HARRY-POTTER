@@ -18,12 +18,11 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|                          O Torneio Tribruxo começou!                          |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Todos se encaminharam para o campo de quadribol, a torcida já está nas     |");
-            Console.WriteLine("| arquibancadas e é quando, na tenda dos participantes, você se reúne com os    |");
-            Console.WriteLine("| outros participantes, aguardando ansiosamente pelas instruções. Você está     |");
-            Console.WriteLine("| empolgado para o seu primeiro desafio, e logo Rony Weasley chega, anunciando  |");
-            Console.WriteLine("| que não será um desafio qualquer: você começará com o mesmo desafio que um    |");
-            Console.WriteLine("| dia Harry Potter enfrentou, o DESAFIO DOS DRAGÕES.                            |");
+            Console.WriteLine("|    A torcida já está nas arquibancadas do campo de quadribol, e é quando, na  |");
+            Console.WriteLine("|  tenda dos participantes, vocês se reúnem, todos igualmente ansiosos pelas    |");
+            Console.WriteLine("| instruções. Logo Rony Weasley chega, anunciando que não será um desafio       |");
+            Console.WriteLine("| qualquer: você começará com o mesmo desafio que um  dia Harry Potter          |");
+            Console.WriteLine("| enfrentou, o DESAFIO DOS DRAGÕES.                                             |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -87,11 +86,9 @@ namespace RPG
             Console.WriteLine("|                                 PROCURAR O OVO                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    O ovo dourado está sendo guardado por um dragão, dentro de uma ninhada de  |");
-            Console.WriteLine("| ovos de dragões Rabo-Córneo Húngaros - porém como você escolheu não enfrentar |");
-            Console.WriteLine("| o dragão cujo ovo a localização é conhecida, agora entrará em uma busca pelo  |");
-            Console.WriteLine("| que pode estar em qualquer lugar de Hogwarts.                                 |");
+            Console.WriteLine("|    O ovo dourado está sendo guardado por um dragão Rabo-Córneo - porém como,  |");
+            Console.WriteLine("| você escolheu não enfrentar o dragão cujo ovo a localização é conhecida,      |");
+            Console.WriteLine("| agora entrará em uma busca pelo que pode estar em qualquer lugar de Hogwarts. |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -130,6 +127,8 @@ namespace RPG
                 //sucesso brilhante
                 if (diceValue >= 18)
                 {
+                    character.score += 5;
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -141,8 +140,6 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                    character.score += 5;
-
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
                     Console.ReadLine();
@@ -150,24 +147,21 @@ namespace RPG
                 }
                 else
                 {
-
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                         PARECE QUE ALGUÉM SOFRE BULLYING                      |");
-                    Console.WriteLine("|-------------------------------------------------------------------------------|");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine("|    Ih, não foi dessa vez. A Murta Que Geme não quis te ajudar e você não      |");
-                    Console.WriteLine("| conseguiu encontrar o ovo. Você perdeu um ponto no torneio e uma vida.        |");
-                    Console.WriteLine("|                                                                               |");
-                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
                     character.score -= 1;
                     character.life -= 1;
 
                     Console.WriteLine();
-                    Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
                     Console.WriteLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                        PARECE QUE ALGUÉM SOFREU BULLYING                      |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------|");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|    Ih, não foi dessa vez. A Murta Que Geme não quis te ajudar e você não      |");
+                    Console.WriteLine("| conseguiu encontrar o ovo. Você perdeu um ponto no torneio e uma vida por     |");
+                    Console.WriteLine($"| isso. Está com {character.life} pontos de vida!                                              |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -177,6 +171,8 @@ namespace RPG
             }
             else
             {
+                character.score -= 1;
+                character.life -= 1;
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -186,16 +182,11 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Humm, parece que foi uma busca que deu em nada. Você se perdeu na floresta |");
                 Console.WriteLine("| e nem mesmo chegou a investigar pelo castelo, onde as principais pistas       |");
-                Console.WriteLine("| estavam. Infelizmente seu tempo se esgotou, portanto vai ficar com um ponto e |");
-                Console.WriteLine("| um ponto de vida a menos.                                                     |");
+                Console.WriteLine("| estavam. Infelizmente seu tempo se esgotou, perdendo um ponto e um ponto de   |");
+                Console.WriteLine($"| vida por isso. Ficando com {character.life} pontos de vida!                                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                character.score -= 1;
-                character.life -= 1;
 
-                Console.WriteLine();
-                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -220,6 +211,7 @@ namespace RPG
             //sucesso brilhante
             if (diceValue >= 18)
             {
+                character.score += 4;
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -234,7 +226,6 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                character.score += 4;
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -243,6 +234,10 @@ namespace RPG
             }
             else
             {
+
+                character.score -= 1;
+                character.life -= 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -253,14 +248,9 @@ namespace RPG
                 Console.WriteLine("| as chamas te desestabilizaram e arruinaram as cerdas da vassoura… Urgh, foi   |");
                 Console.WriteLine("| uma queda feia! Que pena, acabou de perder um ponto e um ponto de vida.       |");
                 Console.WriteLine("|                                                                               |");
+                Console.WriteLine($"| Ficou com apenas {character.life} pontos de vida!                                            |");
+                Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                character.score -= 1;
-                character.life -= 1;
-
-                Console.WriteLine();
-                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -285,6 +275,8 @@ namespace RPG
             //sucesso mediano
             if (diceValue >= 11)
             {
+                character.score += 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -299,8 +291,6 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                character.score += 1;
-
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
                 Console.ReadLine();
@@ -308,6 +298,10 @@ namespace RPG
             }
             else
             {
+
+                character.score -= 1;
+                character.life -= 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -318,14 +312,9 @@ namespace RPG
                 Console.WriteLine("| devagar demais e acabou sendo pego pelo dragão! Que pena, parece que acabou   |");
                 Console.WriteLine("| de perder um ponto e um ponto de vida.                                        |");
                 Console.WriteLine("|                                                                               |");
+                Console.WriteLine($"| Está com {character.life} pontos de vida!                                                    |");
+                Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                character.score -= 1;
-                character.life -= 1;
-
-                Console.WriteLine();
-                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -347,9 +336,9 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|                        A primeira parte chegou ao fim                         |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Muito bem, jovem(ns) competidor(es)! Após um dia inteiro competindo,       |");
-            Console.WriteLine("| você(s) finalmente pode(m) descansar o corpo e a mente de um desafio tão      |");
-            Console.WriteLine("| exaustivo. Após deixar o campo, você(s) vai(ão) para os corredores do castelo.|");
+            Console.WriteLine("|    Muito bem, jovens competidores! Após um dia inteiro competindo, vocês      |");
+            Console.WriteLine("| finalmente podem descansar o corpo e a mente de um desafio tão exaustivo e    |");
+            Console.WriteLine("| após deixar o campo, vocês vão para os corredores do castelo.                 |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -436,6 +425,9 @@ namespace RPG
             if (diceValue >= 11)
             {
 
+                character.house.scoreRavenclaw += 2;
+                character.hasPotion = true;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -446,9 +438,6 @@ namespace RPG
                 Console.WriteLine("| ela te dará alguma vantagem?                                                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                character.house.scoreRavenclaw += 2;
-                character.hasPotion = true;
-
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
                 Console.ReadLine();
@@ -456,6 +445,9 @@ namespace RPG
             }
             else
             {
+                character.life -= 1;
+                character.score -= 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -464,17 +456,10 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você estava cansado demais e caiu no sono sobre o livro de poções. O       |");
                 Console.WriteLine("| monitor te encontrou no laboratório no meio da madrugada e mandou que         |");
-                Console.WriteLine("| subisse para o dormitório.                                                    |");
+                Console.WriteLine($"| subisse para o dormitório. Está com {character.life} pontos de vida!                         |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
-                character.life -= 1;
-                character.score -= 1;
-
-                Console.WriteLine();
-                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -586,11 +571,8 @@ namespace RPG
                     Console.WriteLine("|    Você foi flagrado! Agora todos sabem que você tentou sabotar outro aluno.  |");
                     Console.WriteLine("| Quando estiver andando por aí, fique de olhos abertos...                      |");
                     Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                    Console.WriteLine();
-                    Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                    Console.WriteLine();
 
                     Console.WriteLine();
                     Console.WriteLine("Pressione ENTER para continuar");
@@ -604,6 +586,8 @@ namespace RPG
         //---------> OPÇÃO 3 <---------
         static Character askFriendsForHelp(Character character)
         {
+            character.house.scoreHufflePuff += 2;
+            character.life += 1;
 
             Console.WriteLine();
             Console.WriteLine();
@@ -616,12 +600,10 @@ namespace RPG
             Console.WriteLine("| nossos amigos trazem à tona o melhor de nós.                                  |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você conversou com seus amigos e agora se sente revigorado! Ganhou uma     |");
-            Console.WriteLine("| vida extra!                                                                   |");
+            Console.WriteLine($"| vida extra! Está com {character.life} pontos de vida!                                        |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            character.house.scoreHufflePuff += 2;
-            character.life += 1;
 
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
@@ -633,6 +615,8 @@ namespace RPG
         //---------> OPÇÃO 4 <---------
         static Character practiceSpells(Character character)
         {
+            character.house.scoreGryffindor += 1;
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -645,7 +629,6 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-            character.house.scoreGryffindor += 1;
 
             Console.WriteLine();
             Console.WriteLine();
@@ -658,6 +641,9 @@ namespace RPG
             if (diceValue >= 6)
             {
 
+                character.house.scoreGryffindor += 1;
+                character.score += 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -665,13 +651,10 @@ namespace RPG
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Como diz um importante bruxo: “A dedicação nunca te deixa na mão”, e ao    |");
-                Console.WriteLine("| treinar feitiços você melhorou suas habilidades! Ganhou um ponto, além de     |");
-                Console.WriteLine("| pontos de inteligência.                                                       |");
+                Console.WriteLine("| treinar feitiços você melhorou suas habilidades! Ganhou um ponto.             |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                character.house.scoreGryffindor += 1;
-                character.score += 1;
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");
@@ -680,6 +663,9 @@ namespace RPG
             }
             else
             {
+                character.score -= 1;
+                character.life -= 1;
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -687,16 +673,11 @@ namespace RPG
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Argh! Parece que você se machucou tentando realizar o feitiço! Perdeu uma  |");
-                Console.WriteLine("| vida e um ponto, além de passar vergonha.                                     |");
+                Console.WriteLine($"| vida e um ponto, além de passar vergonha. Está com {character.life} pontos                   |");
+                Console.WriteLine("| de vida!                                                                      |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-                character.score -= 1;
-                character.life -= 1;
-
-                Console.WriteLine();
-                Console.WriteLine($"{character.name}, você está com {character.life} pontos de vida.");
-                Console.WriteLine();
 
                 Console.WriteLine();
                 Console.WriteLine("Pressione ENTER para continuar");

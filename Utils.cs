@@ -547,16 +547,16 @@ namespace RPG
 
             var draw = characters.FindAll(x => x.score == biggestScore && x.isAlive == true);
 
-            if (draw != null && draw.Count >= 2)
+            if (draw.Count != 0 && draw.Count >= 2)
             {
                 RPG.endGame.epilogue(draw);
 
             }
             else
             {
-                var draw2 = characters.FindAll(x => x.isDraw == true);
+                var battleAmos = characters.FindAll(x => x.isDraw == true);
 
-                if (draw2.Count != 0)
+                if (battleAmos.Count != 0)
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -578,6 +578,15 @@ namespace RPG
 
                 foreach (var winner in characters)
                 {
+                    for (int i = 0; i < characters.Count; i++)
+                    {
+
+                        if (biggestScore < characters[i].score)
+                        {
+                            biggestScore = characters[i].score;
+                        }
+
+                    }
 
                     if (winner.score == biggestScore)
                     {
