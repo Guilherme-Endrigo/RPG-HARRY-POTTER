@@ -201,6 +201,7 @@ namespace RPG
     {
         public static void EdwigesTune()
         {
+#pragma warning disable CA1416
             int frequency = 15;
 
             //PARTE 1
