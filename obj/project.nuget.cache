@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "j+WgSeAhtZkGo1+AN/xBOu+bseiqaMzm8bNJdQz2MPjkIWMkh7+m0Wv2vO9E404VAFMbOvBsmyaaF2ym211Umw==",
+  "dgSpecHash": "eyj+oXAVGLqLQ/fRX1Uv3GjmbD1lJz8kvYthXVCmYyN7DWPPPS7yBmfwyJOJJUNORv98OzQuIovT7qCtWgZOsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Projetos\\RPG\\RPG.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\giuli\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\giuli\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\giuli\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\giuli\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

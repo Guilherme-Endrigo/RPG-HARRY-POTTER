@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj": {}
+    "D:\\Projetos\\RPG\\RPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj": {
+    "D:\\Projetos\\RPG\\RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj",
+        "projectUniqueName": "D:\\Projetos\\RPG\\RPG.csproj",
         "projectName": "RPG",
-        "projectPath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\RPG.csproj",
-        "packagesPath": "C:\\Users\\Visitante\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG\\obj\\",
+        "projectPath": "D:\\Projetos\\RPG\\RPG.csproj",
+        "packagesPath": "C:\\Users\\giuli\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\RPG\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Visitante\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\giuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -43,6 +42,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Windows.Extensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

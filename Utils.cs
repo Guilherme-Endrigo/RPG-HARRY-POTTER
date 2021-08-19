@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Media;
 
 namespace RPG
 {
@@ -201,8 +202,8 @@ namespace RPG
     {
         public static void EdwigesTune()
         {
-#pragma warning disable CA1416
-            int frequency = 15;
+            #pragma warning disable CA1416
+            int frequency = 5;
 
             //PARTE 1
 
@@ -211,7 +212,7 @@ namespace RPG
             Console.Beep(493, 350);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 550);
+            Console.Beep(659, 450);
             Thread.Sleep(frequency);
 
             Console.Beep(783, 175);
@@ -229,82 +230,92 @@ namespace RPG
             Console.Beep(880, 530);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 650);
-            Thread.Sleep(frequency);
+            Console.Beep(740, 550);
+            // Thread.Sleep(frequency);
 
             //PARTE 2
 
-            Console.Beep(659, 700);
+            Console.Beep(659, 500);
             Thread.Sleep(frequency);
 
-            Console.Beep(800, 400);
+            Console.Beep(800, 300);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 400);
+            Console.Beep(740, 300);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 700);
             Console.Beep(659, 400);
+            Console.Beep(659, 200);
 
-            Console.Beep(493, 700);
-            Thread.Sleep(frequency);
+            Console.Beep(493, 600);
+            // Thread.Sleep(frequency);
 
             //PARTE 3
 
             Thread.Sleep(frequency);
-            Console.Beep(493, 350);
+            Console.Beep(493, 250);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 500);
+            Console.Beep(659, 400);
             Thread.Sleep(frequency);
 
-            Console.Beep(783, 250);
+            Console.Beep(783, 150);
             Thread.Sleep(frequency);
 
-            Console.Beep(740, 330);
+            Console.Beep(740, 230);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 500);
+            Console.Beep(659, 400);
             Thread.Sleep(frequency);
 
             //PARTE 4
 
-            Console.Beep(987, 400);
+            Console.Beep(987, 300);
             Thread.Sleep(frequency);
 
-            Console.Beep(1174, 700);
+            Console.Beep(1174, 600);
             Thread.Sleep(frequency);
 
-            Console.Beep(1174, 450);
+            Console.Beep(1174, 350);
             Thread.Sleep(frequency);
 
-            Console.Beep(1046, 750);
-            Thread.Sleep(frequency);
+            Console.Beep(1046, 550);
+            // Thread.Sleep(frequency);
 
             //PARTE 5
 
-            Console.Beep(880, 600);
+            Console.Beep(880, 500);
             Thread.Sleep(frequency);
 
-            Console.Beep(1046, 500);
-            Thread.Sleep(frequency);
-
-            Console.Beep(987, 400);
+            Console.Beep(1046, 400);
             Thread.Sleep(frequency);
 
             Console.Beep(987, 300);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 400);
+            Console.Beep(987, 200);
+            Thread.Sleep(frequency);
+
+            Console.Beep(659, 300);
             Thread.Sleep(frequency);
 
             Console.Beep(783, 600);
             Thread.Sleep(frequency);
 
-            Console.Beep(659, 700);
+            Console.Beep(659, 900);
             Thread.Sleep(frequency);
 
         }
+
+        public static void dragonSound()
+        {
+
+            using (var player = new SoundPlayer(@"D:\Projetos\RPG\docs\sound\Track-1.wav"))
+            {
+                player.Play();
+            }
+        }
+
     }
 
     class Dice
