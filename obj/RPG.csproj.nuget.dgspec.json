@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\RPG\\RPG.csproj": {}
+    "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\RPG.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\RPG\\RPG.csproj": {
+    "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\RPG\\RPG.csproj",
+        "projectUniqueName": "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\RPG.csproj",
         "projectName": "RPG",
-        "projectPath": "D:\\Projetos\\RPG\\RPG.csproj",
-        "packagesPath": "C:\\Users\\giuli\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\RPG\\obj\\",
+        "projectPath": "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\RPG.csproj",
+        "packagesPath": "C:\\Users\\endri\\.nuget\\packages\\",
+        "outputPath": "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\giuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\endri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

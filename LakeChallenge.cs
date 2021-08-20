@@ -29,6 +29,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
 
       for (int i = 0; i < character.Count; i++)
@@ -51,6 +52,8 @@ namespace RPG
 
         Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
         string option = Console.ReadLine();
+        RPG.Tune.enter();
+
         while (option != "1" && option != "2" && option != "3" || option == "")
         {
           Console.WriteLine();
@@ -58,11 +61,13 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
+          RPG.Tune.enter();
         }
 
         if (character[i].isBlocked == true)
         {
           Console.WriteLine($"Eita! Surpresa, você não participará desse desafio, foi sabotado nessa rodada! hehehehe");
+          RPG.Tune.trap();
           continue;
         }
 
@@ -109,10 +114,10 @@ namespace RPG
         Console.WriteLine("|                                                                               |");
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
-
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
 
       character.house.scoreGryffindor += 1;
@@ -154,6 +159,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -177,6 +183,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
 
@@ -227,6 +234,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -255,6 +263,9 @@ namespace RPG
 
         if (diceValue >= 11)
         {
+
+          RPG.Tune.drowning();
+
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -269,12 +280,15 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
 
         }
         else
         {
           character.life = 0;
           character.isAlive = false;
+
+          RPG.Tune.underwater();
 
           Console.WriteLine();
           Console.WriteLine();
@@ -293,6 +307,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
 
         }
 
@@ -346,6 +361,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -369,6 +385,8 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
+
       }
 
       return character;
@@ -397,6 +415,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
 
 
@@ -426,6 +445,8 @@ namespace RPG
         Console.WriteLine();
         Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
         string option = Console.ReadLine();
+        RPG.Tune.enter();
+
         while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
         {
           Console.WriteLine();
@@ -433,6 +454,7 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
+          RPG.Tune.enter();
         }
         switch (option)
         {
@@ -502,6 +524,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -526,6 +549,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
 
       return character;
@@ -576,6 +600,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
       else
       {
@@ -598,6 +623,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
 
@@ -648,7 +674,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
-
+        RPG.Tune.enter();
 
       }
       else
@@ -672,6 +698,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       return character;
@@ -722,6 +749,8 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
+
       }
 
       else
@@ -746,6 +775,8 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
+
       }
 
       return character;
@@ -774,7 +805,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione Enter para continuar");
       Console.ReadLine();
-
+      RPG.Tune.enter();
 
       for (int i = 0; i < character.Count; i++)
       {
@@ -803,6 +834,8 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
           string option = Console.ReadLine();
+          RPG.Tune.enter();
+
           while (option != "1" && option != "2" && option != "3" || option == "")
           {
             Console.WriteLine();
@@ -810,6 +843,7 @@ namespace RPG
             Console.WriteLine();
             Console.Write($"{character[i].name}, escolha novamente: ");
             option = Console.ReadLine();
+            RPG.Tune.enter();
           }
 
           switch (option)
@@ -860,6 +894,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
       return character;
 
@@ -922,6 +957,8 @@ namespace RPG
           character.hasMap = true;
           character.score += 4;
 
+          RPG.Tune.item();
+
           Console.WriteLine();
           Console.WriteLine();
           Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -938,6 +975,8 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
+
         }
 
         else
@@ -961,6 +1000,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
 
         }
       }
@@ -985,7 +1025,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
-
+        RPG.Tune.enter();
 
       }
       return character;
@@ -1013,6 +1053,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
       return character;
     }

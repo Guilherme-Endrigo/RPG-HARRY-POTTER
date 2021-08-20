@@ -2,14 +2,15 @@
 
 namespace RPG
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            RPG.Drawings.logoGame();
-            RPG.newGame.menuInitial();
 
-        }
+      RPG.Drawings.logoGame();
+      RPG.newGame.menuInitial();
 
     }
+
+  }
 }

@@ -26,6 +26,7 @@ namespace RPG
       Console.Write("Informe a opção desejada: ");
       string option = Console.ReadLine();
       Console.WriteLine();
+      RPG.Tune.enter();
 
 
       while (option != "1" && option != "2" && option != "3" || option == "")
@@ -35,6 +36,7 @@ namespace RPG
         Console.WriteLine();
         Console.Write("Informe sua escolha novamente: ");
         option = Console.ReadLine();
+        RPG.Tune.enter();
       }
       switch (option)
       {
@@ -47,6 +49,7 @@ namespace RPG
           break;
 
         case "3":
+          RPG.Tune.selectSound();
           Console.Write("Saindo... Esperamos vocês uma outra hora");
           break;
 
@@ -54,6 +57,8 @@ namespace RPG
     }
     public static void startGame()
     {
+
+      RPG.Tune.selectSound();
 
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -74,6 +79,7 @@ namespace RPG
       Console.Write("(Isso delimitará quantos amigos irão jogar): ");
       string groupSize = Console.ReadLine();
       Console.WriteLine();
+      RPG.Tune.enter();
 
       int number;
 
@@ -85,6 +91,7 @@ namespace RPG
         Console.Write("Informe novamente a quantidade de amigos: ");
         groupSize = Console.ReadLine();
         Console.WriteLine();
+        RPG.Tune.enter();
       }
 
 
@@ -124,6 +131,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
         Console.WriteLine();
         Console.WriteLine(" -------------------------------------------------------------------------------- ");
@@ -144,6 +152,7 @@ namespace RPG
         Console.Write($"Informe sua decisão, jogador nº {i + 1}: ");
         string newNameChoice = Console.ReadLine();
         Console.WriteLine();
+        RPG.Tune.enter();
 
 
         while (newNameChoice != "1" && newNameChoice != "2" || newNameChoice == "")
@@ -153,12 +162,14 @@ namespace RPG
           Console.WriteLine();
           Console.Write("Informe sua decisão novamente: ");
           newNameChoice = Console.ReadLine();
+          RPG.Tune.enter();
         }
         switch (newNameChoice)
         {
           case "1":
             Console.Write("Você corajosamente se posiciona na frente do Cálice e coloca seu nome, que é: ");
             string name = Console.ReadLine();
+            RPG.Tune.enter();
 
             bool onlyLettersAndWhitespace = name.All(i => char.IsLetter(i) || char.IsWhiteSpace(i));
 
@@ -170,6 +181,7 @@ namespace RPG
               Console.Write("Informe seu nome novamente: ");
               name = Console.ReadLine();
               Console.WriteLine();
+              RPG.Tune.enter();
             }
             var charc = RPG.Creations.createChar(name, _idChar: i);
             character.Add(charc);
@@ -178,6 +190,7 @@ namespace RPG
           case "2":
             Console.Write("Você é empurrado pelo restante dos seus amigos e, pela vergonha decide colocar seu nome: ");
             name = Console.ReadLine();
+            RPG.Tune.enter();
 
             onlyLettersAndWhitespace = name.All(i => char.IsLetter(i) || char.IsWhiteSpace(i));
 
@@ -188,6 +201,7 @@ namespace RPG
               Console.WriteLine();
               Console.Write("Informe seu nome novamente: ");
               name = Console.ReadLine();
+              RPG.Tune.enter();
             }
             var charct = RPG.Creations.createChar(name, _idChar: i);
             character.Add(charct);
@@ -202,6 +216,9 @@ namespace RPG
 
     public static void rules()
     {
+
+      RPG.Tune.selectSound();
+
       Console.WriteLine();
       Console.WriteLine();
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -232,6 +249,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para voltar para o menu");
       Console.ReadLine();
+      RPG.Tune.enter();
       Console.WriteLine();
 
       menuInitial();
@@ -257,6 +275,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
 
 
@@ -279,6 +298,8 @@ namespace RPG
         Console.WriteLine();
         Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
         string option = Console.ReadLine();
+        RPG.Tune.enter();
+
         while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
         {
           Console.WriteLine();
@@ -286,6 +307,7 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
+          RPG.Tune.enter();
         }
         switch (option)
         {
@@ -307,6 +329,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
+            RPG.Tune.enter();
 
             break;
           case "2":
@@ -327,6 +350,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
+            RPG.Tune.enter();
 
             break;
           case "3":
@@ -347,6 +371,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
+            RPG.Tune.enter();
 
             break;
           case "4":
@@ -367,6 +392,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para continuar");
             Console.ReadLine();
+            RPG.Tune.enter();
 
             break;
         }

@@ -8,6 +8,7 @@ namespace RPG
     static int diceValue = 0;
     public static void dragonsChallenge(List<Character> character)
     {
+      RPG.Tune.dragonSound();
 
       Console.WriteLine();
       Console.WriteLine();
@@ -31,6 +32,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
       for (int i = 0; i < character.Count; i++)
       {
@@ -52,6 +54,7 @@ namespace RPG
         Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
         string option = Console.ReadLine();
         Console.WriteLine();
+        RPG.Tune.enter();
 
         while (option != "1" && option != "2" && option != "3" || option == "")
         {
@@ -60,6 +63,8 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
+          RPG.Tune.enter();
+
         }
         switch (option)
         {
@@ -141,6 +146,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
 
         }
         else
@@ -164,6 +170,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
         }
 
       }
@@ -189,6 +196,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
 
       //shift+alt 
@@ -242,7 +250,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
-
+        RPG.Tune.enter();
       }
       else
       {
@@ -267,6 +275,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
       return character;
     }
@@ -317,6 +326,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -342,6 +352,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       return character;
@@ -368,7 +379,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
-
+      RPG.Tune.enter();
 
       for (int i = 0; i < character.Count; i++)
       {
@@ -390,6 +401,7 @@ namespace RPG
 
         Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
         string option = Console.ReadLine();
+        RPG.Tune.enter();
 
         while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
         {
@@ -398,6 +410,7 @@ namespace RPG
           Console.WriteLine();
           Console.Write($"{character[i].name}, escolha novamente: ");
           option = Console.ReadLine();
+          RPG.Tune.enter();
         }
         switch (option)
         {
@@ -454,6 +467,8 @@ namespace RPG
         character.house.scoreRavenclaw += 1;
         character.hasPotion = true;
 
+        RPG.Tune.item();
+
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -467,6 +482,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -490,6 +506,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       return character;
@@ -540,6 +557,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -584,6 +602,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
+          RPG.Tune.enter();
 
         }
         else
@@ -603,7 +622,7 @@ namespace RPG
           Console.WriteLine();
           Console.WriteLine("Pressione ENTER para continuar");
           Console.ReadLine();
-
+          RPG.Tune.enter();
         }
       }
       return character;
@@ -633,6 +652,7 @@ namespace RPG
       Console.WriteLine();
       Console.WriteLine("Pressione ENTER para continuar");
       Console.ReadLine();
+      RPG.Tune.enter();
 
       return character;
     }
@@ -682,6 +702,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
 
       }
       else
@@ -704,6 +725,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine("Pressione ENTER para continuar");
         Console.ReadLine();
+        RPG.Tune.enter();
       }
       return character;
     }
