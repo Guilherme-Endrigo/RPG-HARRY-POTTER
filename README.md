@@ -19,7 +19,7 @@ Será que você será capaz de jogar todos os caminhos e encontrar todos os east
 
 ## Special features
 
-<img align="left" width="300" height="340" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/full.gif">
+<img align="left" width="320" height="340" src="https://github.com/Guilherme-Endrigo/RPG-HARRY-POTTER/blob/main/Docs/img/full.gif">
 
 Elaboramos diversos fatores com o objetivo de causar maior interatividade, competitividade e imersão do jogador, dentree eles podemos destacar:
 
