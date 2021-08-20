@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "riNQoxTEXLzm8iBAbLoz29AOppXp9ZEQMFeYEyiH6inmfgtVd516xHbekHjUEBjVQQofBNnyf0WlNxVCETbdoQ==",
+  "dgSpecHash": "nusE4yo4vlZtUq1twmQ7Gv558A2+X1R9qO8Oa0mO8e4vgbTvFYKSRUEXHGOHZl+/bQGpt8/1m5nPAX0I33Jx0g==",
   "success": true,
-  "projectFilePath": "C:\\IGTI\\LetsCode\\backEnd\\C#\\RPG-HARRY-POTTER\\RPG.csproj",
+  "projectFilePath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\RPG.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\endri\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\endri\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\endri\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
-    "C:\\Users\\endri\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\Visitante\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Visitante\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Visitante\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Visitante\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

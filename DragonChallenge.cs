@@ -19,7 +19,7 @@ namespace RPG
       Console.WriteLine("|                          O Torneio Tribruxo começou!                          |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    A torcida já está nas arquibancadas do campo de quadribol, e é quando, na  |");
-      Console.WriteLine("|  tenda dos participantes, vocês se reúnem, todos igualmente ansiosos pelas    |");
+      Console.WriteLine("| tenda dos participantes, vocês se reúnem, todos igualmente ansiosos pelas     |");
       Console.WriteLine("| instruções. Logo Rony Weasley chega, anunciando que não será um desafio       |");
       Console.WriteLine("| qualquer: você começará com o mesmo desafio que um  dia Harry Potter          |");
       Console.WriteLine("| enfrentou, o DESAFIO DOS DRAGÕES.                                             |");
@@ -92,7 +92,7 @@ namespace RPG
       Console.WriteLine("|                                 PROCURAR O OVO                                |");
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    O ovo dourado está sendo guardado por um dragão Rabo-Córneo - porém como,  |");
+      Console.WriteLine("|    O ovo dourado está sendo guardado por um dragão Rabo-Córneo - porém, como  |");
       Console.WriteLine("| você escolheu não enfrentar o dragão cujo ovo a localização é conhecida,      |");
       Console.WriteLine("| agora entrará em uma busca pelo que pode estar em qualquer lugar de Hogwarts. |");
       Console.WriteLine("|                                                                               |");
@@ -111,7 +111,7 @@ namespace RPG
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-        Console.WriteLine("|                       PARECE QUE TEMOS UM XEROQUE ROMES                       |");
+        Console.WriteLine("|                      PARECE QUE TEMOS UM XEROQUE ROLMES                       |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
         Console.WriteLine("|    Parabéns! Você conseguiu avançar nas investigações, colheu pistas pelo     |");
@@ -217,7 +217,7 @@ namespace RPG
       Console.WriteLine("|    Em um ato de coragem você se coloca em posição de ataque, pronto para      |");
       Console.WriteLine("| qualquer possível armadilha que o dragão esteja pensando.                     |");
       Console.WriteLine("|                                                                               |");
-      Console.WriteLine("|    Será que o dragão irá conseguir tirar seus pontos de vida? Role o dado  e  |");
+      Console.WriteLine("|    Será que o dragão irá conseguir tirar seus pontos de vida? Role o dado e   |");
       Console.WriteLine("| descubra o desfecho deste duelo.                                              |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -293,8 +293,8 @@ namespace RPG
       Console.WriteLine("|-------------------------------------------------------------------------------|");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine("|    Você escolheu tentar fugir diante deste monstro poderoso, porém será capaz |");
-      Console.WriteLine("| de escapar ? role o dado para saber saber se consegue escapar ou se será a    |");
-      Console.WriteLine("| vez do dragão usar flamethrower!                                              |");
+      Console.WriteLine("| de escapar? Role o dado para saber saber se consegue escapar ou se será a vez |");
+      Console.WriteLine("| do dragão usar flamethrower!                                                  |");
       Console.WriteLine("|                                                                               |");
       Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -341,7 +341,7 @@ namespace RPG
         Console.WriteLine("|                DRAGÕES PODEM REALMENTE SER MONTARIAS DE QUADRIBOL?            |");
         Console.WriteLine("|-------------------------------------------------------------------------------|");
         Console.WriteLine("|                                                                               |");
-        Console.WriteLine("|    Ele está se aproximando… Mais rápido! Voe mais rápido….! Ah não, você foi  |");
+        Console.WriteLine("|    Ele está se aproximando… Mais rápido! Voe mais rápido...! Ah não, você foi |");
         Console.WriteLine("| devagar demais e acabou sendo pego pelo dragão! Que pena, parece que acabou   |");
         Console.WriteLine("| de perder um ponto e um ponto de vida.                                        |");
         Console.WriteLine("|                                                                               |");
