@@ -9,7 +9,7 @@ namespace RPG
 
         static int diceValue;
 
-        public static void epilogue(List<Character> character)
+        public static void epilogue(List<Character> character, List<Character> characterDuel)
         {
             // if (Jogador1.pontos == Jogador2.pontos) ;
             Console.WriteLine();
@@ -34,7 +34,7 @@ namespace RPG
             Console.ReadLine();
             RPG.Tune.enter();
 
-            for (int i = 0; i < character.Count; i++)
+            for (int i = 0; i < characterDuel.Count; i++)
             {
                 Console.WriteLine();
                 Console.WriteLine();
@@ -62,7 +62,7 @@ namespace RPG
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
                 Console.WriteLine();
-                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                Console.Write($"{characterDuel[i].name}, informe a opção desejada para continuar: ");
                 string option = Console.ReadLine();
                 RPG.Tune.enter();
 
@@ -71,22 +71,35 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine("Opção inválida, tente novamente");
                     Console.WriteLine();
-                    Console.Write($"{character[i].name}, escolha novamente: ");
+                    Console.Write($"{characterDuel[i].name}, escolha novamente: ");
                     option = Console.ReadLine();
                     RPG.Tune.enter();
                 }
                 switch (option)
                 {
                     case "1":
-                        character[i] = tryEscape(character[i]);
+                    //se id do characterDuel == character att senao continua
+                        characterDuel[i] = tryEscape(characterDuel[i]);
+                        for(int j = 0; j >= character.Count; j++){
+                            if(character[j].idChar == characterDuel[i].idChar){
+                                character[j] = characterDuel[i];
+                                continue;
+                            }
+                        }
                         break;
 
                     case "2":
-                        character[i] = wandChoice(character[i]);
-                        character[i] = wandDuel(character[i]);
-                        character[i].isDraw = true;
+                        characterDuel[i] = wandChoice(characterDuel[i]);
+                        characterDuel[i] = wandDuel(characterDuel[i]);
+                        characterDuel[i].isDraw = true;
+                        
+                        for(int k = 0; k >= character.Count; k++){
+                            if(character[k].idChar == characterDuel[i].idChar){
+                                character[k] = characterDuel[i];
+                                continue;
+                            }
+                        }
                         break;
-
                 }
             }
 
@@ -106,7 +119,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("| (1) Varinha de Cerejeira, rígida e feita com coração de Dragão;               |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("| (2) Varinha de castanheira, maleável e feita com núcleo de Unicórnio;         |");
+            Console.WriteLine("| (2) Varinha de Castanheira, maleável e feita com núcleo de Unicórnio;         |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("| (3) Varinha de Olmo, flexível e feita com pena de Fênix;                      |");
             Console.WriteLine("|                                                                               |");

@@ -53,7 +53,6 @@ namespace RPG
                 Console.WriteLine();
 
                 Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
-                Console.WriteLine();
                 string option = Console.ReadLine();
                 RPG.Tune.enter();
 

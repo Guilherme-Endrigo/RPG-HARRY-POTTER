@@ -434,7 +434,7 @@ namespace RPG
 
             if (draw.Count != 0 && draw.Count >= 2)
             {
-                RPG.endGame.epilogue(draw);
+                RPG.endGame.epilogue(characters, draw);
 
             }
             else
@@ -487,6 +487,10 @@ namespace RPG
             }
 
         }
+
+
+
+
     }
 
 }

@@ -11,12 +11,9 @@ namespace RPG
 
         public int scoreSlytherin { get; set; }
 
-
         public int scoreRavenclaw { get; set; }
 
-
         public int scoreGryffindor { get; set; }
-
 
         public int scoreHufflePuff { get; set; }
 
