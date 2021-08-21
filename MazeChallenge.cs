@@ -1264,7 +1264,7 @@ namespace RPG
                     player.life += 1;
 
                     Console.WriteLine();
-                    Console.WriteLine($"{player.name}, você está com {player.life} pontos de vida.");
+                    Console.WriteLine($"{player.name}, você está com {player.life} pontos de vida e {player.score} pontos no torneio!");
                     Console.WriteLine();
 
 
@@ -1317,7 +1317,7 @@ namespace RPG
                     else
                     {
                         Console.WriteLine();
-                        Console.WriteLine($"{player.name}, você está com {player.life} pontos de vida.");
+                        Console.WriteLine($"{player.name}, você está com {player.life} pontos de vida e {player.score} pontos no torneio!");
                         Console.WriteLine();
                     }
 

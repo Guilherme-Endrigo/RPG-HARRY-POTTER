@@ -78,10 +78,12 @@ namespace RPG
                 switch (option)
                 {
                     case "1":
-                    //se id do characterDuel == character att senão continua
+                        //se id do characterDuel == character att senão continua
                         characterDuel[i] = tryEscape(characterDuel[i]);
-                        for(int j = 0; j >= character.Count; j++){
-                            if(character[j].idChar == characterDuel[i].idChar){
+                        for (int j = 0; j >= character.Count; j++)
+                        {
+                            if (character[j].idChar == characterDuel[i].idChar)
+                            {
                                 character[j] = characterDuel[i];
                                 continue;
                             }
@@ -92,9 +94,11 @@ namespace RPG
                         characterDuel[i] = wandChoice(characterDuel[i]);
                         characterDuel[i] = wandDuel(characterDuel[i]);
                         characterDuel[i].isDraw = true;
-                        
-                        for(int k = 0; k >= character.Count; k++){
-                            if(character[k].idChar == characterDuel[i].idChar){
+
+                        for (int k = 0; k >= character.Count; k++)
+                        {
+                            if (character[k].idChar == characterDuel[i].idChar)
+                            {
                                 character[k] = characterDuel[i];
                                 continue;
                             }
@@ -587,7 +591,7 @@ namespace RPG
 
                 if (!player.isAlive)
                 {
-                    Console.WriteLine($"Parabéns! {player.name}");
+                    Console.WriteLine($"Sinto muito, {player.name}!");
                     Console.WriteLine($"Casa do participante: {player.house.houseName}");
                     Console.WriteLine($"Sua pontuação no torneio: {player.score}");
                     Console.WriteLine($"Pontos de vida: {player.life}");
