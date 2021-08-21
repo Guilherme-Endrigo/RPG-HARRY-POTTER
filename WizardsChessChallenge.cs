@@ -40,7 +40,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                             XADREZ DE BRUXO!                                  |");
+                Console.WriteLine("|                               XADREZ DE BRUXO!                                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
@@ -90,7 +90,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                 CAVALO DO REI                                 |");
+            Console.WriteLine("|                                CAVALO DO REI                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Cavalo do rei, uma escolha de sorte e coragem. Você se sacrificou para     |");
@@ -141,7 +141,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                            EASTER EGG ENCONTRADO                              |");
+                    Console.WriteLine("|                              EASTER EGG ENCONTRADO                            |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|     Shazam! Por ter o mesmo nome que o corajoso Ronald Bilius Weasley, você   |");
@@ -194,7 +194,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                 TORRE DA RAINHA                               |");
+            Console.WriteLine("|                                TORRE DA RAINHA                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Torre da rainha, uma escolha de segura. Você ficou observando o jogo sem   |");
@@ -272,7 +272,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                    BISPO NEGRO                                |");
+            Console.WriteLine("|                                  BISPO NEGRO                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Bispo Negro, após uma jogada de honra e coragem, o XEQUE MATE ficou por    |");
@@ -295,7 +295,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" -------------------------------------------------------------------------------");
-                Console.WriteLine("|           ACALMA ESSE CORAÇÃO, QUE DESESPERO NUNCA RESOLVEU NADA              |");
+                Console.WriteLine("|             ACALMA ESSE CORAÇÃO, QUE DESESPERO NUNCA RESOLVEU NADA            |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Com muita sabedoria, você conteve a torre da rainha no seu devido lugar,   |");
@@ -483,7 +483,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------  ");
-            Console.WriteLine("|                                 A GRANDE FESTA                                |");
+            Console.WriteLine("|                                A GRANDE FESTA                                 |");
             Console.WriteLine("|------------------------------------------------------------------------------ |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você escolheu ir à festa. Agora role o dado para saber o que virá!         |");
@@ -574,7 +574,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                         VAMOS PARA O SONO DA BELEZA                           |");
+                Console.WriteLine("|                          VAMOS PARA O SONO DA BELEZA                          |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Que sono revigorante! Você teve um sonho e, através dele, aprendeu a como  |");
@@ -663,7 +663,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                 TEM PESSOAS QUE TÊM AZAR NO AMOR E AZAR NO JOGO               |");
+                Console.WriteLine("|                TEM PESSOAS QUE TÊM AZAR NO AMOR E AZAR NO JOGO                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Shazam! Você foi atingido pelo grito ensurdecedor da Mandrácora! Deveria   |");
