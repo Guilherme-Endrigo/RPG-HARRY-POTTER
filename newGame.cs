@@ -203,7 +203,7 @@ namespace RPG
                             Console.Write("Informe seu nome novamente: ");
                             name = Console.ReadLine();
                             onlyLettersAndWhitespace = name.All(i => char.IsLetter(i) || char.IsWhiteSpace(i));
-
+                            Console.WriteLine();
                             RPG.Tune.enter();
                         }
                         var charct = RPG.Creations.createChar(name, _idChar: i);
