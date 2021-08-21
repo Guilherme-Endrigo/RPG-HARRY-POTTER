@@ -144,7 +144,7 @@ namespace RPG
             Console.WriteLine("|                                   BICHO PAPÃO                                 |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Ir sempre para a esquerda não é tão ruim,  mas encontrou um Bicho Papão,   |");
+            Console.WriteLine("|    Ir sempre para a esquerda não é tão ruim, mas encontrou um Bicho Papão,   |");
             Console.WriteLine("| um não-ser que assume a forma do pior medo da pessoa que o vê. Normalmente    |");
             Console.WriteLine("| vive confinado dentro de armários e lugares escuros e, por conta de sua       |");
             Console.WriteLine("| natureza de mudar de forma, ninguém sabe sua real aparência.                  |");
@@ -902,7 +902,7 @@ namespace RPG
             Console.WriteLine("|                                   EXPLOSIVIM                                  |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Alternar entre esquerda e direita é um caminho díficil, um Explosivim te   |");
+            Console.WriteLine("|    Alternar entre esquerda e direita é um caminho díficil. Um Explosivim te   |");
             Console.WriteLine("| seguiu até aqui, uma criatura criada por Rúbeo Hagrid, em 1994, através do    |");
             Console.WriteLine("| cruzamento de Manticoras e caranguejos-de-fogo. E agora?                      |");
             Console.WriteLine("|                                                                               |");
@@ -1161,7 +1161,7 @@ namespace RPG
             Console.WriteLine("| enigmas e charadas.                                                           |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Quando o Ministério da Magia começou a categorizar criaturas mágicas, a    |");
-            Console.WriteLine("| Esfinge foi colocada na categoria fera e não na categoria, devido às suas     |");
+            Console.WriteLine("| Esfinge foi colocada na categoria Fera e não na categoria Ser devido às suas |");
             Console.WriteLine("| tendências violentas. Mas, não se preocupe, aqui você não precisará enfrentar |");
             Console.WriteLine("| a força física dela, mas a sua mente. Será que você dá conta do recado?       |");
             Console.WriteLine("|                                                                               |");

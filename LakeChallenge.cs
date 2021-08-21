@@ -769,7 +769,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                QUE CHEIRO É ESSE?                             |");
+                Console.WriteLine("|                               QUE CHEIRO É ESSE?                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Vish! Seu plano não deu certo, um dos sereianos ouviu um barulho próximo   |");

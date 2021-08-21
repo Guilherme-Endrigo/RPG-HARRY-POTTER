@@ -292,7 +292,7 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                           AS VEZES É MELHOR FUGIR                             |");
+            Console.WriteLine("|                           ÀS VEZES, É MELHOR FUGIR                            |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Você escolheu tentar fugir diante deste monstro poderoso, porém será capaz |");
@@ -674,7 +674,6 @@ namespace RPG
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Você foi flagrado! Agora todos sabem que você tentou sabotar outro aluno.  |");
                     Console.WriteLine("| Quando estiver andando por aí, fique de olhos abertos...                      |");
-                    Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

@@ -513,7 +513,7 @@ namespace RPG
                 Console.WriteLine("| sei que será uma jornada extraordinária – começou Neville.                    |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    O êxito da vida não se mede pelo caminho que você conquistou,  mas sim     |");
-                Console.WriteLine("| pelas dificuldades superadas no caminho, e  o torneio tribruxo é sobre isso.  |");
+                Console.WriteLine("| pelas dificuldades superadas no caminho, e  o Torneio Tribruxo é sobre isso.  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

@@ -12,10 +12,11 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" --------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                   XADREZ BRUXO                                  |");
+            Console.WriteLine("|                                  XADREZ BRUXO                                   |");
             Console.WriteLine("|---------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                                 |");
-            Console.WriteLine("|     Começou um novo dia, sem saber para onde se direm a uma sala escura!        |");
+            Console.WriteLine("|     Começou um novo dia e, passeando pelo castelo, sem saber para onde estão    |");
+            Console.WriteLine("| indo, vocês se dirigem a uma sala escura.                                       |");
             Console.WriteLine("|                                                                                 |");
             Console.WriteLine("|    Em meio ao caos, as luzes se acendem e vocês estão em um grande tabuleiro de |");
             Console.WriteLine("| xadrez. Do outro lado do tabuleiro, há uma porta, porém, para chegar até ela e  |");
@@ -40,7 +41,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                               XADREZ DE BRUXO!                                |");
+                Console.WriteLine("|                                XADREZ BRUXO!                                  |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
@@ -197,7 +198,7 @@ namespace RPG
             Console.WriteLine("|                                TORRE DA RAINHA                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Torre da rainha, uma escolha de segura. Você ficou observando o jogo sem   |");
+            Console.WriteLine("|    Torre da rainha, uma escolha segura. Você ficou observando o jogo sem      |");
             Console.WriteLine("| correr grande perigo até o momento! Role o dado para saber se essa foi a      |");
             Console.WriteLine("| melhor estratégia.                                                            |");
             Console.WriteLine("|                                                                               |");
