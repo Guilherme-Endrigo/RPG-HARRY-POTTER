@@ -57,7 +57,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|   (1) Você deseja sair correndo?                                              |");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|   (2) Voce deseja duelar?                                                     |");
+                Console.WriteLine("|   (2) Você deseja duelar?                                                     |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -78,7 +78,7 @@ namespace RPG
                 switch (option)
                 {
                     case "1":
-                    //se id do characterDuel == character att senao continua
+                    //se id do characterDuel == character att senão continua
                         characterDuel[i] = tryEscape(characterDuel[i]);
                         for(int j = 0; j >= character.Count; j++){
                             if(character[j].idChar == characterDuel[i].idChar){
@@ -274,6 +274,8 @@ namespace RPG
             Console.WriteLine("Rápido! Pressione ENTER para lançar o feitiço de defesa");
             Console.ReadLine();
 
+            RPG.Tune.spell();
+
             Console.WriteLine();
             Console.WriteLine();
             diceValue = RPG.Dice.throwDice();
@@ -300,6 +302,7 @@ namespace RPG
             Console.WriteLine("Pressione ENTER para contra-atacar com um feitiço!");
             Console.ReadLine();
 
+            RPG.Tune.spell();
 
             Console.WriteLine();
             Console.WriteLine();
@@ -325,6 +328,9 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para defender-se do feitiço!");
             Console.ReadLine();
+
+            RPG.Tune.spell();
+
             Console.WriteLine();
             Console.WriteLine();
 
@@ -350,6 +356,9 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para tentar se defender novamente do feitiço de Amos!");
             Console.ReadLine();
+
+            RPG.Tune.spell();
+
             Console.WriteLine();
             Console.WriteLine();
 
@@ -375,6 +384,8 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine("Pressione ENTER para lançar um feitiço em Amos!");
             Console.ReadLine();
+
+            RPG.Tune.spell();
 
 
             Console.WriteLine();
@@ -429,6 +440,9 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine($"{character.name}, Pressione ENTER para jogar o dado.");
             Console.ReadLine();
+
+            RPG.Tune.spell();
+
             diceValue = RPG.Dice.throwDice();
             RPG.Tune.diceSound(diceValue);
             Console.WriteLine($"O Valor do dado é {diceValue}");
@@ -506,7 +520,7 @@ namespace RPG
                 RPG.Tune.enter();
 
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                            EXISTA VIDA PÓS TORNEIO?                           |");
+                Console.WriteLine("|                            EXISTE VIDA PÓS TORNEIO?                           |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Encerra-se mais um ano letivo memorável em Hogwarts, onde contamos com as  |");
