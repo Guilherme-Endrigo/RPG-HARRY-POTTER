@@ -430,52 +430,55 @@ namespace RPG
                     continue;
                 }
 
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
-                Console.WriteLine("|-------------------------------------------------------------------------------|");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Mas espere! Parece que eles têm companhia, estão sendo vigiados por        |");
-                Console.WriteLine("| sereianos! Você precisa resgatá-los! O que você pretende fazer?               |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine("| (1) Lutar contra os sereianos                                                 |");
-                Console.WriteLine("| (2) Tentar salvar todos os reféns                                             |");
-                Console.WriteLine("| (3) Persuadir os sereianos a libertar o seu amigo                             |");
-                Console.WriteLine("| (4) Enfeitiçar os sereianos                                                   |");
-                Console.WriteLine("|                                                                               |");
-                Console.WriteLine(" ------------------------------------------------------------------------------- ");
-
-                Console.WriteLine();
-                Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
-                string option = Console.ReadLine();
-                RPG.Tune.enter();
-
-                while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
+                if (character[i].isAlive)
                 {
+
                     Console.WriteLine();
-                    Console.WriteLine("Opção inválida, tente novamente");
                     Console.WriteLine();
-                    Console.Write($"{character[i].name}, escolha novamente: ");
-                    option = Console.ReadLine();
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+                    Console.WriteLine("|                            DESAFIO DO LAGO NEGRO                              |");
+                    Console.WriteLine("|-------------------------------------------------------------------------------|");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("|    Mas espere! Parece que eles têm companhia, estão sendo vigiados por        |");
+                    Console.WriteLine("| sereianos! Você precisa resgatá-los! O que você pretende fazer?               |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine("| (1) Lutar contra os sereianos                                                 |");
+                    Console.WriteLine("| (2) Tentar salvar todos os reféns                                             |");
+                    Console.WriteLine("| (3) Persuadir os sereianos a libertar o seu amigo                             |");
+                    Console.WriteLine("| (4) Enfeitiçar os sereianos                                                   |");
+                    Console.WriteLine("|                                                                               |");
+                    Console.WriteLine(" ------------------------------------------------------------------------------- ");
+
+                    Console.WriteLine();
+                    Console.Write($"{character[i].name}, informe a opção desejada para continuar: ");
+                    string option = Console.ReadLine();
                     RPG.Tune.enter();
-                }
-                switch (option)
-                {
-                    case "1":
-                        character[i] = fightMerpeople(character[i]);
-                        break;
-                    case "2":
-                        character[i] = saveFriends(character[i]);
-                        break;
-                    case "3":
-                        character[i] = wooMerpeople(character[i]);
-                        break;
-                    case "4":
-                        character[i] = enchantMerpeople(character[i]);
-                        break;
-                }
 
+                    while (option != "1" && option != "2" && option != "3" && option != "4" || option == "")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Opção inválida, tente novamente");
+                        Console.WriteLine();
+                        Console.Write($"{character[i].name}, escolha novamente: ");
+                        option = Console.ReadLine();
+                        RPG.Tune.enter();
+                    }
+                    switch (option)
+                    {
+                        case "1":
+                            character[i] = fightMerpeople(character[i]);
+                            break;
+                        case "2":
+                            character[i] = saveFriends(character[i]);
+                            break;
+                        case "3":
+                            character[i] = wooMerpeople(character[i]);
+                            break;
+                        case "4":
+                            character[i] = enchantMerpeople(character[i]);
+                            break;
+                    }
+                }
 
             }
 
