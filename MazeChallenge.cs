@@ -1258,7 +1258,7 @@ namespace RPG
                 {
                     Console.WriteLine();
                     Console.Write("Parabéns! Você acertou: ");
-                    Console.Write($"{player.name};");
+                    Console.Write($"{player.name}; ");
 
                     player.score += 1;
                     player.life += 1;
@@ -1301,7 +1301,7 @@ namespace RPG
                 foreach (var player in isAlive)
                 {
                     Console.Write("Você errou! Sinto muito: ");
-                    Console.Write($"{player.name};");
+                    Console.Write($"{player.name}; ");
 
                     player.score -= 1;
                     player.life -= 1;

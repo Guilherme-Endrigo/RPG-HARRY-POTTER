@@ -623,6 +623,7 @@ namespace RPG
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
             Console.WriteLine("|          ESTUFA DA PROFª SPROUT, UM LUGAR QUE GUARDA VÁRIOS MISTÉRIOS         |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
+            Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Nesse lugar misterioso, podemos encontrar desde ervas e fungos até... Aah, |");
             Console.WriteLine("| não irei revelar. Bora lá?                                                    |");
             Console.WriteLine("|                                                                               |");
