@@ -18,7 +18,7 @@ namespace RPG
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|                          O Torneio Tribruxo começou!                          |");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    A torcida já está nas arquibancadas do campo de quadribol, e é quando, na  |");
+            Console.WriteLine("|    A torcida já está nas arquibancadas do campo de quadribol e é quando, na   |");
             Console.WriteLine("| tenda dos participantes, vocês se reúnem, todos igualmente ansiosos pelas     |");
             Console.WriteLine("| instruções. Logo Rony Weasley chega, anunciando que não será um desafio       |");
             Console.WriteLine("| qualquer: você começará com o mesmo desafio que um  dia Harry Potter          |");
@@ -39,7 +39,7 @@ namespace RPG
 
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                             DESAFIO DOS DRAGÕES                               |");
+                Console.WriteLine("|                              DESAFIO DOS DRAGÕES                              |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("| Agora, você tem 3 opções:                                                     |");
@@ -216,7 +216,7 @@ namespace RPG
             Console.WriteLine("|                             EM POSIÇÃO DE ATAQUE                              |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Em um ato de coragem você se coloca em posição de ataque, pronto para      |");
+            Console.WriteLine("|    Em um ato de coragem, você se coloca em posição de ataque, pronto para     |");
             Console.WriteLine("| qualquer possível armadilha que o dragão esteja pensando.                     |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Será que o dragão irá conseguir tirar seus pontos de vida? Role o dado e   |");
@@ -269,7 +269,7 @@ namespace RPG
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Vish, parece que o Dragão cuspiu fogo enquanto você lutava com ele no ar,  |");
                 Console.WriteLine("| as chamas te desestabilizaram e arruinaram as cerdas da vassoura… Urgh, foi   |");
-                Console.WriteLine("| uma queda feia! Que pena, acabou de perder um ponto e um ponto de vida.       |");
+                Console.WriteLine("| uma queda feia! Que pena, acabou de perder um ponto e uma vida.               |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine($"| Ficou com apenas {character.life} pontos de vida!                                            |");
                 Console.WriteLine("|                                                                               |");
@@ -376,7 +376,7 @@ namespace RPG
             Console.WriteLine("|                        A primeira parte chegou ao fim                         |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine("|    Muito bem, jovens competidores! Após um dia inteiro competindo, vocês      |");
-            Console.WriteLine("| finalmente podem descansar o corpo e a mente de um desafio tão exaustivo e    |");
+            Console.WriteLine("| finalmente podem descansar o corpo e a mente de um desafio tão exaustivo e,   |");
             Console.WriteLine("| após deixar o campo, vocês vão para os corredores do castelo.                 |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -549,7 +549,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                 NA HORA ERRADA                                |");
+                Console.WriteLine("|                               SONO NAS ALTURAS                                |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Você estava cansado demais e caiu no sono sobre o livro de poções. O       |");
@@ -623,7 +623,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                                 NA HORA ERRADA                                |");
+                Console.WriteLine("|                                NA HORA ERRADA                                 |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine("|    Humm, não deu muito certo. Um professor passou pelo corredor enquanto você |");
@@ -751,11 +751,11 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                             ENTRE NO CLUBE DE DUELOS                          |");
+                Console.WriteLine("|                           ENTRE NO CLUBE DE DUELOS                            |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|    Como diz um importante bruxo: “A dedicação nunca te deixa na mão”, e ao    |");
-                Console.WriteLine("| treinar feitiços você melhorou suas habilidades! Ganhou um ponto.             |");
+                Console.WriteLine("|    Como diz um importante bruxo: “A dedicação nunca te deixa na mão”, e, ao   |");
+                Console.WriteLine("| treinar feitiços, você melhorou suas habilidades! Ganhou um ponto.            |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 

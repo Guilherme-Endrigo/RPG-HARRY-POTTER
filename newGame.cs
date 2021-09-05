@@ -101,8 +101,8 @@ namespace RPG
             Console.WriteLine("|    A diretora McGonagall dirige-se à frente do Salão Comunal e começa seu      |");
             Console.WriteLine("| típico discurso de volta às aulas.                                             |");
             Console.WriteLine("|                                                                                |");
-            Console.WriteLine("|  - Temos a honra de sediar o Torneio Tribruxo, e como todos sabem, após os     |");
-            Console.WriteLine($"  eventos recentes, nós decidimos que neste ano o jogo será aberto a {groupSize}  ");
+            Console.WriteLine("|  - Temos a honra de sediar o Torneio Tribruxo, mas, devido à morte do Cedrico  |");
+            Console.WriteLine($"  na última edição, este ano o jogo será aberto a somente {groupSize}           ");
             Console.WriteLine("| participantes.                                                                 |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|   As instruções para as tarefas que os campeões deverão enfrentar este ano     |");
@@ -116,7 +116,7 @@ namespace RPG
             Console.WriteLine("| das tarefas ganhará a Taça Tribruxo.                                           |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|    Agora, caros possíveis candidatos, se quiserem se candidatar a campeão,     |");
-            Console.WriteLine("| deveram escrever seu nome claramente em um pedaço de pergaminho e depositá-lo  |");
+            Console.WriteLine("| deverão escrever seu nome claramente em um pedaço de pergaminho e depositá-lo  |");
             Console.WriteLine("| no Cálice imediatamente.                                                       |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|    Insira o seu nome se você tiver coragem!                                    |");
@@ -189,7 +189,7 @@ namespace RPG
                         break;
 
                     case "2":
-                        Console.Write("Você é empurrado pelo restante dos seus amigos e, pela vergonha decide colocar seu nome: ");
+                        Console.Write("Você é empurrado pelo restante dos seus amigos e, pela vergonha, decide colocar seu nome: ");
                         name = Console.ReadLine();
                         RPG.Tune.enter();
 
@@ -228,7 +228,10 @@ namespace RPG
             Console.WriteLine("|                                AS REGRAS                                       |");
             Console.WriteLine("|------------------------------------------------------------------------------- |");
             Console.WriteLine("|                                                                                |");
-            Console.WriteLine("|               Tabela de pontuação para cada número do dado D20                 |");
+            Console.WriteLine("|    Na escolha dos caminhos, seja fiel a si mesmo(a)! não escolha o que parece  |");
+            Console.WriteLine("| mais legal, mas o que parece mais com o que você faria.                        |");
+            Console.WriteLine("|                                                                                |");
+            Console.WriteLine("|            --- Tabela de pontuação para cada número do dado D20 ---            |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|   * Falha Crítica (0 - 3) -- Não poderia ter sido pior, mesmo que              |");
             Console.WriteLine("|     tentasse... (Perde 2 pontos de vida).                                      |");
@@ -244,7 +247,7 @@ namespace RPG
             Console.WriteLine("|                                                                                |");
             Console.WriteLine("|   Caso haja empate, será feita uma disputa de duelo                            |");
             Console.WriteLine("|                                                                                |");
-            Console.WriteLine("|   * Obs: Fique atento! Escondemos pequenos easter eggs pelo jogo, divirtam-se! |");
+            Console.WriteLine("|   * Obs: Fique atento! Escondemos pequenos easter eggs pelo jogo, divirta-se!  |");
             Console.WriteLine("|                                                                                |");
             Console.WriteLine(" -------------------------------------------------------------------------------  ");
 
@@ -267,9 +270,9 @@ namespace RPG
             Console.WriteLine("|                       DESCANSO ANTES DO PRIMEIRO DESAFIO                      |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Atenção, o Torneio está prestes a começar… Amanhã será um dia de altas     |");
-            Console.WriteLine("| emoções e o primeiro de muitos desafios. Antes de tudo, escolha o que deseja  |");
-            Console.WriteLine("| fazer até amanhã. Lembre-se apenas, que toda ação pode levar tanto a          |");
+            Console.WriteLine("|    Atenção, o Torneio está prestes a começar! Amanhã será um dia de altas     |");
+            Console.WriteLine("| emoções e o primeiro dos muitos desafios. Antes de tudo, escolha o que deseja |");
+            Console.WriteLine("| fazer até amanhã. Lembre-se, apenas, que toda ação pode levar tanto a         |");
             Console.WriteLine("| vantagens quanto a consequências.                                             |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -321,7 +324,7 @@ namespace RPG
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                ESCREVER UMA FOFOCA                            |");
+                        Console.WriteLine("|                              ESCREVER UMA FOFOCA                              |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Você escreveu uma fofoca para o Profeta Diário, colocando em prática sua   |");
@@ -342,7 +345,7 @@ namespace RPG
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                    LER LIVRO                                  |");
+                        Console.WriteLine("|                                   LER LIVRO                                   |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Ao esperar o resultado lendo um livro, você aumentou sua inteligência, mas |");
@@ -384,7 +387,7 @@ namespace RPG
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                        Console.WriteLine("|                                CUIDAR DA PLANTA                               |");
+                        Console.WriteLine("|                             CUIDAR DE UMA PLANTA                              |");
                         Console.WriteLine("|-------------------------------------------------------------------------------|");
                         Console.WriteLine("|                                                                               |");
                         Console.WriteLine("|    Escolher cuidar de uma planta em um mundo pós-guerra é um gesto de         |");

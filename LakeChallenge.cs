@@ -125,10 +125,10 @@ namespace RPG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
-            Console.WriteLine("|                                GUELRICHO! ÉCA                                 |");
+            Console.WriteLine("|                               GUELRICHO, ÉCA!                                 |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você escolheu engolir o guelricho! Blargh, a partir de agora role o dado   |");
+            Console.WriteLine("|    Você escolheu engolir o guelricho! Blargh! A partir de agora, role o dado  |");
             Console.WriteLine("| para descobrir os efeitos colaterais da sua decisão!                          |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
@@ -204,8 +204,8 @@ namespace RPG
             Console.WriteLine("|                           FEITIÇO CABEÇA DE BOLHA                             |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você escolheu utilizar o feitiço cabeça de bolha! Glub-glub, a partir de   |");
-            Console.WriteLine("| agora role o para descobrir os efeitos colaterais da sua decisão!             |");
+            Console.WriteLine("|    Você escolheu utilizar o feitiço cabeça de bolha, glub-glub. A partir de   |");
+            Console.WriteLine("| agora, role o para descobrir os efeitos colaterais da sua decisão!            |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -247,12 +247,13 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                Console.WriteLine("|                           UMA REVIRAVOLTA DESESPERANTE                        |");
+                Console.WriteLine("|                         UMA REVIRAVOLTA DESESPERANTE                          |");
                 Console.WriteLine("|-------------------------------------------------------------------------------|");
                 Console.WriteLine("|                                                                               |");
-                Console.WriteLine("|  O feitiço virou-se contra o feiticeiro! A bolha estourou, você está ficando  |");
-                Console.WriteLine("| sem ar, tente novamente na próxima rodada fugir desse destino!                |");
-                Console.WriteLine($"| Está com {character.life} pontos de vida!                                                    |");
+                Console.WriteLine("|  O feitiço virou-se contra o feiticeiro! A bolha estourou e você está ficando |");
+                Console.WriteLine("| sem ar! Tente fugir desse destino na próxima rodada!                          |");
+                Console.WriteLine("|                                                                               |");
+                Console.WriteLine($"|    Está com {character.life} pontos de vida!                                                  |");
                 Console.WriteLine("|                                                                               |");
                 Console.WriteLine(" ------------------------------------------------------------------------------- ");
 
@@ -296,7 +297,7 @@ namespace RPG
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine(" ------------------------------------------------------------------------------- ");
-                    Console.WriteLine("|                           UM DESTINO TRISTE! SNIFF SNIFF                      |");
+                    Console.WriteLine("|                           UM DESTINO TRISTE! SNIF SNIFF                      |");
                     Console.WriteLine("|-------------------------------------------------------------------------------|");
                     Console.WriteLine("|                                                                               |");
                     Console.WriteLine("|    Ihhh, o seu tempo se esgotou! Você tentou nadar, mas se desesperou e não   |");
@@ -332,8 +333,8 @@ namespace RPG
             Console.WriteLine("|                                 TRANSFIGURAÇÃO                                |");
             Console.WriteLine("|-------------------------------------------------------------------------------|");
             Console.WriteLine("|                                                                               |");
-            Console.WriteLine("|    Você escolheu utilizar o feitiço de transfiguração! A partir de agora role |");
-            Console.WriteLine("| o dado para descobrir se você se lembrou de entrar na água antes de se        |");
+            Console.WriteLine("|    Você escolheu utilizar o feitiço de transfiguração! A partir de agora,     |");
+            Console.WriteLine("| role o dado para descobrir se você se lembrou de entrar na água antes de se   |");
             Console.WriteLine("| transformar!                                                                  |");
             Console.WriteLine("|                                                                               |");
             Console.WriteLine(" ------------------------------------------------------------------------------- ");

@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\RPG.csproj": {}
+    "C:\\Users\\bcast\\Documents\\CODING\\.NET + Angular (aulas)\\RPG HP\\RPG-HARRY-POTTER\\RPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\RPG.csproj": {
+    "C:\\Users\\bcast\\Documents\\CODING\\.NET + Angular (aulas)\\RPG HP\\RPG-HARRY-POTTER\\RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\RPG.csproj",
+        "projectUniqueName": "C:\\Users\\bcast\\Documents\\CODING\\.NET + Angular (aulas)\\RPG HP\\RPG-HARRY-POTTER\\RPG.csproj",
         "projectName": "RPG",
-        "projectPath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\RPG.csproj",
-        "packagesPath": "C:\\Users\\Visitante\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Visitante\\Documents\\UCode\\Back-end\\Marco\\ProjetoRPG_HP\\RPG-HARRY-POTTER\\obj\\",
+        "projectPath": "C:\\Users\\bcast\\Documents\\CODING\\.NET + Angular (aulas)\\RPG HP\\RPG-HARRY-POTTER\\RPG.csproj",
+        "packagesPath": "C:\\Users\\bcast\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bcast\\Documents\\CODING\\.NET + Angular (aulas)\\RPG HP\\RPG-HARRY-POTTER\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Visitante\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\bcast\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
